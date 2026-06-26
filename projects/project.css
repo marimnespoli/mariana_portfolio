@@ -1,0 +1,986 @@
+/* ─── CASE STUDY ─────────────────────────────────────────────── */
+
+.cs-back {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.cs-back:hover { opacity: 1; }
+
+.cs-main {
+  padding: 40px 0 80px;
+}
+
+/* ── Hero ── */
+.cs-hero {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cs-title {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.0;
+  margin-bottom: 6px;
+}
+
+.cs-title-sub {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  color: #888;
+  margin-bottom: 28px;
+}
+
+.cs-hero__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cs-subtitle {
+  font-family: var(--font);
+  font-size: 16px;
+  color: #444;
+  line-height: 1.65;
+  max-width: 560px;
+  text-align: center;
+}
+
+.cs-tags {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.cs-tag {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: #777;
+}
+
+/* ── Hero image / wireframe ── */
+.cs-hero-img {
+  margin-bottom: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cs-wireframe {
+  width: 100%;
+  display: block;
+}
+
+/* ── MacBook + overview ── */
+.cs-macbook-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.cs-macbook-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── MacBook shell — exact Figma proportions (device bounding box 1008×580px) ── */
+
+/*
+  Figma coordinates relative to device origin (96, 175):
+  Lid:          left=98px, top=0,   w=816, h=554
+  Dark Screen:  left=103,  top=5,   w=806, h=528
+  White Screen: left=119,  top=31,  w=770, h=480
+  Label:        left≈504,  top=534
+  Bottom bar:   left=0,    top=550, w=1008, h=30
+  → % based on 1008w × 580h
+*/
+
+.cs-macbook {
+  position: relative;
+  width: 100%;
+  padding-bottom: 57.5%; /* 580/1008 */
+}
+
+/* Lid */
+.cs-mb__lid {
+  position: absolute;
+  left: 9.72%;   /* 98/1008 */
+  top: 0%;
+  width: 81%;    /* 816/1008 */
+  height: 95.5%; /* 554/580 */
+  background: #1a202c;
+  border: 2px solid #4a5568;
+  border-radius: 28px 28px 4px 4px;
+  box-sizing: border-box;
+}
+
+/* Camera dot on lid */
+.cs-mb__lid::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.8%;
+  padding-bottom: 0.8%;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 50%;
+}
+
+/* Dark bezel */
+.cs-mb__dark {
+  position: absolute;
+  left: 10.22%;  /* 103/1008 */
+  top: 0.86%;   /* 5/580 */
+  width: 79.96%; /* 806/1008 */
+  height: 91%;   /* 528/580 */
+  background: #000;
+  border-radius: 22px 22px 0 0;
+}
+
+/* White screen */
+.cs-mb__screen {
+  position: absolute;
+  left: 11.81%;  /* 119/1008 */
+  top: 5.34%;    /* 31/580 */
+  width: 76.39%; /* 770/1008 */
+  height: 82.76%;/* 480/580 */
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label "Macbook Pro" */
+.cs-mb__label {
+  position: absolute;
+  left: 50%;
+  top: 91.5%;
+  transform: translateX(-50%);
+  font-family: var(--font);
+  font-size: 9px;
+  color: #a0aec0;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Bottom bar wrapper — height = 30/580 of device height */
+.cs-mb__bottom-wrap {
+  position: absolute;
+  left: 0;
+  top: 94.83%; /* 550/580 */
+  width: 100%;
+  height: 5.17%; /* 30/580 */
+  overflow: visible;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+}
+
+/* browser bar */
+.cs-macbook__browser {
+  background: #f1f3f4;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-macbook__dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.cs-macbook__dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+}
+
+.cs-macbook__url {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  height: 16px;
+  font-family: var(--font);
+  font-size: 8px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* site screenshot image */
+.cs-mb__site-img {
+  width: 100%;
+  flex: 1;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* interactive iframe inside MacBook — zoomed in 2x */
+.cs-mb__app-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: none;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+/* app inside screen */
+.cs-app {
+  background: #1a1a2e;
+  flex: 1;
+}
+
+.cs-app__header {
+  background: #111;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-app__logo {
+  background: #2a2a3e;
+  color: #666;
+  font-family: var(--font);
+  font-size: 8px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.cs-app__search {
+  flex: 1;
+  background: #2a2a3e;
+  color: #555;
+  font-family: var(--font);
+  font-size: 8px;
+  padding: 5px 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cs-app__random {
+  background: #39a843;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 8px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.cs-app__filters {
+  background: #20203a;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cs-app__filter {
+  font-family: var(--font);
+  font-size: 7px;
+  color: #777;
+  background: #2e2e4a;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.cs-app__filter--active {
+  background: #39a843;
+  color: #fff;
+}
+
+.cs-app__filter--clear {
+  background: #c0392b;
+  color: #fff;
+  margin-left: auto;
+}
+
+.cs-app__filter-sep {
+  color: #444;
+  font-size: 9px;
+  padding: 0 2px;
+}
+
+.cs-app__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px 12px 16px;
+}
+
+.cs-app__card {
+  background: #222233;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cs-app__card-img {
+  background: #2a2a3e;
+  height: 72px;
+}
+
+.cs-app__card-name {
+  background: #333;
+  height: 7px;
+  border-radius: 2px;
+  margin: 8px 8px 4px;
+}
+
+.cs-app__card-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot.green { background: #39a843; }
+.dot.red   { background: #e84c4c; }
+.dot.grey  { background: #aaa; }
+
+.cs-app__card-info div {
+  background: #2a2a3e;
+  height: 6px;
+  border-radius: 2px;
+  flex: 1;
+}
+
+
+.cs-overview-label {
+  font-family: var(--font-heading) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #999;
+  margin-bottom: 14px !important;
+}
+
+.cs-overview-heading {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cs-overview-text p {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 14px;
+}
+.cs-overview-text p:last-child { margin-bottom: 0; }
+
+/* ── Info row ── */
+.cs-info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+  padding-top: 0;
+}
+
+.cs-info-block {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.cs-info-label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 12px !important;
+  text-align: center;
+}
+
+.cs-info-block p {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.cs-info-block code {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: #f0f0f0;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #333;
+}
+
+/* ── Inspiration section ── */
+.cs-inspo-section {
+  margin-bottom: 72px;
+  padding-top: 40px;
+  border-top: 1px solid #e8e8e8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cs-inspo-label {
+  padding-top: 4px;
+}
+
+.cs-inspo-images {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-left: -80px;
+}
+
+.cs-inspo-images img {
+  flex: 1;
+  min-width: 0;
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ── Design section ── */
+.cs-design-section {
+  margin-bottom: 72px;
+  padding-top: 40px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.cs-design-sidebyside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cs-design-sidebyside .cs-design-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 460px;
+}
+
+.cs-design-sidebyside .cs-design-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs-design-sidebyside .cs-design-frame:first-child img {
+  object-position: center center;
+  transform: none;
+}
+
+.cs-design-sidebyside .cs-design-frame:last-child img {
+  object-position: center center;
+}
+
+.cs-design-label {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cs-design-zigzag {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.cs-design-zigzag--reverse {
+  grid-template-columns: 1.6fr 1fr;
+}
+
+.cs-design-zigzag__text p {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.cs-design-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cs-design-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.cs-design-text p {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.cs-design-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.cs-design-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+
+.cs-design-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-design-item__num {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 600;
+  color: #e8e8e8;
+  line-height: 1;
+}
+
+.cs-design-item__title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cs-design-item__desc {
+  font-family: var(--font);
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.cs-design-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.cs-design-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* ── All devices row ── */
+.cs-all-devices {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 72px;
+  padding-top: 40px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.cs-device-macbook {
+  flex: 3;
+  min-width: 0;
+}
+
+.cs-device-macbook .cs-macbook-wrap,
+.cs-device-macbook .cs-macbook {
+  width: 100%;
+}
+
+.cs-device-tablet {
+  flex: 2;
+  min-width: 0;
+}
+
+.cs-device-tablet .cs-tablet {
+  width: 100%;
+}
+
+.cs-device-mobile {
+  flex: 1;
+  min-width: 0;
+}
+
+.cs-device-mobile .cs-mobile {
+  width: 100%;
+}
+
+/* ── Tablet mockup ── */
+.cs-tablet-wrap {
+  width: 500px;
+  flex-shrink: 0;
+}
+
+.cs-tablet {
+  position: relative;
+  width: 100%;
+  background: #1a202c;
+  border-radius: 28px;
+  border: 2px solid #4a5568;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  padding: 18px 36px 18px 36px;
+  box-sizing: border-box;
+}
+
+.cs-tablet__camera {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.cs-tablet__screen {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cs-tablet__screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Mobile mockup — iPhone 16 Pro Max SVG frame ── */
+.cs-mobile-wrap {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* Container sized to PNG frame: 1748 × 3532 */
+.cs-mobile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 202.1%; /* 3532/1748 × 100 */
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Screen area — measured from actual PNG pixel data:
+   top=217px (6.14%), left=96px (5.49%), w=1555px (88.96%), h=3231px (91.48%) */
+.cs-mobile__screen {
+  position: absolute;
+  top: 3.8%;
+  left: 5.49%;
+  width: 88.96%;
+  height: 91.48%;
+  border-radius: 8%;
+  overflow: hidden;
+  z-index: 0;
+  background: #000;
+}
+
+.cs-mobile__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* Interactive iframe inside phone screen */
+.cs-mobile__screen--iframe {
+  overflow: hidden;
+}
+
+.cs-mobile__screen--iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 390px;
+  height: 844px;
+  border: none;
+  transform-origin: top left;
+  transform: scale(0.48);
+  pointer-events: auto;
+}
+
+/* Frame PNG overlay */
+.cs-mobile__frame {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Notch (iPhone 14) */
+.cs-mobile__island {
+  display: none;
+}
+
+/* ── Dark iPhone variant (node 210:206, cropped frame 482×965) ── */
+.cs-mobile--dark {
+  padding-bottom: 200.2%; /* 965/482 × 100 */
+  background: transparent;
+  border-radius: 0;
+}
+
+.cs-mobile--dark .cs-mobile__screen {
+  top: 3.8%;
+  left: 5.39%;
+  width: 92.74%;
+  height: 89.95%;
+  border-radius: 9%;
+}
+
+.cs-mobile__home {
+  display: none;
+}
+
+/* ── Figma prototype embed ── */
+.cs-prototype-section {
+  margin-bottom: 72px;
+  padding-top: 40px;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: center;
+}
+
+.cs-prototype-section iframe {
+  width: 420px;
+  height: 880px;
+  border: none;
+  border-radius: 16px;
+}
+
+/* ── Mobile phones strip ── */
+/* ── Mobile phones — full width strip (Scenté) ── */
+.cs-phones-section {
+  padding: 60px 0 72px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.cs-phones-strip {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+}
+
+.cs-phone {
+  width: 28%;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  margin-left: 12px;
+}
+
+.cs-phone:first-child {
+  margin-left: 0;
+}
+
+.cs-phone:hover {
+  transform: translateY(-8px);
+  z-index: 3;
+  position: relative;
+}
+
+.cs-phone img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+}
+
+.cs-phone__mockup {
+  width: 100%;
+  display: block;
+}
+
+.cs-phone__figma {
+  width: 100%;
+  aspect-ratio: 440 / 956;
+  border: none;
+  display: block;
+}
+
+.cs-phone .cs-mobile {
+  width: 100%;
+}
+
+/* ── Scenté overview (below phones) ── */
+.cs-scente-overview {
+  margin-bottom: 72px;
+  padding-top: 48px;
+  border-top: 1px solid #e8e8e8;
+  max-width: 720px;
+}
+
+.cs-scente-overview p {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.cs-scente-overview p:last-of-type {
+  margin-bottom: 0;
+}
+
+.cs-scente-overview p {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.cs-scente-overview p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ── Live demo ── */
+.cs-demo {
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.cs-demo__label {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.cs-demo__hint {
+  font-family: var(--font);
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.cs-demo__frame {
+  width: 100%;
+  height: 680px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+}
+
+.cs-demo__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── Links ── */
+.cs-links {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 80px;
+}
+
+.cs-links--inline {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.cs-live-btn {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 100px;
+  transition: opacity 0.2s;
+}
+.cs-live-btn:hover { opacity: 0.8; }
+
+.cs-live-btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  border-radius: 100px;
+}
+
+/* ── Bottom nav ── */
+.cs-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.cs-nav a {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: opacity 0.2s;
+}
+.cs-nav a:hover { opacity: 0.6; }
