@@ -4,42 +4,61 @@
   <clipPath id="clip0_408_68">
     <rect width="181.071" height="97.1896" fill="white" transform="translate(38.9644 76.2053)"/>
   </clipPath>
-  <style>
-    .petal { opacity: 0; }
-    .p0 { animation: p0 10s ease-in-out infinite 0.3s both; }
-    .p1 { animation: p1 10s ease-in-out infinite 0.3s both; }
-    .p2 { animation: p2 10s ease-in-out infinite 0.3s both; }
-    .p3 { animation: p3 10s ease-in-out infinite 0.3s both; }
-    .p4 { animation: p4 10s ease-in-out infinite 0.3s both; }
-    .p5 { animation: p5 10s ease-in-out infinite 0.3s both; }
-    .p6 { animation: p6 10s ease-in-out infinite 0.3s both; }
-    .p7 { animation: p7 10s ease-in-out infinite 0.3s both; }
-
-    /* petal n: bloom at n*4%, hold, wilt at 65%+n*4% */
-    @keyframes p0 { 0%{opacity:0} 3%{opacity:1} 65%{opacity:1} 68%,100%{opacity:0} }
-    @keyframes p1 { 0%,4%{opacity:0} 7%{opacity:1} 69%{opacity:1} 72%,100%{opacity:0} }
-    @keyframes p2 { 0%,8%{opacity:0} 11%{opacity:1} 73%{opacity:1} 76%,100%{opacity:0} }
-    @keyframes p3 { 0%,12%{opacity:0} 15%{opacity:1} 77%{opacity:1} 80%,100%{opacity:0} }
-    @keyframes p4 { 0%,16%{opacity:0} 19%{opacity:1} 81%{opacity:1} 84%,100%{opacity:0} }
-    @keyframes p5 { 0%,20%{opacity:0} 23%{opacity:1} 85%{opacity:1} 88%,100%{opacity:0} }
-    @keyframes p6 { 0%,24%{opacity:0} 27%{opacity:1} 89%{opacity:1} 92%,100%{opacity:0} }
-    @keyframes p7 { 0%,28%{opacity:0} 31%{opacity:1} 93%{opacity:1} 96%,100%{opacity:0} }
-  </style>
 </defs>
 
 <g id="Group 14">
 
-  <!-- 8 pétalas (atrás do M), sentido horário a partir do topo -->
-  <ellipse class="petal p0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9"/>
-  <ellipse class="petal p1" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)"/>
-  <ellipse class="petal p2" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)"/>
-  <ellipse class="petal p3" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)"/>
-  <ellipse class="petal p4" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)"/>
-  <ellipse class="petal p5" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)"/>
-  <ellipse class="petal p6" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)"/>
-  <ellipse class="petal p7" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)"/>
+  <!-- 8 pétalas com SMIL (sem CSS stacking context) — M fica sempre na frente -->
 
-  <!-- Letra M por cima -->
+  <!-- petal 0 — topo (0°) -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.65;0.68;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 1 — 45° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.07;0.69;0.72;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 2 — 90° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.11;0.73;0.76;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 3 — 135° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.15;0.77;0.80;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 4 — 180° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.19;0.81;0.84;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 5 — 225° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.23;0.85;0.88;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 6 — 270° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.27;0.89;0.92;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- petal 7 — 315° -->
+  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.31;0.93;0.96;1"
+      dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
+  </ellipse>
+
+  <!-- Letra M — sempre na frente (último elemento = z mais alto) -->
   <g id="Isolation_Mode" clip-path="url(#clip0_408_68)">
     <path id="Vector" d="M157.116 150.419C157.116 156.98 160.02 162.977 164.589 166.96C173.074 174.366 190.925 174.679 201.987 171.406C212.525 168.284 219.2 159.588 220.019 148.969C220.133 147.463 219.677 145.877 218.225 145.338C217.307 144.996 215.092 145.928 214.714 146.935C211.856 154.508 208.916 165.036 199.368 163.067C197.439 162.67 195.292 161.476 195.292 159.326L195.214 108.174L195.012 100.898C194.669 88.637 185.604 79.3621 173.147 78.0127C161.084 76.7035 150.758 77.7659 140.997 84.9512C137.792 87.3077 132.456 87.4033 129.479 84.9109C124.179 80.4749 118.422 78.0832 111.379 77.6501C104.845 77.2473 98.0299 77.6501 91.8428 80.0922C83.2337 83.491 75.2107 91.4919 72.9495 88.3852C71.8085 86.8142 71.8604 84.0499 71.6063 82.1768C71.1136 78.5514 68.5205 75.5555 64.6412 76.3309C58.0184 77.6552 51.6498 79.0348 45.276 81.2151C41.6923 82.4336 38.9644 86.2301 38.9644 90.0418V161.265C38.9748 165.001 42.5895 169.729 46.4481 169.744L67.3277 169.845C71.2743 169.865 75.1847 165.64 75.1795 161.522L75.1173 110.55C75.1069 102.977 77.4148 96.3811 83.0833 91.1092C85.6504 88.7226 88.4302 86.1697 92.2369 85.354C94.7833 84.8102 97.7861 87.7105 97.7913 90.5856L97.921 161.365C97.9261 165.479 101.997 169.84 106.011 169.85L126.331 169.9C131.885 169.915 134.675 164.784 134.722 159.92L134.924 139.513L135.402 109.76C135.464 105.893 135.096 102.01 136.641 98.3499C139.908 90.6108 149.441 82.0811 154.124 86.1244C155.944 87.6954 157.075 90.3741 157.075 92.9219L157.116 150.414V150.419Z" fill="#4A354E"/>
   </g>
