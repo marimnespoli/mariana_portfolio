@@ -40,7 +40,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── NAVIGATION ─────────────────────────────────────────────── */
 .site-nav {
-  padding: 18px 0;
+  padding: 12px 0;
   background: var(--cream);
 }
 
@@ -119,9 +119,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about__photo {
-  width: 110px;
-  height: 130px;
-  border-radius: var(--radius);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
 }
