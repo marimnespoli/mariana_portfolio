@@ -20,7 +20,25 @@
         <li><a href="#contact">Contact me</a></li>
       </ul>
       <a href="#" class="site-nav__logo" aria-label="Home">
-        <span class="logo-circle">m</span>
+        <svg class="logo-svg" viewBox="0 0 56 56" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+          <!-- filled background circle -->
+          <circle cx="28" cy="28" r="28" fill="#c9bfe8"/>
+          <!-- animated stroke: full circle → semicircle -->
+          <circle class="logo-ring" cx="28" cy="28" r="23"
+            fill="none"
+            stroke="#7a1c2e"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            transform="rotate(-90 28 28)"/>
+          <!-- the m letter -->
+          <text x="28" y="36"
+            text-anchor="middle"
+            font-family="Playfair Display, Georgia, serif"
+            font-style="italic"
+            font-weight="700"
+            font-size="26"
+            fill="#7a1c2e">m</text>
+        </svg>
       </a>
       <ul class="site-nav__right">
         <li><a href="https://www.linkedin.com/in/marimnespoli" target="_blank">Linkedin</a></li>
