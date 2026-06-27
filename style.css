@@ -13,8 +13,8 @@
   --font-serif:   'Playfair Display', Georgia, serif;
   --max-w:        1200px;
   --navy:         #091f5b;
-  --gap:          12px;
-  --radius:       16px;
+  --gap:          24px;
+  --radius:       24px;
 }
 
 html { scroll-behavior: smooth; }
@@ -88,6 +88,8 @@ a { color: inherit; text-decoration: none; }
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
   padding-top: 36px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .hero__name {
@@ -200,30 +202,24 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ─── BENTO GRID ─────────────────────────────────────────────── */
-/*
-  3-col grid:
-  [ featured (col 1, rows 1-2) ] [ small (col 2, row 1) ] [ small (col 3, row 1) ]
-                                  [ small (col 2, row 2) ] [ small (col 3, row 2) ]
-  But we have 3 small cards, so last one spans both cols 2-3
-*/
 .bento-grid {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  grid-template-rows: 280px 280px;
-  gap: var(--gap);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(300px, auto);
+  gap: 24px;
 }
 
 .bento-featured {
-  grid-column: 1;
-  grid-row: 1 / 3;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-.bento-small:nth-child(2) { grid-column: 2; grid-row: 1; }
-.bento-small:nth-child(3) { grid-column: 3; grid-row: 1; }
-.bento-small:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+.bento-small {
+  grid-column: span 1;
+}
 
 /* ─── PROJECT CARD ───────────────────────────────────────────── */
 .project-card {
@@ -247,6 +243,10 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
+}
+
+.bento-featured .project-card {
+  height: 100%;
 }
 
 .project-card--featured .project-card__img-wrap {
