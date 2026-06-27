@@ -176,6 +176,11 @@ body > * {
 /* ─── PROJECTS ───────────────────────────────────────────────── */
 .work {
   padding: 0 0 60px;
+  background: #ffffff;
+}
+
+.work__banner {
+  width: 100%;
   background: var(--cream);
 }
 
@@ -184,7 +189,7 @@ body > * {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 56px 0 40px;
+  padding: 56px 24px;
 }
 
 .work__diamonds {
