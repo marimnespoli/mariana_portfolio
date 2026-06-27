@@ -23,6 +23,8 @@
       to="0 392.1"
       dur="3.5s"
       begin="0.2s"
+      repeatCount="1"
+      restart="never"
       calcMode="spline"
       keySplines="0.4 0 0.2 1"
       fill="freeze"/>
