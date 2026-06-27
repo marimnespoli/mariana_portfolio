@@ -8,52 +8,52 @@
 
 <g id="Group 14">
 
-  <!-- 8 pétalas com SMIL (sem CSS stacking context) — M fica sempre na frente -->
+  <!-- 8 pétalas com SMIL — cy=34.8 so tip (cy+ry=34.8+90=124.8) meets rotation center exactly -->
 
   <!-- petal 0 — topo (0°) -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9">
     <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.65;0.68;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 1 — 45° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.07;0.69;0.72;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 2 — 90° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.11;0.73;0.76;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 3 — 135° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.12;0.15;0.77;0.80;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 4 — 180° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.19;0.81;0.84;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 5 — 225° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.20;0.23;0.85;0.88;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 6 — 270° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.27;0.89;0.92;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
 
   <!-- petal 7 — 315° -->
-  <ellipse opacity="0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)">
+  <ellipse opacity="0" cx="129.5" cy="34.8" rx="36" ry="90" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.28;0.31;0.93;0.96;1"
       dur="10s" begin="0.3s" repeatCount="indefinite" calcMode="linear"/>
   </ellipse>
