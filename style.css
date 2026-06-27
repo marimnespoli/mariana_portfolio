@@ -122,26 +122,20 @@ a { color: inherit; text-decoration: none; }
 .hero__cta {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: #3D2C40;
-  color: #ffffff;
-  border-radius: 999px;
-  padding: 8px 24px 8px 8px;
-  font-size: 15px;
+  gap: 8px;
+  background: none;
+  color: #2D2A33;
+  font-size: 16px;
   font-weight: 500;
-  transition: opacity 0.15s;
 }
 
-.hero__cta:hover { opacity: 0.8; }
+.hero__cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
 
-.hero__cta-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  flex-shrink: 0;
+.hero__cta:hover .hero__cta-arrow {
+  transform: translateX(4px);
 }
 
 /* ─── WORK SECTION ───────────────────────────────────────────── */
