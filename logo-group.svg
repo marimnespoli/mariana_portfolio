@@ -30,14 +30,14 @@
 <g id="Group 14">
 
   <!-- 8 pétalas (atrás do M), sentido horário a partir do topo -->
-  <ellipse class="petal p0" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9"/>
-  <ellipse class="petal p1" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)"/>
-  <ellipse class="petal p2" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)"/>
-  <ellipse class="petal p3" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)"/>
-  <ellipse class="petal p4" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)"/>
-  <ellipse class="petal p5" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)"/>
-  <ellipse class="petal p6" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)"/>
-  <ellipse class="petal p7" cx="129.5" cy="84.8" rx="20" ry="30" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)"/>
+  <ellipse class="petal p0" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9"/>
+  <ellipse class="petal p1" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(45, 129.5, 124.8)"/>
+  <ellipse class="petal p2" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(90, 129.5, 124.8)"/>
+  <ellipse class="petal p3" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(135, 129.5, 124.8)"/>
+  <ellipse class="petal p4" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(180, 129.5, 124.8)"/>
+  <ellipse class="petal p5" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(225, 129.5, 124.8)"/>
+  <ellipse class="petal p6" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(270, 129.5, 124.8)"/>
+  <ellipse class="petal p7" cx="129.5" cy="72.8" rx="26" ry="40" fill="#D1B9D9" transform="rotate(315, 129.5, 124.8)"/>
 
   <!-- Letra M por cima -->
   <g id="Isolation_Mode" clip-path="url(#clip0_408_68)">
