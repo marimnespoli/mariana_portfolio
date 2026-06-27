@@ -3,28 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Mariana Mesquita</title>
+  <title>Mariana Mesquita – Web Developer & Designer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- NAV -->
   <header class="site-nav">
     <nav class="site-nav__inner">
-      <ul class="site-nav__left">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Projects</a></li>
-        <li><a href="#contact">Contact me</a></li>
-      </ul>
       <a href="#" class="site-nav__logo" aria-label="Home">
         <img src="logo-group.svg" alt="mm" class="logo-img" />
       </a>
-      <ul class="site-nav__right">
-        <li><a href="https://www.linkedin.com/in/marimnespoli" target="_blank">Linkedin</a></li>
-        <li><a href="https://github.com/marimnespoli" target="_blank">Github</a></li>
+      <ul class="site-nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://www.linkedin.com/in/marimnespoli" target="_blank">LinkedIn</a></li>
         <li><a href="RESUME.pdf" target="_blank">Resume</a></li>
       </ul>
     </nav>
@@ -34,49 +30,45 @@
 
     <!-- HERO -->
     <section class="hero" id="about">
-      <!-- ABOUT -->
-      <div class="about">
-        <figure class="about__photo">
-          <img src="foto.jpg" alt="Mariana Mesquita" />
-        </figure>
-        <div class="about__bio">
-          <p>
-            I'm a <strong>web developer</strong> and <strong>designer</strong> crafting
-            <em>intuitive, purpose-driven digital experiences</em> through
-          </p>
-          <p>
-            <span class="about__bio-muted">front-end development, thoughtful design</span>,
-            and <span class="about__bio-muted">AI-assisted workflows</span>
-          </p>
-        </div>
+      <div class="container">
+        <h1 class="hero__headline">
+          Front-end developer,<br>
+          designer, and builder of<br>
+          <em class="hero__accent">digital experiences</em>.
+        </h1>
+        <p class="hero__sub">
+          With a passion for clean code and purposeful design, I craft intuitive,
+          purpose-driven web products through front-end development, thoughtful UI/UX,
+          and AI-assisted workflows.
+        </p>
+        <a href="#work" class="hero__cta">
+          <img src="foto.jpg" alt="Mariana" class="hero__cta-avatar" />
+          About Mariana
+        </a>
       </div>
     </section>
 
+    <!-- TECH STRIP -->
+    <div class="tech-strip">
+      <span>React</span>
+      <span>Next.js</span>
+      <span>TypeScript</span>
+      <span>Tailwind CSS</span>
+      <span>Figma</span>
+      <span>Node.js</span>
+      <span>AI Workflows</span>
+    </div>
+
     <!-- PROJECTS -->
     <section class="work" id="work">
-
-      <!-- Full-width cream band, same as nav -->
-      <div class="work__banner">
-        <div class="work__heading">
-          <div class="work__diamonds">
-            <img src="Isolation_Mode.png" alt="" />
-            <img src="Isolation_Mode (1).png" alt="" />
-          </div>
-          <h2 class="work__title">MY PROJECTS</h2>
-          <div class="work__diamonds">
-            <img src="Isolation_Mode (2).png" alt="" />
-            <img src="Isolation_Mode copy.png" alt="" />
-          </div>
-        </div>
-      </div>
-
       <div class="container">
-        <!-- Bento grid: Scenté featured left, others 2×2 right -->
-        <ul class="bento-grid">
 
-          <!-- FEATURED: Scenté -->
-          <li class="bento-featured">
-            <article class="project-card project-card--featured">
+        <h2 class="work__title">Work</h2>
+
+        <ul class="project-grid">
+
+          <li>
+            <article class="project-card">
               <a href="projects/scente.html" class="project-card__img-wrap">
                 <img src="Scente.png" alt="Scenté" />
               </a>
@@ -91,8 +83,7 @@
             </article>
           </li>
 
-          <!-- SMALL: Rick and Morty -->
-          <li class="bento-small">
+          <li>
             <article class="project-card">
               <a href="projects/rick-and-morty.html" class="project-card__img-wrap">
                 <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
@@ -100,7 +91,7 @@
               <div class="project-card__body">
                 <span class="project-card__tag">FRONT-END · REACT · API</span>
                 <h3 class="project-card__title">Rick and Morty API</h3>
-                <p class="project-card__desc">Character explorer with the Rick and Morty API — search and filter using async/await and fetch.</p>
+                <p class="project-card__desc">Character explorer built with the Rick and Morty API — search and filter using async/await and fetch.</p>
                 <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
                   <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
                 </a>
@@ -108,8 +99,7 @@
             </article>
           </li>
 
-          <!-- SMALL: Fortune Cookie -->
-          <li class="bento-small">
+          <li>
             <article class="project-card">
               <a href="projects/fortune-cookie.html" class="project-card__img-wrap">
                 <img src="cookie.svg" alt="Fortune Cookie" />
@@ -125,8 +115,7 @@
             </article>
           </li>
 
-          <!-- SMALL: Celestia -->
-          <li class="bento-small">
+          <li>
             <article class="project-card">
               <a href="projects/celestia.html" class="project-card__img-wrap project-card__img-wrap--dark">
                 <img src="icon-512.png" alt="Celestia" />
@@ -150,14 +139,17 @@
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contact">
-    <nav class="site-footer__nav">
-      <a href="#about" class="site-footer__pill">Skills</a>
-      <a href="#about" class="site-footer__pill">Education</a>
-      <a href="#work" class="site-footer__pill">Software</a>
-      <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" class="site-footer__link">Linkedin</a>
-      <a href="https://github.com/marimnespoli" target="_blank" class="site-footer__link">Github</a>
-      <a href="#" class="site-footer__link">Rodapé</a>
-    </nav>
+    <div class="container">
+      <div class="site-footer__inner">
+        <span class="site-footer__name">Mariana Mesquita</span>
+        <nav class="site-footer__links">
+          <a href="https://www.linkedin.com/in/marimnespoli" target="_blank">LinkedIn</a>
+          <a href="https://github.com/marimnespoli" target="_blank">GitHub</a>
+          <a href="RESUME.pdf" target="_blank">Resume</a>
+          <a href="mailto:marimnespoli@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </div>
   </footer>
 
 </body>
