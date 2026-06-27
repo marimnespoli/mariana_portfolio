@@ -94,7 +94,8 @@ body > * {
 
 .logo-img {
   display: block;
-  width: 150px;
+  width: 150px !important;
+  max-width: 150px;
   height: auto;
 }
 
