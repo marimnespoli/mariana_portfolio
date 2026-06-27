@@ -83,18 +83,6 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
-/* circumference = 2 * π * 23 ≈ 144.51 */
-.logo-ring {
-  stroke-dasharray: 144.51;
-  stroke-dashoffset: 0;        /* full circle visible */
-  animation: half-circle 1.4s ease-in-out forwards;
-}
-
-@keyframes half-circle {
-  from { stroke-dashoffset: 0; }       /* 360° — full circle */
-  to   { stroke-dashoffset: 72.26; }  /* 180° — semicircle  */
-}
-
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
   padding-top: 36px;
