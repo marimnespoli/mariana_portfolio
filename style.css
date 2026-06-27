@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #ffcee1;
+  --bg:       #EDE8DC;
   --text:     #111111;
   --muted:    #888888;
   --border:   #E8D8D4;
@@ -18,7 +18,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
-  background: linear-gradient(to bottom, #ffcee1 0px, #ffcee1 560px, #ffffff 900px);
+  background: linear-gradient(to bottom, #EDE8DC 0px, #EDE8DC 560px, #ffffff 900px);
   color: var(--text);
   font-size: 15px;
   line-height: 1.6;
