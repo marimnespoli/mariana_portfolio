@@ -37,6 +37,7 @@
       <div class="container">
         <h1 class="hero__name">MARIANA MESQUITA</h1>
       </div>
+
       <div class="hero__divider"></div>
 
       <!-- ABOUT -->
@@ -47,7 +48,10 @@
           </figure>
           <div class="about__bio">
             <p>
-              <strong>Mariana Mesquita</strong><span class="muted"> crafts </span><strong>intuitive,</strong><span class="muted"> purpose-driven </span><em>digital experiences</em><span class="muted"> through </span><strong>front-end development,</strong><span class="muted"> thoughtful </span><strong>design,</strong><span class="muted"> and AI-assisted workflows.</span>
+              I'm a <strong>web developer</strong> and <strong>designer</strong> crafting
+              <em>intuitive, purpose-driven digital experiences</em> through
+              <strong>front-end development,</strong> thoughtful <strong>design,</strong>
+              and AI-assisted workflows.
             </p>
           </div>
         </div>
@@ -60,7 +64,6 @@
     <section class="work" id="work">
       <div class="container">
 
-        <!-- Section heading -->
         <div class="work__heading">
           <div class="work__diamonds">
             <img src="Isolation_Mode.png" alt="" />
@@ -73,54 +76,17 @@
           </div>
         </div>
 
-        <!-- Grid -->
-        <ul class="project-grid">
+        <!-- Bento grid: Scenté featured left, others 2×2 right -->
+        <ul class="bento-grid">
 
-          <li>
-            <article class="project-card">
-              <a href="projects/rick-and-morty.html" class="project-card__img-wrap">
-                <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
-              </a>
-              <div class="project-card__body">
-                <div class="project-card__meta">
-                  <span class="project-card__tag">FRONT-END · REACT · API</span>
-                </div>
-                <h3 class="project-card__title">Rick and Morty API</h3>
-                <p class="project-card__desc">A character explorer built with the Rick and Morty API. Search, filter and browse characters in a clean, responsive interface using async/await and fetch.</p>
-                <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
-                  <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
-                </a>
-              </div>
-            </article>
-          </li>
-
-          <li>
-            <article class="project-card">
-              <a href="projects/fortune-cookie.html" class="project-card__img-wrap">
-                <img src="cookie.svg" alt="Fortune Cookie" />
-              </a>
-              <div class="project-card__body">
-                <div class="project-card__meta">
-                  <span class="project-card__tag">NEXT.JS · TYPESCRIPT · TAILWIND</span>
-                </div>
-                <h3 class="project-card__title">Fortune Cookie</h3>
-                <p class="project-card__desc">Interactive fortune cookie app built with Next.js, TypeScript, React and Tailwind CSS.</p>
-                <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
-                  <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
-                </a>
-              </div>
-            </article>
-          </li>
-
-          <li>
-            <article class="project-card">
+          <!-- FEATURED: Scenté -->
+          <li class="bento-featured">
+            <article class="project-card project-card--featured">
               <a href="projects/scente.html" class="project-card__img-wrap">
                 <img src="Scente.png" alt="Scenté" />
               </a>
               <div class="project-card__body">
-                <div class="project-card__meta">
-                  <span class="project-card__tag">HTML · CSS · DESIGN</span>
-                </div>
+                <span class="project-card__tag">HTML · CSS · DESIGN</span>
                 <h3 class="project-card__title">Scenté</h3>
                 <p class="project-card__desc">A candle e-commerce website with an Autumn collection — focused on clean layout and a warm, editorial aesthetic.</p>
                 <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="project-card__github">
@@ -130,17 +96,50 @@
             </article>
           </li>
 
-          <li>
+          <!-- SMALL: Rick and Morty -->
+          <li class="bento-small">
+            <article class="project-card">
+              <a href="projects/rick-and-morty.html" class="project-card__img-wrap">
+                <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
+              </a>
+              <div class="project-card__body">
+                <span class="project-card__tag">FRONT-END · REACT · API</span>
+                <h3 class="project-card__title">Rick and Morty API</h3>
+                <p class="project-card__desc">Character explorer with the Rick and Morty API — search and filter using async/await and fetch.</p>
+                <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
+                  <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
+                </a>
+              </div>
+            </article>
+          </li>
+
+          <!-- SMALL: Fortune Cookie -->
+          <li class="bento-small">
+            <article class="project-card">
+              <a href="projects/fortune-cookie.html" class="project-card__img-wrap">
+                <img src="cookie.svg" alt="Fortune Cookie" />
+              </a>
+              <div class="project-card__body">
+                <span class="project-card__tag">NEXT.JS · TYPESCRIPT · TAILWIND</span>
+                <h3 class="project-card__title">Fortune Cookie</h3>
+                <p class="project-card__desc">Interactive fortune cookie app built with Next.js, TypeScript and Tailwind CSS.</p>
+                <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
+                  <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
+                </a>
+              </div>
+            </article>
+          </li>
+
+          <!-- SMALL: Celestia -->
+          <li class="bento-small">
             <article class="project-card">
               <a href="projects/celestia.html" class="project-card__img-wrap project-card__img-wrap--dark">
                 <img src="icon-512.png" alt="Celestia" />
               </a>
               <div class="project-card__body">
-                <div class="project-card__meta">
-                  <span class="project-card__tag">PWA · AI · DESIGN</span>
-                </div>
+                <span class="project-card__tag">PWA · AI · DESIGN</span>
                 <h3 class="project-card__title">Celestia</h3>
-                <p class="project-card__desc">A horoscope PWA built with Prompt-Driven Development using Claude Design and Claude Code. Features daily horoscopes, zodiac compatibility, and celestial profiles.</p>
+                <p class="project-card__desc">Horoscope PWA built with Prompt-Driven Development — daily horoscopes and zodiac compatibility.</p>
                 <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
                   <img src="25231.png" alt="GitHub" width="14" height="14" /> GitHub
                 </a>
@@ -153,6 +152,18 @@
     </section>
 
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <nav class="site-footer__nav">
+      <a href="#about" class="site-footer__pill">Skills</a>
+      <a href="#about" class="site-footer__pill">Education</a>
+      <a href="#work" class="site-footer__pill">Software</a>
+      <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" class="site-footer__link">Linkedin</a>
+      <a href="https://github.com/marimnespoli" target="_blank" class="site-footer__link">Github</a>
+      <a href="#" class="site-footer__link">Rodapé</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
