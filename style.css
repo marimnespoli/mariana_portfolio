@@ -92,15 +92,16 @@ body > * {
   justify-content: center;
 }
 
-.logo-svg {
+.logo-img {
   display: block;
+  width: 150px;
+  height: auto;
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
-  padding-top: 36px;
-  max-width: 100%;
-  background: var(--cream);
+  padding-top: 0;
+  background: #ffffff;
 }
 
 .hero__name {
@@ -131,8 +132,8 @@ body > * {
 }
 
 .about__photo {
-  width: 160px;
-  height: 160px;
+  width: 185px;
+  height: 185px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -174,6 +175,7 @@ body > * {
 /* ─── PROJECTS ───────────────────────────────────────────────── */
 .work {
   padding: 0 0 60px;
+  background: var(--cream);
 }
 
 .work__heading {
