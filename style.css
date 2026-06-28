@@ -134,10 +134,21 @@ main {
 }
 
 .hero__divider {
+  position: relative;
   width: 1px;
   align-self: stretch;
   background: var(--border);
   flex-shrink: 0;
+}
+
+.hero__divider-star {
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
 }
 
 /* Left col */
