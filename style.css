@@ -187,7 +187,7 @@ main {
 .hero__subtitle-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
   margin-top: 14px;
 }
 
@@ -222,8 +222,8 @@ main {
 }
 
 .hero__social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
 
 .hero__social-link:hover {
