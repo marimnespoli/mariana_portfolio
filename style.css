@@ -269,7 +269,7 @@ main {
   display: inline-flex;
   align-items: center;
   color: var(--text-muted);
-  transition: color 0.15s;
+  transition: opacity 0.15s;
 }
 
 .hero__social-link svg {
@@ -278,7 +278,7 @@ main {
 }
 
 .hero__social-link:hover {
-  color: var(--text);
+  opacity: 0.45;
 }
 
 .hero__photo {
