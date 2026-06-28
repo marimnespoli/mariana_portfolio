@@ -32,20 +32,24 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── NAV ────────────────────────────────────────────────────── */
 .nav {
-  padding: 16px 0;
+  padding: 24px 48px;
 }
 
 .nav__inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 32px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 24px;
 }
 
-.nav__logo { display: flex; align-items: center; align-self: center; }
+.nav__left { margin-left: 0; }
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__logo { display: flex; align-items: center; }
 
 .logo-img { width: 100px; height: auto; display: block; margin: 0; padding: 0; }
 
