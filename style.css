@@ -188,22 +188,26 @@ main {
 .hero__social {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   margin-top: 18px;
 }
 
 .hero__social-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 500;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   color: var(--text-muted);
-  transition: color 0.15s;
+  transition: color 0.15s, transform 0.18s ease, border-color 0.15s;
 }
 
 .hero__social-link:hover {
   color: var(--text);
+  border-color: #b0b0b0;
+  transform: scale(1.05);
 }
 
 .hero__photo {
@@ -287,16 +291,17 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 16px 0 80px;
+  padding: 64px 0 80px;
 }
 
 .work__title {
   font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  letter-spacing: 0px;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 36px;
   text-align: center;
+  color: var(--navy);
 }
 
 /* 3 columns on desktop */
