@@ -174,7 +174,7 @@ main {
   letter-spacing: 1px;
   line-height: 1.05;
   color: var(--navy);
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
   margin-top: 24px;
 }
