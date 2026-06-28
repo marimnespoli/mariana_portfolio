@@ -211,8 +211,8 @@ main {
 .hero__social {
   display: flex;
   align-items: center;
-  gap: 21px;
-  margin-top: 10px;
+  gap: 24px;
+  margin-top: 14px;
 }
 
 .hero__social-link {
