@@ -203,8 +203,8 @@ main {
 .hero__social {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-top: 0;
+  gap: 16px;
+  margin-top: 10px;
 }
 
 .hero__social-link {
