@@ -174,8 +174,8 @@ main {
 .hero__title {
   font-family: var(--font-heading);
   font-size: 56px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   line-height: 1.0;
   color: var(--navy);
   text-transform: none;
