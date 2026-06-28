@@ -93,6 +93,34 @@ main {
   flex-shrink: 0;
 }
 
+/* Header row */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px 24px 0;
+}
+
+.header__cta {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 22px;
+  border-radius: 100px;
+  border: 1.5px solid var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: background 0.15s, color 0.15s;
+}
+
+.header__cta:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
 /* Nav pill — static at top */
 .header__nav {
   display: flex;
@@ -101,7 +129,7 @@ main {
   border-radius: 100px;
   padding: 6px;
   width: fit-content;
-  margin: 20px auto;
+  margin: 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
