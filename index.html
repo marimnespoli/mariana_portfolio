@@ -7,34 +7,38 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- ── NAV ───────────────────────────────────────────────────── -->
   <header class="nav">
     <div class="nav__inner">
-      <div class="nav__brand">
-        <a href="#" class="nav__name">Mariana Mesquita</a>
-        <span class="nav__role">Front-end Developer &amp; Designer</span>
+
+      <a href="#" class="nav__logo">
+        <img src="logo.svg" class="nav__logo-img" alt="" />
+        <span class="nav__logo-name">Mariana Mesquita</span>
+      </a>
+
+      <div class="nav__pill">
+        <a href="#work" class="nav__pill-link">Work</a>
+        <a href="#about" class="nav__pill-link">About</a>
       </div>
-      <nav class="nav__links">
-        <a href="#work" class="nav__link">Work</a>
-        <a href="#about" class="nav__link">About</a>
-        <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" class="nav__link nav__link--icon" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+
+      <nav class="nav__icons">
+        <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" aria-label="LinkedIn" class="nav__icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
-        <a href="https://github.com/marimnespoli" target="_blank" class="nav__link nav__link--icon" aria-label="GitHub">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <a href="https://github.com/marimnespoli" target="_blank" aria-label="GitHub" class="nav__icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
           </svg>
         </a>
-        <a href="RESUME.pdf" target="_blank" class="nav__link nav__link--icon" aria-label="Resume">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <a href="RESUME.pdf" target="_blank" aria-label="Resume" class="nav__icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
             <polyline points="14 2 14 8 20 8"/>
             <line x1="8" y1="13" x2="16" y2="13"/>
@@ -42,114 +46,153 @@
           </svg>
         </a>
       </nav>
+
     </div>
   </header>
 
   <main>
 
     <!-- ── HERO ──────────────────────────────────────────────────── -->
-    <section class="hero">
-      <div class="container">
-        <h1 class="hero__headline">
-          I'm Mariana Mesquita, a <em class="hero__accent">front-end developer</em> and designer crafting intuitive, purpose-driven digital experiences.
-        </h1>
-        <p class="hero__sub">Based in Toronto · Open to opportunities</p>
+    <section class="hero" id="home">
+      <div class="hero__inner">
+
+        <div class="hero__left">
+          <div class="hero__deco" aria-hidden="true">
+            <img src="diamond.png" class="hero__deco-item hero__deco-item--spin" alt="" />
+            <img src="diamond.png" class="hero__deco-item hero__deco-item--spin-rev" alt="" />
+            <img src="diamond.png" class="hero__deco-item hero__deco-item--spin" alt="" />
+          </div>
+          <h1 class="hero__headline">I'm Mariana,<br>hello! 👋</h1>
+          <p class="hero__role">Front-end Developer<br>&amp; Designer</p>
+          <div class="hero__social">
+            <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" aria-label="LinkedIn" class="hero__social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://github.com/marimnespoli" target="_blank" aria-label="GitHub" class="hero__social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+            <a href="RESUME.pdf" target="_blank" aria-label="Resume" class="hero__social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="12" y2="17"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <figure class="hero__photo">
+            <img src="foto.jpg" alt="Mariana Mesquita" />
+          </figure>
+          <div class="hero__bio-box">
+            <h2 class="hero__bio-title">Hey, guess who? 🌸</h2>
+            <p class="hero__bio-text">I'm <strong>Mariana Mesquita</strong>, a web developer and designer based in Toronto. I craft intuitive, purpose-driven digital experiences — combining <strong>front-end development</strong>, thoughtful design, and AI-assisted workflows.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ── WORK ──────────────────────────────────────────────────── -->
+    <!-- ── FEATURED PROJECTS ──────────────────────────────────────── -->
     <section class="work" id="work">
       <div class="container">
-        <div class="work__header">
-          <span class="work__label">Selected work</span>
+
+        <h2 class="work__title">Featured Projects</h2>
+
+        <div class="work__grid">
+
+          <article class="card">
+            <a href="projects/scente.html" class="card__img-link">
+              <div class="card__img-wrap">
+                <img src="Scente.png" alt="Scenté" />
+              </div>
+            </a>
+            <div class="card__body">
+              <div class="card__head">
+                <h3 class="card__title">Scenté</h3>
+                <span class="card__badge">Built ↗</span>
+              </div>
+              <p class="card__desc">A candle e-commerce website with an Autumn collection — focused on clean layout and a warm, editorial aesthetic.</p>
+              <div class="card__foot">
+                <span class="card__tags">HTML · CSS · Design</span>
+                <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="card__gh" aria-label="GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a href="projects/rick-and-morty.html" class="card__img-link">
+              <div class="card__img-wrap">
+                <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
+              </div>
+            </a>
+            <div class="card__body">
+              <div class="card__head">
+                <h3 class="card__title">Rick and Morty API</h3>
+                <span class="card__badge">Built ↗</span>
+              </div>
+              <p class="card__desc">Character explorer with the Rick and Morty API — search and filter using async/await and fetch.</p>
+              <div class="card__foot">
+                <span class="card__tags">React · Front-end · API</span>
+                <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="card__gh" aria-label="GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a href="projects/fortune-cookie.html" class="card__img-link">
+              <div class="card__img-wrap card__img-wrap--light">
+                <img src="cookie.svg" alt="Fortune Cookie" />
+              </div>
+            </a>
+            <div class="card__body">
+              <div class="card__head">
+                <h3 class="card__title">Fortune Cookie</h3>
+                <span class="card__badge">Built ↗</span>
+              </div>
+              <p class="card__desc">Interactive fortune cookie app built with Next.js, TypeScript and Tailwind CSS.</p>
+              <div class="card__foot">
+                <span class="card__tags">Next.js · TypeScript · Tailwind</span>
+                <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="card__gh" aria-label="GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a href="projects/celestia.html" class="card__img-link">
+              <div class="card__img-wrap card__img-wrap--dark">
+                <img src="icon-512.png" alt="Celestia" />
+              </div>
+            </a>
+            <div class="card__body">
+              <div class="card__head">
+                <h3 class="card__title">Celestia</h3>
+                <span class="card__badge">PWA ↗</span>
+              </div>
+              <p class="card__desc">Horoscope PWA built with Prompt-Driven Development — daily horoscopes and zodiac compatibility.</p>
+              <div class="card__foot">
+                <span class="card__tags">PWA · AI · Design</span>
+                <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="card__gh" aria-label="GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
-
-        <!-- Project 01 -->
-        <article class="project">
-          <a href="projects/scente.html" class="project__image-link">
-            <div class="project__image-wrap">
-              <img src="Scente.png" alt="Scenté" />
-            </div>
-          </a>
-          <div class="project__info">
-            <div class="project__meta">
-              <span class="project__num">01</span>
-              <span class="project__tags">HTML · CSS · Design</span>
-              <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="project__gh" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h2 class="project__title">Scenté</h2>
-            <p class="project__desc">A candle e-commerce website with an Autumn collection — focused on clean layout and a warm, editorial aesthetic.</p>
-          </div>
-        </article>
-
-        <div class="project__divider"></div>
-
-        <!-- Project 02 -->
-        <article class="project project--flip">
-          <a href="projects/rick-and-morty.html" class="project__image-link">
-            <div class="project__image-wrap">
-              <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
-            </div>
-          </a>
-          <div class="project__info">
-            <div class="project__meta">
-              <span class="project__num">02</span>
-              <span class="project__tags">Front-end · React · API</span>
-              <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project__gh" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h2 class="project__title">Rick and Morty API</h2>
-            <p class="project__desc">Character explorer with the Rick and Morty API — search and filter using async/await and fetch.</p>
-          </div>
-        </article>
-
-        <div class="project__divider"></div>
-
-        <!-- Project 03 -->
-        <article class="project">
-          <a href="projects/fortune-cookie.html" class="project__image-link">
-            <div class="project__image-wrap project__image-wrap--light">
-              <img src="cookie.svg" alt="Fortune Cookie" />
-            </div>
-          </a>
-          <div class="project__info">
-            <div class="project__meta">
-              <span class="project__num">03</span>
-              <span class="project__tags">Next.js · TypeScript · Tailwind</span>
-              <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project__gh" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h2 class="project__title">Fortune Cookie</h2>
-            <p class="project__desc">Interactive fortune cookie app built with Next.js, TypeScript and Tailwind CSS.</p>
-          </div>
-        </article>
-
-        <div class="project__divider"></div>
-
-        <!-- Project 04 -->
-        <article class="project project--flip">
-          <a href="projects/celestia.html" class="project__image-link">
-            <div class="project__image-wrap project__image-wrap--dark">
-              <img src="icon-512.png" alt="Celestia" />
-            </div>
-          </a>
-          <div class="project__info">
-            <div class="project__meta">
-              <span class="project__num">04</span>
-              <span class="project__tags">PWA · AI · Design</span>
-              <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project__gh" aria-label="GitHub">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h2 class="project__title">Celestia</h2>
-            <p class="project__desc">Horoscope PWA built with Prompt-Driven Development — daily horoscopes and zodiac compatibility.</p>
-          </div>
-        </article>
-
       </div>
     </section>
 
@@ -161,8 +204,7 @@
             <img src="foto.jpg" alt="Mariana Mesquita" />
           </figure>
           <div class="about__content">
-            <span class="about__label">About</span>
-            <h2 class="about__heading">Who is Mariana?</h2>
+            <h2 class="about__heading">WHO IS MARIANA?</h2>
             <p>I'm a <strong>web developer</strong> based in Toronto who enjoys creating simple, intuitive, and distinctive digital experiences.</p>
             <p>I approach projects by breaking complex problems into clear steps while exploring different tools and technologies, including AI, to develop thoughtful and effective solutions. My focus is on building interfaces that are visually balanced, functional, and easy to navigate.</p>
           </div>
@@ -173,7 +215,7 @@
     <!-- ── WHEN NOT CODING ────────────────────────────────────────── -->
     <section class="when">
       <div class="container">
-        <span class="when__label">When not coding...</span>
+        <h2 class="when__heading">WHEN NOT CODING...</h2>
       </div>
       <div class="when__grid">
         <img src="when-img1.png" alt="" />
