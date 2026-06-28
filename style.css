@@ -141,7 +141,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero__shapes {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   align-items: center;
   margin-bottom: 4px;
 }
