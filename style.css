@@ -124,7 +124,7 @@ main {
   box-shadow: 0 4px 16px rgba(0,0,0,0.22);
 }
 
-/* Nav — separated individual pills */
+/* Nav — minimal hand-drawn pills */
 .header__nav {
   display: flex;
   justify-content: center;
@@ -135,20 +135,20 @@ main {
 }
 
 .header__nav-link {
-  padding: 10px 26px;
+  padding: 6px 18px;
   border-radius: 100px;
-  border: 2px solid #c4c4c4;
-  font-size: 14px;
-  font-weight: 500;
+  border: 1px solid var(--text);
+  font-size: 13px;
+  font-weight: 400;
   color: var(--text);
-  background: #f7f7f7;
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  background: transparent;
+  letter-spacing: 0.01em;
+  transition: color 0.15s, background 0.15s;
 }
 
 .header__nav-link:hover {
   background: var(--text);
   color: var(--bg);
-  border-color: var(--text);
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
