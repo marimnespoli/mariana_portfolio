@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:         #fcfaf3;
+  --bg:         #ffffff;
   --text:       #111111;
   --text-muted: #646464;
   --border:     #e4e4e4;
