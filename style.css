@@ -35,7 +35,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── HEADER ─────────────────────────────────────────────────── */
 .header {
-  display: none;
+  display: block;
+  background: transparent;
 }
 
 main {
