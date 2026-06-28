@@ -45,15 +45,19 @@ a { color: inherit; text-decoration: none; }
   gap: 24px;
 }
 
-.nav__logo { display: block; }
+.nav__logo { display: flex; align-items: center; align-self: center; }
 
-.logo-img { width: 100px; height: auto; display: block; }
+.logo-img { width: 100px; height: auto; display: block; margin: 0; padding: 0; }
 
 .nav__tagline {
   font-size: 20px;
   font-weight: 500;
   color: var(--text);
   white-space: nowrap;
+  align-self: center;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__name {
