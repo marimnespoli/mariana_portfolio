@@ -165,9 +165,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero__title {
-  font-family: var(--font);
-  font-size: 44px;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 1.05;
   color: var(--navy);
