@@ -184,6 +184,12 @@ main {
   margin-top: 24px;
 }
 
+.hero__name-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .hero__subtitle-row {
   display: flex;
   align-items: center;
@@ -210,7 +216,7 @@ main {
 .hero__social {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 21px;
   margin-top: 0;
 }
 
@@ -222,8 +228,8 @@ main {
 }
 
 .hero__social-link svg {
-  width: 22px;
-  height: 22px;
+  width: 29px;
+  height: 29px;
 }
 
 .hero__social-link:hover {
