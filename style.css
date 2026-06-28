@@ -191,19 +191,13 @@ main {
   align-self: flex-start;
 }
 
-.hero__subtitle-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
-}
-
 .hero__subtitle {
   font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.4;
+  margin-top: 14px;
 }
 
 .hero__photo-col {
@@ -218,7 +212,7 @@ main {
   display: flex;
   align-items: center;
   gap: 21px;
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 .hero__social-link {
