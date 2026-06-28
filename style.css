@@ -32,20 +32,17 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── NAV ────────────────────────────────────────────────────── */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 5%;
+  padding: 20px 0;
 }
 
-.nav__inner { display: contents; }
-
-.nav__left { display: flex; align-items: center; }
-
-.nav__right {
-  display: flex;
+.nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 
 .nav__logo { display: flex; align-items: center; }
