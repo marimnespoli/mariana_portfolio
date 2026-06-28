@@ -15,6 +15,10 @@
   <header class="header">
     <div class="header__inner">
       <a href="#" class="header__logo"></a>
+      <nav class="header__nav">
+        <a href="#work" class="header__nav-link">Work</a>
+        <a href="#about" class="header__nav-link">About</a>
+      </nav>
     </div>
   </header>
 
@@ -37,26 +41,23 @@
             <p class="hero__subtitle">Web developer and designer</p>
           </div>
 
-          <!-- Center: photo -->
-          <div class="hero__center">
-            <figure class="hero__photo">
-              <img src="foto.jpg" alt="Mariana Mesquita" />
-            </figure>
-          </div>
-
-          <!-- Right: bio -->
+          <!-- Right: photo + bio integrated -->
           <div class="hero__right" id="about">
-            <p class="hero__tagline">
-              <strong>Mariana Mesquita</strong> builds <strong>clean, intuitive</strong>
-              <em class="hero__tagline-highlight">experiences</em> through front-end development &amp; design,
-              keeping things <strong>simple, structured</strong> and visually sharp.
-            </p>
+            <div class="hero__bio-block">
+              <figure class="hero__photo">
+                <img src="foto.jpg" alt="Mariana Mesquita" />
+              </figure>
+              <p class="hero__tagline">
+                <strong>Mariana Mesquita</strong> builds <strong>clean, intuitive</strong>
+                <em class="hero__tagline-highlight">experiences</em> through front-end development &amp; design,
+                keeping things <strong>simple, structured</strong> and visually sharp.
+              </p>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
-
 
     <!-- FEATURED PROJECTS -->
     <section class="work" id="work">
@@ -70,6 +71,10 @@
                 <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
               </a>
               <h3 class="project-card__title">Rick and Morty API</h3>
+              <div class="project-card__badges">
+                <span class="badge">JavaScript</span>
+                <span class="badge">API</span>
+              </div>
               <p class="project-card__desc">A character explorer built with the Rick and Morty API. Search, filter and browse characters in a clean, responsive interface using async/await and fetch.</p>
               <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />
@@ -84,6 +89,10 @@
                 <img src="cookie.svg" alt="Fortune Cookie" />
               </a>
               <h3 class="project-card__title">Fortune Cookie</h3>
+              <div class="project-card__badges">
+                <span class="badge">Next.js</span>
+                <span class="badge">TypeScript</span>
+              </div>
               <p class="project-card__desc">Interactive fortune cookie app built with Next.js. Click to open a cookie and receive a random fortune. Built with TypeScript, React and Tailwind CSS.</p>
               <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />
@@ -98,6 +107,10 @@
                 <img src="Scente.png" alt="Scenté" />
               </a>
               <h3 class="project-card__title">Scenté</h3>
+              <div class="project-card__badges">
+                <span class="badge">HTML/CSS</span>
+                <span class="badge">UI Design</span>
+              </div>
               <p class="project-card__desc">A candle e-commerce website featuring an Autumn collection. Built with HTML and CSS — focused on clean layout, smooth navigation and a warm, editorial aesthetic.</p>
               <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />
@@ -112,6 +125,10 @@
                 <img src="icon-512.png" alt="Celestia" />
               </a>
               <h3 class="project-card__title">Celestia</h3>
+              <div class="project-card__badges">
+                <span class="badge">PWA</span>
+                <span class="badge">Prompt-Driven</span>
+              </div>
               <p class="project-card__desc">A horoscope PWA built with Prompt-Driven Development using Claude Design and Claude Code. Features daily horoscopes, zodiac compatibility, and celestial profiles.</p>
               <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />

@@ -92,7 +92,7 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
 }
 
-/* Nav centered absolutely */
+/* Nav pill centered */
 .header__nav {
   position: absolute;
   left: 50%;
@@ -105,15 +105,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .header__nav-link {
-  padding: 8px 22px;
+  padding: 8px 28px;
   border-radius: 100px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
   transition: color 0.15s, background 0.15s;
 }
 
-.header__nav-link.active,
 .header__nav-link:hover {
   background: var(--bg);
   color: var(--text);
@@ -121,14 +120,14 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
-  padding: 56px 0 72px;
+  padding: 72px 0 88px;
   background: var(--bg);
 }
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 5fr 1fr 3fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
   align-items: center;
 }
 
@@ -185,15 +184,9 @@ a { color: inherit; text-decoration: none; }
   margin-top: 16px;
 }
 
-/* Center col */
-.hero__center {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .hero__photo {
-  width: 150px;
-  height: 180px;
+  width: 130px;
+  height: 155px;
   border-radius: 10px;
   overflow: hidden;
   margin: 0;
@@ -211,7 +204,13 @@ a { color: inherit; text-decoration: none; }
 /* Right col */
 .hero__right {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.hero__bio-block {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
 }
 
 .hero__tagline {
@@ -266,7 +265,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 8px 0 80px;
+  padding: 32px 0 100px;
 }
 
 .work__title {
@@ -372,13 +371,20 @@ a { color: inherit; text-decoration: none; }
 .project-card__github:hover { color: var(--text); }
 
 /* ─── BADGE ──────────────────────────────────────────────────── */
+.project-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
 .badge {
   display: inline-block;
-  padding: 4px 11px;
+  padding: 3px 10px;
   border-radius: 100px;
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
   border: 1.5px solid var(--border);
   color: var(--text-muted);
   white-space: nowrap;
