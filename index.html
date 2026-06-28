@@ -3,97 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariana Mesquita – Portfolio</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ── NAV ───────────────────────────────────────────────────── -->
-  <header class="nav">
-    <div class="nav__inner">
-
-      <a href="#" class="nav__logo">
-        <img src="logo.svg" class="nav__logo-img" alt="" />
-        <span class="nav__logo-name">Mariana Mesquita</span>
-      </a>
-
-      <div class="nav__pill">
-        <a href="#work" class="nav__pill-link">Work</a>
-        <a href="#about" class="nav__pill-link">About</a>
-      </div>
-
-      <nav class="nav__icons">
-        <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" aria-label="LinkedIn" class="nav__icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-          </svg>
-        </a>
-        <a href="https://github.com/marimnespoli" target="_blank" aria-label="GitHub" class="nav__icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-        </a>
-        <a href="RESUME.pdf" target="_blank" aria-label="Resume" class="nav__icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="8" y1="13" x2="16" y2="13"/>
-            <line x1="8" y1="17" x2="12" y2="17"/>
-          </svg>
-        </a>
-      </nav>
-
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo"></a>
     </div>
   </header>
 
   <main>
 
-    <!-- ── HERO ──────────────────────────────────────────────────── -->
-    <section class="hero" id="home">
+    <!-- HERO -->
+    <section class="hero">
       <div class="container">
-        <div class="hero__inner">
+        <div class="hero__grid">
 
-          <!-- LEFT: role + social -->
+          <!-- Left -->
           <div class="hero__left">
-            <div class="hero__role">
-              <span class="hero__role-line1">Front-end Developer</span>
-              <span class="hero__role-line2">&amp; Designer</span>
+            <div class="hero__shapes">
+              <img src="Isolation_Mode.png" alt="" />
+              <img src="Isolation_Mode (1).png" alt="" />
+              <img src="Isolation_Mode (2).png" alt="" />
+              <img src="Isolation_Mode copy.png" alt="" />
             </div>
-            <div class="hero__social">
-              <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" aria-label="LinkedIn" class="hero__social-link">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                </svg>
-              </a>
-              <a href="https://github.com/marimnespoli" target="_blank" aria-label="GitHub" class="hero__social-link">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                </svg>
-              </a>
-              <a href="RESUME.pdf" target="_blank" aria-label="Resume" class="hero__social-link">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="8" y1="13" x2="16" y2="13"/>
-                  <line x1="8" y1="17" x2="12" y2="17"/>
-                </svg>
-              </a>
+            <div class="hero__title-wrap">
+              <h1 class="hero__title">I'm Mariana, hello!</h1>
+              <div class="hero__meta">
+                <p class="hero__role">Web Design<br>&amp; Developer</p>
+                <a href="https://github.com/marimnespoli" target="_blank" class="hero__github">
+                  <img src="25231.png" alt="GitHub" width="20" height="20" />
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- RIGHT: photo + bio side by side -->
-          <div class="hero__right">
-            <figure class="hero__photo">
-              <img src="foto.jpg" alt="Mariana Mesquita" />
-            </figure>
-            <div class="hero__bio-box">
-              <h2 class="hero__bio-title">Hey, guess who? 🌸</h2>
-              <p class="hero__bio-text">I'm <strong>Mariana Mesquita</strong>, a web developer and designer based in Toronto. I craft intuitive, purpose-driven digital experiences — combining <strong>front-end development</strong>, thoughtful design, and AI-assisted workflows.</p>
+          <!-- Right: bio -->
+          <div class="hero__right" id="about">
+            <div class="hero__bio">
+              <figure class="hero__photo">
+                <img src="foto.jpg" alt="Mariana Mesquita" />
+              </figure>
+              <div class="hero__bio-text">
+                <h2 class="hero__bio-heading">Hi there 👋</h2>
+                <p>
+                  I'm <strong>Mariana Mesquita</strong> — a <strong>web developer</strong> passionate about design and thinking outside the box, keeping things simple and well-structured.
+                </p>
+                <p>
+                  I mix clean code with intuitive interfaces that actually make sense. Always curious, coffee-powered, and dog lover.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -101,146 +67,139 @@
       </div>
     </section>
 
-    <!-- ── FEATURED PROJECTS ──────────────────────────────────────── -->
+<ul class="stack__grid">
+  <li class="stack__item">
+    <img src="Isolation_Mode.png" alt="" />
+    <span>HTML5</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode (1).png" alt="" />
+    <span>CSS3</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode (2).png" alt="" />
+    <span>JavaScript</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode copy.png" alt="" />
+    <span>TypeScript</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode.png" alt="" />
+    <span>React</span>
+  </li>
+ 
+  <li class="stack__item">
+    <img src="Isolation_Mode (2).png" alt="" />
+    <span>Figma</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode copy.png" alt="" />
+    <span>Adobe Illustrator</span>
+  </li>
+  <li class="stack__item">
+    <img src="Isolation_Mode.png" alt="" />
+    <span>Adobe Photoshop</span>
+  </li>
+</ul>
+
+    <!-- FEATURED PROJECTS -->
     <section class="work" id="work">
       <div class="container">
-
         <h2 class="work__title">Featured Projects</h2>
+        <ul class="projects-grid">
 
-        <div class="work__grid">
-
-          <article class="card">
-            <a href="projects/scente.html" class="card__img-link">
-              <div class="card__img-wrap">
-                <img src="Scente.png" alt="Scenté" />
-              </div>
-            </a>
-            <div class="card__body">
-              <div class="card__head">
-                <h3 class="card__title">Scenté</h3>
-                <span class="card__badge">Built ↗</span>
-              </div>
-              <p class="card__desc">A candle e-commerce website with an Autumn collection — focused on clean layout and a warm, editorial aesthetic.</p>
-              <div class="card__foot">
-                <span class="card__tags">HTML · CSS · Design</span>
-                <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="card__gh" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="projects/rick-and-morty.html" class="card__img-link">
-              <div class="card__img-wrap">
+          <li>
+            <article class="project-card">
+              <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="project-card__img-wrap">
                 <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
-              </div>
-            </a>
-            <div class="card__body">
-              <div class="card__head">
-                <h3 class="card__title">Rick and Morty API</h3>
-                <span class="card__badge">Built ↗</span>
-              </div>
-              <p class="card__desc">Character explorer with the Rick and Morty API — search and filter using async/await and fetch.</p>
-              <div class="card__foot">
-                <span class="card__tags">React · Front-end · API</span>
-                <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="card__gh" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+              </a>
+              <h3 class="project-card__title">Rick and Morty API</h3>
+              <p class="project-card__desc">A character explorer built with the Rick and Morty API. Search, filter and browse characters in a clean, responsive interface using async/await and fetch.</p>
+              <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
+                <img src="25231.png" alt="GitHub" width="14" height="14" />
+                GitHub
+              </a>
+            </article>
+          </li>
 
-          <article class="card">
-            <a href="projects/fortune-cookie.html" class="card__img-link">
-              <div class="card__img-wrap card__img-wrap--light">
+          <li>
+            <article class="project-card">
+              <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="project-card__img-wrap">
                 <img src="cookie.svg" alt="Fortune Cookie" />
-              </div>
-            </a>
-            <div class="card__body">
-              <div class="card__head">
-                <h3 class="card__title">Fortune Cookie</h3>
-                <span class="card__badge">Built ↗</span>
-              </div>
-              <p class="card__desc">Interactive fortune cookie app built with Next.js, TypeScript and Tailwind CSS.</p>
-              <div class="card__foot">
-                <span class="card__tags">Next.js · TypeScript · Tailwind</span>
-                <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="card__gh" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+              </a>
+              <h3 class="project-card__title">Fortune Cookie</h3>
+              <p class="project-card__desc">Interactive fortune cookie app built with Next.js. Click to open a cookie and receive a random fortune. Built with TypeScript, React and Tailwind CSS.</p>
+              <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
+                <img src="25231.png" alt="GitHub" width="14" height="14" />
+                GitHub
+              </a>
+            </article>
+          </li>
 
-          <article class="card">
-            <a href="projects/celestia.html" class="card__img-link">
-              <div class="card__img-wrap card__img-wrap--dark">
+          <li>
+            <article class="project-card">
+              <a href="https://scent-website-sigma.vercel.app" target="_blank" class="project-card__img-wrap">
+                <img src="Scente.png" alt="Scenté" />
+              </a>
+              <h3 class="project-card__title">Scenté</h3>
+              <p class="project-card__desc">A candle e-commerce website featuring an Autumn collection. Built with HTML and CSS — focused on clean layout, smooth navigation and a warm, editorial aesthetic.</p>
+              <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="project-card__github">
+                <img src="25231.png" alt="GitHub" width="14" height="14" />
+                GitHub
+              </a>
+            </article>
+          </li>
+
+          <li>
+            <article class="project-card">
+              <a href="https://celestia-henna.vercel.app" target="_blank" class="project-card__img-wrap">
                 <img src="icon-512.png" alt="Celestia" />
-              </div>
-            </a>
-            <div class="card__body">
-              <div class="card__head">
-                <h3 class="card__title">Celestia</h3>
-                <span class="card__badge">PWA ↗</span>
-              </div>
-              <p class="card__desc">Horoscope PWA built with Prompt-Driven Development — daily horoscopes and zodiac compatibility.</p>
-              <div class="card__foot">
-                <span class="card__tags">PWA · AI · Design</span>
-                <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="card__gh" aria-label="GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+              </a>
+              <h3 class="project-card__title">Celestia</h3>
+              <p class="project-card__desc">A horoscope PWA built with Prompt-Driven Development using Claude Design and Claude Code. Features daily horoscopes, zodiac compatibility, and celestial profiles.</p>
+              <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
+                <img src="25231.png" alt="GitHub" width="14" height="14" />
+                GitHub
+              </a>
+            </article>
+          </li>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ── ABOUT ──────────────────────────────────────────────────── -->
-    <section class="about" id="about">
-      <div class="container">
-        <div class="about__inner">
-          <figure class="about__photo">
-            <img src="foto.jpg" alt="Mariana Mesquita" />
-          </figure>
-          <div class="about__content">
-            <h2 class="about__heading">WHO IS MARIANA?</h2>
-            <p>I'm a <strong>web developer</strong> based in Toronto who enjoys creating simple, intuitive, and distinctive digital experiences.</p>
-            <p>I approach projects by breaking complex problems into clear steps while exploring different tools and technologies, including AI, to develop thoughtful and effective solutions. My focus is on building interfaces that are visually balanced, functional, and easy to navigate.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── WHEN NOT CODING ────────────────────────────────────────── -->
-    <section class="when">
-      <div class="container">
-        <h2 class="when__heading">WHEN NOT CODING...</h2>
-      </div>
-      <div class="when__grid">
-        <img src="when-img1.png" alt="" />
-        <img src="when-img2.png" alt="" />
-        <img src="when-img3.png" alt="" />
-        <img src="when-img4.png" alt="" />
+        </ul>
       </div>
     </section>
 
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────── -->
-  <footer class="footer" id="contact">
+  <footer class="footer">
+    <div class="footer__construction">
+      <p>
+        <span class="text-navy">This site is still under construction 👩🏽‍💻</span>
+        <span class="text-olive">Thanks for your patience!</span>
+        <span class="text-navy">More content coming soon.</span>
+      </p>
+      <p class="text-olive">Made with back pain from lying on the sofa 🛋️</p>
+    </div>
+    <a href="https://github.com/marimnespoli" target="_blank" class="footer__github">
+      <img src="25231.png" alt="GitHub" width="18" height="18" />
+      GitHub
+    </a>
+  </footer>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
     <div class="container">
-      <div class="footer__inner">
-        <span class="footer__copy">© 2024 Mariana Mesquita</span>
-        <div class="footer__links">
-          <a href="https://www.linkedin.com/in/marimnespoli" target="_blank" class="footer__link">LinkedIn</a>
-          <a href="https://github.com/marimnespoli" target="_blank" class="footer__link">GitHub</a>
-          <a href="RESUME.pdf" target="_blank" class="footer__link">Resume</a>
+      <div class="contact__inner">
+        <div class="contact__text">
+          <h2 class="work__title">Let's work together</h2>
+          <p class="contact__desc">Have a project in mind or just want to say hi? My inbox is always open.</p>
         </div>
+        <a href="mailto:marimnespoli@gmail.com" class="contact__email">
+          marimnespoli@gmail.com
+        </a>
       </div>
     </div>
-  </footer>
+  </section>
 
 </body>
 </html>
