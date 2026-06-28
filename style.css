@@ -217,8 +217,13 @@ main {
 .hero__social-link {
   display: inline-flex;
   align-items: center;
-  color: var(--text-muted);
-  transition: color 0.15s;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #222;
+  color: #fff;
+  transition: opacity 0.15s, transform 0.18s ease;
 }
 
 .hero__social-link svg {
@@ -227,7 +232,8 @@ main {
 }
 
 .hero__social-link:hover {
-  color: var(--text);
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .hero__photo {
