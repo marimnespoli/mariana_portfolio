@@ -152,7 +152,6 @@ main {
   inset: 0;
   border-radius: 50%;
   border: 1px solid var(--text);
-  filter: url(#hand-drawn);
   pointer-events: none;
 }
 
