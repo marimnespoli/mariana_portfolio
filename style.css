@@ -188,6 +188,7 @@ main {
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
+  align-self: flex-start;
 }
 
 .hero__subtitle-row {
