@@ -117,6 +117,7 @@ main {
 .header__nav-link:hover {
   background: var(--bg);
   color: var(--text);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
@@ -213,6 +214,7 @@ main {
   color: var(--text);
   border-color: #b0b0b0;
   transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
 .hero__photo {
@@ -296,7 +298,7 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 64px 0 80px;
+  padding: 88px 0 80px;
 }
 
 .work__title {
@@ -304,7 +306,7 @@ main {
   font-size: 40px;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   text-align: center;
   color: var(--navy);
 }
@@ -514,12 +516,26 @@ main {
   }
 
   .hero__title { font-size: 38px; }
-  .hero__tagline { font-size: 20px; }
+  .hero__tagline { font-size: 18px; }
 
   .hero__center { display: none; }
 
+  .hero__bio-block {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero__photo {
+    width: 100px;
+    height: 120px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .work {
+    padding: 56px 0 56px;
   }
 }
 
