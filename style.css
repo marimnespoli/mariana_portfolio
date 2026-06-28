@@ -222,31 +222,17 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.5;
 }
 
-.hero__tagline-italic {
-  font-family: var(--font);
-  font-style: italic;
+.hero__tagline strong {
   font-weight: 700;
-  color: var(--text-muted);
-}
-
-.hero__tagline-comma {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 .hero__tagline-highlight {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.hero__tagline-period {
-  font-family: var(--font);
-  font-weight: 700;
-  color: var(--navy);
+  color: #7b6fbf;
+  text-decoration: underline wavy #b9b3e0;
+  text-underline-offset: 4px;
 }
 
 /* ─── BIO ────────────────────────────────────────────────────── */
