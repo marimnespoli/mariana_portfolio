@@ -124,31 +124,30 @@ main {
   box-shadow: 0 4px 16px rgba(0,0,0,0.22);
 }
 
-/* Nav — minimal hand-drawn pills */
+/* Nav — organic hand-drawn pills */
 .header__nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
   width: fit-content;
   margin: 0;
 }
 
 .header__nav-link {
-  padding: 6px 18px;
-  border-radius: 100px;
+  padding: 5px 15px;
+  border-radius: 52px 48px 50px 49px / 49px 51px 48px 50px;
   border: 1px solid var(--text);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 400;
   color: var(--text);
   background: transparent;
-  letter-spacing: 0.01em;
-  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.03em;
+  transition: opacity 0.15s;
 }
 
 .header__nav-link:hover {
-  background: var(--text);
-  color: var(--bg);
+  opacity: 0.5;
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
