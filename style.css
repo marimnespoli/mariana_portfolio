@@ -97,12 +97,14 @@ a { color: inherit; text-decoration: none; }
   border: 1.5px solid var(--accent);
   color: var(--accent);
   flex-shrink: 0;
-  transition: background 0.18s, color 0.18s;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .nav__icon-btn:hover {
   background: var(--accent);
   color: #fff;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 12px rgba(102,30,42,0.18);
 }
 
 .nav__icon-btn svg { display: block; }
@@ -377,6 +379,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 36px;
 }
 
 .footer__copy {
@@ -411,7 +414,7 @@ a { color: inherit; text-decoration: none; }
   .work__diamond { width: 44px; height: 44px; }
   .bento-grid { grid-template-columns: 1fr; }
   .who__heading { font-size: 26px; }
-  .when__heading { font-size: 26px; padding: 0 20px; }
+  .when__heading { font-size: 26px; padding: 0 20px; letter-spacing: 0.04em; }
   .when__grid { grid-template-columns: repeat(2, 1fr); }
   .when__grid img { height: 200px; }
 }
