@@ -107,45 +107,48 @@ main {
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  padding: 8px 22px;
+  padding: 10px 26px;
   border-radius: 100px;
-  border: 1.5px solid var(--text);
+  border: 2px solid var(--text);
   font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
-  transition: background 0.15s, color 0.15s;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--text);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .header__cta:hover {
-  background: var(--text);
-  color: var(--bg);
+  background: #333;
+  border-color: #333;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
 }
 
-/* Nav pill — static at top */
+/* Nav — separated individual pills */
 .header__nav {
   display: flex;
   justify-content: center;
-  background: var(--nav-bg);
-  border-radius: 100px;
-  padding: 6px;
+  align-items: center;
+  gap: 10px;
   width: fit-content;
   margin: 0;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 .header__nav-link {
-  padding: 8px 24px;
+  padding: 10px 26px;
   border-radius: 100px;
+  border: 2px solid #c4c4c4;
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-muted);
-  transition: color 0.15s, background 0.15s;
+  color: var(--text);
+  background: #f7f7f7;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
 
 .header__nav-link:hover {
-  background: var(--bg);
-  color: var(--text);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
