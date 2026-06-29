@@ -312,10 +312,11 @@ main {
 
 .hero__tagline {
   font-family: var(--font);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: #111;
   line-height: 1.75;
+  letter-spacing: 0.02em;
 }
 
 .hero__tagline strong {
