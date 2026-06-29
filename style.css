@@ -93,32 +93,25 @@ main {
   flex-shrink: 0;
 }
 
-/* Header row — 3-col grid keeps nav truly centered */
+/* Header row — logo left, nav right */
 .header-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  padding: 20px 32px 0;
+  justify-content: space-between;
+  padding: 24px 32px 0;
   max-width: var(--max-w);
   margin: 0 auto;
 }
 
 .header__logo {
-  justify-self: start;
+  display: flex;
+  align-items: center;
 }
 
 .header__logo-img {
-  width: 80px;
+  width: 72px;
   height: auto;
   display: block;
-}
-
-.header__location {
-  justify-self: end;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
 }
 
 /* Nav — organic hand-drawn pills */
@@ -196,9 +189,9 @@ main {
 
 .hero__shapes {
   display: flex;
-  gap: 20px;
+  gap: 28px;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .hero__shapes img {
@@ -325,8 +318,6 @@ main {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   color: #7b6fbf;
-  text-decoration: underline wavy #b9b3e0;
-  text-underline-offset: 4px;
 }
 
 /* ─── BIO ────────────────────────────────────────────────────── */
