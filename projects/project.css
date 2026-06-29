@@ -2001,3 +2001,447 @@
   font-weight: 400;
   color: #aaa;
 }
+
+/* ════════════════════════════════════════════════
+   BENTO GRID — Scenté
+   ════════════════════════════════════════════════ */
+
+.cs2-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+}
+
+/* ── Tags ── */
+.cs2-bento-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+.cs2-bento-tag--light { color: rgba(255,255,255,0.4); }
+
+/* ── Shared card base ── */
+.cs2-bento-hero,
+.cs2-bento-info,
+.cs2-bento-devices,
+.cs2-bento-tokens,
+.cs2-bento-stats,
+.cs2-bento-process,
+.cs2-bento-stack,
+.cs2-bento-result {
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  padding: 32px;
+  background: #fff;
+  min-width: 0;
+}
+
+/* ── ① Hero — col 1-8 ── */
+.cs2-bento-hero {
+  grid-column: 1 / 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs2-bento-hero__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 12px 0 16px;
+}
+
+.cs2-bento-hero__accent { color: #7b70bf; }
+
+.cs2-bento-hero__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  line-height: 1.65;
+  max-width: 420px;
+}
+
+.cs2-bento-hero__actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* dark button variant */
+.cs2-btn--dark {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #1a1a1a;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.cs2-btn--dark:hover { opacity: 0.8; }
+
+/* ── ② Project Info — col 9-12 ── */
+.cs2-bento-info {
+  grid-column: 9 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs2-bento-info__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.cs2-bento-info__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cs2-bento-info__row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.cs2-bento-info__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #bbb;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cs2-bento-info__val {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* ── ③ Multi-device — full width ── */
+.cs2-bento-devices {
+  grid-column: 1 / 13;
+  background: linear-gradient(135deg, #f5f3ff 0%, #f0f9ff 50%, #fef9f0 100%);
+  border-color: #e8e8e8;
+}
+
+.cs2-bento-devices__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px 0 32px;
+}
+
+.cs2-bento-device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs2-bento-device--macbook { flex: 3; max-width: 480px; }
+.cs2-bento-device--tablet  { flex: 1.6; max-width: 200px; }
+.cs2-bento-device--phone   { flex: 0.9; max-width: 120px; }
+
+.cs2-bento-device--phone img { width: 100%; display: block; }
+
+.cs2-bento-device__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #aaa;
+  letter-spacing: 0.06em;
+}
+
+/* Breakpoint ruler */
+.cs2-breakpoint-ruler {
+  position: relative;
+  height: 28px;
+  margin-top: 8px;
+}
+
+.cs2-breakpoint-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.cs2-breakpoint-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.cs2-breakpoint-tick::before {
+  content: '';
+  width: 1px;
+  height: 8px;
+  background: #ccc;
+}
+
+.cs2-breakpoint-tick span {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: #aaa;
+  letter-spacing: 0.04em;
+}
+
+/* ── ④ Brand Tokens — col 1-8 ── */
+.cs2-bento-tokens {
+  grid-column: 1 / 9;
+}
+
+.cs2-bento-tokens__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.cs2-bento-tokens__sublabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.cs2-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.cs2-swatch { display: flex; flex-direction: column; gap: 6px; }
+
+.cs2-swatch__chip {
+  width: 100%;
+  aspect-ratio: 1 / 0.7;
+  border-radius: 10px;
+}
+
+.cs2-swatch__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.cs2-swatch__hex {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.cs2-type-scale { display: flex; flex-direction: column; gap: 0; }
+
+.cs2-type-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cs2-type-row:last-child { border-bottom: none; }
+
+.cs2-type-sample { font-family: 'Inter', sans-serif; }
+
+.cs2-type-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: #bbb;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ── ⑤ Stats — col 9-12 ── */
+.cs2-bento-stats {
+  grid-column: 9 / 13;
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.cs2-bento-stats__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.cs2-bento-stat { display: flex; flex-direction: column; gap: 2px; }
+
+.cs2-bento-stat__val {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #f4f3ef;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.cs2-bento-stat__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── ⑥ Design Process — col 1-8 ── */
+.cs2-bento-process {
+  grid-column: 1 / 9;
+  min-height: 260px;
+}
+
+.cs2-bento-process__body {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+}
+
+.cs2-bento-process__code {
+  flex: 1;
+}
+
+.cs2-code--sm { font-size: 11px; }
+
+.cs2-bento-process__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.cs2-process-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs2-process-step__n {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+.cs2-process-step__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.cs2-process-step--active .cs2-process-step__n {
+  background: #7b70bf;
+  border-color: #7b70bf;
+  color: #fff;
+}
+
+.cs2-process-step--active .cs2-process-step__label {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* ── ⑦ Tech Stack — col 9-12 ── */
+.cs2-bento-stack {
+  grid-column: 9 / 13;
+  background: linear-gradient(145deg, #f5f3ff 0%, #fef9f0 100%);
+}
+
+.cs2-bento-stack__rows {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.cs2-stack-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cs2-stack-row:last-child { border-bottom: none; }
+
+.cs2-stack-row__tool {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.cs2-stack-row__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* ── ⑧ Final Result — full width ── */
+.cs2-bento-result {
+  grid-column: 1 / 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.cs2-bento-result__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.cs2-bento-result__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #7b70bf;
+}
+
+.cs2-bento-result__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: -8px;
+}
+
+.cs2-bento-result .cs2-iframe-outer { width: 100%; }
