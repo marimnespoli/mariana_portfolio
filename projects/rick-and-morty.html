@@ -260,13 +260,98 @@ interface FilterState {
             <p class="cs2-result-card__sub">Try it — search and filter characters in real time</p>
           </div>
 
-          <div class="cs2-demo-frame">
-            <iframe
-              src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
-              title="Rick and Morty Character Explorer — live demo"
-              loading="lazy"
-            ></iframe>
+          <!-- Mini-app funcional -->
+          <div class="cs2-miniapp">
+
+            <div class="cs2-miniapp__filters">
+              <input
+                id="rm-name"
+                class="cs2-miniapp__input"
+                type="text"
+                placeholder="Search by name…"
+                autocomplete="off"
+              />
+              <select id="rm-status" class="cs2-miniapp__select">
+                <option value="">Status</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+              </select>
+              <select id="rm-gender" class="cs2-miniapp__select">
+                <option value="">Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="genderless">Genderless</option>
+                <option value="unknown">Unknown</option>
+              </select>
+              <select id="rm-species" class="cs2-miniapp__select">
+                <option value="">Species</option>
+                <option value="human">Human</option>
+                <option value="alien">Alien</option>
+                <option value="humanoid">Humanoid</option>
+                <option value="robot">Robot</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+
+            <div id="rm-grid" class="cs2-miniapp__grid">
+              <p class="cs2-miniapp__loading">Loading characters…</p>
+            </div>
+
           </div>
+
+          <script>
+          (function () {
+            const BASE = 'https://rickandmortyapi.com/api/character';
+            const filters = { name: '', status: '', gender: '', species: '' };
+            let debounceTimer;
+
+            const grid = document.getElementById('rm-grid');
+
+            function statusDot(status) {
+              const colours = { Alive: '#4caf50', Dead: '#e84c4c', unknown: '#aaa' };
+              return colours[status] || '#aaa';
+            }
+
+            async function fetchAndRender() {
+              const params = new URLSearchParams(
+                Object.fromEntries(Object.entries(filters).filter(([, v]) => v))
+              );
+              grid.innerHTML = '<p class="cs2-miniapp__loading">Loading…</p>';
+              try {
+                const res = await fetch(`${BASE}?page=2&${params}`);
+                if (!res.ok) throw new Error('no results');
+                const data = await res.json();
+                const chars = (data.results || []).slice(0, 8);
+                grid.innerHTML = chars.map(c => `
+                  <div class="cs2-rm-card">
+                    <img src="${c.image}" alt="${c.name}" loading="lazy" />
+                    <div class="cs2-rm-card__body">
+                      <span class="cs2-rm-card__name">${c.name}</span>
+                      <span class="cs2-rm-card__meta">
+                        <span class="cs2-rm-dot" style="background:${statusDot(c.status)}"></span>
+                        ${c.status} · ${c.species}
+                      </span>
+                      <span class="cs2-rm-card__loc">${c.location.name}</span>
+                    </div>
+                  </div>`).join('');
+              } catch {
+                grid.innerHTML = '<p class="cs2-miniapp__loading">No characters found.</p>';
+              }
+            }
+
+            document.getElementById('rm-name').addEventListener('input', e => {
+              filters.name = e.target.value;
+              clearTimeout(debounceTimer);
+              debounceTimer = setTimeout(fetchAndRender, 300);
+            });
+            document.getElementById('rm-status').addEventListener('change', e => { filters.status = e.target.value; fetchAndRender(); });
+            document.getElementById('rm-gender').addEventListener('change', e => { filters.gender = e.target.value; fetchAndRender(); });
+            document.getElementById('rm-species').addEventListener('change', e => { filters.species = e.target.value; fetchAndRender(); });
+
+            fetchAndRender();
+          })();
+          </script>
 
           <div class="cs2-result-card__actions">
             <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">

@@ -1714,3 +1714,124 @@
   border-radius: 16px;
   display: block;
 }
+
+/* ── Mini-app (Final Result) ── */
+.cs2-miniapp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs2-miniapp__filters {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, auto);
+  gap: 10px;
+}
+
+.cs2-miniapp__input,
+.cs2-miniapp__select {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #333;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 14px;
+  outline: none;
+  transition: border-color 0.18s, color 0.18s;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.cs2-miniapp__input::placeholder { color: #aaa; }
+
+.cs2-miniapp__input:focus,
+.cs2-miniapp__select:focus {
+  border-color: #7b70bf;
+  color: #7b70bf;
+}
+
+.cs2-miniapp__select {
+  padding-right: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.cs2-miniapp__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.cs2-miniapp__loading {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #aaa;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cs2-rm-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.18s;
+  background: transparent;
+}
+
+.cs2-rm-card:hover { border-color: #7b70bf; }
+
+.cs2-rm-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.cs2-rm-card__body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs2-rm-card__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.cs2-rm-card__meta {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cs2-rm-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.cs2-rm-card__loc {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #bbb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
