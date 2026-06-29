@@ -351,6 +351,10 @@ main {
 }
 
 /* ─── ABOUT ──────────────────────────────────────────────────── */
+.about {
+  padding: 0 0 80px;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
