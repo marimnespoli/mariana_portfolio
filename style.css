@@ -149,7 +149,7 @@ main {
   font-size: 13.5px;
   font-weight: 500;
   color: var(--text);
-  background: rgba(9, 31, 91, 0.04);
+  background: transparent;
   letter-spacing: 0.04em;
   transition: opacity 0.15s, background 0.15s;
 }
@@ -178,7 +178,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero__divider {
@@ -238,7 +238,6 @@ main {
   color: var(--navy);
   text-transform: none;
   white-space: nowrap;
-  margin-top: 24px;
 }
 
 .hero__name-block {
