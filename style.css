@@ -361,20 +361,21 @@ main {
 
 .about-simple {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .about-simple__name {
   font-family: var(--font);
-  font-size: 42px;
+  font-size: 52px;
   font-weight: 700;
   color: var(--text);
-  line-height: 1.15;
-  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
 }
 
 .about-simple__text {
@@ -482,8 +483,6 @@ main {
 
 .about-photo-frame {
   width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
   display: block;
 }
 
@@ -493,7 +492,7 @@ main {
   display: block;
   object-fit: cover;
   object-position: top;
-  border-radius: 24px;
+  border-radius: 20px;
 }
 
 .about-content {
