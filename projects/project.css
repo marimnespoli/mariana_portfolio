@@ -119,6 +119,10 @@
   color: #1a1a1a;
 }
 
+.cs-meta-row--two {
+  gap: 80px;
+}
+
 /* ── MacBook + overview ── */
 .cs-macbook-row {
   display: grid;
