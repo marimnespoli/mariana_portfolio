@@ -24,17 +24,19 @@
   font-family: var(--font-heading);
   font-size: 80px;
   font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--navy);
   line-height: 1.0;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .cs-title-sub {
-  font-family: var(--font-heading);
-  font-size: 28px;
+  font-family: var(--font);
+  font-size: 22px;
   font-weight: 400;
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 28px;
+  letter-spacing: 0;
 }
 
 .cs-hero__row {
@@ -453,8 +455,8 @@
 
 .cs-info-block {
   background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 10px;
+  border: 1px solid #dde0ea;
+  border-radius: 14px;
   padding: 24px 28px;
 }
 
@@ -931,6 +933,8 @@
 /* ── Live demo ── */
 .cs-demo {
   margin-bottom: 72px;
+  padding-top: 40px;
+  border-top: 1px solid #e8e8e8;
   text-align: center;
 }
 
