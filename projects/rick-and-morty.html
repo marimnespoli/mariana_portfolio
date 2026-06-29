@@ -303,9 +303,10 @@ interface FilterState {
                       <span class="cs2-rm-card__name">${c.name}</span>
                       <span class="cs2-rm-card__meta">
                         <span class="cs2-rm-dot" style="background:${statusDot(c.status)}"></span>
-                        ${c.status} · ${c.species}
+                        ${c.status}
                       </span>
-                      <span class="cs2-rm-card__loc">${c.location.name}</span>
+                      <span class="cs2-rm-card__meta">${c.species}</span>
+                      <span class="cs2-rm-card__gender">${c.gender}</span>
                     </div>
                   </div>`).join('');
               } catch {
