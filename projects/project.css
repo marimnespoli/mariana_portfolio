@@ -1376,19 +1376,14 @@
   width: 100%;
   height: 540px;
   overflow: hidden;
-  position: relative;
 }
 
 .cs2-iframe-wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 167%;
-  height: 167%;
+  height: 900px;
   border: none;
   display: block;
-  transform: scale(0.6);
-  transform-origin: top left;
+  zoom: 0.6;
 }
 
 /* ── MacBook mockup wrapper ── */
