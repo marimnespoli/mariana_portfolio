@@ -132,50 +132,50 @@ main {
   background: var(--border);
 }
 
-/* Nav — organic hand-drawn pills */
+/* Nav — editorial, no pills */
 .header__nav {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  width: fit-content;
-  margin: 0;
+  gap: 32px;
 }
 
 .header__nav-link {
   position: relative;
-  padding: 9px 30px;
+  padding: 14px 10px;
   border: none;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
   color: var(--text);
-  background: rgba(123, 112, 191, 0.07);
-  letter-spacing: 0.07em;
-  transition: color 0.25s, background 0.25s;
+  background: transparent;
+  letter-spacing: 2px;
+  transition: color 0.25s;
 }
 
 .header__nav-link::before {
-  content: '';
+  content: '✦';
   position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1.5px solid rgba(9, 31, 91, 0.3);
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7b70bf;
+  font-size: 10px;
+  opacity: 0;
   pointer-events: none;
-  transition: border-color 0.25s;
+  transition: opacity 0.25s ease;
 }
 
 .header__nav-link:hover {
-  color: #7b6fbf;
-  background: rgba(123, 112, 191, 0.12);
+  color: #7b70bf;
 }
 
 .header__nav-link:hover::before {
-  border-color: #7b6fbf;
+  opacity: 1;
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
 .hero {
-  padding: 64px 0 56px;
+  padding: 64px 0 80px;
   background: var(--bg);
 }
 
@@ -292,13 +292,20 @@ main {
   opacity: 0.45;
 }
 
+.hero__photo-frame {
+  background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
+  padding: 4px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
 .hero__photo {
   width: 130px;
   height: 155px;
   border-radius: 10px;
   overflow: hidden;
   margin: 0;
-  flex-shrink: 0;
 }
 
 .hero__photo img {
@@ -339,10 +346,7 @@ main {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   color: #7b6fbf;
-  text-decoration: underline wavy;
-  text-decoration-color: #d0cce8;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 
 /* ─── BIO ────────────────────────────────────────────────────── */
@@ -376,7 +380,7 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 88px 0 80px;
+  padding: 100px 0 80px;
 }
 
 .work__title {
@@ -393,11 +397,11 @@ main {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 360px));
-  gap: 40px 28px;
+  gap: 40px;
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: start;
+  justify-content: center;
 }
 
 /* ─── PROJECT CARD ───────────────────────────────────────────── */
