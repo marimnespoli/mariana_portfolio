@@ -1185,9 +1185,9 @@
 }
 
 .cs2-card--dark {
-  background: #1c1c1e;
-  border-color: #1c1c1e;
-  color: #fff;
+  background: transparent;
+  border-color: #e8e8e8;
+  color: var(--navy);
 }
 
 .cs2-card__num {
@@ -1205,8 +1205,8 @@
 }
 
 .cs2-card__num--light {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
+  background: #f0f0f0;
+  color: #7b70bf;
 }
 
 .cs2-card__title {
@@ -1218,7 +1218,7 @@
 }
 
 .cs2-card--dark .cs2-card__title {
-  color: #fff;
+  color: var(--navy);
 }
 
 .cs2-card__text {
@@ -1230,16 +1230,16 @@
 }
 
 .cs2-card__text--muted {
-  color: #a0a0a8;
+  color: #444;
 }
 
 .cs2-inline-code {
   font-family: 'Courier New', monospace;
   font-size: 12px;
-  background: rgba(255,255,255,0.1);
+  background: #f0f0f0;
   padding: 1px 5px;
   border-radius: 4px;
-  color: #c5c0e8;
+  color: #333;
 }
 
 .cs2-card__stats {
@@ -1247,7 +1247,7 @@
   gap: 28px;
   padding-top: 16px;
   margin-top: auto;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid #e8e8e8;
 }
 
 .cs2-stat {
@@ -1260,7 +1260,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--navy);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1268,7 +1268,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  color: #a0a0a8;
+  color: #888;
 }
 
 /* ── Section wrapper ── */
