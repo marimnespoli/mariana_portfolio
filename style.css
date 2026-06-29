@@ -93,12 +93,11 @@ main {
   flex-shrink: 0;
 }
 
-/* Header row — logo left, nav right */
+/* Header row — logo left, line center, nav right */
 .header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 24px 32px 0;
+  padding: 28px 32px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -113,32 +112,24 @@ main {
 }
 
 .header__logo-img {
-  width: 72px;
+  width: 100px;
   height: auto;
   display: block;
 }
 
 
-/* Horizontal divider below header */
-.header__rule {
+/* Inline rule between logo and nav */
+.header__rule-inline {
+  flex: 1;
   display: flex;
   align-items: center;
-  max-width: var(--max-w);
-  margin: 12px auto 0;
-  padding: 0 32px;
+  padding: 0 28px;
 }
 
 .header__rule-line {
   flex: 1;
   height: 1px;
   background: var(--border);
-}
-
-.header__rule-star {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  margin-left: -1px;
 }
 
 /* Nav — organic hand-drawn pills */
