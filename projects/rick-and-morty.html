@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="project.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -34,18 +34,23 @@
         <div class="cs2-header__top">
           <div class="cs2-header__left">
             <div class="cs2-header__tags">
-              <span class="cs2-tag">Case Study</span>
+              <span class="cs2-pill">Case Study</span>
               <span class="cs2-year">2024</span>
             </div>
             <h1 class="cs2-title">
               Rick &amp; Morty
               <span class="cs2-title__sub">Character Explorer</span>
             </h1>
-            <p class="cs2-tech-stack">TypeScript &nbsp;·&nbsp; Fetch API &nbsp;·&nbsp; CSS Grid &nbsp;·&nbsp; REST API</p>
+            <div class="cs2-pills-row">
+              <span class="cs2-pill">TypeScript</span>
+              <span class="cs2-pill">Fetch API</span>
+              <span class="cs2-pill">CSS Grid</span>
+              <span class="cs2-pill">REST API</span>
+            </div>
           </div>
           <div class="cs2-header__actions">
             <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
-              Live Demo <span class="cs2-btn__arrow">↗</span>
+              Live Demo ↗
             </a>
             <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="cs2-btn cs2-btn--outline">
               GitHub ↗
@@ -103,91 +108,86 @@
           <div class="cs2-section__rule"></div>
         </div>
 
-        <div class="cs2-process-grid">
+        <!-- Mockup em destaque (full-width) -->
+        <div class="cs2-browser">
+          <div class="cs2-browser__bar">
+            <div class="cs2-browser__dots">
+              <span class="cs2-dot cs2-dot--red"></span>
+              <span class="cs2-dot cs2-dot--yellow"></span>
+              <span class="cs2-dot cs2-dot--green"></span>
+            </div>
+            <div class="cs2-browser__url">wddm127-assignment2-rick-and-morty-beta.vercel.app</div>
+          </div>
+          <div class="cs2-browser__screen">
+            <img src="rick-morty-screenshot.png" alt="Rick and Morty Character Explorer screenshot" />
+          </div>
+        </div>
 
-          <!-- Screenshot -->
-          <div class="cs2-process-screenshot">
-            <div class="cs2-browser">
-              <div class="cs2-browser__bar">
-                <div class="cs2-browser__dots">
-                  <span class="cs2-dot cs2-dot--red"></span>
-                  <span class="cs2-dot cs2-dot--yellow"></span>
-                  <span class="cs2-dot cs2-dot--green"></span>
+        <!-- Cards explicativos em linha abaixo do mockup -->
+        <div class="cs2-process-cards">
+
+          <div class="cs2-spec-card">
+            <h3 class="cs2-spec-card__title">Color Palette</h3>
+            <div class="cs2-palette">
+              <div class="cs2-palette__item">
+                <div class="cs2-palette__swatch" style="background:#1a1a2e;"></div>
+                <div class="cs2-palette__info">
+                  <span class="cs2-palette__name">Space Black</span>
+                  <span class="cs2-palette__hex">#1a1a2e · Background</span>
                 </div>
-                <div class="cs2-browser__url">wddm127-assignment2-rick-and-morty-beta.vercel.app</div>
               </div>
-              <div class="cs2-browser__screen">
-                <img src="rick-morty-screenshot.png" alt="Rick and Morty Character Explorer screenshot" />
+              <div class="cs2-palette__item">
+                <div class="cs2-palette__swatch" style="background:#e84c4c;"></div>
+                <div class="cs2-palette__info">
+                  <span class="cs2-palette__name">Dead Red</span>
+                  <span class="cs2-palette__hex">#e84c4c · Status</span>
+                </div>
+              </div>
+              <div class="cs2-palette__item">
+                <div class="cs2-palette__swatch" style="background:#7a7670;"></div>
+                <div class="cs2-palette__info">
+                  <span class="cs2-palette__name">Muted Gray</span>
+                  <span class="cs2-palette__hex">#7a7670 · Secondary</span>
+                </div>
+              </div>
+              <div class="cs2-palette__item">
+                <div class="cs2-palette__swatch" style="background:#f8f8f6; border:1px solid #e0e0e0;"></div>
+                <div class="cs2-palette__info">
+                  <span class="cs2-palette__name">Off White</span>
+                  <span class="cs2-palette__hex">#f8f8f6 · Surface</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Specs -->
-          <div class="cs2-process-specs">
-
-            <div class="cs2-spec-card">
-              <h3 class="cs2-spec-card__title">Color Palette</h3>
-              <div class="cs2-palette">
-                <div class="cs2-palette__item">
-                  <div class="cs2-palette__swatch" style="background:#39a843;"></div>
-                  <div class="cs2-palette__info">
-                    <span class="cs2-palette__name">Portal Green</span>
-                    <span class="cs2-palette__hex">#39a843 · Primary</span>
-                  </div>
-                </div>
-                <div class="cs2-palette__item">
-                  <div class="cs2-palette__swatch" style="background:#1a1a2e;"></div>
-                  <div class="cs2-palette__info">
-                    <span class="cs2-palette__name">Space Black</span>
-                    <span class="cs2-palette__hex">#1a1a2e · Background</span>
-                  </div>
-                </div>
-                <div class="cs2-palette__item">
-                  <div class="cs2-palette__swatch" style="background:#7a7670;"></div>
-                  <div class="cs2-palette__info">
-                    <span class="cs2-palette__name">Muted Gray</span>
-                    <span class="cs2-palette__hex">#7a7670 · Secondary</span>
-                  </div>
-                </div>
-                <div class="cs2-palette__item">
-                  <div class="cs2-palette__swatch" style="background:#f8f8f6; border:1px solid #e0e0e0;"></div>
-                  <div class="cs2-palette__info">
-                    <span class="cs2-palette__name">Off White</span>
-                    <span class="cs2-palette__hex">#f8f8f6 · Surface</span>
-                  </div>
-                </div>
+          <div class="cs2-spec-card">
+            <h3 class="cs2-spec-card__title">Typography</h3>
+            <div class="cs2-typo">
+              <div class="cs2-typo__row">
+                <span class="cs2-typo__name" style="font-weight:700; font-size:22px;">Inter Bold</span>
+                <span class="cs2-pill cs2-pill--sm">Headings</span>
+              </div>
+              <div class="cs2-typo__row">
+                <span class="cs2-typo__name" style="font-size:18px;">Inter Regular</span>
+                <span class="cs2-pill cs2-pill--sm">Body</span>
+              </div>
+              <div class="cs2-typo__row cs2-typo__row--last">
+                <span class="cs2-typo__name" style="font-family:'Courier New',monospace; font-size:14px;">Courier New</span>
+                <span class="cs2-pill cs2-pill--sm">Code</span>
               </div>
             </div>
-
-            <div class="cs2-spec-card">
-              <h3 class="cs2-spec-card__title">Typography</h3>
-              <div class="cs2-typo">
-                <div class="cs2-typo__row">
-                  <span class="cs2-typo__name" style="font-family:'Oswald',sans-serif; font-size:22px;">Oswald</span>
-                  <span class="cs2-tag cs2-tag--sm">Headings</span>
-                </div>
-                <div class="cs2-typo__row">
-                  <span class="cs2-typo__name" style="font-family:'Inter',sans-serif; font-size:18px;">Inter</span>
-                  <span class="cs2-tag cs2-tag--sm">Body</span>
-                </div>
-                <div class="cs2-typo__row cs2-typo__row--last">
-                  <span class="cs2-typo__name" style="font-family:'Courier New',monospace; font-size:14px;">Courier New</span>
-                  <span class="cs2-tag cs2-tag--sm">Code</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="cs2-spec-card cs2-spec-card--muted">
-              <h3 class="cs2-spec-card__title">Why This Structure</h3>
-              <ul class="cs2-rationale">
-                <li><span class="cs2-rationale__arrow">→</span> Single state object for all filters avoids sync bugs</li>
-                <li><span class="cs2-rationale__arrow">→</span> URL rebuilt on every change — one source of truth</li>
-                <li><span class="cs2-rationale__arrow">→</span> TypeScript types enforce API shape at compile time</li>
-                <li><span class="cs2-rationale__arrow">→</span> CSS Grid for cards — no library needed</li>
-              </ul>
-            </div>
-
           </div>
+
+          <div class="cs2-spec-card cs2-spec-card--muted">
+            <h3 class="cs2-spec-card__title">Why This Structure</h3>
+            <ul class="cs2-rationale">
+              <li><span class="cs2-rationale__arrow">→</span> Single state object for all filters avoids sync bugs</li>
+              <li><span class="cs2-rationale__arrow">→</span> URL rebuilt on every change — one source of truth</li>
+              <li><span class="cs2-rationale__arrow">→</span> TypeScript types enforce API shape at compile time</li>
+              <li><span class="cs2-rationale__arrow">→</span> CSS Grid for cards — no library needed</li>
+            </ul>
+          </div>
+
         </div>
       </section>
 
@@ -202,11 +202,8 @@
 
           <div class="cs2-highlight-card">
             <div class="cs2-highlight-card__top">
-              <div class="cs2-highlight-card__icon">⚡</div>
-              <div>
-                <h3 class="cs2-highlight-card__title">Filter State</h3>
-              </div>
-              <span class="cs2-tag cs2-tag--sm">state</span>
+              <h3 class="cs2-highlight-card__title">Filter State</h3>
+              <span class="cs2-pill cs2-pill--sm">state</span>
             </div>
             <p class="cs2-highlight-card__desc">One object owns all active filters. Every input change updates it and immediately triggers a URL rebuild and fetch — no duplicate logic anywhere.</p>
             <pre class="cs2-code"><code>const filters: FilterState = {
@@ -227,11 +224,8 @@ function updateFilter(
 
           <div class="cs2-highlight-card">
             <div class="cs2-highlight-card__top">
-              <div class="cs2-highlight-card__icon">🌐</div>
-              <div>
-                <h3 class="cs2-highlight-card__title">API Fetching</h3>
-              </div>
-              <span class="cs2-tag cs2-tag--sm">fetch</span>
+              <h3 class="cs2-highlight-card__title">API Fetching</h3>
+              <span class="cs2-pill cs2-pill--sm">fetch</span>
             </div>
             <p class="cs2-highlight-card__desc">Typed async/await fetch with dynamic query params. URLSearchParams strips empty strings automatically so the API never receives blank filters.</p>
             <pre class="cs2-code"><code>async function fetchCharacters(
@@ -252,11 +246,8 @@ function updateFilter(
 
           <div class="cs2-highlight-card">
             <div class="cs2-highlight-card__top">
-              <div class="cs2-highlight-card__icon">🔷</div>
-              <div>
-                <h3 class="cs2-highlight-card__title">TypeScript Types</h3>
-              </div>
-              <span class="cs2-tag cs2-tag--sm">types</span>
+              <h3 class="cs2-highlight-card__title">TypeScript Types</h3>
+              <span class="cs2-pill cs2-pill--sm">types</span>
             </div>
             <p class="cs2-highlight-card__desc">Interfaces derived from the Rick and Morty API schema. If the API shape changes, TypeScript surfaces every broken access immediately at compile time.</p>
             <pre class="cs2-code"><code>interface Character {
@@ -279,16 +270,13 @@ interface FilterState {
 
           <div class="cs2-highlight-card">
             <div class="cs2-highlight-card__top">
-              <div class="cs2-highlight-card__icon">🃏</div>
-              <div>
-                <h3 class="cs2-highlight-card__title">Card Rendering</h3>
-              </div>
-              <span class="cs2-tag cs2-tag--sm">dom</span>
+              <h3 class="cs2-highlight-card__title">Card Rendering</h3>
+              <span class="cs2-pill cs2-pill--sm">dom</span>
             </div>
-            <p class="cs2-highlight-card__desc">Characters render as template-literal HTML injected via innerHTML. Status dot colour is set inline — no external library needed for the conditional logic.</p>
+            <p class="cs2-highlight-card__desc">Characters render as template-literal HTML injected via innerHTML. Status colour is set inline — no external library needed for the conditional logic.</p>
             <pre class="cs2-code"><code>function renderCard(c: Character) {
   const colour =
-    c.status === "Alive" ? "#39a843"
+    c.status === "Alive" ? "#4caf50"
     : c.status === "Dead" ? "#e84c4c"
     : "#aaa";
   return `

@@ -1025,8 +1025,9 @@
 .cs-nav a:hover { opacity: 0.6; }
 
 
+
 /* ═══════════════════════════════════════════════════════════
-   CS2 — Rick & Morty case study (new layout)
+   CS2 — Rick & Morty case study (refactored layout)
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Layout shell ── */
@@ -1041,6 +1042,32 @@
   display: flex;
   flex-direction: column;
   gap: 72px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Pills (outline, hover roxa) ── */
+.cs2-pill {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 3px 12px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  color: #666;
+  background: transparent;
+  transition: border-color 0.18s, color 0.18s;
+  cursor: default;
+}
+
+.cs2-pill:hover {
+  border-color: #7b70bf;
+  color: #7b70bf;
+}
+
+.cs2-pill--sm {
+  font-size: 10px;
+  padding: 2px 10px;
 }
 
 /* ── Header ── */
@@ -1062,7 +1089,7 @@
 .cs2-header__left {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .cs2-header__tags {
@@ -1072,35 +1099,17 @@
 }
 
 .cs2-year {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
+  font-weight: 400;
   color: #999;
-  font-variant-numeric: tabular-nums;
-}
-
-.cs2-tag {
-  display: inline-block;
-  font-family: var(--font);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  padding: 3px 12px;
-  border: 1px solid #ddd;
-  border-radius: 100px;
-  color: #666;
-  background: #fff;
-}
-
-.cs2-tag--sm {
-  font-size: 10px;
-  padding: 2px 10px;
 }
 
 .cs2-title {
-  font-family: var(--font-heading);
+  font-family: 'Inter', sans-serif;
   font-size: 56px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--navy);
   line-height: 1.0;
   display: flex;
@@ -1110,14 +1119,14 @@
 .cs2-title__sub {
   display: block;
   font-style: italic;
-  color: #39a843;
+  font-weight: 400;
+  color: #7b70bf;
 }
 
-.cs2-tech-stack {
-  font-family: var(--font);
-  font-size: 12px;
-  color: #999;
-  letter-spacing: 0.2px;
+.cs2-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .cs2-header__actions {
@@ -1132,9 +1141,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 10px 22px;
   border-radius: 100px;
   transition: opacity 0.15s;
@@ -1176,8 +1185,8 @@
 }
 
 .cs2-card--dark {
-  background: #1a2e1c;
-  border-color: #1a2e1c;
+  background: #1a1a2e;
+  border-color: #1a1a2e;
   color: #fff;
 }
 
@@ -1189,23 +1198,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
-  font-weight: 600;
-  color: #39a843;
+  font-weight: 700;
+  color: #7b70bf;
 }
 
 .cs2-card__num--light {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.12);
   color: #fff;
 }
 
 .cs2-card__title {
-  font-family: var(--font-heading);
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--navy);
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .cs2-card--dark .cs2-card__title {
@@ -1213,14 +1222,15 @@
 }
 
 .cs2-card__text {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.75;
   color: #444;
 }
 
 .cs2-card__text--muted {
-  color: #8aab8e;
+  color: #8a96aa;
 }
 
 .cs2-inline-code {
@@ -1229,7 +1239,7 @@
   background: rgba(255,255,255,0.1);
   padding: 1px 5px;
   border-radius: 4px;
-  color: #b2f5be;
+  color: #c5c0e8;
 }
 
 .cs2-card__stats {
@@ -1247,24 +1257,25 @@
 }
 
 .cs2-stat__val {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   font-variant-numeric: tabular-nums;
 }
 
 .cs2-stat__label {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
-  color: #8aab8e;
+  font-weight: 400;
+  color: #8a96aa;
 }
 
 /* ── Section wrapper ── */
 .cs2-section {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 .cs2-section__header {
@@ -1274,9 +1285,9 @@
 }
 
 .cs2-section__label {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   color: #999;
@@ -1289,15 +1300,7 @@
   background: #e8e8e8;
 }
 
-/* ── Process grid ── */
-.cs2-process-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-/* Browser mockup */
+/* ── Browser mockup (full-width em destaque) ── */
 .cs2-browser {
   border: 1px solid #e0e0e0;
   border-radius: 16px;
@@ -1336,7 +1339,7 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 3px 10px;
-  font-family: var(--font);
+  font-family: 'Courier New', monospace;
   font-size: 10px;
   color: #888;
   overflow: hidden;
@@ -1349,18 +1352,18 @@
   display: block;
 }
 
-/* Specs column */
-.cs2-process-specs {
-  display: flex;
-  flex-direction: column;
+/* ── Process cards (3 colunas abaixo do mockup) ── */
+.cs2-process-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
 .cs2-spec-card {
   background: #fff;
   border: 1px solid #e8e8e8;
-  border-radius: 20px;
-  padding: 22px 24px;
+  border-radius: 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1371,9 +1374,9 @@
 }
 
 .cs2-spec-card__title {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #999;
@@ -1381,8 +1384,8 @@
 
 /* Palette */
 .cs2-palette {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -1393,9 +1396,9 @@
 }
 
 .cs2-palette__swatch {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -1406,9 +1409,9 @@
 }
 
 .cs2-palette__name {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
 }
 
@@ -1440,6 +1443,7 @@
 }
 
 .cs2-typo__name {
+  font-family: 'Inter', sans-serif;
   color: #1a1a1a;
 }
 
@@ -1457,14 +1461,15 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
+  font-weight: 400;
   line-height: 1.6;
   color: #333;
 }
 
 .cs2-rationale__arrow {
-  color: #39a843;
+  color: #7b70bf;
   font-family: 'Courier New', monospace;
   font-size: 11px;
   flex-shrink: 0;
@@ -1490,52 +1495,41 @@
 }
 
 .cs2-highlight-card:hover {
-  border-color: #39a84360;
+  border-color: #7b70bf60;
 }
 
 .cs2-highlight-card__top {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.cs2-highlight-card__icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: #f0f7f1;
-  border: 1px solid #e0e8e1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
+  gap: 10px;
 }
 
 .cs2-highlight-card__title {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--navy);
   flex: 1;
+  letter-spacing: -0.01em;
 }
 
 .cs2-highlight-card__desc {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
+  font-weight: 400;
   line-height: 1.7;
   color: #666;
 }
 
 .cs2-code {
   margin: 0;
-  padding: 16px;
+  padding: 18px;
   border-radius: 14px;
   background: #1a1a2e;
-  color: #8aab8e;
+  color: #c5c0e8;
   font-family: 'Courier New', monospace;
   font-size: 11px;
-  line-height: 1.65;
+  line-height: 1.7;
   overflow-x: auto;
   flex: 1;
 }
@@ -1545,10 +1539,10 @@
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 24px;
-  padding: 48px;
+  padding: 56px 48px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -1556,32 +1550,35 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   max-width: 480px;
 }
 
 .cs2-result-card__title {
-  font-family: var(--font-heading);
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .cs2-result-card__title em {
   font-style: italic;
-  color: #39a843;
+  font-weight: 400;
+  color: #7b70bf;
 }
 
 .cs2-result-card__sub {
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-weight: 400;
   color: #888;
 }
 
 .cs2-demo-frame {
   width: 100%;
-  height: 620px;
+  height: 640px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid #e0e0e0;
@@ -1598,7 +1595,7 @@
 .cs2-result-card__actions {
   display: flex;
   gap: 12px;
-  padding-top: 16px;
+  padding-top: 24px;
   border-top: 1px solid #e8e8e8;
   width: 100%;
   justify-content: center;
@@ -1611,14 +1608,15 @@
   justify-content: space-between;
   padding-top: 24px;
   border-top: 1px solid #e8e8e8;
-  font-family: var(--font);
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
+  font-weight: 400;
   color: #999;
 }
 
 .cs2-footer a {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
   transition: opacity 0.2s;
 }
