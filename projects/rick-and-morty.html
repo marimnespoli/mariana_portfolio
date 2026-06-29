@@ -270,13 +270,23 @@ interface FilterState {
           </div>
 
           <!-- Live app embed -->
-          <div class="cs2-iframe-wrap">
-            <iframe
-              src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
-              title="Rick and Morty Character Explorer — live demo"
-              loading="lazy"
-              allowfullscreen
-            ></iframe>
+          <div class="cs2-iframe-outer">
+            <div class="cs2-iframe-bar">
+              <div class="cs2-iframe-dots">
+                <span class="d-red"></span>
+                <span class="d-yellow"></span>
+                <span class="d-green"></span>
+              </div>
+              <div class="cs2-iframe-url">wddm127-assignment2-rick-and-morty-beta.vercel.app</div>
+            </div>
+            <div class="cs2-iframe-wrap">
+              <iframe
+                src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
+                title="Rick and Morty Character Explorer — live demo"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
 
           <div class="cs2-result-card__actions">
