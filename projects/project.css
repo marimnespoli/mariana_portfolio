@@ -1321,6 +1321,13 @@
   background: #e8e8e8;
 }
 
+/* ── MacBook mockup wrapper ── */
+.cs2-macbook-wrap {
+  width: 80%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 /* ── Browser mockup (full-width em destaque) ── */
 .cs2-browser {
   border: 1px solid #e0e0e0;
