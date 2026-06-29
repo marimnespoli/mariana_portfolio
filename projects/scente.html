@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="project.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -26,140 +26,330 @@
     </nav>
   </header>
 
-  <main class="cs-main">
+  <main class="cs2-main">
+    <div class="cs2-wrap">
 
-    <!-- Hero -->
-    <div class="container">
-      <section class="cs-hero">
-        <h1 class="cs-title">Scenté</h1>
-        <p class="cs-title-sub">Candle E-Commerce</p>
+      <!-- ─── Header ─── -->
+      <header class="cs2-header">
+        <div class="cs2-header__top">
+          <div class="cs2-header__left">
+            <h1 class="cs2-title">
+              Scenté
+              <span class="cs2-title__sub">Candle E-Commerce</span>
+            </h1>
+            <div class="cs2-pills-row">
+              <span class="cs2-pill">HTML</span>
+              <span class="cs2-pill">CSS</span>
+              <span class="cs2-pill">Responsive Design</span>
+              <span class="cs2-pill">UI Design</span>
+            </div>
+          </div>
+          <div class="cs2-header__actions">
+            <a href="https://scent-website-sigma.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              Live Demo ↗
+            </a>
+            <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="cs2-btn cs2-btn--outline">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+        <div class="cs2-divider"></div>
+      </header>
+
+      <!-- ─── Goal / Approach ─── -->
+      <section class="cs2-cards-2col">
+
+        <div class="cs2-card">
+          <div class="cs2-card__num">01</div>
+          <h2 class="cs2-card__title">The Goal</h2>
+          <p class="cs2-card__text">
+            Design and build an editorial candle brand website with an autumn soul — warm tones, intentional layout, and a product grid that feels curated, not generic.
+          </p>
+          <p class="cs2-card__text">
+            The constraint: pure HTML and CSS, no JavaScript. Every layout had to be solved through the cascade — flexbox, grid, and carefully chosen breakpoints.
+          </p>
+        </div>
+
+        <div class="cs2-card">
+          <div class="cs2-card__num">02</div>
+          <h2 class="cs2-card__title">The Approach</h2>
+          <p class="cs2-card__text">
+            Responsive-first from the start. Each section was designed simultaneously for desktop, tablet, and mobile — not adapted after the fact. Breakpoints follow content needs, not arbitrary device widths.
+          </p>
+          <p class="cs2-card__text">
+            Typography and spacing scale fluidly. The visual identity — warm cream tones, serif accents, editorial whitespace — stays consistent across every viewport.
+          </p>
+          <div class="cs2-card__stats">
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">3</span>
+              <span class="cs2-stat__label">breakpoints</span>
+            </div>
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">0</span>
+              <span class="cs2-stat__label">JS dependencies</span>
+            </div>
+          </div>
+        </div>
+
       </section>
-    </div>
 
-    <!-- Metadata -->
-    <div class="container">
-      <div class="cs-meta-row">
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Role</p>
-          <p class="cs-meta-value">UI Designer · Developer</p>
+      <!-- ─── Desktop Interface ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Desktop</span>
+          <div class="cs2-section__rule"></div>
         </div>
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Tech</p>
-          <p class="cs-meta-value">HTML · CSS</p>
-        </div>
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Type</p>
-          <p class="cs-meta-value">UI Design</p>
-        </div>
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Year</p>
-          <p class="cs-meta-value">2024</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Mobile phones — full width -->
-    <div class="cs-phones-section">
-      <div class="cs-phones-strip">
-        <div class="cs-phone">
-          <img src="iphone-home-mockup.png" alt="Scenté — Home" />
-        </div>
-        <div class="cs-phone">
-          <img src="iphone-collection-mockup.png" alt="Scenté — Collection" />
-        </div>
-        <div class="cs-phone">
-          <img src="iphone-contact-mockup.png" alt="Scenté — Contact" />
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <!-- Overview text -->
-      <div class="cs-scente-overview">
-        <p class="cs-overview-label">Overview</p>
-        <h2 class="cs-overview-heading">An editorial candle brand<br>with an autumn soul</h2>
-        <p>Scenté is a candle e-commerce website featuring an Autumn collection. Built with HTML and CSS, the site focuses on clean layout, smooth navigation, and a warm, editorial aesthetic that reflects the brand identity.</p>
-        <p>Every section was designed to feel intentional — from the product grid to the typography choices — creating an immersive experience that evokes warmth and calm.</p>
-        <div class="cs-links cs-links--inline">
-          <a href="https://scent-website-sigma.vercel.app" target="_blank" class="cs-live-btn">View Live Site ↗</a>
-          <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="cs-live-btn cs-live-btn--outline">GitHub ↗</a>
-        </div>
-      </div>
-
-      <!-- Desktop + Tablet row -->
-      <div class="cs-all-devices">
-
-        <!-- MacBook -->
-        <div class="cs-device-macbook">
-          <div class="cs-macbook-wrap">
+        <div class="cs2-macbook-wrap">
           <div class="cs-macbook">
             <div class="cs-mb__lid"></div>
             <div class="cs-mb__dark"></div>
             <div class="cs-mb__screen">
-              <img class="cs-mb__site-img" src="scente-screenshot.png" alt="Scenté — Desktop" />
+              <img class="cs-mb__site-img" src="scente-screenshot.png" alt="Scenté — Desktop view" />
             </div>
             <div class="cs-mb__bottom-wrap">
               <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display:block;" viewBox="0 0 1008 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Bottom">
-                  <g id="Base">
+                <g id="BottomS">
+                  <g id="BaseS">
                     <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="#A3ACB1"/>
-                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#mb_grad0)"/>
+                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#mb_grad0_s)"/>
                   </g>
-                  <g id="BottomCurve">
+                  <g id="BottomCurveS">
                     <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="#647279"/>
-                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#mb_grad1)"/>
+                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#mb_grad1_s)"/>
                   </g>
-                  <g id="Groove">
+                  <g id="GrooveS">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="#96A1A8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#mb_grad2)"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#mb_grad2_s)"/>
                   </g>
                 </g>
                 <defs>
-                  <linearGradient id="mb_grad0" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#0D1012"/>
-                    <stop offset="0.03" stop-color="#CAD4DB"/>
-                    <stop offset="0.0625" stop-color="#242729"/>
-                    <stop offset="0.134" stop-color="#A3ACB1"/>
-                    <stop offset="0.866" stop-color="#A3ACB1"/>
-                    <stop offset="0.942" stop-color="#242729"/>
-                    <stop offset="0.971" stop-color="#CAD4DB"/>
-                    <stop offset="0.997" stop-color="#0D1012"/>
+                  <linearGradient id="mb_grad0_s" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0D1012"/><stop offset="0.03" stop-color="#CAD4DB"/>
+                    <stop offset="0.0625" stop-color="#242729"/><stop offset="0.134" stop-color="#A3ACB1"/>
+                    <stop offset="0.866" stop-color="#A3ACB1"/><stop offset="0.942" stop-color="#242729"/>
+                    <stop offset="0.971" stop-color="#CAD4DB"/><stop offset="0.997" stop-color="#0D1012"/>
                   </linearGradient>
-                  <linearGradient id="mb_grad1" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#7A7F83"/>
-                    <stop offset="1" stop-color="#0B0B0E"/>
+                  <linearGradient id="mb_grad1_s" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7A7F83"/><stop offset="1" stop-color="#0B0B0E"/>
                   </linearGradient>
-                  <linearGradient id="mb_grad2" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3C3C3C"/>
-                    <stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
-                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/>
-                    <stop offset="1" stop-color="#444444"/>
+                  <linearGradient id="mb_grad2_s" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3C3C3C"/><stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
+                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/><stop offset="1" stop-color="#444444"/>
                   </linearGradient>
                 </defs>
               </svg>
             </div>
           </div>
-          </div>
         </div>
+      </section>
 
-        <!-- Tablet -->
-        <div class="cs-device-tablet">
-          <div class="cs-tablet">
-            <div class="cs-tablet__camera"></div>
-            <div class="cs-tablet__screen">
-              <img src="Home page- tablet.png" alt="Scenté — Tablet" />
+      <!-- ─── Responsive — Tablet + Mobile ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Responsive</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+        <p class="cs2-section__caption">Same content, every screen — tablet and mobile layouts designed in parallel</p>
+
+        <div class="cs2-responsive-row">
+
+          <!-- Tablet -->
+          <div class="cs2-responsive-col cs2-responsive-col--tablet">
+            <div class="cs2-device-label">Tablet</div>
+            <div class="cs-tablet">
+              <div class="cs-tablet__camera"></div>
+              <div class="cs-tablet__screen">
+                <img src="Home page- tablet.png" alt="Scenté — Tablet" />
+              </div>
             </div>
           </div>
+
+          <!-- Mobile phones -->
+          <div class="cs2-responsive-col cs2-responsive-col--mobile">
+            <div class="cs2-device-label">Mobile</div>
+            <div class="cs2-phones-row">
+              <div class="cs2-phone-wrap">
+                <img src="iphone-home-mockup.png" alt="Scenté — Home mobile" />
+              </div>
+              <div class="cs2-phone-wrap">
+                <img src="iphone-collection-mockup.png" alt="Scenté — Collection mobile" />
+              </div>
+              <div class="cs2-phone-wrap">
+                <img src="iphone-contact-mockup.png" alt="Scenté — Contact mobile" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── Technical Highlights ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Technical Highlights</span>
+          <div class="cs2-section__rule"></div>
         </div>
 
-      </div>
+        <div class="cs2-highlights-grid">
 
-      <!-- Nav -->
-      <div class="cs-nav">
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">CSS Grid Layout</h3>
+              <span class="cs2-pill cs2-pill--sm">layout</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Product grid adapts from 3 columns on desktop to 2 on tablet to 1 on mobile — all in CSS, no JS resize listeners needed.</p>
+            <pre class="cs2-code"><code>.product-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Fluid Typography</h3>
+              <span class="cs2-pill cs2-pill--sm">type</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Hero headline scales between viewport widths using <code class="cs2-inline-code">clamp()</code> — no hard breakpoints needed for type, no layout shift between sizes.</p>
+            <pre class="cs2-code"><code>.hero__title {
+  font-size: clamp(
+    2rem,
+    5vw + 1rem,
+    5.5rem
+  );
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero__sub {
+  font-size: clamp(
+    0.9rem,
+    1.5vw + 0.5rem,
+    1.25rem
+  );
+  color: var(--muted);
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Nav Collapse</h3>
+              <span class="cs2-pill cs2-pill--sm">responsive</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Navigation collapses to a stacked layout on mobile using flexbox direction change — no hamburger menu JS, just a CSS-driven reflow.</p>
+            <pre class="cs2-code"><code>.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .nav__logo {
+    margin-bottom: 4px;
+  }
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Brand Tokens</h3>
+              <span class="cs2-pill cs2-pill--sm">css vars</span>
+            </div>
+            <p class="cs2-highlight-card__desc">All brand colours and spacing live in CSS custom properties on <code class="cs2-inline-code">:root</code> — one change propagates site-wide, keeping the autumn palette consistent.</p>
+            <pre class="cs2-code"><code>:root {
+  --cream:   #F5EFE6;
+  --warm:    #C8A97E;
+  --dark:    #2C1F14;
+  --muted:   #8A7562;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 120px;
+
+  --radius:  4px;
+  --radius-lg: 12px;
+}</code></pre>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── Final Result ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Final Result</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-result-card">
+          <div class="cs2-result-card__header">
+            <h2 class="cs2-result-card__title">
+              An editorial brand,<br><em>live on every screen.</em>
+            </h2>
+            <p class="cs2-result-card__sub">Resize the window — the layout adapts</p>
+          </div>
+
+          <div class="cs2-iframe-outer">
+            <div class="cs2-iframe-bar">
+              <div class="cs2-iframe-dots">
+                <span class="d-red"></span>
+                <span class="d-yellow"></span>
+                <span class="d-green"></span>
+              </div>
+              <div class="cs2-iframe-url">scent-website-sigma.vercel.app</div>
+            </div>
+            <div class="cs2-iframe-wrap">
+              <iframe
+                src="https://scent-website-sigma.vercel.app"
+                title="Scenté — live demo"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="cs2-result-card__actions">
+            <a href="https://scent-website-sigma.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              View Live ↗
+            </a>
+            <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="cs2-btn cs2-btn--outline">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Nav ─── -->
+      <footer class="cs2-footer">
         <a href="fortune-cookie.html">← Fortune Cookie</a>
+        <span>Scenté · 2024</span>
         <a href="celestia.html">Celestia →</a>
-      </div>
+      </footer>
 
     </div>
   </main>
