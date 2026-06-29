@@ -1023,3 +1023,604 @@
   transition: opacity 0.2s;
 }
 .cs-nav a:hover { opacity: 0.6; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   CS2 — Rick & Morty case study (new layout)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Layout shell ── */
+.cs2-main {
+  padding: 40px 0 80px;
+}
+
+.cs2-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* ── Header ── */
+.cs2-header {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs2-header__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cs2-header__left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs2-header__tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs2-year {
+  font-family: var(--font);
+  font-size: 12px;
+  color: #999;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs2-tag {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 3px 12px;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  color: #666;
+  background: #fff;
+}
+
+.cs2-tag--sm {
+  font-size: 10px;
+  padding: 2px 10px;
+}
+
+.cs2-title {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--navy);
+  line-height: 1.0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs2-title__sub {
+  display: block;
+  font-style: italic;
+  color: #39a843;
+}
+
+.cs2-tech-stack {
+  font-family: var(--font);
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.2px;
+}
+
+.cs2-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+
+.cs2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 100px;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.cs2-btn:hover { opacity: 0.75; }
+
+.cs2-btn--primary {
+  background: var(--navy);
+  color: #fff;
+}
+
+.cs2-btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+}
+
+.cs2-divider {
+  height: 1px;
+  background: #e8e8e8;
+}
+
+/* ── Problem / Solution cards ── */
+.cs2-cards-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cs2-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cs2-card--dark {
+  background: #1a2e1c;
+  border-color: #1a2e1c;
+  color: #fff;
+}
+
+.cs2-card__num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: #39a843;
+}
+
+.cs2-card__num--light {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.cs2-card__title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0;
+}
+
+.cs2-card--dark .cs2-card__title {
+  color: #fff;
+}
+
+.cs2-card__text {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.cs2-card__text--muted {
+  color: #8aab8e;
+}
+
+.cs2-inline-code {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  background: rgba(255,255,255,0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #b2f5be;
+}
+
+.cs2-card__stats {
+  display: flex;
+  gap: 28px;
+  padding-top: 16px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cs2-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs2-stat__val {
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs2-stat__label {
+  font-family: var(--font);
+  font-size: 11px;
+  color: #8aab8e;
+}
+
+/* ── Section wrapper ── */
+.cs2-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cs2-section__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs2-section__label {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.cs2-section__rule {
+  flex: 1;
+  height: 1px;
+  background: #e8e8e8;
+}
+
+/* ── Process grid ── */
+.cs2-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Browser mockup */
+.cs2-browser {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.cs2-browser__bar {
+  background: #f0f0f0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs2-browser__dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.cs2-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+.cs2-dot--red    { background: rgba(192,57,43,0.4); }
+.cs2-dot--yellow { background: rgba(212,172,13,0.4); }
+.cs2-dot--green  { background: rgba(39,174,96,0.4); }
+
+.cs2-browser__url {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-family: var(--font);
+  font-size: 10px;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cs2-browser__screen img {
+  width: 100%;
+  display: block;
+}
+
+/* Specs column */
+.cs2-process-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs2-spec-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs2-spec-card--muted {
+  background: #f7f7f5;
+}
+
+.cs2-spec-card__title {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+/* Palette */
+.cs2-palette {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cs2-palette__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs2-palette__swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.cs2-palette__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs2-palette__name {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.cs2-palette__hex {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #999;
+}
+
+/* Typography */
+.cs2-typo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs2-typo__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cs2-typo__row--last {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.cs2-typo__name {
+  color: #1a1a1a;
+}
+
+/* Rationale list */
+.cs2-rationale {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.cs2-rationale li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cs2-rationale__arrow {
+  color: #39a843;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Technical Highlights ── */
+.cs2-highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cs2-highlight-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+
+.cs2-highlight-card:hover {
+  border-color: #39a84360;
+}
+
+.cs2-highlight-card__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs2-highlight-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #f0f7f1;
+  border: 1px solid #e0e8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cs2-highlight-card__title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  flex: 1;
+}
+
+.cs2-highlight-card__desc {
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.cs2-code {
+  margin: 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: #1a1a2e;
+  color: #8aab8e;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.65;
+  overflow-x: auto;
+  flex: 1;
+}
+
+/* ── Final Result ── */
+.cs2-result-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.cs2-result-card__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.cs2-result-card__title {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.cs2-result-card__title em {
+  font-style: italic;
+  color: #39a843;
+}
+
+.cs2-result-card__sub {
+  font-family: var(--font);
+  font-size: 14px;
+  color: #888;
+}
+
+.cs2-demo-frame {
+  width: 100%;
+  height: 620px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+.cs2-demo-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.cs2-result-card__actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e8e8;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Footer nav ── */
+.cs2-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+  font-family: var(--font);
+  font-size: 12px;
+  color: #999;
+}
+
+.cs2-footer a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: opacity 0.2s;
+}
+
+.cs2-footer a:hover { opacity: 0.6; }
