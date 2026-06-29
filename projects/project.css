@@ -1379,11 +1379,12 @@
 }
 
 .cs2-iframe-wrap iframe {
-  width: 167%;
+  width: 1440px;
   height: 900px;
   border: none;
   display: block;
   zoom: 0.6;
+  max-width: none;
 }
 
 /* ── MacBook mockup wrapper ── */
