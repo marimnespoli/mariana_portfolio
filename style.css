@@ -144,14 +144,14 @@ main {
 
 .header__nav-link {
   position: relative;
-  padding: 8px 26px;
+  padding: 9px 30px;
   border: none;
   font-size: 13.5px;
   font-weight: 500;
   color: var(--text);
-  background: transparent;
-  letter-spacing: 0.04em;
-  transition: color 0.25s;
+  background: rgba(123, 112, 191, 0.07);
+  letter-spacing: 0.07em;
+  transition: color 0.25s, background 0.25s;
 }
 
 .header__nav-link::before {
@@ -159,13 +159,14 @@ main {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(17, 17, 17, 0.55);
+  border: 1.5px solid rgba(9, 31, 91, 0.3);
   pointer-events: none;
   transition: border-color 0.25s;
 }
 
 .header__nav-link:hover {
   color: #7b6fbf;
+  background: rgba(123, 112, 191, 0.12);
 }
 
 .header__nav-link:hover::before {
