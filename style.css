@@ -114,6 +114,28 @@ main {
   display: block;
 }
 
+/* Horizontal divider below header */
+.header__rule {
+  display: flex;
+  align-items: center;
+  max-width: var(--max-w);
+  margin: 12px auto 0;
+  padding: 0 32px;
+}
+
+.header__rule-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.header__rule-star {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-left: -1px;
+}
+
 /* Nav — organic hand-drawn pills */
 .header__nav {
   display: flex;
