@@ -378,7 +378,7 @@ main {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 250px 1fr;
   gap: 48px;
   width: 100%;
   max-width: 1000px;
@@ -388,7 +388,49 @@ main {
 
 .about-photo-col {
   display: flex;
+  flex-direction: column;
   align-self: start;
+  gap: 16px;
+}
+
+.about-cta {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 9px 16px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.about-cta:hover {
+  border-color: #7b70bf;
+  color: #7b70bf;
+}
+
+.about-panel {
+  background: #f8f8fa;
+  border-radius: 24px;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-panel__section {
+  padding: 20px 0;
+}
+
+.about-panel__section:first-child {
+  padding-top: 0;
+}
+
+.about-panel__divider {
+  height: 1px;
+  background: #e8e8ee;
+  flex-shrink: 0;
 }
 
 .about-photo-frame {
@@ -418,9 +460,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: #f7f7f9;
-  border-radius: 16px;
-  padding: 18px 20px;
 }
 
 .about-heading {
@@ -457,6 +496,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.about-panel .about-card,
+.about-panel .about-interests {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 
 .about-card__badge {
@@ -521,7 +567,7 @@ main {
 .about-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 32px;
 }
 
 .about-edu-row {
@@ -615,6 +661,10 @@ main {
 
   .about-bottom-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-panel {
+    padding: 24px 20px;
   }
 }
 

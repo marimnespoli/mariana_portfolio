@@ -31,26 +31,29 @@
       <div class="container">
         <div class="about-grid">
 
-          <!-- Left: photo -->
+          <!-- Left: photo anchor column -->
           <div class="about-photo-col">
             <div class="about-photo-frame">
               <img src="foto.jpg" alt="Mariana Mesquita" class="about-photo" />
             </div>
+            <a href="mailto:marimnespoli@gmail.com" class="about-cta">Get in touch ↗</a>
           </div>
 
-          <!-- Right: sub-grid -->
-          <div class="about-content">
+          <!-- Right: unified content panel -->
+          <div class="about-panel">
 
-            <!-- Row 1: heading + bio -->
-            <div class="about-bio-card">
+            <!-- Bio -->
+            <div class="about-panel__section">
               <h3 class="about-heading">About me</h3>
               <p class="about-bio">
                 Sou uma <strong>front-end developer e designer</strong> focada em traduzir conceitos complexos em interfaces digitais intuitivas. Com formação recente em <strong>Web Design e Desenvolvimento</strong> pelo Humber Polytechnic, meu trabalho é movido pela intersecção entre lógica estrutural e estética visual. Acredito que o design deve ser, acima de tudo, <strong>funcional e escalável</strong>, e busco constantemente aplicar práticas modernas de front-end para criar experiências que sejam tão eficientes quanto bonitas.
               </p>
             </div>
 
-            <!-- Row 2: Education -->
-            <div class="about-card about-card--full">
+            <div class="about-panel__divider"></div>
+
+            <!-- Education -->
+            <div class="about-panel__section">
               <p class="about-card__label">Education</p>
               <div class="about-edu-row">
                 <span class="about-card__badge">2020 – 2024</span>
@@ -62,10 +65,12 @@
               </div>
             </div>
 
-            <!-- Row 3: Skills + Interests side by side -->
+            <div class="about-panel__divider"></div>
+
+            <!-- Skills + Interests side by side -->
             <div class="about-bottom-grid">
 
-              <div class="about-card">
+              <div class="about-panel__section">
                 <p class="about-card__label">Skills</p>
                 <div class="about-skill-groups">
                   <div class="about-skill-group">
@@ -95,7 +100,7 @@
                 </div>
               </div>
 
-              <div class="about-interests">
+              <div class="about-panel__section">
                 <p class="about-card__label">What inspires me</p>
                 <div class="about-interests__list">
                   <span class="about-interest">
