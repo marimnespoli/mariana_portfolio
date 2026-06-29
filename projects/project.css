@@ -1007,6 +1007,74 @@
   border-radius: 100px;
 }
 
+/* ── Editorial layout ── */
+.cs-ed-hero {
+  background: #f0ece6;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 48px;
+  height: 480px;
+}
+
+.cs-ed-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.cs-ed-body {
+  max-width: 740px;
+  margin-bottom: 72px;
+}
+
+.cs-ed-title {
+  font-family: var(--font);
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cs-ed-meta {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 28px;
+}
+
+.cs-ed-text {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cs-ed-text code {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  background: #f0f0f0;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #333;
+}
+
+.cs-ed-section {
+  margin-top: 48px;
+}
+
+.cs-ed-heading {
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+
 /* ── Bottom nav ── */
 .cs-nav {
   display: flex;
