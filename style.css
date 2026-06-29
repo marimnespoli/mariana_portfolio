@@ -93,11 +93,11 @@ main {
   flex-shrink: 0;
 }
 
-/* Header row — logo left, nav right */
+/* Header row — logo center, nav right */
 .header-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 24px 32px 0;
   max-width: var(--max-w);
   margin: 0 auto;
@@ -106,6 +106,13 @@ main {
 .header__logo {
   display: flex;
   align-items: center;
+  justify-self: center;
+  grid-column: 2;
+}
+
+.header__nav {
+  grid-column: 3;
+  justify-self: end;
 }
 
 .header__logo-img {
