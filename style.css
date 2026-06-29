@@ -295,8 +295,8 @@ main {
 
 .hero__photo-frame {
   background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
-  padding: 2px;
-  border-radius: 12px;
+  padding: 4px;
+  border-radius: 14px;
   flex-shrink: 0;
   display: inline-flex;
 }
@@ -381,7 +381,7 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 52px 0 80px;
+  padding: 28px 0 80px;
 }
 
 .work__title {
@@ -391,7 +391,7 @@ main {
   letter-spacing: 2px;
   margin-bottom: 40px;
   text-align: center;
-  color: var(--text);
+  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -412,7 +412,6 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: start;
 }
 
 /* ─── PROJECT CARD ───────────────────────────────────────────── */
@@ -440,7 +439,7 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .project-card__img-wrap img[src="cookie.svg"] {

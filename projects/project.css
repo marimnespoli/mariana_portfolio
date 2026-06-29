@@ -86,6 +86,37 @@
   display: block;
 }
 
+/* ── Project metadata row ── */
+.cs-meta-row {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.cs-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-meta-label {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.cs-meta-value {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
 /* ── MacBook + overview ── */
 .cs-macbook-row {
   display: grid;
