@@ -1374,98 +1374,21 @@
 }
 
 /* ── Process cards (3 colunas abaixo do mockup) ── */
-.cs2-process-cards {
+/* ── Engineering Deep Dive grid (3 cols) ── */
+.cs2-deepdive-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  align-items: start;
 }
 
-.cs2-spec-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 24px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.cs2-spec-card--muted {
-  background: #f7f7f5;
-}
-
-.cs2-spec-card__title {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #999;
-}
-
-/* Palette */
-.cs2-palette {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.cs2-palette__item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cs2-palette__swatch {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.cs2-palette__info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.cs2-palette__name {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.cs2-palette__hex {
-  font-family: 'Courier New', monospace;
-  font-size: 10px;
-  color: #999;
-}
-
-/* Typography */
-.cs2-typo {
-  display: flex;
-  flex-direction: column;
-}
-
-.cs2-typo__row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.cs2-typo__row--last {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.cs2-typo__name {
-  font-family: 'Inter', sans-serif;
-  color: #1a1a1a;
+/* stats variant — no top border, flush at top of card */
+.cs2-card__stats--top {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 /* Rationale list */
@@ -1645,21 +1568,28 @@
 .cs2-footer a:hover { opacity: 0.6; }
 
 /* ── Character gallery (Final Result) ── */
-.cs2-char-gallery {
+/* ── Final Result layout: iframe left + char stack right ── */
+.cs2-result-layout {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr 200px;
+  gap: 16px;
   width: 100%;
+  align-items: start;
+}
+
+.cs2-char-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .cs2-char-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   border: 1px solid #e8e8e8;
   border-radius: 16px;
-  padding: 14px 10px;
+  padding: 12px;
   transition: border-color 0.18s;
 }
 
@@ -1668,19 +1598,25 @@
 }
 
 .cs2-char-card img {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 52px;
+  height: 52px;
   object-fit: cover;
   border-radius: 10px;
+  flex-shrink: 0;
   display: block;
+}
+
+.cs2-char-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .cs2-char-name {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 700;
-  color: var(--navy);
-  text-align: center;
+  color: #1a1a1a;
   line-height: 1.3;
 }
 
@@ -1688,5 +1624,4 @@
   font-family: 'Courier New', monospace;
   font-size: 10px;
   color: #999;
-  text-align: center;
 }
