@@ -1153,21 +1153,34 @@
   font-size: 13px;
   font-weight: 700;
   padding: 10px 22px;
-  border-radius: 100px;
-  transition: opacity 0.15s;
+  border-radius: 6px;
+  transition: border-color 0.18s, color 0.18s;
   white-space: nowrap;
 }
-.cs2-btn:hover { opacity: 0.75; }
+.cs2-btn:hover { opacity: 1; }
 
 .cs2-btn--primary {
-  background: var(--navy);
-  color: #fff;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.cs2-btn--primary:hover {
+  border-color: #7b70bf;
+  color: #7b70bf;
+  opacity: 1;
 }
 
 .cs2-btn--outline {
   background: transparent;
-  border: 1.5px solid var(--navy);
-  color: var(--navy);
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+.cs2-btn--outline:hover {
+  border-color: #7b70bf;
+  color: #7b70bf;
+  opacity: 1;
 }
 
 .cs2-divider {
