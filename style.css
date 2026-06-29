@@ -361,8 +361,8 @@ main {
 
 .about-simple {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 72px;
+  grid-template-columns: 240px 1fr;
+  gap: 64px;
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
