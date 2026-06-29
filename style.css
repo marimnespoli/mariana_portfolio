@@ -112,7 +112,6 @@ main {
   width: 72px;
   height: auto;
   display: block;
-  filter: brightness(0) opacity(0.6);
 }
 
 /* Nav — organic hand-drawn pills */
