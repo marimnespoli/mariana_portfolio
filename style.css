@@ -377,11 +377,21 @@ main {
   margin-bottom: 20px;
 }
 
+.about-simple__text {
+  max-width: 540px;
+}
+
 .about-simple__bio {
   font-size: 16px;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 20px;
+}
+
+.about-simple__bio:last-child {
+  margin-bottom: 0;
 }
 
 .about-simple__bio strong {
