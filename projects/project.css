@@ -1185,8 +1185,8 @@
 }
 
 .cs2-card--dark {
-  background: #1a1a2e;
-  border-color: #1a1a2e;
+  background: #1b3022;
+  border-color: #1b3022;
   color: #fff;
 }
 
@@ -1230,7 +1230,7 @@
 }
 
 .cs2-card__text--muted {
-  color: #8a96aa;
+  color: #9db8a4;
 }
 
 .cs2-inline-code {
@@ -1268,7 +1268,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  color: #8a96aa;
+  color: #9db8a4;
 }
 
 /* ── Section wrapper ── */
@@ -1525,8 +1525,8 @@
   margin: 0;
   padding: 18px;
   border-radius: 14px;
-  background: #1a1a2e;
-  color: #c5c0e8;
+  background: #1b3022;
+  color: #b8d4bf;
   font-family: 'Courier New', monospace;
   font-size: 11px;
   line-height: 1.7;
@@ -1539,10 +1539,10 @@
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 24px;
-  padding: 56px 48px;
+  padding: 64px 56px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 
