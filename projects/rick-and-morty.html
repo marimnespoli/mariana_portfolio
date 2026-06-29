@@ -265,6 +265,7 @@ interface FilterState {
                 <option value="robot">Robot</option>
                 <option value="unknown">Unknown</option>
               </select>
+              <button id="rm-random" class="cs2-btn cs2-btn--outline cs2-miniapp__random">Random</button>
             </div>
 
             <div id="rm-grid" class="cs2-miniapp__grid">
@@ -322,6 +323,30 @@ interface FilterState {
             document.getElementById('rm-status').addEventListener('change', e => { filters.status = e.target.value; fetchAndRender(); });
             document.getElementById('rm-gender').addEventListener('change', e => { filters.gender = e.target.value; fetchAndRender(); });
             document.getElementById('rm-species').addEventListener('change', e => { filters.species = e.target.value; fetchAndRender(); });
+            document.getElementById('rm-random').addEventListener('click', async () => {
+              const randomId = Math.floor(Math.random() * 826) + 1;
+              grid.innerHTML = '<p class="cs2-miniapp__loading">Loading…</p>';
+              try {
+                const res = await fetch(`${BASE}/${randomId}`);
+                if (!res.ok) throw new Error('not found');
+                const c = await res.json();
+                grid.innerHTML = `
+                  <div class="cs2-rm-card">
+                    <img src="${c.image}" alt="${c.name}" loading="lazy" />
+                    <div class="cs2-rm-card__body">
+                      <span class="cs2-rm-card__name">${c.name}</span>
+                      <span class="cs2-rm-card__meta">
+                        <span class="cs2-rm-dot" style="background:${statusDot(c.status)}"></span>
+                        ${c.status}
+                      </span>
+                      <span class="cs2-rm-card__meta">${c.species}</span>
+                      <span class="cs2-rm-card__gender">${c.gender}</span>
+                    </div>
+                  </div>`;
+              } catch {
+                grid.innerHTML = '<p class="cs2-miniapp__loading">No character found.</p>';
+              }
+            });
 
             fetchAndRender();
           })();

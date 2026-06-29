@@ -1725,8 +1725,15 @@
 
 .cs2-miniapp__filters {
   display: grid;
-  grid-template-columns: 1fr repeat(3, auto);
+  grid-template-columns: 1fr repeat(3, auto) auto;
   gap: 10px;
+}
+
+.cs2-miniapp__random {
+  font-size: 13px;
+  padding: 0 16px;
+  height: 38px;
+  white-space: nowrap;
 }
 
 .cs2-miniapp__input,
