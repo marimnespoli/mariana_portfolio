@@ -151,7 +151,7 @@ main {
   color: var(--text);
   background: transparent;
   letter-spacing: 0.04em;
-  transition: opacity 0.15s, background 0.15s;
+  transition: color 0.25s;
 }
 
 .header__nav-link::before {
@@ -161,11 +161,15 @@ main {
   border-radius: 50%;
   border: 1px solid rgba(17, 17, 17, 0.55);
   pointer-events: none;
+  transition: border-color 0.25s;
 }
 
 .header__nav-link:hover {
-  opacity: 0.55;
-  background: rgba(9, 31, 91, 0.08);
+  color: #7b6fbf;
+}
+
+.header__nav-link:hover::before {
+  border-color: #7b6fbf;
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
