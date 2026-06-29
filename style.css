@@ -157,12 +157,12 @@ main {
   position: absolute;
   left: -20px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-6px);
   color: #7b70bf;
   font-size: 10px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header__nav-link:hover {
@@ -171,6 +171,7 @@ main {
 
 .header__nav-link:hover::before {
   opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
@@ -294,8 +295,8 @@ main {
 
 .hero__photo-frame {
   background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
-  padding: 4px;
-  border-radius: 14px;
+  padding: 2px;
+  border-radius: 12px;
   flex-shrink: 0;
   display: inline-flex;
 }
@@ -380,28 +381,38 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 100px 0 80px;
+  padding: 52px 0 80px;
 }
 
 .work__title {
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-bottom: 40px;
   text-align: center;
-  color: var(--navy);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.work__title-star {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 /* 3 columns on desktop */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 360px));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: center;
+  justify-content: start;
 }
 
 /* ─── PROJECT CARD ───────────────────────────────────────────── */
