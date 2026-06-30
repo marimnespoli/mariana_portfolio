@@ -46,30 +46,6 @@
       display: block;
     }
 
-    /* Vertical divider */
-    .about-divider {
-      width: 1px;
-      align-self: stretch;
-      background: #c8c8c8;
-      position: relative;
-      margin: 0 auto;
-      flex-shrink: 0;
-    }
-
-    .about-divider::before {
-      content: '+';
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--font);
-      font-size: 14px;
-      color: #999;
-      background: var(--bg);
-      padding: 0 2px;
-      line-height: 1;
-    }
-
     /* Text side */
     .about-text {
       padding-top: 80px;
@@ -226,7 +202,9 @@
           </div>
         </div>
 
-        <div class="about-divider" aria-hidden="true"></div>
+        <div class="hero__divider" aria-hidden="true">
+          <img class="hero__divider-star" src="Vector (1) copy.png" alt="" />
+        </div>
 
         <div class="about-text">
           <h1 class="about-heading">I'm Mariana Mesquita.</h1>
