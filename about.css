@@ -1,47 +1,46 @@
 /* ─── ABOUT PAGE ─────────────────────────────────────────────── */
 
 .ab-main {
-  padding: 64px 0 100px;
+  padding: 56px 0 100px;
 }
 
-/* ── Hero ───────────────────────────────────────────────────── */
+/* ── Hero: Bio (left) + Photo (right) ───────────────────────── */
 .ab-hero {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 80px;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 72px;
   align-items: start;
-  margin-bottom: 72px;
+  margin-bottom: 64px;
 }
 
 .ab-hero__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
 }
 
 .ab-title {
   font-family: 'Inter', sans-serif;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
   color: #091f5b;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-  margin-bottom: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  margin: 0 0 24px;
 }
 
 .ab-bio {
   font-family: 'Inter', sans-serif;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 400;
-  color: #444;
+  color: #555;
   line-height: 1.75;
-  margin-bottom: 16px;
-  max-width: 560px;
+  margin: 0 0 14px;
+  max-width: 520px;
 }
 
 .ab-bio strong {
-  font-weight: 600;
+  font-weight: 700;
   color: #111;
 }
 
@@ -54,16 +53,16 @@
 .ab-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
   color: #111;
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
   border-radius: 100px;
-  padding: 9px 20px;
-  transition: border-color 0.2s, color 0.2s;
+  padding: 8px 18px;
   text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  margin-top: 4px;
 }
 
 .ab-btn:hover {
@@ -71,11 +70,15 @@
   color: #7b70bf;
 }
 
+.ab-hero__right {
+  /* photo column */
+}
+
 .ab-photo {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top;
 }
@@ -83,62 +86,63 @@
 /* ── Education + Skills ─────────────────────────────────────── */
 .ab-info {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 220px 1fr;
   gap: 48px;
   align-items: start;
-  padding-top: 48px;
-  border-top: 1px solid #e8e8e8;
-  margin-bottom: 80px;
+  margin-bottom: 72px;
 }
 
 .ab-section-title {
   font-family: 'Inter', sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #111;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
+  margin: 0 0 20px;
 }
 
+/* Education */
 .ab-edu__course {
   font-family: 'Inter', sans-serif;
-  font-size: 14.5px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: #111;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .ab-edu__school {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-style: italic;
   color: #666;
-  margin-bottom: 14px;
+  margin: 0 0 14px;
 }
 
 .ab-edu__badge {
   display: inline-block;
   font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
   color: #111;
-  border: 1px solid #ccc;
+  border: 1px solid #bbb;
   border-radius: 100px;
   padding: 5px 14px;
 }
 
+/* Skills */
 .ab-skills__grid {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 32px;
+  row-gap: 14px;
+  column-gap: 24px;
 }
 
 .ab-skills__grid li {
   font-family: 'Inter', sans-serif;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 400;
   color: #333;
   line-height: 1.4;
@@ -146,31 +150,31 @@
 
 /* ── When Not Working ───────────────────────────────────────── */
 .ab-when {
-  border-top: 1px solid #e8e8e8;
-  padding-top: 56px;
+  border-top: 1px solid #e4e4e4;
+  padding-top: 52px;
 }
 
 .ab-when__title {
   font-family: 'Inter', sans-serif;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: #111;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 36px;
+  margin: 0 0 32px;
 }
 
 .ab-when__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .ab-when__img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   display: block;
 }
 
@@ -178,17 +182,17 @@
 @media (max-width: 860px) {
   .ab-hero {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 
   .ab-hero__right {
     order: -1;
-    max-width: 280px;
+    max-width: 260px;
   }
 
   .ab-info {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 
   .ab-when__grid {
@@ -197,6 +201,6 @@
 }
 
 @media (max-width: 500px) {
-  .ab-title { font-size: 34px; }
-  .ab-when__grid { grid-template-columns: repeat(2, 1fr); }
+  .ab-title { font-size: 28px; }
+  .ab-when__title { font-size: 24px; }
 }
