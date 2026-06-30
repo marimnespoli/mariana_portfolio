@@ -63,13 +63,20 @@
 
     .about-heading {
       font-family: var(--font-heading);
-      font-size: 56px;
+      font-size: 40px;
       font-weight: 600;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.04em;
       color: var(--navy);
       line-height: 1.0;
-      text-transform: uppercase;
+      white-space: nowrap;
       margin-bottom: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .about-heading {
+        font-size: 28px;
+        white-space: normal;
+      }
     }
 
     .about-subtitle {
@@ -228,7 +235,7 @@
         </div>
 
         <div class="about-text">
-          <h1 class="about-heading">Mariana Mesquita</h1>
+          <h1 class="about-heading">I'm Mariana Mesquita</h1>
           <p class="about-subtitle">Web Designer & Front-end Developer</p>
           <div class="about-body">
             <p>Based in <strong>Toronto</strong>, I blend creative design with technical implementation to build intuitive and purposeful digital experiences. From initial concepts and Figma prototypes to fully functional code, I enjoy turning ideas into thoughtful products using modern, AI-assisted workflows. Fueled by coffee and driven by curiosity.</p>
