@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Mariana Mesquita</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="header-row">
     <div class="header__logo">
       <a href="index.html"><img src="svg.svg" alt="Mariana Mesquita" class="header__logo-img" /></a>
@@ -26,34 +26,74 @@
     </nav>
   </header>
 
-  <main>
-    <section class="about about--page">
-      <div class="container">
-        <div class="about-simple">
+  <main class="ab-main">
+    <div class="container">
 
-          <!-- Photo -->
-          <div class="about-photo-frame">
-            <img src="foto.jpg" alt="Mariana Mesquita" class="about-photo" />
-          </div>
+      <!-- ── HERO: Bio + Photo ──────────────────────────────── -->
+      <div class="ab-hero">
 
-          <!-- Bio -->
-          <div class="about-simple__text">
-            <h1 class="about-simple__name">I'm Mariana Mesquita.</h1>
-            <p class="about-simple__bio">
-              <strong>Front-end developer e designer</strong> focada em traduzir conceitos complexos em interfaces intuitivas. Com formação recente pela Humber Polytechnic, meu trabalho busca a intersecção entre lógica estrutural e estética visual.
-            </p>
-            <p class="about-simple__bio">
-              Acredito que o design deve ser <strong>funcional</strong> e <strong>escalável</strong>. Busco constantemente aplicar práticas modernas de front-end para criar experiências que sejam tão eficientes quanto bonitas.
-            </p>
-          </div>
+        <div class="ab-hero__left">
+          <h1 class="ab-title">I'm Mariana Mesquita.</h1>
 
+          <p class="ab-bio">
+            <strong>Web designer &amp; developer based in Toronto, Canada.</strong>
+            I craft intuitive digital experiences by bridging the gap between
+            high-fidelity UI/UX design and clean, scalable code.
+          </p>
+
+          <p class="ab-bio">
+            My workflow combines aesthetic design principles with AI-assisted
+            development to turn complex concepts into thoughtful, functional products.
+            From early wireframes to final implementation.
+          </p>
+
+          <p class="ab-bio ab-bio--italic">Fueled by coffee, driven by curiosity.</p>
+
+          <a href="mailto:marimnespoli@gmail.com" class="ab-btn">Get in touch +</a>
         </div>
 
-        <div class="about-page-nav">
-          <a href="index.html">← back to portfolio</a>
+        <div class="ab-hero__right">
+          <img src="foto.jpg" alt="Mariana Mesquita" class="ab-photo" />
+        </div>
+
+      </div>
+
+      <!-- ── EDUCATION + SKILLS ─────────────────────────────── -->
+      <div class="ab-info">
+
+        <div class="ab-edu">
+          <h2 class="ab-section-title">Education</h2>
+          <p class="ab-edu__course">Web design and development</p>
+          <p class="ab-edu__school">Humber Polytechnic</p>
+          <span class="ab-edu__badge">+ 2020 – 2024</span>
+        </div>
+
+        <div class="ab-skills">
+          <h2 class="ab-section-title">Skills</h2>
+          <ul class="ab-skills__grid">
+            <li>+ UX/UI Design</li>
+            <li>+ Front-end Development</li>
+            <li>+ Prototyping &amp; Wireframing</li>
+            <li>+ AI-Driven Workflow</li>
+            <li>+ Product Thinking</li>
+            <li>+ Design Systems</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ── WHEN NOT WORKING ───────────────────────────────── -->
+      <div class="ab-when">
+        <h2 class="ab-when__title">WHEN NOT WORKING...</h2>
+        <div class="ab-when__grid">
+          <img src="when-img1.png" alt="" class="ab-when__img" />
+          <img src="when-img2.png" alt="" class="ab-when__img" />
+          <img src="when-img3.png" alt="" class="ab-when__img" />
+          <img src="when-img4.png" alt="" class="ab-when__img" />
         </div>
       </div>
-    </section>
+
+    </div>
   </main>
 
 </body>
