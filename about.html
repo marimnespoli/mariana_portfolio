@@ -81,10 +81,36 @@
 
     .about-subtitle {
       font-family: var(--font);
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--text-muted);
-      margin-bottom: 40px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #444;
+      margin-top: 4px;
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .about-cta {
+      margin-top: 32px;
+    }
+
+    .about-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+      border-radius: 50px;
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .about-cta a:hover {
+      background: var(--navy);
+      color: #fff;
     }
 
     .about-body {
@@ -239,6 +265,9 @@
           <p class="about-subtitle">Web Designer & Front-end Developer</p>
           <div class="about-body">
             <p>Based in <strong>Toronto</strong>, I blend creative design with technical implementation to build intuitive and purposeful digital experiences. From initial concepts and Figma prototypes to fully functional code, I enjoy turning ideas into thoughtful products using modern, AI-assisted workflows. Fueled by coffee and driven by curiosity.</p>
+          </div>
+          <div class="about-cta">
+            <a href="index.html#contact">Let's Connect ↗</a>
           </div>
         </div>
 
