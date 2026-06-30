@@ -11,16 +11,22 @@
   <style>
     /* ── About page ── */
     .about-main {
-      padding: 60px 0 100px;
+      padding: 0;
+    }
+
+    /* Hero section — full viewport height, content centered */
+    .about-hero-section {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
     }
 
     /* Hero row */
     .about-hero {
       display: grid;
-      grid-template-columns: 360px auto 1fr;
-      gap: 0 56px;
+      grid-template-columns: 240px auto 1fr;
+      gap: 0 48px;
       align-items: center;
-      margin-bottom: 80px;
     }
 
     /* Photo card */
@@ -78,7 +84,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0 80px;
-      padding-top: 60px;
+      padding: 60px 0 100px;
       border-top: 1px solid var(--border);
     }
 
@@ -191,10 +197,11 @@
   </header>
 
   <main class="about-main">
-    <div class="container">
 
-      <!-- Hero: photo | divider | text -->
-      <div class="about-hero">
+    <!-- Hero: full-height, vertically centered -->
+    <div class="about-hero-section">
+      <div class="container">
+        <div class="about-hero">
 
         <div class="about-photo-wrap">
           <div class="about-photo">
@@ -215,9 +222,12 @@
           </div>
         </div>
 
+        </div>
       </div>
+    </div>
 
-      <!-- Education + Skills -->
+    <!-- Education + Skills -->
+    <div class="container">
       <div class="about-bottom">
 
         <div class="about-education">
@@ -251,7 +261,7 @@
 
       </div>
 
-    </div>
+    </div><!-- /container -->
   </main>
 
 </body>
