@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Mariana Mesquita</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── About page ── */
+    .about-main {
+      padding: 60px 0 100px;
+    }
+
+    /* Hero row */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 360px auto 1fr;
+      gap: 0 56px;
+      align-items: start;
+      margin-bottom: 80px;
+    }
+
+    /* Photo card */
+    .about-photo-wrap {
+      background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
+      border-radius: 20px;
+      padding: 6px;
+      flex-shrink: 0;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 392 / 488;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    /* Vertical divider */
+    .about-divider {
+      width: 1px;
+      align-self: stretch;
+      background: #c8c8c8;
+      position: relative;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+
+    .about-divider::before {
+      content: '+';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font);
+      font-size: 14px;
+      color: #999;
+      background: var(--bg);
+      padding: 0 2px;
+      line-height: 1;
+    }
+
+    /* Text side */
+    .about-text {
+      padding-top: 80px;
+    }
+
+    .about-heading {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 32px;
+    }
+
+    .about-body {
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .about-body p + p {
+      margin-top: 20px;
+    }
+
+    /* Bottom section */
+    .about-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+      padding-top: 60px;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-section-title {
+      font-family: var(--font-heading);
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Year badge */
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--text);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1;
+      position: relative;
+      top: 3px;
+    }
+
+    .about-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text);
+      flex-shrink: 0;
+    }
+
+    /* Education entry */
+    .about-edu-entry {
+      margin-top: 8px;
+    }
+
+    .about-edu-name {
+      font-family: var(--font);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .about-edu-school {
+      font-family: var(--font);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    /* Skills */
+    .about-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .about-skill-tag {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      padding: 6px 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 40px 0;
+      }
+      .about-photo-wrap { max-width: 320px; }
+      .about-divider { display: none; }
+      .about-text { padding-top: 0; }
+      .about-bottom {
+        grid-template-columns: 1fr;
+        gap: 48px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-row">
+    <div class="header__logo">
+      <a href="index.html"><img src="svg.svg" alt="Mariana Mesquita" class="header__logo-img" /></a>
+    </div>
+    <div class="header__rule-inline" aria-hidden="true">
+      <div class="header__rule-line"></div>
+    </div>
+    <nav class="header__nav">
+      <a href="index.html#work" class="header__nav-link">Work</a>
+      <a href="about.html" class="header__nav-link header__nav-link--active">About</a>
+      <a href="index.html#contact" class="header__nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about-main">
+    <div class="container">
+
+      <!-- Hero: photo | divider | text -->
+      <div class="about-hero">
+
+        <div class="about-photo-wrap">
+          <div class="about-photo">
+            <img src="foto.jpg" alt="Mariana Mesquita" />
+          </div>
+        </div>
+
+        <div class="about-divider" aria-hidden="true"></div>
+
+        <div class="about-text">
+          <h1 class="about-heading">I'm Mariana Mesquita.</h1>
+          <div class="about-body">
+            <p>I'm <strong>Mariana Mesquita</strong>. My work blends design, front-end development, and AI-assisted workflows to create intuitive and purposeful digital experiences.</p>
+            <p>From early ideas and visual references to polished Figma designs and front-end implementation, I enjoy turning concepts into thoughtful digital products.</p>
+            <p>Fueled by coffee, driven by curiosity.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Education + Skills -->
+      <div class="about-bottom">
+
+        <div class="about-education">
+          <h2 class="about-section-title">
+            Education
+            <span class="about-badge">
+              <span class="about-badge-dot"></span>
+              2025 – 2026
+            </span>
+          </h2>
+          <div class="about-edu-entry">
+            <p class="about-edu-name">Web design and development</p>
+            <p class="about-edu-school">Humber Polytechnic</p>
+          </div>
+        </div>
+
+        <div class="about-skills">
+          <h2 class="about-section-title">Skills</h2>
+          <div class="about-skills-list">
+            <span class="about-skill-tag">Figma</span>
+            <span class="about-skill-tag">HTML</span>
+            <span class="about-skill-tag">CSS</span>
+            <span class="about-skill-tag">JavaScript</span>
+            <span class="about-skill-tag">TypeScript</span>
+            <span class="about-skill-tag">React</span>
+            <span class="about-skill-tag">Next.js</span>
+            <span class="about-skill-tag">Adobe Illustrator</span>
+            <span class="about-skill-tag">AI-assisted workflows</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
