@@ -18,25 +18,23 @@
     .about-hero-section {
       min-height: calc(100vh - 80px);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
     }
 
     /* Hero row */
     .about-hero {
       display: grid;
-      grid-template-columns: 360px auto 1fr;
-      gap: 0 56px;
+      grid-template-columns: 240px auto minmax(0, 500px);
+      gap: 0 48px;
       align-items: center;
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
-      width: 100%;
     }
 
     /* Photo card */
     .about-photo-wrap {
       background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
-      border-radius: 24px;
+      border-radius: 20px;
       padding: 6px;
       flex-shrink: 0;
     }
@@ -44,7 +42,7 @@
     .about-photo {
       width: 100%;
       aspect-ratio: 392 / 488;
-      border-radius: 20px;
+      border-radius: 15px;
       overflow: hidden;
     }
 
