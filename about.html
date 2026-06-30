@@ -24,9 +24,11 @@
     /* Hero row */
     .about-hero {
       display: grid;
-      grid-template-columns: 240px auto 1fr;
+      grid-template-columns: 240px auto minmax(0, 500px);
       gap: 0 48px;
       align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     /* Photo card */
