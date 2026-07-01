@@ -7,39 +7,28 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
   <style>
-    /* ── About page ── */
-    .about-main {
-      padding: 0;
-    }
+    .about-main { padding: 0; }
 
-    /* Hero section */
-    .about-hero-section {
-      padding: 60px 0 48px;
-    }
-
-    /* Hero row */
-    .about-hero {
+    /* ── Grid unificado: 3 colunas ── */
+    .about-grid {
       display: grid;
-      grid-template-columns: 240px auto minmax(0, 500px);
-      gap: 0 48px;
-      align-items: start;
-      max-width: 900px;
+      grid-template-columns: 360px 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      column-gap: 56px;
+      max-width: 980px;
       margin: 0 auto;
+      padding: 100px 0 80px;
+      align-items: start;
     }
 
-    /* Photo card */
-    .about-photo-wrap {
-      background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
-      border-radius: 20px;
-      padding: 6px;
-      flex-shrink: 0;
-    }
-
+    /* Foto: col 1, row 1 */
     .about-photo {
+      grid-column: 1;
+      grid-row: 1;
       width: 100%;
-      aspect-ratio: 392 / 488;
+      aspect-ratio: 4 / 5;
       border-radius: 15px;
       overflow: hidden;
     }
@@ -48,204 +37,203 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center top;
       display: block;
     }
 
-    /* Text side */
+    /* Bio: cols 2–3, row 1 */
     .about-text {
-      padding-top: 0;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      max-width: 500px;
     }
 
-    .about-heading {
-      font-family: var(--font-heading);
-      font-size: 34px;
+    .about-intro {
+      font-family: var(--font);
+      font-size: 1.2rem;
       font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--navy);
-      line-height: 1.0;
-      white-space: nowrap;
-      margin-bottom: 16px;
+      color: #333333;
+      line-height: 1.7;
+      margin: 0 0 24px 0;
     }
 
-    @media (max-width: 768px) {
-      .about-heading {
-        font-size: 26px;
-        white-space: normal;
-      }
-    }
-
-    .about-subtitle {
-      font-family: var(--font);
-      font-size: 16px;
-      font-weight: 500;
-      color: #444;
-      margin-top: 4px;
-      margin-bottom: 32px;
-      letter-spacing: 0.02em;
-    }
-
-    .about-cta {
-      margin-top: 32px;
-    }
-
-    .about-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-      border: 1.5px solid var(--navy);
-      border-radius: 50px;
-      padding: 10px 24px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .about-cta a:hover {
-      background: var(--navy);
-      color: #fff;
+    .about-intro strong {
+      font-weight: 700;
+      color: #1a1a1a;
     }
 
     .about-body {
       font-family: var(--font);
-      font-size: 15px;
+      font-size: 1.15rem;
       font-weight: 400;
-      color: var(--text-muted);
+      color: #333333;
       line-height: 1.7;
-      max-width: 520px;
+      margin: 0 0 18px 0;
     }
 
-    .about-body p + p {
-      margin-top: 14px;
-    }
+    .about-body:last-child { margin-bottom: 0; }
 
-    /* Bottom section */
-    .about-bottom-wrap {
-      padding: 36px 0 80px;
-      border-top: 1px solid var(--border);
-    }
+    /* Colunas info: row 2 — skills col 1, education col 2, contact col 3 */
+    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 56px; }
+    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 56px; }
+    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 56px; }
 
-    .about-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .about-card {
-      background: #F9F9F9;
-      border-radius: 16px;
-      padding: 2rem;
-    }
-
-    .about-section-title {
-      font-family: var(--font-heading);
-      font-size: 13px;
+    .about-col-label {
+      font-family: var(--font);
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 28px;
+      letter-spacing: -0.6px;
+      color: #888888;
+      margin: 0 0 20px 0;
     }
 
-    /* Year badge */
-    .about-badge {
-      display: inline-flex;
+    .about-col-item {
+      margin: 0 0 10px 0;
+    }
+
+    .about-col-item:last-child { margin-bottom: 0; }
+
+    .about-col-name {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      border: 1px solid #ccc;
-      border-radius: 50px;
-      padding: 3px 12px;
+      gap: 10px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 2px 0;
+      line-height: 1.4;
+    }
+
+
+    .about-col-meta {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 400;
+      color: #4a4a4a;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Skills: tags inline */
+    .about-skills-group {
+      margin: 0 0 18px 0;
+    }
+
+    .about-skills-group:last-child { margin-bottom: 0; }
+
+    .about-skills-group-label {
       font-family: var(--font);
       font-size: 12px;
-      font-weight: 400;
-      color: var(--text-muted);
-      line-height: 1;
-      vertical-align: middle;
-      margin-left: 10px;
-    }
-
-    .about-badge-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    /* Education entry */
-    .about-edu-entry {
-      margin-top: 16px;
-    }
-
-    .about-edu-name {
-      font-family: var(--font);
-      font-size: 17px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .about-edu-school {
-      font-family: var(--font);
-      font-size: 16px;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    /* Skills */
-    .about-skill-group {
-      margin-top: 20px;
-    }
-
-    .about-skill-group:first-child {
-      margin-top: 0;
-    }
-
-    .about-skill-group-label {
-      font-family: var(--font);
-      font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+      color: #777;
+      margin: 0 0 8px 0;
     }
 
     .about-skills-list {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .about-skill-tag {
+      gap: 6px;
       font-family: var(--font);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 5px 14px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
+    .sk {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: url('Vector (1) copy.png') center / contain no-repeat;
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #4a4a4a;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+
+    .about-link:hover { color: #111; }
+
+    .about-link::before {
+      content: '';
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: url('Vector (1) copy.png') center / contain no-repeat;
+      flex-shrink: 0;
+      opacity: 0.4;
+      align-self: center;
+    }
+
+    /* Bullet alignment: marcadores alinhados com títulos de seção */
+    .about-col .about-col-item {
+      padding-left: 0;
+    }
+
+    /* ── When Not Working ── */
+    .about-when-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .about-when-section {
+      padding: 20px 0 100px;
+    }
+
+    .about-when-title {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: -0.6px;
+      color: #888888;
+      margin: 0 0 28px 0;
+      line-height: 1.5;
+    }
+
+    .about-when-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 56px;
+    }
+
+    .about-when-grid img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
       .about-hero {
         grid-template-columns: 1fr;
-        gap: 40px 0;
+        gap: 40px;
+        padding: 48px 0 56px;
       }
-      .about-photo-wrap { max-width: 320px; }
-      .about-divider { display: none; }
-      .about-text { padding-top: 0; }
-      .about-bottom {
-        grid-template-columns: 1fr;
-      }
+      .about-photo { max-width: 340px; }
+      .about-intro { font-size: 19px; }
+      .about-footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-when-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .about-footer-grid { grid-template-columns: 1fr; gap: 32px; }
     }
   </style>
 </head>
@@ -266,90 +254,73 @@
   </header>
 
   <main class="about-main">
+    <div class="container">
 
-    <!-- Hero: full-height, vertically centered -->
-    <div class="about-hero-section">
-      <div class="container">
-        <div class="about-hero">
+      <div class="about-grid">
 
-        <div class="about-photo-wrap">
-          <div class="about-photo">
-            <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
-          </div>
-        </div>
-
-        <div class="hero__divider" aria-hidden="true">
-          <img class="hero__divider-star" src="Vector (1) copy.png" alt="" />
+        <div class="about-photo">
+          <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
         </div>
 
         <div class="about-text">
-          <h1 class="about-heading">I'm Mariana Mesquita</h1>
-          <p class="about-subtitle">Web Designer & Front-end Developer</p>
-          <div class="about-body">
-            <p>Based in <strong>Toronto</strong>, I blend creative design with technical implementation to build intuitive and purposeful digital experiences. From initial concepts and Figma prototypes to fully functional code, I enjoy turning ideas into thoughtful products using modern, AI-assisted workflows. Fueled by coffee and driven by curiosity.</p>
+          <p class="about-intro">Hi, I'm <strong>Mariana Mesquita</strong>.</p>
+          <p class="about-body">A web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
+          <p class="about-body">I bridge the gap between high-fidelity design and technical implementation, turning complex requirements into thoughtful, functional products through an integrated, AI-assisted workflow.</p>
+        </div>
+
+        <div class="about-col about-col--skills">
+          <p class="about-col-label">Skills</p>
+          <div class="about-skills-group">
+            <p class="about-skills-group-label">Design &amp; Product</p>
+            <p class="about-skills-list">UI/UX Design <span class="sk"></span> Wireframing <span class="sk"></span> Product Thinking <span class="sk"></span> Design Systems</p>
           </div>
-          <div class="about-cta">
-            <a href="index.html#contact">Let's Connect <img src="Vector (1) copy.png" alt="" style="width:14px;height:14px;display:inline-block;vertical-align:middle;" /></a>
+          <div class="about-skills-group">
+            <p class="about-skills-group-label">Development</p>
+            <p class="about-skills-list">Front-end Development <span class="sk"></span> AI-Driven Workflows <span class="sk"></span> Clean Code</p>
           </div>
         </div>
 
+        <div class="about-col about-col--education">
+          <p class="about-col-label">Education</p>
+          <div class="about-col-item">
+            <p class="about-col-name">Web Design and Development</p>
+            <p class="about-col-meta">Humber Polytechnic, 2025–2026</p>
+          </div>
         </div>
+
+        <div class="about-col about-col--contact">
+          <p class="about-col-label">Contact</p>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
+          </div>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
+          </div>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
+          </div>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
+          </div>
+        </div>
+
       </div>
+
     </div>
 
-    <!-- Education + Skills -->
-    <div class="container">
-      <div class="about-bottom-wrap">
-        <div class="about-bottom">
-
-          <div class="about-card about-education">
-            <h2 class="about-section-title">
-              Education
-              <span class="about-badge">
-                <span class="about-badge-dot"></span>
-                2025 – 2026
-              </span>
-            </h2>
-            <div class="about-edu-entry">
-              <p class="about-edu-name">Web Design and Development</p>
-              <p class="about-edu-school">Humber Polytechnic</p>
-            </div>
+    <section class="about-when-section">
+      <div class="container">
+        <div class="about-when-inner">
+          <h2 class="about-when-title">WHEN NOT WORKING...</h2>
+          <div class="about-when-grid">
+            <img src="when-img1.png" alt="" />
+            <img src="when-img2.png" alt="" />
+            <img src="when-img3.png" alt="" />
+            <img src="when-img4.png" alt="" />
           </div>
-
-          <div class="about-card about-skills">
-            <h2 class="about-section-title">Skills &amp; Stacks</h2>
-
-            <div class="about-skill-group">
-              <p class="about-skill-group-label">Design</p>
-              <div class="about-skills-list">
-                <span class="about-skill-tag">Figma</span>
-                <span class="about-skill-tag">Adobe Illustrator</span>
-              </div>
-            </div>
-
-            <div class="about-skill-group">
-              <p class="about-skill-group-label">Frontend</p>
-              <div class="about-skills-list">
-                <span class="about-skill-tag">HTML</span>
-                <span class="about-skill-tag">CSS</span>
-                <span class="about-skill-tag">JavaScript</span>
-                <span class="about-skill-tag">TypeScript</span>
-                <span class="about-skill-tag">React</span>
-                <span class="about-skill-tag">Next.js</span>
-              </div>
-            </div>
-
-            <div class="about-skill-group">
-              <p class="about-skill-group-label">Tools</p>
-              <div class="about-skills-list">
-                <span class="about-skill-tag">AI-assisted workflows</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
-    </div><!-- /container -->
+    </section>
   </main>
 
 </body>

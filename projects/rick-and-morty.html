@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="project.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -26,32 +26,81 @@
     </nav>
   </header>
 
-  <main class="cs-main">
-    <div class="container">
+  <main class="cs2-main">
+    <div class="cs2-wrap">
 
-      <!-- Hero -->
-      <section class="cs-hero">
-        <h1 class="cs-title">Rick and Morty</h1>
-        <p class="cs-title-sub">Character Explorer</p>
+      <!-- ─── Header ─── -->
+      <header class="cs2-header">
+        <div class="cs2-header__top">
+          <div class="cs2-header__left">
+            <h1 class="cs2-title">
+              Rick &amp; Morty
+              <span class="cs2-title__sub">Character Explorer</span>
+            </h1>
+            <div class="cs2-pills-row">
+              <span class="cs2-pill">TypeScript</span>
+              <span class="cs2-pill">Fetch API</span>
+              <span class="cs2-pill">CSS Grid</span>
+              <span class="cs2-pill">REST API</span>
+            </div>
+          </div>
+          <div class="cs2-header__actions">
+            <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              Live Demo ↗
+            </a>
+            <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="cs2-btn cs2-btn--outline">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+        <div class="cs2-divider"></div>
+      </header>
+
+      <!-- ─── Goal / Approach ─── -->
+      <section class="cs2-cards-2col">
+
+        <div class="cs2-card">
+          <div class="cs2-card__num">01</div>
+          <h2 class="cs2-card__title">The Goal</h2>
+          <p class="cs2-card__text">
+            Build a character explorer that talks to a real public API — no mock data, no shortcuts. Users needed to search and filter Rick and Morty characters in real time, with multiple filters working simultaneously.
+          </p>
+          <p class="cs2-card__text">
+            The constraint: no frameworks. Just TypeScript, the native Fetch API, and CSS. Every abstraction had to be hand-rolled.
+          </p>
+        </div>
+
+        <div class="cs2-card">
+          <div class="cs2-card__num">02</div>
+          <h2 class="cs2-card__title">The Approach</h2>
+          <p class="cs2-card__text">
+            A single filter-state object owns all active filters. On every change, it serialises itself into a URL query string and fires one typed <code class="cs2-inline-code">fetch()</code> call. The UI updates from the resolved JSON — no duplication, no stale state.
+          </p>
+          <p class="cs2-card__text">
+            TypeScript interfaces enforce the API contract at compile time, so runtime surprises are caught before the browser ever sees them.
+          </p>
+          <div class="cs2-card__stats">
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">4</span>
+              <span class="cs2-stat__label">live filters</span>
+            </div>
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">826</span>
+              <span class="cs2-stat__label">characters</span>
+            </div>
+          </div>
+        </div>
+
       </section>
 
-      <!-- Metadata -->
-      <div class="cs-meta-row cs-meta-row--two">
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Role</p>
-          <p class="cs-meta-value">Frontend Developer</p>
+      <!-- ─── Mockup ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Interface</span>
+          <div class="cs2-section__rule"></div>
         </div>
-        <div class="cs-meta-block">
-          <p class="cs-meta-label">Tech</p>
-          <p class="cs-meta-value">TypeScript · Fetch API · CSS Grid</p>
-        </div>
-      </div>
 
-      <!-- MacBook + Overview -->
-      <div class="cs-macbook-row">
-
-        <!-- MacBook mockup -->
-        <div class="cs-macbook-wrap">
+        <div class="cs2-macbook-wrap">
           <div class="cs-macbook">
             <div class="cs-mb__lid"></div>
             <div class="cs-mb__dark"></div>
@@ -100,55 +149,163 @@
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Overview text -->
-        <div class="cs-overview-text">
-          <p class="cs-overview-label">Overview</p>
-          <h2 class="cs-overview-heading">A character explorer<br>powered by a public API</h2>
-          <p>Built with TypeScript and no frameworks, this app lets users search and filter Rick and Morty characters in real time — by name, status, species, and gender. All filters combine simultaneously against the Rick and Morty REST API.</p>
-          <p>The focus was on clean async logic, type-safe data handling, and a responsive UI that feels native to the show's universe.</p>
-          <div class="cs-links cs-links--inline">
-            <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="cs-live-btn">View Live Site ↗</a>
-            <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="cs-live-btn cs-live-btn--outline">GitHub ↗</a>
+      <!-- ─── Technical Highlights ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Technical Highlights</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-highlights-grid">
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Filter State</h3>
+              <span class="cs2-pill cs2-pill--sm">state</span>
+            </div>
+            <p class="cs2-highlight-card__desc">One object owns all active filters. Every input change updates it and immediately triggers a URL rebuild and fetch — no duplicate logic anywhere.</p>
+            <pre class="cs2-code"><code>const filters: FilterState = {
+  name: "",
+  status: "",
+  species: "",
+  gender: "",
+};
+
+function updateFilter(
+  key: keyof FilterState,
+  value: string
+) {
+  filters[key] = value;
+  fetchCharacters(filters);
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">API Fetching</h3>
+              <span class="cs2-pill cs2-pill--sm">fetch</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Typed async/await fetch with dynamic query params. URLSearchParams strips empty strings automatically so the API never receives blank filters.</p>
+            <pre class="cs2-code"><code>async function fetchCharacters(
+  f: FilterState
+): Promise&lt;Character[]&gt; {
+  const params = new URLSearchParams(
+    Object.fromEntries(
+      Object.entries(f).filter(([, v]) => v)
+    )
+  );
+  const res = await fetch(
+    `${BASE_URL}?${params}`
+  );
+  const data = await res.json();
+  return data.results ?? [];
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">TypeScript Types</h3>
+              <span class="cs2-pill cs2-pill--sm">types</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Interfaces derived from the Rick and Morty API schema. If the API shape changes, TypeScript surfaces every broken access immediately at compile time.</p>
+            <pre class="cs2-code"><code>interface Character {
+  id: number;
+  name: string;
+  status: "Alive" | "Dead" | "unknown";
+  species: string;
+  gender: string;
+  image: string;
+  location: { name: string };
+}
+
+interface FilterState {
+  name: string;
+  status: string;
+  species: string;
+  gender: string;
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Card Rendering</h3>
+              <span class="cs2-pill cs2-pill--sm">dom</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Characters render as template-literal HTML injected via innerHTML. Status colour is set inline — no external library needed for the conditional logic.</p>
+            <pre class="cs2-code"><code>function renderCard(c: Character) {
+  const colour =
+    c.status === "Alive" ? "#4caf50"
+    : c.status === "Dead" ? "#e84c4c"
+    : "#aaa";
+  return `
+    &lt;div class="card"&gt;
+      &lt;img src="${c.image}" alt="${c.name}"&gt;
+      &lt;h3&gt;${c.name}&lt;/h3&gt;
+      &lt;span class="dot"
+        style="background:${colour}"&gt;
+      &lt;/span&gt;
+      ${c.status} — ${c.species}
+    &lt;/div&gt;`;
+}</code></pre>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── Final Result ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Final Result</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-result-card">
+          <div class="cs2-result-card__header">
+            <h2 class="cs2-result-card__title">
+              Shipped to <em>production</em><br>in one sprint.
+            </h2>
+            <p class="cs2-result-card__sub">Try it — search and filter characters in real time</p>
+          </div>
+
+          <!-- Live app embed -->
+          <div class="cs2-iframe-outer">
+            <div class="cs2-iframe-bar">
+              <div class="cs2-iframe-dots">
+                <span class="d-red"></span>
+                <span class="d-yellow"></span>
+                <span class="d-green"></span>
+              </div>
+              <div class="cs2-iframe-url">wddm127-assignment2-rick-and-morty-beta.vercel.app</div>
+            </div>
+            <div class="cs2-iframe-wrap">
+              <iframe
+                src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
+                title="Rick and Morty Character Explorer — live demo"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="cs2-result-card__actions">
+            <a href="https://wddm127-assignment2-rick-and-morty-beta.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              View Live ↗
+            </a>
+            <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="cs2-btn cs2-btn--outline">
+              Source Code ↗
+            </a>
           </div>
         </div>
+      </section>
 
-      </div>
-
-      <!-- Info row -->
-      <div class="cs-info-row">
-        <div class="cs-info-block">
-          <p class="cs-info-label">What it does</p>
-          <p>Search and filter Rick and Morty characters by name, status, species, and gender. All filters combine in real time against the public API.</p>
-        </div>
-        <div class="cs-info-block">
-          <p class="cs-info-label">How I built it</p>
-          <p>TypeScript for type-safe API calls, <code>async/await</code> fetch with dynamic query params, pure CSS Grid for the responsive card layout. No frameworks.</p>
-        </div>
-        <div class="cs-info-block">
-          <p class="cs-info-label">Key challenge</p>
-          <p>Making multiple filters combine simultaneously without duplicating fetch logic — solved with a single state object that rebuilds the URL on every change.</p>
-        </div>
-      </div>
-
-      <!-- Live Demo -->
-      <div class="cs-demo">
-        <p class="cs-demo__label">Live Demo</p>
-        <p class="cs-demo__hint">Try it — search and filter characters in real time</p>
-        <div class="cs-demo__frame">
-          <iframe
-            src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
-            title="Rick and Morty Character Explorer — live demo"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-
-      <!-- Nav -->
-      <div class="cs-nav">
+      <!-- ─── Nav ─── -->
+      <footer class="cs2-footer">
         <a href="../index.html">← back to portfolio</a>
+        <span>Rick &amp; Morty · 2024</span>
         <a href="fortune-cookie.html">Fortune Cookie →</a>
-      </div>
+      </footer>
 
     </div>
   </main>
