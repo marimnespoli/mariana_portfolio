@@ -141,7 +141,7 @@
       transition: background 0.2s, color 0.2s;
       margin-top: 8px;
     }
-    .fc-btn:hover { background: #000; color: #fff; }
+    .fc-btn:hover { background: #7b70bf; border-color: #7b70bf; color: #fff; }
 
     /* ─────────────────────────────────────────
        2. GOLDEN BANNER (Fortune Cookie branding)
@@ -158,7 +158,7 @@
     }
 
     .fc-goal-split__app {
-      background: #fff;
+      background: #FDF8F5;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -166,53 +166,14 @@
       padding: 48px 40px;
     }
 
-    .fc-goal-split__macbook-wrap {
+    .fc-goal-split__app-img {
       width: 88%;
-      max-width: 500px;
-    }
-
-    .fc-goal-split__macbook-frame {
-      background: #1d1d1f;
-      border-radius: 14px 14px 0 0;
-      padding: 10px 10px 0;
-      box-shadow: 0 0 0 1px #3a3a3c, 0 20px 60px rgba(0,0,0,0.18);
-    }
-
-    .fc-goal-split__macbook-screen {
-      background: #000;
-      border-radius: 6px 6px 0 0;
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-    }
-
-    .fc-goal-split__macbook-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 480px;
       display: block;
     }
 
-    .fc-goal-split__macbook-base {
-      background: linear-gradient(to bottom, #c8c8ca, #a8a8aa);
-      height: 14px;
-      border-radius: 0 0 4px 4px;
-      position: relative;
-    }
-
-    .fc-goal-split__macbook-base::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30%;
-      height: 5px;
-      background: #8a8a8c;
-      border-radius: 0 0 6px 6px;
-    }
-
     .fc-goal-split__text {
-      background: #fff;
+      background: #FDF8F5;
       padding: 64px 72px;
       display: flex;
       flex-direction: column;
@@ -257,14 +218,14 @@
     .fc-references__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 10px;
     }
 
     .fc-references__img {
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 3 / 4;
-      max-height: 320px;
+      max-height: 220px;
     }
 
     .fc-references__img img {
@@ -366,19 +327,43 @@
       color: #000;
       transition: background 0.2s, color 0.2s;
     }
-    .fc-final__btn:hover { background: #000; color: #fff; }
+    .fc-final__btn:hover { background: #7b70bf; border-color: #7b70bf; color: #fff; }
 
-    .fc-final__mockup {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    .fc-final__macbook-wrap { width: 100%; max-width: 760px; }
+
+    .fc-final__macbook-frame {
+      background: #1d1d1f;
+      border-radius: 14px 14px 0 0;
+      padding: 12px 12px 0;
+      box-shadow: 0 0 0 1px #3a3a3c, 0 24px 64px rgba(0,0,0,0.22);
     }
 
-    .fc-final__mockup img {
-      width: 100%;
-      display: block;
+    .fc-final__macbook-screen {
+      background: #000;
+      border-radius: 6px 6px 0 0;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+
+    .fc-final__macbook-screen img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    .fc-final__macbook-base {
+      background: linear-gradient(to bottom, #c8c8ca, #a8a8aa);
+      height: 16px;
+      border-radius: 0 0 4px 4px;
+      position: relative;
+    }
+
+    .fc-final__macbook-base::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 28%; height: 6px;
+      background: #8a8a8c;
+      border-radius: 0 0 6px 6px;
     }
 
     /* ─────────────────────────────────────────
@@ -478,14 +463,7 @@
     <section class="fc-goal-split">
 
       <div class="fc-goal-split__app">
-        <div class="fc-goal-split__macbook-wrap">
-          <div class="fc-goal-split__macbook-frame">
-            <div class="fc-goal-split__macbook-screen">
-              <img src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie website" />
-            </div>
-          </div>
-          <div class="fc-goal-split__macbook-base"></div>
-        </div>
+        <img class="fc-goal-split__app-img" src="../Group 16.png" alt="Fortune Cookie app" />
       </div>
 
       <div class="fc-goal-split__text">
@@ -552,8 +530,13 @@
         <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="fc-final__btn">GitHub</a>
         <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="fc-final__btn">View Website</a>
       </div>
-      <div class="fc-final__mockup">
-        <img src="../MacBook Pro 16_ - 1.png" alt="Fortune Cookie final website" />
+      <div class="fc-final__macbook-wrap">
+        <div class="fc-final__macbook-frame">
+          <div class="fc-final__macbook-screen">
+            <img src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie final website" />
+          </div>
+        </div>
+        <div class="fc-final__macbook-base"></div>
       </div>
     </section>
 
