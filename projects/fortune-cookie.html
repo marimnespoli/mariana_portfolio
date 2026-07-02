@@ -27,94 +27,48 @@
   </header>
 
   <main class="cs2-main">
+
+    <!-- ─── Header (contained) ─── -->
     <div class="cs2-wrap">
+      <header class="cs2-header cs2-header--sidebar">
 
-      <!-- ─── Header ─── -->
-      <header class="cs2-header">
-        <div class="cs2-header__top">
-          <div class="cs2-header__left">
-            <h1 class="cs2-title">
-              Fortune Cookie
-              <span class="cs2-title__sub">Interactive Fortune App</span>
-            </h1>
-            <div class="cs2-pills-row">
-              <span class="cs2-pill">Next.js</span>
-              <span class="cs2-pill">TypeScript</span>
-              <span class="cs2-pill">Tailwind CSS</span>
-              <span class="cs2-pill">React</span>
-            </div>
+        <div class="cs2-header__meta">
+          <div class="cs2-meta-item">
+            <span class="cs2-meta-item__label">Role</span>
+            <span class="cs2-meta-item__val cs2-meta-item__val--strong">Web Developer</span>
           </div>
-          <div class="cs2-header__actions">
-            <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
-              Live Demo ↗
-            </a>
-            <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-btn cs2-btn--outline">
-              GitHub ↗
-            </a>
+          <div class="cs2-meta-item">
+            <span class="cs2-meta-item__label">Built with</span>
+            <span class="cs2-meta-item__val">Next.js · TypeScript · Tailwind CSS · React · Figma · Illustrator · Figma MCP</span>
+          </div>
+          <div class="cs2-meta-links">
+            <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-meta-link">Live Demo ↗</a>
+            <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-meta-link">GitHub ↗</a>
           </div>
         </div>
-        <div class="cs2-divider"></div>
+
+        <div class="cs2-header__main">
+          <h1 class="cs2-title">Fortune Cookie</h1>
+          <p class="cs2-header__desc">A fortune cookie app where one click breaks the cookie and reveals a random fortune.</p>
+        </div>
+
       </header>
+    </div><!-- /cs2-wrap -->
 
-      <!-- ─── Goal / Approach ─── -->
-      <section class="cs2-cards-2col">
+    <!-- ─── Goal + MacBook split (full-bleed) ─── -->
+    <section class="cs2-goal-split">
 
-        <div class="cs2-card">
-          <div class="cs2-card__num">01</div>
-          <h2 class="cs2-card__title">The Goal</h2>
-          <p class="cs2-card__text">
-            Build a playful, tactile fortune cookie experience in the browser — one click to break, one reveal to read. No filler content, no extra steps.
-          </p>
-          <p class="cs2-card__text">
-            The challenge: make a simple interaction feel satisfying through animation and visual design. The entire app lives in a single gesture.
-          </p>
-        </div>
+      <div class="cs2-goal-split__text">
+        <h2 class="cs2-goal-split__title">The Goal</h2>
+        <p class="cs2-goal-split__body">
+          I wanted to create an experience where the gesture of breaking the cookie was the center of everything — one click, one reveal. Nothing before, nothing after.
+        </p>
+        <p class="cs2-goal-split__body">
+          The challenge was making a simple interaction feel satisfying through animation and visual design. The entire app lives in a single gesture.
+        </p>
+      </div>
 
-        <div class="cs2-card">
-          <div class="cs2-card__num">02</div>
-          <h2 class="cs2-card__title">The Approach</h2>
-          <p class="cs2-card__text">
-            Conceived in Figma with custom illustrations made in Adobe Illustrator. Visual identity draws from Chinese New Year aesthetics — warm tones, decorative patterns, hand-crafted assets.
-          </p>
-          <p class="cs2-card__text">
-            Implemented with Next.js and TypeScript via the Figma MCP, translating the design directly into a working React component tree.
-          </p>
-          <div class="cs2-card__stats">
-            <div class="cs2-stat">
-              <span class="cs2-stat__val">1</span>
-              <span class="cs2-stat__label">interaction</span>
-            </div>
-            <div class="cs2-stat">
-              <span class="cs2-stat__val">∞</span>
-              <span class="cs2-stat__label">fortunes</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- ─── References ─── -->
-      <section class="cs2-section">
-        <div class="cs2-section__header">
-          <span class="cs2-section__label">References</span>
-          <div class="cs2-section__rule"></div>
-        </div>
-        <p class="cs2-section__caption">Inspired by Chinese New Year visual aesthetics</p>
-        <div class="cs2-ref-grid">
-          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref1.png" alt="Reference 1" /></div>
-          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref4.png" alt="Reference 4" /></div>
-          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref3.png" alt="Reference 3" /></div>
-          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref2.png" alt="Reference 2" /></div>
-        </div>
-      </section>
-
-      <!-- ─── Interface ─── -->
-      <section class="cs2-section">
-        <div class="cs2-section__header">
-          <span class="cs2-section__label">Interface</span>
-          <div class="cs2-section__rule"></div>
-        </div>
-
+      <div class="cs2-goal-split__device">
         <div class="cs2-macbook-wrap">
           <div class="cs-macbook">
             <div class="cs-mb__lid"></div>
@@ -163,176 +117,59 @@
               </svg>
             </div>
           </div>
+        </div><!-- /cs2-macbook-wrap -->
+      </div><!-- /cs2-goal-split__device -->
+
+    </section><!-- /cs2-goal-split -->
+
+    <!-- ─── Rest of content (contained) ─── -->
+    <div class="cs2-wrap">
+
+      <!-- ─── App banner ─── -->
+      <div class="cs2-app-banner">
+        <img src="fortune-cookie-screenshot.png" alt="Fortune Cookie App" />
+      </div>
+
+      <!-- ─── Metrics row ─── -->
+      <div class="cs2-metrics-row">
+        <div class="cs2-metric-item">
+          <span class="cs2-metric-item__val">1</span>
+          <span class="cs2-metric-item__label">Interaction</span>
         </div>
-      </section>
+        <div class="cs2-metric-item">
+          <span class="cs2-metric-item__val">
+            <svg class="cs2-infinity" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="∞">
+              <path class="cs2-infinity__path" d="M60 30 C60 30 45 5 25 5 C5 5 5 55 25 55 C45 55 60 30 60 30 C60 30 75 5 95 5 C115 5 115 55 95 55 C75 55 60 30 60 30 Z" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="cs2-metric-item__label">Fortunes</span>
+        </div>
+      </div>
 
       <!-- ─── Design Screens ─── -->
-      <section class="cs2-section">
+      <section class="cs2-section cs2-section--screens">
         <div class="cs2-section__header">
           <span class="cs2-section__label">Design Screens</span>
           <div class="cs2-section__rule"></div>
         </div>
-        <div class="cs2-screens-grid">
-          <div class="cs2-screen-frame">
+        <div class="cs2-screens-stack">
+          <div class="cs2-screen-solo">
             <img src="../fortune-cookie-app/MacBook Pro 16_ - 1.png" alt="Screen — Cookie closed" />
           </div>
-          <div class="cs2-screen-frame">
+          <div class="cs2-screen-solo">
             <img src="../fortune-cookie-app/MacBook Pro 16_ - 2.png" alt="Screen — Fortune revealed" />
           </div>
         </div>
       </section>
 
-      <!-- ─── Technical Highlights ─── -->
-      <section class="cs2-section">
-        <div class="cs2-section__header">
-          <span class="cs2-section__label">Technical Highlights</span>
-          <div class="cs2-section__rule"></div>
+      <!-- ─── Project links ─── -->
+      <div class="cs2-project-links">
+        <span class="cs2-project-links__label">PROJECT</span>
+        <div class="cs2-project-links__row">
+          <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-project-link">Live Demo ↗</a>
+          <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-project-link">GitHub ↗</a>
         </div>
-
-        <div class="cs2-highlights-grid">
-
-          <div class="cs2-highlight-card">
-            <div class="cs2-highlight-card__top">
-              <h3 class="cs2-highlight-card__title">Component Tree</h3>
-              <span class="cs2-pill cs2-pill--sm">react</span>
-            </div>
-            <p class="cs2-highlight-card__desc">Cookie state lives in a single parent component. Child components receive props — no prop drilling, no global state needed for a single-interaction app.</p>
-            <pre class="cs2-code"><code>type CookieState =
-  | "idle"
-  | "breaking"
-  | "revealed";
-
-export default function Cookie() {
-  const [state, setState] =
-    useState&lt;CookieState&gt;("idle");
-  const fortune = useFortune();
-
-  return (
-    &lt;CookieShell
-      state={state}
-      onBreak={() =>
-        setState("breaking")}
-      fortune={fortune}
-    /&gt;
-  );
-}</code></pre>
-          </div>
-
-          <div class="cs2-highlight-card">
-            <div class="cs2-highlight-card__top">
-              <h3 class="cs2-highlight-card__title">Fortune Hook</h3>
-              <span class="cs2-pill cs2-pill--sm">hook</span>
-            </div>
-            <p class="cs2-highlight-card__desc">A custom hook picks a random fortune from the list on mount — one call, one result, immutable for the session. No side effects on re-render.</p>
-            <pre class="cs2-code"><code>const fortunes: string[] = [
-  "A dream you have will come true.",
-  "You will find treasure...",
-  // ...
-];
-
-export function useFortune() {
-  const [fortune] = useState(() =>
-    fortunes[
-      Math.floor(
-        Math.random() * fortunes.length
-      )
-    ]
-  );
-  return fortune;
-}</code></pre>
-          </div>
-
-          <div class="cs2-highlight-card">
-            <div class="cs2-highlight-card__top">
-              <h3 class="cs2-highlight-card__title">Animation</h3>
-              <span class="cs2-pill cs2-pill--sm">css</span>
-            </div>
-            <p class="cs2-highlight-card__desc">Cookie break uses a CSS keyframe applied via a state-driven class. Tailwind utilities handle the reveal fade — no JS animation library needed.</p>
-            <pre class="cs2-code"><code>@keyframes crumble {
-  0%   { transform: rotate(0deg)
-                    scale(1); }
-  40%  { transform: rotate(-8deg)
-                    scale(1.05); }
-  70%  { transform: rotate(6deg)
-                    scale(0.95); }
-  100% { transform: rotate(0deg)
-                    scale(0)
-         opacity: 0; }
-}
-
-.breaking {
-  animation: crumble 0.5s
-    ease-in forwards;
-}</code></pre>
-          </div>
-
-          <div class="cs2-highlight-card">
-            <div class="cs2-highlight-card__top">
-              <h3 class="cs2-highlight-card__title">Figma → Code</h3>
-              <span class="cs2-pill cs2-pill--sm">mcp</span>
-            </div>
-            <p class="cs2-highlight-card__desc">Design was built in Figma with custom Illustrator assets. The Figma MCP translated layout tokens directly into Tailwind classes — spacing, colours, and type scales stayed consistent.</p>
-            <pre class="cs2-code"><code>// Figma token → Tailwind
-// bg: #C8102E → bg-[#C8102E]
-// radius: 24 → rounded-3xl
-// gap: 16 → gap-4
-
-&lt;div className={cn(
-  "flex flex-col items-center",
-  "gap-4 rounded-3xl",
-  "bg-[#C8102E] p-8",
-  state === "revealed" &&
-    "animate-fade-in"
-)}&gt;</code></pre>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ─── Final Result ─── -->
-      <section class="cs2-section">
-        <div class="cs2-section__header">
-          <span class="cs2-section__label">Final Result</span>
-          <div class="cs2-section__rule"></div>
-        </div>
-
-        <div class="cs2-result-card">
-          <div class="cs2-result-card__header">
-            <h2 class="cs2-result-card__title">
-              Designed in Figma,<br><em>shipped the same day.</em>
-            </h2>
-            <p class="cs2-result-card__sub">Click the cookie to reveal your fortune</p>
-          </div>
-
-          <div class="cs2-iframe-outer">
-            <div class="cs2-iframe-bar">
-              <div class="cs2-iframe-dots">
-                <span class="d-red"></span>
-                <span class="d-yellow"></span>
-                <span class="d-green"></span>
-              </div>
-              <div class="cs2-iframe-url">fortune-cookie-d55a.vercel.app</div>
-            </div>
-            <div class="cs2-iframe-wrap">
-              <iframe
-                src="https://fortune-cookie-d55a.vercel.app"
-                title="Fortune Cookie — live demo"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-
-          <div class="cs2-result-card__actions">
-            <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
-              View Live ↗
-            </a>
-            <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-btn cs2-btn--outline">
-              Source Code ↗
-            </a>
-          </div>
-        </div>
-      </section>
+      </div>
 
       <!-- ─── Nav ─── -->
       <footer class="cs2-footer">
@@ -341,7 +178,8 @@ export function useFortune() {
         <a href="scente.html">Scenté →</a>
       </footer>
 
-    </div>
+    </div><!-- /cs2-wrap -->
+
   </main>
 
 </body>

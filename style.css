@@ -291,9 +291,6 @@ main {
 }
 
 .hero__photo-frame {
-  background: linear-gradient(145deg, #e2e0f4, #b9b3e0 55%, #d4d0ee);
-  padding: 4px;
-  border-radius: 14px;
   flex-shrink: 0;
   display: inline-flex;
 }
@@ -378,22 +375,21 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 28px 0 80px;
+  padding: 0 0 80px;
+  border-top: 1px solid #333333;
+  margin-top: 80px;
 }
 
 .work__title {
   font-family: var(--font);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.6px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin: 64px 0 56px;
   text-align: center;
-  color: #888888;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
+  color: #111111;
+  display: block;
 }
 
 .work__title-star {
@@ -424,6 +420,8 @@ main {
   border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
 .project-card__img-placeholder {
