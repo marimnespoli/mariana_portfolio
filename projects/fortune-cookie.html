@@ -300,11 +300,17 @@
     /* ─────────────────────────────────────────
        6. STAT SECTIONS (1 interaction / Infinity luck)
     ───────────────────────────────────────── */
+    /* text-left: text(38%) | image(1fr) */
     .fc-stat {
       display: grid;
       grid-template-columns: minmax(280px, 38%) 1fr;
       min-height: 520px;
       width: 100%;
+    }
+
+    /* image-left: image(1fr) | text(38%) */
+    .fc-stat--image-first {
+      grid-template-columns: 1fr minmax(280px, 38%);
     }
 
     .fc-stat + .fc-stat {
@@ -538,7 +544,7 @@
 
     <!-- ─── 6. Stat: 1 Interaction ─── -->
     <!-- Image LEFT, text RIGHT (Figma layout) -->
-    <section class="fc-stat">
+    <section class="fc-stat fc-stat--image-first">
       <div class="fc-stat__visual">
         <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
       </div>
