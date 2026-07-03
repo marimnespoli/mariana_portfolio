@@ -73,11 +73,10 @@
 
     .about-body:last-child { margin-bottom: 0; }
 
-    /* Colunas info: row 2 — 3 colunas, contact+links empilhados na col 3 */
+    /* Colunas info: row 2 — 3 colunas */
     .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 40px; }
     .about-col--education { grid-column: 2; grid-row: 2; padding-top: 40px; }
-    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 40px; }
-    .about-col--links     { grid-column: 3; grid-row: 3; padding-top: 32px; }
+    .about-col-contact-links { grid-column: 3; grid-row: 2; padding-top: 40px; display: flex; flex-direction: column; gap: 32px; }
 
     .about-col-label {
       font-family: var(--font);
@@ -288,23 +287,24 @@
           </div>
         </div>
 
-        <div class="about-col about-col--contact">
-          <p class="about-col-label">Contact</p>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
+        <div class="about-col-contact-links">
+          <div class="about-col">
+            <p class="about-col-label">Contact</p>
+            <div class="about-col-item">
+              <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
+            </div>
           </div>
-        </div>
-
-        <div class="about-col about-col--links">
-          <p class="about-col-label">Links</p>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
-          </div>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
-          </div>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
+          <div class="about-col">
+            <p class="about-col-label">Links</p>
+            <div class="about-col-item">
+              <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
+            </div>
+            <div class="about-col-item">
+              <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
+            </div>
+            <div class="about-col-item">
+              <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
+            </div>
           </div>
         </div>
 
