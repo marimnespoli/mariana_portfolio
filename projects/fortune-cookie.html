@@ -258,34 +258,36 @@
 
     /* ── Shared section title (References / stat labels) ── */
     .fc-section-title {
-      font-size: 36px;
+      font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
       color: #000;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .fc-references__title {
-      font-size: 36px;
+      font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
       color: #000;
       margin-bottom: 32px;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .fc-references__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(12px, 2vw, 24px);
-      align-items: start;
+      display: flex;
+      gap: clamp(16px, 3vw, 50px);
+      align-items: flex-end;
     }
 
     .fc-references__img {
+      flex: 1;
       border-radius: 12px;
       overflow: hidden;
       aspect-ratio: 3 / 4;
-      width: 100%;
+      min-width: 0;
     }
 
     .fc-references__img img {
@@ -319,11 +321,12 @@
     }
 
     .fc-stat__label {
-      font-size: 40px;
-      font-weight: 400;
-      letter-spacing: -0.04em;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
       color: #000;
-      line-height: 1.05;
+      line-height: 1.2;
       max-width: 260px;
     }
 
@@ -534,22 +537,24 @@
     </section>
 
     <!-- ─── 6. Stat: 1 Interaction ─── -->
+    <!-- Image LEFT, text RIGHT (Figma layout) -->
     <section class="fc-stat">
-      <div class="fc-stat__text">
-        <span class="fc-stat__label fc-section-title">1 interaction</span>
-      </div>
       <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
+      </div>
+      <div class="fc-stat__text">
+        <span class="fc-stat__label">1 Interaction</span>
       </div>
     </section>
 
     <!-- ─── 7. Stat: Infinity Luck ─── -->
+    <!-- Text LEFT, image RIGHT (Figma layout) -->
     <section class="fc-stat">
       <div class="fc-stat__text">
-        <span class="fc-stat__label fc-section-title">Infinity luck.</span>
+        <span class="fc-stat__label">Infinity luck.</span>
       </div>
       <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
       </div>
     </section>
 
