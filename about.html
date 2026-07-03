@@ -11,22 +11,18 @@
   <style>
     .about-main { padding: 0; }
 
-    /* ── Grid unificado: 3 colunas ── */
-    .about-grid {
+    /* ── Hero: foto 50% | texto 50% ── */
+    .about-hero {
       display: grid;
-      grid-template-columns: 280px 1fr 1fr;
-      grid-template-rows: auto auto auto;
-      column-gap: 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
       max-width: 980px;
       margin: 0 auto;
-      padding: 100px 0 80px;
+      padding: 100px 0 0;
       align-items: start;
     }
 
-    /* Foto: col 1, row 1 */
     .about-photo {
-      grid-column: 1;
-      grid-row: 1;
       width: 100%;
       aspect-ratio: 4 / 5;
       border-radius: 15px;
@@ -41,11 +37,19 @@
       display: block;
     }
 
-    /* Bio: cols 2–3, row 1 */
     .about-text {
-      grid-column: 2 / 4;
-      grid-row: 1;
-      max-width: 500px;
+      padding-top: 8px;
+    }
+
+    /* ── Info: 3 colunas ── */
+    .about-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 0 80px;
+      align-items: start;
     }
 
     .about-intro {
@@ -73,10 +77,8 @@
 
     .about-body:last-child { margin-bottom: 0; }
 
-    /* Colunas info: row 2 — 3 colunas */
-    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 56px; }
-    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 56px; }
-    .about-col-contact-links { grid-column: 3; grid-row: 2; padding-top: 56px; display: flex; flex-direction: column; gap: 32px; }
+    /* Colunas info — grid separado */
+    .about-col-contact-links { display: flex; flex-direction: column; gap: 32px; }
 
     .about-col-label {
       font-family: var(--font);
@@ -252,17 +254,18 @@
   <main class="about-main">
     <div class="container">
 
-      <div class="about-grid">
-
+      <div class="about-hero">
         <div class="about-photo">
           <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
         </div>
-
         <div class="about-text">
           <p class="about-intro">Hi, I'm <strong>Mariana Mesquita</strong>.</p>
           <p class="about-body">A web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
           <p class="about-body">I bridge the gap between high-fidelity design and technical implementation, turning complex requirements into thoughtful, functional products through an integrated, AI-assisted workflow.</p>
         </div>
+      </div>
+
+      <div class="about-info">
 
         <div class="about-col about-col--skills">
           <p class="about-col-label">Skills</p>
@@ -306,7 +309,7 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- /.about-info -->
 
     </div>
 
