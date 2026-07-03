@@ -303,27 +303,32 @@
     /* text-left: text(~46%) | image(~54%) */
     .fc-stat {
       display: grid;
-      grid-template-columns: 46% 54%;
-      max-height: 560px;
+      grid-template-columns: 54% 46%;
+      height: 460px;
       max-width: 1200px;
       margin: 0 auto;
       width: calc(100% - 48px);
       overflow: hidden;
-      background: #FDF8F5;
+      border-radius: 20px;
+      border: 1px solid #ede8e0;
     }
 
-    /* image-left: image(~54%) | text(~46%) */
     .fc-stat--image-first {
       grid-template-columns: 54% 46%;
     }
 
+    /* text-left variant (Infinity Luck) */
+    .fc-stat:not(.fc-stat--image-first) {
+      grid-template-columns: 46% 54%;
+    }
+
     .fc-stat + .fc-stat {
-      border-top: 1px solid #ede8e0;
+      margin-top: 16px;
     }
 
     .fc-stat__text {
       background: #fff;
-      padding: 48px 56px;
+      padding: 56px 64px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -336,7 +341,7 @@
       text-transform: uppercase;
       color: #000;
       line-height: 1.2;
-      width: 308px;
+      max-width: 308px;
     }
 
     .fc-stat__visual {
