@@ -31,11 +31,11 @@
 
 .ab-bio {
   font-family: 'Inter', sans-serif;
-  font-size: 14.5px;
+  font-size: 20px;
   font-weight: 400;
-  color: #555;
-  line-height: 1.75;
-  margin: 0 0 14px;
+  color: #333;
+  line-height: 30px;
+  margin: 0 0 22px;
   max-width: 520px;
 }
 
