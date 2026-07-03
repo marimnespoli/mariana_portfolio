@@ -97,7 +97,7 @@ main {
 .header-row {
   display: flex;
   align-items: center;
-  padding: 40px 48px;
+  padding: 28px 60px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -112,7 +112,7 @@ main {
 }
 
 .header__logo-img {
-  width: 100px;
+  width: 64px;
   height: auto;
   display: block;
 }
@@ -132,7 +132,7 @@ main {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
 
 .header__nav-link {
