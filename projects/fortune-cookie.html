@@ -309,7 +309,7 @@
     }
 
     .fc-stat__label-wrap {
-      padding: 64px max(80px, calc((100vw - 1200px) / 2 + 80px)) 64px 80px;
+      padding: 64px 60px 64px 80px;
       display: flex;
       align-items: center;
     }
@@ -323,16 +323,18 @@
     }
 
     .fc-stat__visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px max(80px, calc((100vw - 1200px) / 2 + 80px)) 48px 40px;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
     }
 
     .fc-stat__visual-screen {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ─────────────────────────────────────────
