@@ -298,6 +298,9 @@
        6. STAT SECTIONS (1 interaction / Infinity luck)
     ───────────────────────────────────────── */
     .fc-stat {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
       width: 100%;
     }
 
@@ -305,17 +308,8 @@
       border-top: 1px solid #e8e8e8;
     }
 
-    .fc-stat__inner {
-      display: flex;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      min-height: 480px;
-    }
-
     .fc-stat__label-wrap {
-      flex: 1;
-      padding: 80px 60px 80px 80px;
+      padding: 64px max(80px, calc((100vw - 1200px) / 2 + 80px)) 64px 80px;
       display: flex;
       align-items: center;
     }
@@ -329,19 +323,16 @@
     }
 
     .fc-stat__visual {
-      flex: 1;
-      min-height: 480px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
+      padding: 48px max(80px, calc((100vw - 1200px) / 2 + 80px)) 48px 40px;
     }
 
     .fc-stat__visual-screen {
-      width: 88%;
-      max-width: 520px;
+      width: 100%;
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-      margin: 48px 0;
     }
 
     /* ─────────────────────────────────────────
@@ -539,25 +530,21 @@
 
     <!-- ─── 6. Stat: 1 Interaction ─── -->
     <section class="fc-stat">
-      <div class="fc-stat__inner">
-        <div class="fc-stat__label-wrap">
-          <span class="fc-stat__label fc-section-title">1 interaction</span>
-        </div>
-        <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
-        </div>
+      <div class="fc-stat__label-wrap">
+        <span class="fc-stat__label fc-section-title">1 interaction</span>
+      </div>
+      <div class="fc-stat__visual">
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
       </div>
     </section>
 
     <!-- ─── 7. Stat: Infinity Luck ─── -->
     <section class="fc-stat">
-      <div class="fc-stat__inner">
-        <div class="fc-stat__label-wrap">
-          <span class="fc-stat__label fc-section-title">Infinity luck.</span>
-        </div>
-        <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
-        </div>
+      <div class="fc-stat__label-wrap">
+        <span class="fc-stat__label fc-section-title">Infinity luck.</span>
+      </div>
+      <div class="fc-stat__visual">
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
       </div>
     </section>
 
