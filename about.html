@@ -11,13 +11,13 @@
   <style>
     .about-main { padding: 0; }
 
-    /* ── Grid unificado: 3 colunas ── */
+    /* ── Grid unificado: 4 colunas ── */
     .about-grid {
       display: grid;
-      grid-template-columns: 360px 1fr 1fr;
+      grid-template-columns: 280px 1fr 1fr 1fr;
       grid-template-rows: auto auto auto;
-      column-gap: 56px;
-      max-width: 980px;
+      column-gap: 48px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 100px 0 80px;
       align-items: start;
@@ -41,9 +41,9 @@
       display: block;
     }
 
-    /* Bio: cols 2–3, row 1 */
+    /* Bio: cols 2–4, row 1 */
     .about-text {
-      grid-column: 2 / 4;
+      grid-column: 2 / 5;
       grid-row: 1;
       max-width: 500px;
     }
@@ -73,10 +73,11 @@
 
     .about-body:last-child { margin-bottom: 0; }
 
-    /* Colunas info: row 2 — skills col 1, education col 2, contact col 3 */
-    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 56px; }
-    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 56px; }
-    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 56px; }
+    /* Colunas info: row 2 — 4 colunas */
+    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 40px; }
+    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 40px; }
+    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 40px; }
+    .about-col--links     { grid-column: 4; grid-row: 2; padding-top: 40px; }
 
     .about-col-label {
       font-family: var(--font);
@@ -134,26 +135,15 @@
     }
 
     .about-skills-list {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
       font-family: var(--font);
       font-size: 14px;
       font-weight: 400;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.8;
       margin: 0;
     }
 
-    .sk {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      background: url('Vector (1) copy.png') center / contain no-repeat;
-      opacity: 0.4;
-      flex-shrink: 0;
-    }
+    .sk { display: none; }
 
 
     .about-link {
@@ -272,11 +262,11 @@
           <p class="about-col-label">Skills</p>
           <div class="about-skills-group">
             <p class="about-skills-group-label">Design &amp; Product</p>
-            <p class="about-skills-list">UI/UX Design <span class="sk"></span> Wireframing <span class="sk"></span> Product Thinking <span class="sk"></span> Design Systems</p>
+            <p class="about-skills-list">UI/UX Design<br>Wireframing<br>Product Thinking<br>Design Systems</p>
           </div>
           <div class="about-skills-group">
             <p class="about-skills-group-label">Development</p>
-            <p class="about-skills-list">Front-end Development <span class="sk"></span> AI-Driven Workflows <span class="sk"></span> Clean Code</p>
+            <p class="about-skills-list">Front-end Development<br>AI-Driven Workflows<br>Clean Code</p>
           </div>
         </div>
 
@@ -284,7 +274,8 @@
           <p class="about-col-label">Education</p>
           <div class="about-col-item">
             <p class="about-col-name">Web Design and Development</p>
-            <p class="about-col-meta">Humber Polytechnic, 2025–2026</p>
+            <p class="about-col-meta">Humber Polytechnic</p>
+            <p class="about-col-meta">2025–2026</p>
           </div>
         </div>
 
@@ -293,14 +284,18 @@
           <div class="about-col-item">
             <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
           </div>
+        </div>
+
+        <div class="about-col about-col--links">
+          <p class="about-col-label">Links</p>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
+            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">Resume</a></p>
           </div>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
+            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">LinkedIn</a></p>
           </div>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
+            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">GitHub</a></p>
           </div>
         </div>
 
