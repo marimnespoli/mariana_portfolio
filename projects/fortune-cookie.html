@@ -19,7 +19,14 @@
     .fc-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 60px;
+      padding: 0 80px;
+    }
+
+    /* ── Header alignment override (global uses 60px) ── */
+    .header-row {
+      padding-left: 80px;
+      padding-right: 80px;
+      max-width: 1200px;
     }
 
     /* ── Banner stack ── */
@@ -214,7 +221,7 @@
 
     .fc-goal-split__text {
       background: #FDF8F5;
-      padding: 64px max(60px, calc((100vw - 1200px) / 2 + 60px)) 64px 72px;
+      padding: 64px max(80px, calc((100vw - 1200px) / 2 + 80px)) 64px 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -385,6 +392,8 @@
       background: #fff;
       color: #111;
       padding: 64px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
