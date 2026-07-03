@@ -11,13 +11,18 @@
   <style>
     .about-main { padding: 0; }
 
-    /* ── Hero: foto 50% | texto 50% ── */
+    /* ─── Shared container ─── */
+    .about-inner {
+      max-width: 872px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Hero: foto | texto ─── */
     .about-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
-      max-width: 860px;
-      margin: 0 auto;
       padding: 100px 0 0;
       align-items: start;
     }
@@ -25,7 +30,7 @@
     .about-photo {
       width: 100%;
       aspect-ratio: 4 / 5;
-      border-radius: 15px;
+      border-radius: 10px;
       overflow: hidden;
     }
 
@@ -38,47 +43,33 @@
     }
 
     .about-text {
-      padding-top: 8px;
-    }
-
-    /* ── Info: 3 colunas ── */
-    .about-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 48px;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 56px 0 80px;
-      align-items: start;
-    }
-
-    .about-intro {
-      font-family: var(--font);
-      font-size: 20px;
-      font-weight: 400;
-      color: #333333;
-      line-height: 30px;
-      margin: 0 0 24px 0;
-    }
-
-    .about-intro strong {
-      font-weight: 700;
-      color: #111;
+      padding-top: 4px;
     }
 
     .about-body {
       font-family: var(--font);
       font-size: 20px;
       font-weight: 400;
-      color: #333333;
+      color: #333;
       line-height: 30px;
       margin: 0 0 22px 0;
     }
 
+    .about-body strong {
+      font-weight: 700;
+      color: #111;
+    }
+
     .about-body:last-child { margin-bottom: 0; }
 
-    /* Colunas info — grid separado */
-    .about-col-contact-links { display: flex; flex-direction: column; gap: 32px; }
+    /* ─── Info: 4 colunas ─── */
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 64px 0 80px;
+      align-items: start;
+    }
 
     .about-col-label {
       font-family: var(--font);
@@ -86,12 +77,13 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: -0.6px;
-      color: #888888;
-      margin: 0 0 20px 0;
+      color: #888;
+      margin: 0 0 16px 0;
+      line-height: 21px;
     }
 
     .about-col-item {
-      margin: 0 0 10px 0;
+      margin: 0 0 14px 0;
     }
 
     .about-col-item:last-child { margin-bottom: 0; }
@@ -116,44 +108,28 @@
       line-height: 22px;
     }
 
-    /* Skills: tags inline */
-    .about-skills-group {
-      margin: 0 0 18px 0;
-    }
-
-    .about-skills-group:last-child { margin-bottom: 0; }
-
-    .about-skills-group-label {
+    /* Skills: sub-group label */
+    .about-skills-label {
       font-family: var(--font);
       font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #777;
-      margin: 0 0 8px 0;
+      letter-spacing: 0.04em;
+      color: #aaa;
+      margin: 0 0 6px 0;
     }
 
-    .about-skills-list {
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 400;
-      color: #333;
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .sk { display: none; }
-
-
+    /* Links com hover estrela */
     .about-link {
       position: relative;
       display: inline-block;
-      color: #333;
+      color: #5e5e5e;
       text-decoration: none;
-      font-size: 14px;
       font-family: var(--font);
+      font-size: 16px;
       font-weight: 400;
-      padding-left: 0;
+      letter-spacing: -0.6px;
+      line-height: 22px;
       transition: color 0.25s;
     }
 
@@ -177,61 +153,56 @@
       transform: translateY(-50%) translateX(0);
     }
 
-    /* Bullet alignment: marcadores alinhados com títulos de seção */
-    .about-col .about-col-item {
-      padding-left: 0;
-    }
-
-    /* ── When Not Working ── */
-    .about-when-inner {
-      max-width: 980px;
+    /* ─── When Not Working ─── */
+    .about-when {
+      padding: 0 24px 100px;
+      max-width: 872px;
       margin: 0 auto;
     }
 
-    .about-when-section {
-      padding: 20px 0 100px;
-    }
-
-    .about-when-title {
+    .about-when-label {
       font-family: var(--font);
       font-size: 14px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: -0.6px;
-      color: #888888;
-      margin: 0 0 28px 0;
-      line-height: 1.5;
+      color: #888;
+      margin: 0 0 24px 0;
+      line-height: 21px;
     }
 
     .about-when-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 56px;
+      gap: 16px;
     }
 
     .about-when-grid img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 15px;
+      border-radius: 10px;
       display: block;
     }
 
-    /* ── Responsive ── */
+    /* ─── Responsive ─── */
     @media (max-width: 860px) {
       .about-hero {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 48px 0 56px;
+        gap: 32px;
+        padding: 48px 0 0;
       }
-      .about-photo { max-width: 340px; }
-      .about-intro { font-size: 19px; }
-      .about-footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-photo { max-width: 320px; }
+      .about-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 48px 0 64px;
+      }
       .about-when-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 540px) {
-      .about-footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-info { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -252,80 +223,87 @@
   </header>
 
   <main class="about-main">
-    <div class="container">
 
+    <div class="about-inner">
+
+      <!-- Hero -->
       <div class="about-hero">
         <div class="about-photo">
           <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
         </div>
         <div class="about-text">
-          <p class="about-intro">Hi, I'm <strong>Mariana Mesquita</strong>.</p>
-          <p class="about-body">A web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
+          <p class="about-body">Hi, I'm <strong>Mariana Mesquita</strong>, a web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
           <p class="about-body">I bridge the gap between high-fidelity design and technical implementation, turning complex requirements into thoughtful, functional products through an integrated, AI-assisted workflow.</p>
         </div>
       </div>
 
+      <!-- Info: 4 colunas -->
       <div class="about-info">
 
-        <div class="about-col about-col--skills">
+        <!-- Skills -->
+        <div class="about-col">
           <p class="about-col-label">Skills</p>
-          <div class="about-skills-group">
-            <p class="about-skills-group-label">Design &amp; Product</p>
-            <p class="about-skills-list">UI/UX Design<br>Wireframing<br>Product Thinking<br>Design Systems</p>
+          <div class="about-col-item">
+            <p class="about-skills-label">Design &amp; Product</p>
+            <p class="about-col-name">UI/UX Design</p>
+            <p class="about-col-name">Wireframing</p>
+            <p class="about-col-name">Product Thinking</p>
+            <p class="about-col-name">Design Systems</p>
           </div>
-          <div class="about-skills-group">
-            <p class="about-skills-group-label">Development</p>
-            <p class="about-skills-list">Front-end Development<br>AI-Driven Workflows<br>Clean Code</p>
+          <div class="about-col-item">
+            <p class="about-skills-label">Development</p>
+            <p class="about-col-name">Front-end Development</p>
+            <p class="about-col-name">AI-Driven Workflows</p>
+            <p class="about-col-name">Clean Code</p>
           </div>
         </div>
 
-        <div class="about-col about-col--education">
+        <!-- Education -->
+        <div class="about-col">
           <p class="about-col-label">Education</p>
           <div class="about-col-item">
             <p class="about-col-name">Web Design and Development</p>
-            <p class="about-col-meta">Humber Polytechnic</p>
-            <p class="about-col-meta">2025–2026</p>
+            <p class="about-col-meta">Humber Polytechnic, 2025–2026</p>
           </div>
         </div>
 
-        <div class="about-col-contact-links">
-          <div class="about-col">
-            <p class="about-col-label">Contact</p>
-            <div class="about-col-item">
-              <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
-            </div>
+        <!-- Contact -->
+        <div class="about-col">
+          <p class="about-col-label">Contact</p>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#5e5e5e;text-decoration:none;letter-spacing:-0.6px;">marimnespoli@gmail.com</a></p>
           </div>
-          <div class="about-col">
-            <p class="about-col-label">Links</p>
-            <div class="about-col-item">
-              <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
-            </div>
-            <div class="about-col-item">
-              <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
-            </div>
-            <div class="about-col-item">
-              <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
-            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="about-col">
+          <p class="about-col-label">Links</p>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
+          </div>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
+          </div>
+          <div class="about-col-item">
+            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
           </div>
         </div>
 
       </div><!-- /.about-info -->
 
+    </div><!-- /.about-inner -->
+
+    <!-- When Not Working -->
+    <div class="about-when">
+      <p class="about-when-label">When Not Working...</p>
+      <div class="about-when-grid">
+        <img src="when-img1.png" alt="" />
+        <img src="when-img2.png" alt="" />
+        <img src="when-img3.png" alt="" />
+        <img src="when-img4.png" alt="" />
+      </div>
     </div>
 
-    <section class="about-when-section">
-      <div class="container">
-        <div class="about-when-inner">
-          <h2 class="about-when-title">WHEN NOT WORKING...</h2>
-          <div class="about-when-grid">
-            <img src="when-img1.png" alt="" />
-            <img src="when-img2.png" alt="" />
-            <img src="when-img3.png" alt="" />
-            <img src="when-img4.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
 </body>
