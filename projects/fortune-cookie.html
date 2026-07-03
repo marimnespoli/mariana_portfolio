@@ -62,7 +62,7 @@
       grid-template-columns: 1fr auto;
       gap: 80px;
       align-items: start;
-      padding: 80px 60px 72px;
+      padding: 80px 80px 72px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -244,7 +244,9 @@
        5. REFERENCES RESEARCH
     ───────────────────────────────────────── */
     .fc-references {
-      padding: 0 80px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 80px 80px;
     }
 
     .fc-references__title {
@@ -252,13 +254,13 @@
       font-weight: 700;
       letter-spacing: -0.03em;
       color: #000;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .fc-references__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      gap: 8px;
       align-items: start;
     }
 
@@ -282,29 +284,29 @@
     .fc-stat {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 420px;
+      min-height: 480px;
       width: 100%;
       align-items: center;
     }
 
     .fc-stat__label-wrap {
-      padding: 60px 60px 60px 80px;
+      padding: 80px 60px 80px 80px;
       display: flex;
       align-items: center;
     }
 
     .fc-stat__label {
-      font-size: 32px;
+      font-size: 52px;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       color: #000;
-      line-height: 1.1;
+      line-height: 1.05;
     }
 
     .fc-stat__visual {
       background: transparent;
       height: 100%;
-      min-height: 420px;
+      min-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -324,18 +326,22 @@
     .fc-stat__visual-screen {
       position: relative;
       z-index: 1;
-      width: 96%;
-      max-width: 640px;
+      width: 82%;
+      max-width: 520px;
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-      margin: 40px 0;
+      margin: 48px 0;
+    }
+
+    .fc-stat + .fc-stat {
+      border-top: 1px solid #e8e8e8;
     }
 
     /* ─────────────────────────────────────────
        7. FINAL WEBSITE
     ───────────────────────────────────────── */
     .fc-final {
-      padding: 100px 60px 80px;
+      padding: 100px 80px 80px;
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
@@ -378,7 +384,7 @@
     .fc-footer {
       background: #fff;
       color: #111;
-      padding: 64px 60px;
+      padding: 64px 80px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
