@@ -5,237 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Mariana Mesquita</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-  <style>
-    .about-main { padding: 0; }
-
-    /* ── Grid unificado: 3 colunas ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 360px 1fr 1fr;
-      grid-template-rows: auto auto auto;
-      column-gap: 56px;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 100px 0 80px;
-      align-items: start;
-    }
-
-    /* Foto: col 1, row 1 */
-    .about-photo {
-      grid-column: 1;
-      grid-row: 1;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    /* Bio: cols 2–3, row 1 */
-    .about-text {
-      grid-column: 2 / 4;
-      grid-row: 1;
-      max-width: 500px;
-    }
-
-    .about-intro {
-      font-family: var(--font);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #333333;
-      line-height: 1.7;
-      margin: 0 0 24px 0;
-    }
-
-    .about-intro strong {
-      font-weight: 700;
-      color: #1a1a1a;
-    }
-
-    .about-body {
-      font-family: var(--font);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: #333333;
-      line-height: 1.7;
-      margin: 0 0 18px 0;
-    }
-
-    .about-body:last-child { margin-bottom: 0; }
-
-    /* Colunas info: row 2 — skills col 1, education col 2, contact col 3 */
-    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 56px; }
-    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 56px; }
-    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 56px; }
-
-    .about-col-label {
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: -0.6px;
-      color: #888888;
-      margin: 0 0 20px 0;
-    }
-
-    .about-col-item {
-      margin: 0 0 10px 0;
-    }
-
-    .about-col-item:last-child { margin-bottom: 0; }
-
-    .about-col-name {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font);
-      font-size: 15px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin: 0 0 2px 0;
-      line-height: 1.4;
-    }
-
-
-    .about-col-meta {
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 400;
-      color: #4a4a4a;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    /* Skills: tags inline */
-    .about-skills-group {
-      margin: 0 0 18px 0;
-    }
-
-    .about-skills-group:last-child { margin-bottom: 0; }
-
-    .about-skills-group-label {
-      font-family: var(--font);
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #777;
-      margin: 0 0 8px 0;
-    }
-
-    .about-skills-list {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 400;
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .sk {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      background: url('Vector (1) copy.png') center / contain no-repeat;
-      opacity: 0.4;
-      flex-shrink: 0;
-    }
-
-
-    .about-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #4a4a4a;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.15s;
-    }
-
-    .about-link:hover { color: #111; }
-
-    .about-link::before {
-      content: '';
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      background: url('Vector (1) copy.png') center / contain no-repeat;
-      flex-shrink: 0;
-      opacity: 0.4;
-      align-self: center;
-    }
-
-    /* Bullet alignment: marcadores alinhados com títulos de seção */
-    .about-col .about-col-item {
-      padding-left: 0;
-    }
-
-    /* ── When Not Working ── */
-    .about-when-inner {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .about-when-section {
-      padding: 20px 0 100px;
-    }
-
-    .about-when-title {
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: -0.6px;
-      color: #888888;
-      margin: 0 0 28px 0;
-      line-height: 1.5;
-    }
-
-    .about-when-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 56px;
-    }
-
-    .about-when-grid img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 15px;
-      display: block;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 860px) {
-      .about-hero {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 48px 0 56px;
-      }
-      .about-photo { max-width: 340px; }
-      .about-intro { font-size: 19px; }
-      .about-footer-grid { grid-template-columns: 1fr 1fr; }
-      .about-when-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 540px) {
-      .about-footer-grid { grid-template-columns: 1fr; gap: 32px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -248,79 +21,79 @@
     </div>
     <nav class="header__nav">
       <a href="index.html#work" class="header__nav-link">Work</a>
-      <a href="about.html" class="header__nav-link header__nav-link--active">About</a>
+      <a href="about.html" class="header__nav-link">About</a>
       <a href="index.html#contact" class="header__nav-link">Contact</a>
     </nav>
   </header>
 
-  <main class="about-main">
+  <main class="ab-main">
     <div class="container">
 
-      <div class="about-grid">
+      <!-- ── HERO: Bio + Photo ──────────────────────────────── -->
+      <div class="ab-hero">
 
-        <div class="about-photo">
-          <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
+        <div class="ab-hero__left">
+          <h1 class="ab-title">I'm Mariana Mesquita.</h1>
+
+          <p class="ab-bio">
+            <strong>Web designer &amp; developer based in Toronto, Canada.</strong>
+            I craft intuitive digital experiences by bridging the gap between
+            high-fidelity UI/UX design and clean, scalable code.
+          </p>
+
+          <p class="ab-bio">
+            My workflow combines aesthetic design principles with AI-assisted
+            development to turn complex concepts into thoughtful, functional products.
+            From early wireframes to final implementation.
+          </p>
+
+          <p class="ab-bio ab-bio--italic">Fueled by coffee, driven by curiosity.</p>
+
+          <a href="mailto:marimnespoli@gmail.com" class="ab-btn">Get in touch +</a>
         </div>
 
-        <div class="about-text">
-          <p class="about-intro">Hi, I'm <strong>Mariana Mesquita</strong>.</p>
-          <p class="about-body">A web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
-          <p class="about-body">I bridge the gap between high-fidelity design and technical implementation, turning complex requirements into thoughtful, functional products through an integrated, AI-assisted workflow.</p>
+        <div class="ab-hero__right">
+          <img src="foto.jpg" alt="Mariana Mesquita" class="ab-photo" />
         </div>
 
-        <div class="about-col about-col--skills">
-          <p class="about-col-label">Skills</p>
-          <div class="about-skills-group">
-            <p class="about-skills-group-label">Design &amp; Product</p>
-            <p class="about-skills-list">UI/UX Design <span class="sk"></span> Wireframing <span class="sk"></span> Product Thinking <span class="sk"></span> Design Systems</p>
-          </div>
-          <div class="about-skills-group">
-            <p class="about-skills-group-label">Development</p>
-            <p class="about-skills-list">Front-end Development <span class="sk"></span> AI-Driven Workflows <span class="sk"></span> Clean Code</p>
-          </div>
+      </div>
+
+      <!-- ── EDUCATION + SKILLS ─────────────────────────────── -->
+      <div class="ab-info">
+
+        <div class="ab-edu">
+          <h2 class="ab-section-title">Education</h2>
+          <p class="ab-edu__course">Web design and development</p>
+          <p class="ab-edu__school">Humber Polytechnic</p>
+          <span class="ab-edu__badge">+ 2020 - 2024</span>
         </div>
 
-        <div class="about-col about-col--education">
-          <p class="about-col-label">Education</p>
-          <div class="about-col-item">
-            <p class="about-col-name">Web Design and Development</p>
-            <p class="about-col-meta">Humber Polytechnic, 2025–2026</p>
-          </div>
+        <div class="ab-skills">
+          <h2 class="ab-section-title">Skills</h2>
+          <ul class="ab-skills__grid">
+            <li>+ UX/UI Design</li>
+            <li>+ Front-end Development</li>
+            <li>+ Prototyping &amp; Wireframing</li>
+            <li>+ AI-Driven Workflow</li>
+            <li>+ Product Thinking</li>
+            <li>+ Design Systems</li>
+          </ul>
         </div>
 
-        <div class="about-col about-col--contact">
-          <p class="about-col-label">Contact</p>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="mailto:marimnespoli@gmail.com" style="color:#333;text-decoration:none;">marimnespoli@gmail.com</a></p>
-          </div>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
-          </div>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
-          </div>
-          <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
-          </div>
-        </div>
+      </div>
 
+      <!-- ── WHEN NOT WORKING ───────────────────────────────── -->
+      <div class="ab-when">
+        <h2 class="ab-when__title">WHEN NOT WORKING...</h2>
+        <div class="ab-when__grid">
+          <img src="when-img1.png" alt="" class="ab-when__img" />
+          <img src="when-img2.png" alt="" class="ab-when__img" />
+          <img src="when-img3.png" alt="" class="ab-when__img" />
+          <img src="when-img4.png" alt="" class="ab-when__img" />
+        </div>
       </div>
 
     </div>
-
-    <section class="about-when-section">
-      <div class="container">
-        <div class="about-when-inner">
-          <h2 class="about-when-title">WHEN NOT WORKING...</h2>
-          <div class="about-when-grid">
-            <img src="when-img1.png" alt="" />
-            <img src="when-img2.png" alt="" />
-            <img src="when-img3.png" alt="" />
-            <img src="when-img4.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
 </body>

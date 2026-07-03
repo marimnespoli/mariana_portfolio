@@ -8,429 +8,10 @@
   <link rel="stylesheet" href="project.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Base ── */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: #000; }
-    a { text-decoration: none; color: inherit; }
-
-    /* ── Container ── */
-    .fc-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 80px;
-    }
-
-    /* ── Header alignment override (global uses 60px) ── */
-    .header-row {
-      padding-left: 80px;
-      padding-right: 80px;
-      max-width: 1200px;
-    }
-
-    /* ── Banner stack ── */
-    .fc-banner {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    .fc-banner__bg {
-      width: 60%;
-      max-width: 600px;
-      display: block;
-    }
-    .fc-banner__text {
-      position: absolute;
-      top: 18%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 28%;
-      max-width: 260px;
-    }
-
-    /* ── Fortune ribbon ── */
-    .fc-ribbon {
-      display: flex;
-      justify-content: center;
-      padding: 60px 0;
-    }
-    .fc-ribbon img {
-      width: 55%;
-      max-width: 700px;
-      display: block;
-    }
-
-    /* ─────────────────────────────────────────
-       1. HERO
-    ───────────────────────────────────────── */
-    .fc-hero {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 80px;
-      align-items: start;
-      padding: 80px 80px 72px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .fc-hero__title {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.0;
-      color: #000;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .fc-hero__desc {
-      font-size: 18px;
-      font-weight: 400;
-      color: #333;
-      line-height: 1.7;
-      max-width: 560px;
-    }
-
-    .fc-hero__right {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      min-width: 220px;
-      padding-top: 8px;
-    }
-
-    .fc-meta-group { display: flex; flex-direction: column; gap: 4px; }
-
-    .fc-meta-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #000;
-    }
-
-    .fc-meta-val {
-      font-size: 13px;
-      font-weight: 400;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    .fc-btn {
-      display: inline-block;
-      width: fit-content;
-      align-self: flex-start;
-      border: 2px solid #000;
-      border-radius: 8px;
-      padding: 12px 36px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000;
-      text-align: center;
-      transition: background 0.2s, color 0.2s;
-      margin-top: 8px;
-    }
-    .fc-btn:hover { background: #7b70bf; border-color: #7b70bf; color: #fff; }
-
-    /* ─────────────────────────────────────────
-       2. GOLDEN BANNER (Fortune Cookie branding)
-    ───────────────────────────────────────── */
-
-    /* ─────────────────────────────────────────
-       3. THE GOAL SPLIT
-    ───────────────────────────────────────── */
-    .fc-goal-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-      width: 100%;
-    }
-
-    .fc-goal-split__app {
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-    }
-
-    .fc-goal-split__app-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .fc-goal-split__app-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      min-height: 480px;
-      gap: 24px;
-      padding: 40px;
-    }
-
-    .fc-goal-split__app-cookie-wrap {
-      position: relative;
-      width: 68%;
-      max-width: 320px;
-      aspect-ratio: 476 / 352;
-    }
-
-    .fc-goal-split__app-cookie-masked {
-      position: absolute;
-      top: 8.09%; left: 0; right: 0.14%; bottom: 0.05%;
-      -webkit-mask-image: url(../assets/fortune-cookie/cookie-mask.svg);
-      mask-image: url(../assets/fortune-cookie/cookie-mask.svg);
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-    }
-
-    .fc-goal-split__app-cookie-masked img {
-      width: 100%; height: 100%; object-fit: fill; display: block;
-    }
-
-    .fc-goal-split__app-cookie-v1 {
-      position: absolute;
-      top: 0; left: 47.07%; right: 50.89%; bottom: 97.22%;
-    }
-
-    .fc-goal-split__app-cookie-v2 {
-      position: absolute;
-      top: 0.4%; left: 37.01%; right: 57.05%; bottom: 89.28%;
-    }
-
-    .fc-goal-split__app-cookie-v1 img,
-    .fc-goal-split__app-cookie-v2 img {
-      width: 100%; height: 100%; display: block;
-    }
-
-    .fc-goal-split__app-click {
-      width: 110px;
-      display: block;
-    }
-
-    .fc-goal-split__text {
-      background: #FDF8F5;
-      padding: 64px max(80px, calc((100vw - 1200px) / 2 + 80px)) 64px 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .fc-goal-split__label {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #000;
-    }
-
-    .fc-goal-split__body {
-      font-size: 15px;
-      font-weight: 400;
-      color: #222;
-      line-height: 1.85;
-    }
-
-    /* ─────────────────────────────────────────
-       4. FORTUNE RIBBON
-    ───────────────────────────────────────── */
-
-    /* ─────────────────────────────────────────
-       5. REFERENCES RESEARCH
-    ───────────────────────────────────────── */
-    .fc-references {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 96px 80px 96px;
-    }
-
-    /* ── Shared section title (References / stat labels) ── */
-    .fc-section-title {
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: #000;
-      line-height: 1.05;
-    }
-
-    .fc-references__title {
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: #000;
-      margin-bottom: 28px;
-    }
-
-    .fc-references__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      align-items: start;
-    }
-
-    .fc-references__img {
-      border-radius: 10px;
-      overflow: hidden;
-      aspect-ratio: 3 / 4;
-      width: 100%;
-      max-height: 220px;
-    }
-
-    .fc-references__img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ─────────────────────────────────────────
-       6. STAT SECTIONS (1 interaction / Infinity luck)
-    ───────────────────────────────────────── */
-    .fc-stat {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-      width: 100%;
-    }
-
-    .fc-stat + .fc-stat {
-      margin-top: 80px;
-    }
-
-    .fc-stat__text {
-      background: #FDF8F5;
-      padding: 96px 60px 96px 80px;
-      display: flex;
-      align-items: center;
-    }
-
-    .fc-stat__label {
-      font-size: 40px;
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      color: #000;
-      line-height: 1.05;
-    }
-
-    .fc-stat__visual {
-      overflow: hidden;
-      min-height: 480px;
-    }
-
-    .fc-stat__visual-screen {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ─────────────────────────────────────────
-       7. FINAL WEBSITE
-    ───────────────────────────────────────── */
-    .fc-final {
-      padding: 100px 80px 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .fc-final__title {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      text-align: center;
-      color: #000;
-    }
-
-    .fc-final__buttons {
-      display: flex;
-      gap: 24px;
-    }
-
-    .fc-final__btn {
-      border: 2px solid #000;
-      border-radius: 10px;
-      padding: 12px 36px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #000;
-      transition: background 0.2s, color 0.2s;
-    }
-    .fc-final__btn:hover { background: #7b70bf; border-color: #7b70bf; color: #fff; }
-
-    .fc-final__macbook-wrap { width: 100%; max-width: 860px; }
-
-    /* ─────────────────────────────────────────
-       8. FOOTER
-    ───────────────────────────────────────── */
-    .fc-footer {
-      background: #fff;
-      color: #111;
-      padding: 64px 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-top: 1px solid #e8e8e8;
-    }
-
-    .fc-footer__logo img {
-      height: 48px;
-      width: auto;
-      display: block;
-    }
-
-    .fc-footer__nav {
-      display: flex;
-      gap: 120px;
-    }
-
-    .fc-footer__col {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .fc-footer__col-label {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #888;
-      margin-bottom: 4px;
-    }
-
-    .fc-footer__link {
-      font-size: 16px;
-      font-weight: 400;
-      color: #111;
-      line-height: 1.4;
-      transition: opacity 0.2s;
-    }
-    .fc-footer__link:hover { opacity: 0.5; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ─── Nav ─── -->
   <header class="header-row">
     <div class="header__logo">
       <a href="../index.html"><img src="../svg.svg" alt="Mariana Mesquita" class="header__logo-img" /></a>
@@ -445,179 +26,323 @@
     </nav>
   </header>
 
-  <main>
+  <main class="cs2-main">
+    <div class="cs2-wrap">
 
-    <!-- ─── 1. Golden Banner ─── -->
-    <div class="fc-banner">
-      <img class="fc-banner__bg" src="../assets/fortune-cookie/faixa do fortune cookie.png" alt="" />
-      <img class="fc-banner__text" src="../assets/fortune-cookie/Fortune cookie.svg" alt="Fortune Cookie" />
-    </div>
-
-    <!-- ─── 2. Hero ─── -->
-    <section class="fc-hero">
-      <div class="fc-hero__left">
-        <h1 class="fc-hero__title">Fortune Cookie</h1>
-        <p class="fc-hero__desc">A fortune cookie app where one click breaks the cookie and reveals a random fortune.</p>
-      </div>
-      <div class="fc-hero__right">
-        <div class="fc-meta-group">
-          <span class="fc-meta-label">Project Scope</span>
-          <span class="fc-meta-val">Web design and development</span>
-        </div>
-        <div class="fc-meta-group">
-          <span class="fc-meta-label">Skills</span>
-          <span class="fc-meta-val">Next.js · TypeScript · Tailwind CSS · React · Figma · Illustrator</span>
-        </div>
-        <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="fc-btn">View Website</a>
-      </div>
-    </section>
-
-    <!-- ─── 3. The Goal Split ─── -->
-    <section class="fc-goal-split">
-
-      <div class="fc-goal-split__app">
-        <img class="fc-goal-split__app-bg" src="../assets/fortune-cookie/bg.png" alt="" />
-        <div class="fc-goal-split__app-content">
-          <div class="fc-goal-split__app-cookie-wrap">
-            <div class="fc-goal-split__app-cookie-masked">
-              <img src="../assets/fortune-cookie/cookie-fill.svg" alt="" />
-            </div>
-            <div class="fc-goal-split__app-cookie-v1">
-              <img src="../assets/fortune-cookie/cookie-v1.svg" alt="" />
-            </div>
-            <div class="fc-goal-split__app-cookie-v2">
-              <img src="../assets/fortune-cookie/cookie-v2.svg" alt="" />
+      <!-- ─── Header ─── -->
+      <header class="cs2-header">
+        <div class="cs2-header__top">
+          <div class="cs2-header__left">
+            <h1 class="cs2-title">
+              Fortune Cookie
+              <span class="cs2-title__sub">Interactive Fortune App</span>
+            </h1>
+            <div class="cs2-pills-row">
+              <span class="cs2-pill">Next.js</span>
+              <span class="cs2-pill">TypeScript</span>
+              <span class="cs2-pill">Tailwind CSS</span>
+              <span class="cs2-pill">React</span>
             </div>
           </div>
-          <img class="fc-goal-split__app-click" src="../assets/fortune-cookie/click-btn.svg" alt="click" />
+          <div class="cs2-header__actions">
+            <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              Live Demo ↗
+            </a>
+            <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-btn cs2-btn--outline">
+              GitHub ↗
+            </a>
+          </div>
         </div>
-      </div>
+        <div class="cs2-divider"></div>
+      </header>
 
-      <div class="fc-goal-split__text">
-        <span class="fc-goal-split__label">The Goal</span>
-        <p class="fc-goal-split__body">
-          I wanted to create an experience where the gesture of breaking the cookie was the center of everything — one click, one reveal. Nothing before, nothing after.
-        </p>
-        <p class="fc-goal-split__body">
-          The challenge was making a simple interaction feel satisfying through animation and visual design. The entire app lives in a single gesture.
-        </p>
-      </div>
+      <!-- ─── Goal / Approach ─── -->
+      <section class="cs2-cards-2col">
 
-    </section>
-
-    <!-- ─── 4. Fortune Ribbon ─── -->
-    <div class="fc-ribbon">
-      <img src="../Group 16.png" alt="A journey of a thousand miles begins with a single step" />
-    </div>
-
-    <!-- ─── 5. References Research ─── -->
-    <section class="fc-references">
-      <h2 class="fc-references__title fc-section-title">References research</h2>
-      <div class="fc-references__grid">
-        <div class="fc-references__img">
-          <img src="ref1.png" alt="Reference 1" />
+        <div class="cs2-card">
+          <div class="cs2-card__num">01</div>
+          <h2 class="cs2-card__title">The Goal</h2>
+          <p class="cs2-card__text">
+            Build a playful, tactile fortune cookie experience in the browser — one click to break, one reveal to read. No filler content, no extra steps.
+          </p>
+          <p class="cs2-card__text">
+            The challenge: make a simple interaction feel satisfying through animation and visual design. The entire app lives in a single gesture.
+          </p>
         </div>
-        <div class="fc-references__img">
-          <img src="ref2.png" alt="Reference 2" />
-        </div>
-        <div class="fc-references__img">
-          <img src="ref3.png" alt="Reference 3" />
-        </div>
-        <div class="fc-references__img">
-          <img src="ref4.png" alt="Reference 4" />
-        </div>
-      </div>
-    </section>
 
-    <!-- ─── 6. Stat: 1 Interaction ─── -->
-    <section class="fc-stat">
-      <div class="fc-stat__text">
-        <span class="fc-stat__label fc-section-title">1 interaction</span>
-      </div>
-      <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
-      </div>
-    </section>
+        <div class="cs2-card">
+          <div class="cs2-card__num">02</div>
+          <h2 class="cs2-card__title">The Approach</h2>
+          <p class="cs2-card__text">
+            Conceived in Figma with custom illustrations made in Adobe Illustrator. Visual identity draws from Chinese New Year aesthetics — warm tones, decorative patterns, hand-crafted assets.
+          </p>
+          <p class="cs2-card__text">
+            Implemented with Next.js and TypeScript via the Figma MCP, translating the design directly into a working React component tree.
+          </p>
+          <div class="cs2-card__stats">
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">1</span>
+              <span class="cs2-stat__label">interaction</span>
+            </div>
+            <div class="cs2-stat">
+              <span class="cs2-stat__val">∞</span>
+              <span class="cs2-stat__label">fortunes</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- ─── 7. Stat: Infinity Luck ─── -->
-    <section class="fc-stat">
-      <div class="fc-stat__text">
-        <span class="fc-stat__label fc-section-title">Infinity luck.</span>
-      </div>
-      <div class="fc-stat__visual">
-          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
-      </div>
-    </section>
+      </section>
 
-    <!-- ─── 8. Final Website ─── -->
-    <section class="fc-final">
-      <h2 class="fc-final__title">FINAL WEBSITE</h2>
-      <div class="fc-final__buttons">
-        <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="fc-final__btn">GitHub</a>
-        <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="fc-final__btn">View Website</a>
-      </div>
-      <div class="fc-final__macbook-wrap">
-        <div class="cs-macbook-wrap">
+      <!-- ─── References ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">References</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+        <p class="cs2-section__caption">Inspired by Chinese New Year visual aesthetics</p>
+        <div class="cs2-ref-grid">
+          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref1.png" alt="Reference 1" /></div>
+          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref4.png" alt="Reference 4" /></div>
+          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref3.png" alt="Reference 3" /></div>
+          <div class="cs2-ref-img"><img src="../fortune-cookie-app/assets/ref2.png" alt="Reference 2" /></div>
+        </div>
+      </section>
+
+      <!-- ─── Interface ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Interface</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-macbook-wrap">
           <div class="cs-macbook">
             <div class="cs-mb__lid"></div>
             <div class="cs-mb__dark"></div>
             <div class="cs-mb__screen">
-              <img class="cs-mb__site-img" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie final website" style="transform:none;object-position:center top;" />
+              <img class="cs-mb__site-img" src="fortune-cookie-screenshot.png" alt="Fortune Cookie App screenshot" />
             </div>
             <div class="cs-mb__bottom-wrap">
               <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display:block;" viewBox="0 0 1008 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Bottom"><g id="Base">
-                  <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="#A3ACB1"/>
-                  <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#fc_grad0)"/>
-                </g><g id="BottomCurve">
-                  <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="#647279"/>
-                  <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#fc_grad1)"/>
-                </g><g id="Groove">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="#96A1A8"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#fc_grad2)"/>
-                </g></g>
+                <g id="Bottom2">
+                  <g id="Base2">
+                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="#A3ACB1"/>
+                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#mb_grad0_fc)"/>
+                  </g>
+                  <g id="BottomCurve2">
+                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="#647279"/>
+                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#mb_grad1_fc)"/>
+                  </g>
+                  <g id="Groove2">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="#96A1A8"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#mb_grad2_fc)"/>
+                  </g>
+                </g>
                 <defs>
-                  <linearGradient id="fc_grad0" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#0D1012"/><stop offset="0.03" stop-color="#CAD4DB"/><stop offset="0.0625" stop-color="#242729"/>
-                    <stop offset="0.134" stop-color="#A3ACB1"/><stop offset="0.866" stop-color="#A3ACB1"/>
-                    <stop offset="0.942" stop-color="#242729"/><stop offset="0.971" stop-color="#CAD4DB"/><stop offset="0.997" stop-color="#0D1012"/>
+                  <linearGradient id="mb_grad0_fc" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0D1012"/>
+                    <stop offset="0.03" stop-color="#CAD4DB"/>
+                    <stop offset="0.0625" stop-color="#242729"/>
+                    <stop offset="0.134" stop-color="#A3ACB1"/>
+                    <stop offset="0.866" stop-color="#A3ACB1"/>
+                    <stop offset="0.942" stop-color="#242729"/>
+                    <stop offset="0.971" stop-color="#CAD4DB"/>
+                    <stop offset="0.997" stop-color="#0D1012"/>
                   </linearGradient>
-                  <linearGradient id="fc_grad1" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#7A7F83"/><stop offset="1" stop-color="#0B0B0E"/>
+                  <linearGradient id="mb_grad1_fc" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7A7F83"/>
+                    <stop offset="1" stop-color="#0B0B0E"/>
                   </linearGradient>
-                  <linearGradient id="fc_grad2" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3C3C3C"/><stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
-                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/><stop offset="1" stop-color="#444444"/>
+                  <linearGradient id="mb_grad2_fc" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3C3C3C"/>
+                    <stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
+                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#444444"/>
                   </linearGradient>
                 </defs>
               </svg>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- ─── Design Screens ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Design Screens</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+        <div class="cs2-screens-grid">
+          <div class="cs2-screen-frame">
+            <img src="../fortune-cookie-app/MacBook Pro 16_ - 1.png" alt="Screen — Cookie closed" />
+          </div>
+          <div class="cs2-screen-frame">
+            <img src="../fortune-cookie-app/MacBook Pro 16_ - 2.png" alt="Screen — Fortune revealed" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Technical Highlights ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Technical Highlights</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-highlights-grid">
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Component Tree</h3>
+              <span class="cs2-pill cs2-pill--sm">react</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Cookie state lives in a single parent component. Child components receive props — no prop drilling, no global state needed for a single-interaction app.</p>
+            <pre class="cs2-code"><code>type CookieState =
+  | "idle"
+  | "breaking"
+  | "revealed";
+
+export default function Cookie() {
+  const [state, setState] =
+    useState&lt;CookieState&gt;("idle");
+  const fortune = useFortune();
+
+  return (
+    &lt;CookieShell
+      state={state}
+      onBreak={() =>
+        setState("breaking")}
+      fortune={fortune}
+    /&gt;
+  );
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Fortune Hook</h3>
+              <span class="cs2-pill cs2-pill--sm">hook</span>
+            </div>
+            <p class="cs2-highlight-card__desc">A custom hook picks a random fortune from the list on mount — one call, one result, immutable for the session. No side effects on re-render.</p>
+            <pre class="cs2-code"><code>const fortunes: string[] = [
+  "A dream you have will come true.",
+  "You will find treasure...",
+  // ...
+];
+
+export function useFortune() {
+  const [fortune] = useState(() =>
+    fortunes[
+      Math.floor(
+        Math.random() * fortunes.length
+      )
+    ]
+  );
+  return fortune;
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Animation</h3>
+              <span class="cs2-pill cs2-pill--sm">css</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Cookie break uses a CSS keyframe applied via a state-driven class. Tailwind utilities handle the reveal fade — no JS animation library needed.</p>
+            <pre class="cs2-code"><code>@keyframes crumble {
+  0%   { transform: rotate(0deg)
+                    scale(1); }
+  40%  { transform: rotate(-8deg)
+                    scale(1.05); }
+  70%  { transform: rotate(6deg)
+                    scale(0.95); }
+  100% { transform: rotate(0deg)
+                    scale(0)
+         opacity: 0; }
+}
+
+.breaking {
+  animation: crumble 0.5s
+    ease-in forwards;
+}</code></pre>
+          </div>
+
+          <div class="cs2-highlight-card">
+            <div class="cs2-highlight-card__top">
+              <h3 class="cs2-highlight-card__title">Figma → Code</h3>
+              <span class="cs2-pill cs2-pill--sm">mcp</span>
+            </div>
+            <p class="cs2-highlight-card__desc">Design was built in Figma with custom Illustrator assets. The Figma MCP translated layout tokens directly into Tailwind classes — spacing, colours, and type scales stayed consistent.</p>
+            <pre class="cs2-code"><code>// Figma token → Tailwind
+// bg: #C8102E → bg-[#C8102E]
+// radius: 24 → rounded-3xl
+// gap: 16 → gap-4
+
+&lt;div className={cn(
+  "flex flex-col items-center",
+  "gap-4 rounded-3xl",
+  "bg-[#C8102E] p-8",
+  state === "revealed" &&
+    "animate-fade-in"
+)}&gt;</code></pre>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── Final Result ─── -->
+      <section class="cs2-section">
+        <div class="cs2-section__header">
+          <span class="cs2-section__label">Final Result</span>
+          <div class="cs2-section__rule"></div>
+        </div>
+
+        <div class="cs2-result-card">
+          <div class="cs2-result-card__header">
+            <h2 class="cs2-result-card__title">
+              Designed in Figma,<br><em>shipped the same day.</em>
+            </h2>
+            <p class="cs2-result-card__sub">Click the cookie to reveal your fortune</p>
+          </div>
+
+          <div class="cs2-iframe-outer">
+            <div class="cs2-iframe-bar">
+              <div class="cs2-iframe-dots">
+                <span class="d-red"></span>
+                <span class="d-yellow"></span>
+                <span class="d-green"></span>
+              </div>
+              <div class="cs2-iframe-url">fortune-cookie-d55a.vercel.app</div>
+            </div>
+            <div class="cs2-iframe-wrap">
+              <iframe
+                src="https://fortune-cookie-d55a.vercel.app"
+                title="Fortune Cookie — live demo"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="cs2-result-card__actions">
+            <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="cs2-btn cs2-btn--primary">
+              View Live ↗
+            </a>
+            <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="cs2-btn cs2-btn--outline">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Nav ─── -->
+      <footer class="cs2-footer">
+        <a href="rick-and-morty.html">← Rick &amp; Morty</a>
+        <span>Fortune Cookie · 2025</span>
+        <a href="scente.html">Scenté →</a>
+      </footer>
+
+    </div>
   </main>
-
-  <!-- ─── Footer ─── -->
-  <footer class="fc-footer">
-    <div class="fc-footer__logo">
-      <a href="../index.html"><img src="../svg.svg" alt="Mariana Mesquita" /></a>
-    </div>
-    <div class="fc-footer__nav">
-      <div class="fc-footer__col">
-        <span class="fc-footer__col-label">Main</span>
-        <a href="../index.html#work" class="fc-footer__link">Work</a>
-        <a href="../about.html" class="fc-footer__link">About</a>
-      </div>
-      <div class="fc-footer__col">
-        <span class="fc-footer__col-label">Contact</span>
-        <a href="#" class="fc-footer__link">Resume</a>
-        <a href="#" class="fc-footer__link">LinkedIn</a>
-        <a href="mailto:marimnespoli@gmail.com" class="fc-footer__link">Email</a>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>

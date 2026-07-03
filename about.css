@@ -1,0 +1,206 @@
+/* ─── ABOUT PAGE ─────────────────────────────────────────────── */
+
+.ab-main {
+  padding: 56px 0 100px;
+}
+
+/* ── Hero: Bio (left) + Photo (right) ───────────────────────── */
+.ab-hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 72px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.ab-hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ab-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #091f5b;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  margin: 0 0 24px;
+}
+
+.ab-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.75;
+  margin: 0 0 14px;
+  max-width: 520px;
+}
+
+.ab-bio strong {
+  font-weight: 700;
+  color: #111;
+}
+
+.ab-bio--italic {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 28px;
+}
+
+.ab-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #111;
+  border: 1px solid #aaa;
+  border-radius: 100px;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  margin-top: 4px;
+}
+
+.ab-btn:hover {
+  border-color: #7b70bf;
+  color: #7b70bf;
+}
+
+.ab-hero__right {
+  /* photo column */
+}
+
+.ab-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ── Education + Skills ─────────────────────────────────────── */
+.ab-info {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 72px;
+}
+
+.ab-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.2px;
+  margin: 0 0 20px;
+}
+
+/* Education */
+.ab-edu__course {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+}
+
+.ab-edu__school {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 14px;
+}
+
+.ab-edu__badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #111;
+  border: 1px solid #bbb;
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+/* Skills */
+.ab-skills__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 14px;
+  column-gap: 24px;
+}
+
+.ab-skills__grid li {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ── When Not Working ───────────────────────────────────────── */
+.ab-when {
+  border-top: 1px solid #e4e4e4;
+  padding-top: 52px;
+}
+
+.ab-when__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 32px;
+}
+
+.ab-when__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ab-when__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .ab-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ab-hero__right {
+    order: -1;
+    max-width: 260px;
+  }
+
+  .ab-info {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ab-when__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .ab-title { font-size: 28px; }
+  .ab-when__title { font-size: 24px; }
+}
