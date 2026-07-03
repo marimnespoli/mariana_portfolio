@@ -303,18 +303,18 @@
     /* text-left: text(38%) | image(1fr) */
     .fc-stat {
       display: grid;
-      grid-template-columns: minmax(280px, 38%) 1fr;
-      min-height: 520px;
+      grid-template-columns: minmax(260px, 36%) 1fr;
+      max-height: 560px;
       width: 100%;
+      overflow: hidden;
     }
 
-    /* image-left: image(1fr) | text(38%) */
+    /* image-left: image(1fr) | text(36%) */
     .fc-stat--image-first {
-      grid-template-columns: 1fr minmax(280px, 38%);
+      grid-template-columns: 1fr minmax(260px, 36%);
     }
 
     .fc-stat + .fc-stat {
-      margin-top: 0;
       border-top: 1px solid #ede8e0;
     }
 
@@ -338,7 +338,7 @@
 
     .fc-stat__visual {
       overflow: hidden;
-      min-height: 520px;
+      height: 100%;
     }
 
     .fc-stat__visual-screen {
