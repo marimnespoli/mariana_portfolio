@@ -277,7 +277,7 @@
     .fc-references__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: clamp(12px, 2vw, 24px);
       align-items: start;
     }
 
@@ -300,39 +300,43 @@
     ───────────────────────────────────────── */
     .fc-stat {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
+      grid-template-columns: minmax(280px, 38%) 1fr;
+      min-height: 520px;
       width: 100%;
     }
 
     .fc-stat + .fc-stat {
-      margin-top: 80px;
+      margin-top: 0;
+      border-top: 1px solid #ede8e0;
     }
 
     .fc-stat__text {
       background: #FDF8F5;
-      padding: 80px 60px 80px 80px;
+      padding: 80px 60px;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
     }
 
     .fc-stat__label {
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 400;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       color: #000;
-      line-height: 1.1;
+      line-height: 1.05;
+      max-width: 260px;
     }
 
     .fc-stat__visual {
       overflow: hidden;
-      min-height: 480px;
+      min-height: 520px;
     }
 
     .fc-stat__visual-screen {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
