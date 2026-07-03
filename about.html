@@ -147,26 +147,35 @@
 
 
     .about-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #4a4a4a;
+      position: relative;
+      display: inline-block;
+      color: #333;
       text-decoration: none;
       font-size: 14px;
-      transition: color 0.15s;
+      font-family: var(--font);
+      font-weight: 400;
+      padding-left: 0;
+      transition: color 0.25s;
     }
 
-    .about-link:hover { color: #111; }
-
     .about-link::before {
-      content: '';
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      background: url('Vector (1) copy.png') center / contain no-repeat;
-      flex-shrink: 0;
-      opacity: 0.4;
-      align-self: center;
+      content: '✦';
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      transform: translateY(-50%) translateX(-4px);
+      color: #7b70bf;
+      font-size: 9px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .about-link:hover { color: #7b70bf; }
+
+    .about-link:hover::before {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
     }
 
     /* Bullet alignment: marcadores alinhados com títulos de seção */
@@ -289,13 +298,13 @@
         <div class="about-col about-col--links">
           <p class="about-col-label">Links</p>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">Resume</a></p>
+            <p class="about-col-meta"><a href="#" class="about-link">Resume</a></p>
           </div>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">LinkedIn</a></p>
+            <p class="about-col-meta"><a href="#" class="about-link">LinkedIn</a></p>
           </div>
           <div class="about-col-item">
-            <p class="about-col-meta"><a href="#" style="color:#333;text-decoration:none;">GitHub</a></p>
+            <p class="about-col-meta"><a href="#" class="about-link">GitHub</a></p>
           </div>
         </div>
 
