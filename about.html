@@ -11,26 +11,66 @@
   <style>
     .about-main { padding: 0; }
 
-    /* ── Grid unificado: 3 colunas ── */
-    .about-grid {
+    /* ── Hero: texto esquerda, foto direita ── */
+    .about-hero {
       display: grid;
-      grid-template-columns: 360px 1fr 1fr;
-      grid-template-rows: auto auto auto;
-      column-gap: 56px;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 100px 0 80px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 80px 96px;
     }
 
-    /* Foto: col 1, row 1 */
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 16px;
+    }
+
+    .about-heading {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      line-height: 1.0;
+      color: var(--navy);
+      text-transform: none;
+    }
+
+    .about-body {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .about-body strong { font-weight: 600; color: #111; }
+    .about-body em { font-style: italic; color: #555; }
+
+    .about-cta {
+      display: inline-block;
+      width: fit-content;
+      border: 1.5px solid #333;
+      border-radius: 100px;
+      padding: 10px 28px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #111;
+      margin-top: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .about-cta:hover { background: #111; color: #fff; }
+
+    /* Foto */
     .about-photo {
-      grid-column: 1;
-      grid-row: 1;
       width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: 15px;
+      border-radius: 16px;
       overflow: hidden;
+      aspect-ratio: 4 / 5;
     }
 
     .about-photo img {
@@ -41,42 +81,26 @@
       display: block;
     }
 
-    /* Bio: cols 2–3, row 1 */
-    .about-text {
-      grid-column: 2 / 4;
-      grid-row: 1;
-      max-width: 500px;
+    /* ── Info columns ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr 1fr;
+      grid-template-rows: auto;
+      column-gap: 56px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 80px 80px;
+      border-top: 1px solid var(--border);
+      align-items: start;
     }
 
-    .about-intro {
-      font-family: var(--font);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #333333;
-      line-height: 1.7;
-      margin: 0 0 24px 0;
-    }
+    /* Foto: hidden in bottom grid */
+    .about-photo-placeholder { display: none; }
 
-    .about-intro strong {
-      font-weight: 700;
-      color: #1a1a1a;
-    }
-
-    .about-body {
-      font-family: var(--font);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: #333333;
-      line-height: 1.7;
-      margin: 0 0 18px 0;
-    }
-
-    .about-body:last-child { margin-bottom: 0; }
-
-    /* Colunas info: row 2 — skills col 1, education col 2, contact col 3 */
-    .about-col--skills    { grid-column: 1; grid-row: 2; padding-top: 56px; }
-    .about-col--education { grid-column: 2; grid-row: 2; padding-top: 56px; }
-    .about-col--contact   { grid-column: 3; grid-row: 2; padding-top: 56px; }
+    /* Colunas info */
+    .about-col--skills    { grid-column: 1; padding-top: 56px; }
+    .about-col--education { grid-column: 2; padding-top: 56px; }
+    .about-col--contact   { grid-column: 3; padding-top: 56px; }
 
     .about-col-label {
       font-family: var(--font);
@@ -254,19 +278,23 @@
   </header>
 
   <main class="about-main">
-    <div class="container">
 
-      <div class="about-grid">
-
-        <div class="about-photo">
-          <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
-        </div>
-
+      <!-- ── Hero ── -->
+      <div class="about-hero">
         <div class="about-text">
-          <p class="about-intro">Hi, I'm <strong>Mariana Mesquita</strong>.</p>
-          <p class="about-body">A web designer &amp; developer based in Toronto, specializing in building intuitive digital experiences at the intersection of UI/UX design and clean, scalable code.</p>
-          <p class="about-body">I bridge the gap between high-fidelity design and technical implementation, turning complex requirements into thoughtful, functional products through an integrated, AI-assisted workflow.</p>
+          <h1 class="about-heading">I'm Mariana Mesquita.</h1>
+          <p class="about-body"><strong>Web designer &amp; developer based in Toronto, Canada.</strong> I craft intuitive digital experiences by bridging the gap between high-fidelity UI/UX design and clean, scalable code.</p>
+          <p class="about-body">My workflow combines aesthetic design principles with AI-assisted development to turn complex concepts into thoughtful, functional products. From early wireframes to final implementation.</p>
+          <p class="about-body"><em>Fueled by coffee, driven by curiosity.</em></p>
+          <a href="index.html#contact" class="about-cta">Get in touch +</a>
         </div>
+        <div class="about-photo">
+          <img src="foto.jpg" alt="Mariana Mesquita" />
+        </div>
+      </div>
+
+      <!-- ── Info columns ── -->
+      <div class="about-grid">
 
         <div class="about-col about-col--skills">
           <p class="about-col-label">Skills</p>
@@ -305,8 +333,6 @@
         </div>
 
       </div>
-
-    </div>
 
     <section class="about-when-section">
       <div class="container">
