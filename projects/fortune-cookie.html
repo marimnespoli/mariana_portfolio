@@ -300,33 +300,30 @@
     /* ─────────────────────────────────────────
        6. STAT SECTIONS (1 interaction / Infinity luck)
     ───────────────────────────────────────── */
-    /* text-left: text(~46%) | image(~54%) */
     .fc-stat {
-      display: grid;
-      grid-template-columns: 46% 54%;
-      max-height: 560px;
+      display: flex;
+      align-items: center;
+      max-height: 480px;
+      overflow: hidden;
+      width: calc(100% - 80px);
       max-width: 1200px;
       margin: 0 auto;
-      width: calc(100% - 48px);
-      overflow: hidden;
-      background: #FDF8F5;
+      gap: 80px;
     }
 
-    /* image-left: image(~54%) | text(~46%) */
     .fc-stat--image-first {
-      grid-template-columns: 54% 46%;
+      flex-direction: row;
     }
 
     .fc-stat + .fc-stat {
-      border-top: 1px solid #ede8e0;
+      margin-top: 24px;
     }
 
     .fc-stat__text {
-      background: #fff;
-      padding: 48px 56px;
+      flex: 0 0 auto;
+      width: 308px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
     }
 
     .fc-stat__label {
@@ -336,12 +333,13 @@
       text-transform: uppercase;
       color: #000;
       line-height: 1.2;
-      width: 308px;
     }
 
     .fc-stat__visual {
+      flex: 0 0 45%;
       overflow: hidden;
-      height: 100%;
+      align-self: stretch;
+      border-radius: 12px;
     }
 
     .fc-stat__visual-screen {
