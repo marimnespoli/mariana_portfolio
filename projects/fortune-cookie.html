@@ -256,10 +256,19 @@
       padding: 96px 80px 96px;
     }
 
-    .fc-references__title {
-      font-size: 28px;
+    /* ── Shared section title (References / stat labels) ── */
+    .fc-section-title {
+      font-size: 40px;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
+      color: #000;
+      line-height: 1.05;
+    }
+
+    .fc-references__title {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
       color: #000;
       margin-bottom: 28px;
     }
@@ -289,21 +298,30 @@
        6. STAT SECTIONS (1 interaction / Infinity luck)
     ───────────────────────────────────────── */
     .fc-stat {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
       width: 100%;
+    }
+
+    .fc-stat + .fc-stat {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .fc-stat__inner {
+      display: flex;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 480px;
     }
 
     .fc-stat__label-wrap {
+      flex: 1;
       padding: 80px 60px 80px 80px;
       display: flex;
       align-items: center;
     }
 
     .fc-stat__label {
-      font-size: 52px;
+      font-size: 40px;
       font-weight: 700;
       letter-spacing: -0.04em;
       color: #000;
@@ -311,37 +329,19 @@
     }
 
     .fc-stat__visual {
-      background: transparent;
-      height: 100%;
+      flex: 1;
       min-height: 480px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .fc-stat__visual-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.5;
+      justify-content: flex-end;
     }
 
     .fc-stat__visual-screen {
-      position: relative;
-      z-index: 1;
-      width: 82%;
+      width: 88%;
       max-width: 520px;
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
       margin: 48px 0;
-    }
-
-    .fc-stat + .fc-stat {
-      border-top: 1px solid #e8e8e8;
     }
 
     /* ─────────────────────────────────────────
@@ -520,7 +520,7 @@
 
     <!-- ─── 5. References Research ─── -->
     <section class="fc-references">
-      <h2 class="fc-references__title">References research</h2>
+      <h2 class="fc-references__title fc-section-title">References research</h2>
       <div class="fc-references__grid">
         <div class="fc-references__img">
           <img src="ref1.png" alt="Reference 1" />
@@ -539,21 +539,25 @@
 
     <!-- ─── 6. Stat: 1 Interaction ─── -->
     <section class="fc-stat">
-      <div class="fc-stat__label-wrap">
-        <span class="fc-stat__label">1 interaction</span>
-      </div>
-      <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
+      <div class="fc-stat__inner">
+        <div class="fc-stat__label-wrap">
+          <span class="fc-stat__label fc-section-title">1 interaction</span>
+        </div>
+        <div class="fc-stat__visual">
+          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
+        </div>
       </div>
     </section>
 
     <!-- ─── 7. Stat: Infinity Luck ─── -->
     <section class="fc-stat">
-      <div class="fc-stat__label-wrap">
-        <span class="fc-stat__label">Infinity luck.</span>
-      </div>
-      <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
+      <div class="fc-stat__inner">
+        <div class="fc-stat__label-wrap">
+          <span class="fc-stat__label fc-section-title">Infinity luck.</span>
+        </div>
+        <div class="fc-stat__visual">
+          <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
+        </div>
       </div>
     </section>
 
