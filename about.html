@@ -27,12 +27,32 @@
       align-items: start;
     }
 
+    .about-photo-wrap {
+      position: relative;
+      width: 100%;
+    }
     .about-photo {
       width: 100%;
       aspect-ratio: 4 / 5;
       border-radius: 10px;
       overflow: hidden;
+      outline: 1px solid rgba(0,0,0,0.10);
+      outline-offset: -1px;
     }
+    .about-photo-star {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      display: block;
+    }
+    /* pixel positions from Figma (container ~424×500px) */
+    .about-photo-star--tr  { width: 40px; height: 40px; left: 83.9%; top: 24%; }
+    .about-photo-star--ml  { width: 43px; height: 43px; left: 10.6%; top: 41.7%; }
+    /* vector stars — inset positions + rotations from Figma */
+    .about-photo-star--tl  { width: 28px; height: 27px; top: 6.2%;  left: 7.83%; transform: rotate(75deg); }
+    .about-photo-star--lc  { width: 28px; height: 27px; top: 35%;   left: 5.66%; transform: rotate(75deg); }
+    .about-photo-star--tr2 { width: 28px; height: 27px; top: 5.6%;  right: 4.57%; transform: rotate(75deg); }
+    .about-photo-star--br  { width: 28px; height: 27px; top: 63%;   right: 0.55%; transform: rotate(120deg); }
 
     .about-photo img {
       width: 100%;
@@ -228,11 +248,19 @@
 
       <!-- Hero -->
       <div class="about-hero">
-        <div class="about-photo">
-          <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
+        <div class="about-photo-wrap">
+          <div class="about-photo">
+            <img src="Gemini_Generated_Image_82noc382noc382no.png" alt="Mariana Mesquita" />
+          </div>
+          <img class="about-photo-star about-photo-star--tr"  src="star-large-dark.svg"  alt="" />
+          <img class="about-photo-star about-photo-star--ml"  src="star-large-dark2.svg" alt="" />
+          <img class="about-photo-star about-photo-star--tl"  src="star-outline.svg"  alt="" />
+          <img class="about-photo-star about-photo-star--lc"  src="star-small-blue.svg"  alt="" />
+          <img class="about-photo-star about-photo-star--tr2" src="star-small-blue.svg"  alt="" />
+          <img class="about-photo-star about-photo-star--br"  src="star-small-blue2.svg" alt="" />
         </div>
         <div class="about-text">
-          <p class="about-body">Hi, I'm <strong>Mariana Mesquita</strong>, a front-end developer and designer based in Toronto, building intuitive digital experiences with thoughtful UI and clean, scalable code.</p>
+          <p class="about-body">Hi, I'm <strong>Mariana Mesquita</strong>, a <strong>front-end developer and designer</strong> based in Toronto, building intuitive digital experiences with thoughtful UI and clean, scalable code.</p>
           <p class="about-body">I enjoy turning complex ideas into simple, accessible products by combining design, development, and AI-powered workflows.</p>
         </div>
       </div>

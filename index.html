@@ -4,74 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=42" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/overused-grotesk" rel="stylesheet" />
 </head>
 <body>
+
 
   <!-- NAV -->
   <header class="header-row">
     <div class="header__logo">
-      <img src="svg.svg" alt="Mariana Mesquita" class="header__logo-img" />
+      <a href="index.html" class="header__logo-name">Mariana Mesquita</a>
     </div>
-    <div class="header__rule-inline" aria-hidden="true">
-      <div class="header__rule-line"></div>
-    </div>
-    <nav class="header__nav">
+    <nav class="header__nav-pill">
       <a href="#work" class="header__nav-link">Work</a>
       <a href="about.html" class="header__nav-link">About</a>
-      <a href="#contact" class="header__nav-link">Contact</a>
+      <a href="https://www.linkedin.com/in/mariana-mesquita-/" target="_blank" class="header__nav-link">LinkedIn</a>
+      <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
   </header>
 
   <main>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero__grid">
-
-          <!-- Left: name + subtitle -->
-          <div class="hero__left">
-            <div class="hero__name-block">
-              <h1 class="hero__title">MARIANA MESQUITA</h1>
-            </div>
-            <p class="hero__subtitle">Web developer &amp; designer</p>
-          </div>
-
-          <!-- Right: photo | divider | bio -->
-          <div class="hero__right">
-            <div class="hero__bio-block">
-              <div class="hero__photo-col">
-                <div class="hero__photo-frame">
-                  <figure class="hero__photo">
-                    <img src="foto.jpg" alt="Mariana Mesquita" />
-                  </figure>
-                </div>
-              </div>
-              <div class="hero__divider" aria-hidden="true">
-                <img class="hero__divider-star" src="Vector (1) copy.png" alt="" />
-              </div>
-              <p class="hero__tagline">
-                <strong>Mariana Mesquita</strong> builds <strong>clean, intuitive</strong>
-                <em class="hero__tagline-highlight">experiences</em> through front-end development &amp; design,
-                keeping things <strong>simple, structured</strong> and visually sharp.
-              </p>
-            </div>
-          </div>
-
-        </div>
+    <section class="hero-intro">
+      <div class="hero-intro__text">
+        <h1 class="hero-intro__heading">
+          <img src="Layer_1 copy.svg" class="hero-intro__name-logo" alt="" aria-hidden="true" /> I'm <span class="hero-intro__name-highlight">Mariana Mesquita</span><span class="hero-intro__dash"> —</span>
+        </h1>
+        <p class="hero-intro__sub">front-end developer and web designer.</p>
+        <p class="hero-intro__location" aria-live="polite">
+          <span>Toronto, ON</span>
+          <span class="hero-intro__dot">·</span>
+          <span id="header-time">--:-- --</span>
+          <span class="hero-intro__dot">·</span>
+          <span class="hero-intro__temp-icon"><span id="header-temp">--°</span><span id="header-icon"></span></span>
+        </p>
       </div>
     </section>
+
+    <script>
+      (function () {
+        const ICONS = {
+          sun:   '☀️',
+          cloud: '☁️',
+          rain:  '🌧️',
+          snow:  '❄️',
+          storm: '⛈️',
+          fog:   '🌫️',
+          moon:  '🌙',
+        };
+
+        function codeToIcon(wmo) {
+          if (wmo === 113)                  return 'sun';
+          if (wmo === 116 || wmo === 119)   return 'cloud';
+          if (wmo === 122 || wmo === 143)   return 'fog';
+          if ([176,185,263,266,281,284,293,296,299,302,305,308,311,314,317,320,353,356,359].includes(wmo)) return 'rain';
+          if ([179,182,227,230,323,326,329,332,335,338,350,368,371,374,377].includes(wmo)) return 'snow';
+          if ([200,386,389,392,395].includes(wmo)) return 'storm';
+          return 'cloud';
+        }
+
+        function updateClock() {
+          const now = new Date().toLocaleTimeString('en-US', {
+            hour: 'numeric', minute: '2-digit', hour12: true,
+            timeZone: 'America/Toronto'
+          });
+          const el = document.getElementById('header-time');
+          if (el) el.textContent = now;
+        }
+        updateClock();
+        setInterval(updateClock, 30000);
+
+        function render(icon, temp) {
+          document.getElementById('header-temp').textContent = Math.round(temp) + '°';
+          document.getElementById('header-icon').innerHTML = ICONS[icon] || ICONS.cloud;
+        }
+
+        fetch('https://wttr.in/Toronto?format=j1')
+          .then(r => r.json())
+          .then(d => {
+            const temp = parseFloat(d.current_condition[0].temp_C);
+            const wmo  = parseInt(d.current_condition[0].weatherCode);
+            render(codeToIcon(wmo), temp);
+          })
+          .catch(e => console.error('weather fetch failed:', e));
+      })();
+    </script>
 
     <!-- FEATURED PROJECTS -->
     <section class="work" id="work">
       <div class="container">
-        <h2 class="work__title">
-          My Work
-        </h2>
+        <h2 class="work__title">Selected work <span aria-hidden="true">↓</span></h2>
         <ul class="projects-grid">
 
           <li>
@@ -81,7 +108,6 @@
               </a>
               <div class="project-card__heading">
                 <a href="projects/rick-and-morty.html" class="project-card__title-link"><h3 class="project-card__title">Rick and Morty API</h3></a>
-                <span class="badge badge--type">Personal Project</span>
               </div>
               <p class="project-card__desc">A character explorer built with the Rick and Morty API. Search, filter and browse characters in a clean, responsive interface using async/await and fetch.</p>
               <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
@@ -98,7 +124,6 @@
               </a>
               <div class="project-card__heading">
                 <a href="projects/fortune-cookie.html" class="project-card__title-link"><h3 class="project-card__title">Fortune Cookie</h3></a>
-                <span class="badge badge--type">Next.js App</span>
               </div>
               <p class="project-card__desc">Interactive fortune cookie app built with Next.js. Click to open a cookie and receive a random fortune. Built with TypeScript, React and Tailwind CSS.</p>
               <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
@@ -115,7 +140,6 @@
               </a>
               <div class="project-card__heading">
                 <a href="projects/scente.html" class="project-card__title-link"><h3 class="project-card__title">Scenté</h3></a>
-                <span class="badge badge--type">UI Design</span>
               </div>
               <p class="project-card__desc">A candle e-commerce website featuring an Autumn collection. Built with HTML and CSS — focused on clean layout, smooth navigation and a warm, editorial aesthetic.</p>
               <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="project-card__github">
@@ -132,7 +156,6 @@
               </a>
               <div class="project-card__heading">
                 <a href="projects/celestia.html" class="project-card__title-link"><h3 class="project-card__title">Celestia</h3></a>
-                <span class="badge badge--type">PWA</span>
               </div>
               <p class="project-card__desc">A horoscope PWA built with Prompt-Driven Development using Claude Design and Claude Code. Features daily horoscopes, zodiac compatibility, and celestial profiles.</p>
               <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
