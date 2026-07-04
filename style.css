@@ -96,13 +96,12 @@ main {
   flex-shrink: 0;
 }
 
-/* Header row — logo left, line center, nav right */
+/* Header row — nav centered, weather right */
 .header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 98px;
-  height: 94px;
+  justify-content: center;
+  padding: 28px 48px;
   background: #fafafa;
   max-width: 100%;
 }
@@ -243,27 +242,38 @@ main {
 
 /* ─── HERO INTRO ─────────────────────────────────────────────── */
 .hero-intro {
-  padding: 100px 0 64px;
+  padding: 80px 0 0;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+/* Sticker group: absolute, 960 px wide, centrado no hero */
+.hero-intro__group {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 960px;
+  pointer-events: none;
+}
+
 .hero-intro__text {
   text-align: center;
-  padding-left: 98px;
-  padding-right: 98px;
-  max-width: 1300px;
+  max-width: 788px;
   width: 100%;
+  margin: 0 auto;
   letter-spacing: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-intro__heading {
   font-family: 'Overused Grotesk', Inter, system-ui, sans-serif;
-  font-size: 48px;
+  font-size: 43.7px;
   font-weight: 400;
   color: #141414;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.03em;
   margin: 0;
   white-space: nowrap;
@@ -273,13 +283,32 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(0, 0, 0, 0.04);
-  border-radius: 8px;
+  background: rgba(38, 99, 242, 0.12);
+  border-left: 2px solid rgba(38, 99, 242, 0.45);
+  border-right: 2px solid rgba(38, 99, 242, 0.45);
+  border-radius: 0;
   padding: 2px 10px;
   color: #141414;
   white-space: nowrap;
   font-weight: 600;
 }
+
+/* ─── Hero Stickers ──────────────────────────────────────────── */
+.hero-sticker {
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  z-index: 1;
+}
+
+/* X = (figma_x - 384) / 960 * 100%  →  group de 960 px centrado no frame 1728 px  */
+/* Y = figma_y - 102  →  102 px = altura do header                                  */
+.hero-sticker--blue-star   { width: 40px;  height: 39px;  left: 13.75%; top:   3px; }
+.hero-sticker--sparkle     { width: 57px;  height: 57px;  left:  2.29%; top: 133px; transform: rotate(-15deg); }
+.hero-sticker--curl        { width: 96px;  height: 108px; left: 10.83%; top: 245px; }
+.hero-sticker--flower      { width: 40px;  height: 36px;  left: 92.60%; top:   3px; }
+.hero-sticker--orange-star { width: 40px;  height: 39px;  left: 98.13%; top: 139px; }
+.hero-sticker--red-star    { width: 54px;  height: 43px;  left: 87.29%; top: 288px; }
 
 .hero-intro__dash {
   font-weight: 400;
@@ -297,12 +326,69 @@ main {
 
 .hero-intro__sub {
   font-family: 'Overused Grotesk', Inter, system-ui, sans-serif;
-  font-size: 48px;
+  font-size: 43.7px;
   font-weight: 400;
   color: #141414;
-  line-height: 1.2;
+  line-height: 57.6px;
   letter-spacing: -0.03em;
-  margin: 0 0 32px;
+  margin: 0 0 28px;
+}
+
+.hero-intro__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  padding: 5px 18px 5px 5px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(20,20,20,0.8);
+  text-decoration: none;
+  transition: box-shadow 0.18s;
+}
+
+.hero-intro__cta:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.hero-intro__cta-avatar-wrap {
+  position: relative;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.hero-intro__cta-avatar-wrap::after {
+  content: '→';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b70bf;
+  font-size: 16px;
+  transform: translateX(-100%);
+  transition: transform 0.22s ease;
+}
+.hero-intro__cta:hover .hero-intro__cta-avatar-wrap::after {
+  transform: translateX(0);
+}
+.hero-intro__cta:hover .hero-intro__cta-avatar {
+  transform: translateX(100%);
+}
+.hero-intro__cta-avatar {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.22s ease;
+  display: block;
+  display: block;
 }
 
 .hero-intro__location {
@@ -1042,7 +1128,7 @@ main {
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
   padding: 64px 0 80px;
-  margin-top: 96px;
+  margin-top: 40px;
 }
 
 .work .container {
