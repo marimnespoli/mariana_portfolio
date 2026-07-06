@@ -1,3 +1,11 @@
+/* ─── SPACING SYSTEM ─────────────────────────────────────────── */
+:root {
+  --space-xs: 16px;   /* entre título e parágrafo dentro da mesma seção */
+  --space-sm: 32px;   /* entre parágrafo e link/botão abaixo */
+  --space-md: 64px;   /* entre uma seção e a imagem que vem logo depois */
+  --space-lg: 120px;  /* entre uma seção completa e a próxima */
+}
+
 /* ─── CASE STUDY ─────────────────────────────────────────────── */
 
 .cs-back {
