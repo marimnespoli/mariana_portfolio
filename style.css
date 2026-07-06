@@ -11,6 +11,11 @@
   --font-heading: 'Oswald', sans-serif;
   --font:         'Inter', sans-serif;
   --max-w:      1300px;
+
+  /* ── Section spacing tokens ── */
+  --section-gap-lg: 120px; /* between major sections: hero → work, work → footer */
+  --section-gap-md:  80px; /* internal: section title → content grid             */
+  --section-gap-sm:  40px; /* tight gaps: between cards, small separators        */
 }
 
 html { scroll-behavior: smooth; }
@@ -109,7 +114,7 @@ main {
 /* ── Global Footer ── */
 .site-footer {
   background: linear-gradient(to top, #fde8e2 0px, #fef6f3 100px, #fffaf9 180px, #ffffff 260px);
-  padding: 64px 98px;
+  padding: var(--section-gap-lg) 98px var(--section-gap-md);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -243,18 +248,21 @@ main {
 /* ─── HERO INTRO ─────────────────────────────────────────────── */
 .hero-intro {
   padding: 80px 0 0;
+  /* min-height = group height (360px): stickers nunca overflow invisível */
+  min-height: 360px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-/* Sticker group: absolute, 960 px wide, centrado no hero */
+/* Sticker group: absolute, 960 px wide, height = sticker mais baixo (curl: 245+108=353, +7 buffer) */
 .hero-intro__group {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 960px;
+  height: 360px;
   pointer-events: none;
 }
 
@@ -266,6 +274,11 @@ main {
   letter-spacing: 0;
   position: relative;
   z-index: 2;
+  pointer-events: none;
+}
+
+.hero-intro__cta {
+  pointer-events: auto;
 }
 
 .hero-intro__heading {
@@ -294,11 +307,23 @@ main {
 }
 
 /* ─── Hero Stickers ──────────────────────────────────────────── */
+@keyframes wiggle {
+  0%   { rotate: 0deg; }
+  20%  { rotate: 18deg; }
+  50%  { rotate: -16deg; }
+  75%  { rotate: 8deg; }
+  100% { rotate: 0deg; }
+}
+
 .hero-sticker {
   position: absolute;
-  pointer-events: none;
+  pointer-events: auto;
   display: block;
   z-index: 1;
+}
+
+.hero-sticker.is-wiggling {
+  animation: wiggle 0.55s ease-in-out;
 }
 
 /* X = (figma_x - 384) / 960 * 100%  →  group de 960 px centrado no frame 1728 px  */
@@ -309,6 +334,11 @@ main {
 .hero-sticker--flower      { width: 40px;  height: 36px;  left: 92.60%; top:   3px; }
 .hero-sticker--orange-star { width: 40px;  height: 39px;  left: 98.13%; top: 139px; }
 .hero-sticker--red-star    { width: 54px;  height: 43px;  left: 87.29%; top: 288px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sticker.is-wiggling { animation: none; }
+  .hero-sticker--sparkle { transform: rotate(-15deg); }
+}
 
 .hero-intro__dash {
   font-weight: 400;
@@ -327,10 +357,10 @@ main {
 .hero-intro__sub {
   font-family: 'Overused Grotesk', Inter, system-ui, sans-serif;
   font-size: 43.7px;
-  font-weight: 400;
+  font-weight: 300;
   color: #141414;
   line-height: 57.6px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01em;
   margin: 0 0 28px;
 }
 
@@ -1127,8 +1157,8 @@ main {
 
 /* ─── WORK ───────────────────────────────────────────────────── */
 .work {
-  padding: 64px 0 80px;
-  margin-top: 40px;
+  padding: 0 0 var(--section-gap-md);
+  margin-top: var(--section-gap-lg); /* gap between hero and work = 120px */
 }
 
 .work .container {
@@ -1142,7 +1172,7 @@ main {
   font-weight: 700;
   letter-spacing: -0.3px;
   text-transform: none;
-  margin: 0 0 48px;
+  margin: 0 0 var(--section-gap-md);
   text-align: center;
   color: #111111;
   display: flex;

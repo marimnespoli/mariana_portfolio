@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=67" />
+  <link rel="stylesheet" href="style.css?v=72" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <nav class="header__nav-pill">
       <a href="#work" class="header__nav-link">Work</a>
       <a href="about.html" class="header__nav-link">About</a>
-      <a href="https://www.linkedin.com/in/mariana-mesquita-/" target="_blank" class="header__nav-link">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
       <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
   </header>
@@ -113,7 +113,7 @@
               <div class="project-card__heading">
                 <a href="projects/rick-and-morty.html" class="project-card__title-link"><h3 class="project-card__title">Rick and Morty API</h3></a>
               </div>
-              <p class="project-card__desc">A character explorer built with the Rick and Morty API. Search, filter and browse characters in a clean, responsive interface using async/await and fetch.</p>
+              <p class="project-card__desc">A character explorer for the Rick and Morty universe — search, filter, and browse through a clean, responsive interface.</p>
               <a href="https://github.com/marimnespoli/wddm127-assignment2-rick-and-morty" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />
                 GitHub
@@ -129,7 +129,7 @@
               <div class="project-card__heading">
                 <a href="projects/fortune-cookie.html" class="project-card__title-link"><h3 class="project-card__title">Fortune Cookie</h3></a>
               </div>
-              <p class="project-card__desc">Interactive fortune cookie app built with Next.js. Click to open a cookie and receive a random fortune. Built with TypeScript, React and Tailwind CSS.</p>
+              <p class="project-card__desc">A playful digital fortune cookie — crack one open for a bit of unexpected wisdom.</p>
               <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="project-card__github">
                 <img src="25231.png" alt="GitHub" width="14" height="14" />
                 GitHub
@@ -176,5 +176,17 @@
   </main>
 
 
+  <script>
+    document.querySelectorAll('.hero-sticker').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        el.classList.remove('is-wiggling');
+        void el.offsetWidth;
+        el.classList.add('is-wiggling');
+      });
+      el.addEventListener('animationend', function() {
+        el.classList.remove('is-wiggling');
+      });
+    });
+  </script>
 </body>
 </html>

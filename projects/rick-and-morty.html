@@ -25,12 +25,13 @@
     /* ── Banner ── */
     .rm-banner {
       width: calc(100% - 48px);
-      max-width: 500px;
+      max-width: 800px;
       margin: 40px auto 0;
-      border-radius: 15px;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
     }
-    .rm-banner__bg {
+    .rm-banner__video {
       width: 100%;
       display: block;
     }
@@ -41,7 +42,7 @@
       grid-template-columns: 1fr auto;
       gap: 80px;
       align-items: start;
-      padding: 80px 80px 72px;
+      padding: var(--section-gap-lg) 80px var(--section-gap-md);
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -113,6 +114,7 @@
       grid-template-columns: 1fr 1fr;
       min-height: 480px;
       width: 100%;
+      margin-top: var(--section-gap-lg);
     }
 
     .rm-goal-split__visual {
@@ -197,8 +199,9 @@
       letter-spacing: 0.88px;
       text-transform: uppercase;
       color: #000;
-      margin-bottom: 32px;
+      margin-bottom: var(--section-gap-md);
       line-height: 1.2;
+      text-align: center;
     }
 
     .rm-references__grid {
@@ -234,7 +237,7 @@
       grid-template-columns: 54% 46%;
       height: 460px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: var(--section-gap-lg) auto 0;
       width: calc(100% - 48px);
       overflow: hidden;
       border-radius: 15px;
@@ -294,6 +297,122 @@
       display: block;
     }
 
+    /* ── Character Cards Showcase ── */
+    .rm-cards-section {
+      background: transparent;
+      padding: var(--section-gap-lg) 80px var(--section-gap-md);
+    }
+
+    .rm-cards-section__label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(0, 234, 255, 0.5);
+      margin-bottom: 40px;
+    }
+
+    .rm-cards-row {
+      display: flex;
+      gap: 56px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .rm-char-card {
+      background-color: #000;
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      background-repeat: repeat;
+      border: 2px solid #00eaff;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      width: 220px;
+      transition: transform 0.2s;
+    }
+
+    .rm-char-card:hover {
+      transform: scale(1.05);
+    }
+
+    .rm-char-card__img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .rm-char-card__name {
+      margin: 5px 0;
+      color: #00eaff;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .rm-char-card__meta {
+      margin: 0;
+      font-size: 14px;
+      color: white;
+    }
+
+    /* ── Live Demo ── */
+    .rm-demo {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-lg) 80px var(--section-gap-md);
+    }
+
+    .rm-demo__title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .rm-demo__hint {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .rm-demo__video {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1.5px solid #e0e0e0;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      margin-bottom: 32px;
+    }
+
+    .rm-demo__clip {
+      width: 100%;
+      height: 700px;
+      overflow: hidden;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    }
+
+    .rm-demo__frame {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      display: block;
+      background: #f8f8f8;
+      margin-top: 0;
+    }
+
     /* ── Final Website ── */
     .rm-final {
       padding: 100px 80px 80px;
@@ -341,7 +460,7 @@
     <nav class="header__nav-pill">
       <a href="../index.html#work" class="header__nav-link">Work</a>
       <a href="../about.html" class="header__nav-link">About</a>
-      <a href="https://www.linkedin.com/in/mariana-mesquita-/" target="_blank" class="header__nav-link">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
       <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
   </header>
@@ -350,7 +469,7 @@
 
     <!-- ─── 1. Banner ─── -->
     <div class="rm-banner">
-      <img class="rm-banner__bg" src="../rick and morty image project.jpg" alt="Rick and Morty" />
+      <video class="rm-banner__video" src="../filtros-demo.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <!-- ─── 2. Hero ─── -->
@@ -391,39 +510,58 @@
 
     </section>
 
-    <!-- ─── 4. Divider ─── -->
-    <div class="rm-ribbon">
-      <div class="rm-ribbon__placeholder">divider / quote image</div>
-    </div>
 
-    <!-- ─── 5. Screenshots / References ─── -->
-    <section class="rm-references">
-      <h2 class="rm-references__title">Screenshots</h2>
-      <div class="rm-references__grid">
-        <div class="rm-references__img">img</div>
-        <div class="rm-references__img">img</div>
-        <div class="rm-references__img">img</div>
-        <div class="rm-references__img">img</div>
+<!-- ─── 5. Character Cards Showcase ─── -->
+    <section class="rm-cards-section">
+      <h2 class="rm-references__title">Character Explorer</h2>
+<div class="rm-cards-row">
+
+        <div class="rm-char-card">
+          <img class="rm-char-card__img" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez" />
+          <h3 class="rm-char-card__name">Rick Sanchez</h3>
+          <p class="rm-char-card__meta">Status: Alive</p>
+          <p class="rm-char-card__meta">Species: Human</p>
+          <p class="rm-char-card__meta">Gender: Male</p>
+        </div>
+        <div class="rm-char-card">
+          <img class="rm-char-card__img" src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Morty Smith" />
+          <h3 class="rm-char-card__name">Morty Smith</h3>
+          <p class="rm-char-card__meta">Status: Alive</p>
+          <p class="rm-char-card__meta">Species: Human</p>
+          <p class="rm-char-card__meta">Gender: Male</p>
+        </div>
+        <div class="rm-char-card">
+          <img class="rm-char-card__img" src="https://rickandmortyapi.com/api/character/avatar/3.jpeg" alt="Summer Smith" />
+          <h3 class="rm-char-card__name">Summer Smith</h3>
+          <p class="rm-char-card__meta">Status: Alive</p>
+          <p class="rm-char-card__meta">Species: Human</p>
+          <p class="rm-char-card__meta">Gender: Female</p>
+        </div>
+        <div class="rm-char-card">
+          <img class="rm-char-card__img" src="https://rickandmortyapi.com/api/character/avatar/4.jpeg" alt="Beth Smith" />
+          <h3 class="rm-char-card__name">Beth Smith</h3>
+          <p class="rm-char-card__meta">Status: Alive</p>
+          <p class="rm-char-card__meta">Species: Human</p>
+          <p class="rm-char-card__meta">Gender: Female</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- ─── 6. Stat: 826 Characters ─── -->
-    <section class="rm-stat rm-stat--image-first">
-      <div class="rm-stat__visual">
-        <!-- screenshot -->
-      </div>
-      <div class="rm-stat__text">
-        <span class="rm-stat__label">826 Characters</span>
-      </div>
-    </section>
 
-    <!-- ─── 7. Stat: 4 Live Filters ─── -->
-    <section class="rm-stat">
-      <div class="rm-stat__text">
-        <span class="rm-stat__label">4 Live Filters</span>
-      </div>
-      <div class="rm-stat__visual">
-        <!-- screenshot -->
+
+    <!-- ─── 7. Live Demo ─── -->
+    <section class="rm-demo">
+      <h2 class="rm-demo__title">Explore</h2>
+      <p class="rm-demo__hint">Try it yourself — search, filter, or hit Random Character.</p>
+      <div class="rm-demo__clip">
+        <iframe
+          class="rm-demo__frame"
+          src="https://wddm127-assignment2-rick-and-morty-beta.vercel.app"
+          title="Rick and Morty Explorer — live demo"
+          loading="lazy"
+          scrolling="no"
+        ></iframe>
       </div>
     </section>
 
