@@ -293,9 +293,11 @@
     .sc-design-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      width: 100%;
-      min-height: 520px;
-      margin-top: var(--space-lg);
+      max-width: 1200px;
+      margin: var(--space-lg) auto 0;
+      padding: 0 80px;
+      gap: 80px;
+      align-items: center;
     }
     .sc-design-row + .sc-design-row {
       margin-top: var(--space-lg);
@@ -303,8 +305,7 @@
     .sc-design-row__media {
       overflow: hidden;
       background: #f0ece6;
-      display: flex;
-      align-items: stretch;
+      border-radius: 12px;
     }
     .sc-design-row__media img,
     .sc-design-row__media video {
@@ -318,8 +319,6 @@
       flex-direction: column;
       justify-content: center;
       gap: 0;
-      padding: 80px 80px 80px 80px;
-      padding-right: max(80px, calc((100vw - 1200px) / 2 + 80px));
     }
     .sc-design-row__heading {
       font-size: 24px;
