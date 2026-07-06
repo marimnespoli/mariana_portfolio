@@ -221,10 +221,9 @@
 
     .sc-design-proto__videos {
       width: 100%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
       gap: 32px;
       margin-top: 12px;
     }
@@ -235,14 +234,14 @@
     }
 
     .sc-design-proto__flow--tablet {
-      flex: 1 1 700px;
-      max-width: 800px;
+      width: 100%;
       border-radius: 60px;
     }
 
     .sc-design-proto__flow--mobile {
-      width: 240px;
-      flex: 0 0 240px;
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
       border-radius: 40px 40px 20px 20px;
     }
 
