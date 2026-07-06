@@ -176,7 +176,7 @@
 
     /* ── Design & Prototype ── */
     .sc-design-proto {
-      max-width: 680px;
+      max-width: 1100px;
       margin: var(--section-gap-lg) auto 0;
       padding: 0 24px;
       display: flex;
@@ -186,8 +186,28 @@
       gap: 20px;
     }
 
+    .sc-design-proto__text {
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
     .sc-design-proto .sc-btn {
       align-self: center;
+    }
+
+    .sc-design-proto .sc-screenshots__title {
+      margin-bottom: 0;
+    }
+
+    .sc-design-proto__flow {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      margin-top: 12px;
     }
 
     /* ── Screenshots ── */
@@ -440,10 +460,12 @@
 
     <!-- ─── Design & Prototype ─── -->
     <section class="sc-design-proto">
-      <span class="sc-goal-split__label">The Design</span>
-      <h2 class="sc-goal-split__heading">Designed and prototyped across every screen.</h2>
-      <p class="sc-goal-split__body">Home, Collection, and Contact pages were fully designed and prototyped in Figma across desktop, tablet, and mobile — mapping out user flow, layout, and component consistency before development began.</p>
-      <a href="https://www.figma.com/proto/2u97yQNTXVfHJYRSIVoJmH/Mariana-Mesquita---PROJECT-2?node-id=49-414&p=f&t=0BS6aDkRd1vGwNH1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=49%3A414&show-proto-sidebar=1" target="_blank" class="sc-btn">View Figma Prototype →</a>
+      <div class="sc-design-proto__text">
+        <h2 class="sc-screenshots__title">The Design</h2>
+        <p class="sc-goal-split__body">Home, Collection, and Contact pages were fully designed and prototyped in Figma across desktop, tablet, and mobile — mapping out user flow, layout, and component consistency before development began.</p>
+        <a href="https://www.figma.com/proto/2u97yQNTXVfHJYRSIVoJmH/Mariana-Mesquita---PROJECT-2?node-id=49-414&p=f&t=0BS6aDkRd1vGwNH1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=49%3A414&show-proto-sidebar=1" target="_blank" class="sc-btn">View Figma Prototype →</a>
+      </div>
+      <img class="sc-design-proto__flow" src="scente-figma-flow.jpg" alt="Scenté — Figma prototype flow across tablet, desktop, and mobile" />
     </section>
 
     <!-- ─── Screenshots ─── -->
