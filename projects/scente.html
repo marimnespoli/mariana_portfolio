@@ -359,6 +359,73 @@
       padding: var(--section-gap-lg) 80px var(--section-gap-md);
     }
 
+    /* ── The Design ── */
+    .sc-design {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-lg) 80px var(--section-gap-md);
+      text-align: center;
+    }
+    .sc-design__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .sc-design__heading {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .sc-design__body {
+      font-size: 15px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.9;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+    .sc-design__link {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .sc-design__link:hover { opacity: 0.5; }
+    .sc-design__tablet {
+      margin-top: var(--section-gap-md);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    }
+    .sc-design__tablet img {
+      width: 100%;
+      display: block;
+    }
+    .sc-design__phones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: var(--section-gap-md);
+    }
+    .sc-design__phones img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
     .sc-demo__title {
       font-size: 24px;
       font-weight: 700;
@@ -493,44 +560,21 @@
       </div>
     </div>
 
-    <!-- ─── Design & Prototype ─── -->
-    <section class="sc-design-proto">
-      <div class="sc-design-proto__text">
-        <h2 class="sc-screenshots__title">The Design</h2>
-        <p class="sc-goal-split__body">Home, Collection, and Contact pages were fully designed and prototyped in Figma across desktop, tablet, and mobile — mapping out user flow, layout, and component consistency before development began.</p>
-        <a href="https://www.figma.com/proto/2u97yQNTXVfHJYRSIVoJmH/Mariana-Mesquita---PROJECT-2?node-id=49-414&p=f&t=0BS6aDkRd1vGwNH1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=49%3A414&show-proto-sidebar=1" target="_blank" class="sc-btn">View Figma Prototype →</a>
+    <!-- ─── The Design ─── -->
+    <section class="sc-design">
+      <p class="sc-design__label">Process</p>
+      <h2 class="sc-design__heading">The Design</h2>
+      <p class="sc-design__body">Home, Collection, and Contact pages were fully designed and prototyped in Figma across desktop, tablet, and mobile — mapping out user flow, layout, and component consistency before development began.</p>
+      <a href="https://www.figma.com/proto/2u97yQNTXVfHJYRSIVoJmH/Mariana-Mesquita---PROJECT-2" target="_blank" class="sc-design__link">View Figma Prototype →</a>
+      <div class="sc-design__tablet">
+        <img src="Home page- tablet.png" alt="Scenté — Tablet design" />
       </div>
-      <img class="sc-design-proto__flow" src="scente-figma-flow.jpg" alt="Scenté — Figma prototype flow across tablet, desktop, and mobile" />
-      <div class="sc-design-proto__videos">
-        <video class="sc-design-proto__flow sc-design-proto__flow--tablet" src="scente-prototype-demo.mp4" autoplay muted loop playsinline></video>
-        <video class="sc-design-proto__flow sc-design-proto__flow--mobile" src="scente-prototype-demo-mobile.mp4" autoplay muted loop playsinline></video>
-      </div>
-    </section>
-
-    <!-- ─── Screenshots ─── -->
-    <section class="sc-screenshots">
-      <h2 class="sc-screenshots__title">Pages</h2>
-      <div class="sc-screenshots__grid">
-        <div class="sc-screenshots__img">Home</div>
-        <div class="sc-screenshots__img">Collection</div>
-        <div class="sc-screenshots__img">Contact</div>
+      <div class="sc-design__phones">
+        <img src="iphone-home-mockup.png" alt="Scenté — Home mobile" />
+        <img src="iphone-collection-mockup.png" alt="Scenté — Collection mobile" />
+        <img src="iphone-contact-mockup.png" alt="Scenté — Contact mobile" />
       </div>
     </section>
-
-    <!-- ─── Stat blocks ─── -->
-    <div class="sc-stat">
-      <div class="sc-stat__text">
-        <span class="sc-stat__label">3 breakpoints designed</span>
-      </div>
-      <div class="sc-stat__visual"><!-- image placeholder --></div>
-    </div>
-
-    <div class="sc-stat sc-stat--flipped">
-      <div class="sc-stat__visual"><!-- image placeholder --></div>
-      <div class="sc-stat__text">
-        <span class="sc-stat__label">0 JavaScript dependencies</span>
-      </div>
-    </div>
 
     <!-- ─── Live Demo ─── -->
     <section class="sc-demo">
