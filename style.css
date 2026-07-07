@@ -1306,6 +1306,13 @@ main {
   border: 1px solid #d8d8d8;
   border-radius: 8px;
   padding: 3px 8px;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.project-card__tag:hover {
+  background: rgba(123, 112, 191, 0.08);
+  border-color: #7b70bf;
+  color: #7b70bf;
 }
 
 .project-card__github {
