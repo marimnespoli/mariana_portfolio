@@ -1211,7 +1211,7 @@ main {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 56px;
+  gap: 72px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1314,7 +1314,7 @@ main {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 8px;
   transition: color 0.15s;
 }
 
