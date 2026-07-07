@@ -109,7 +109,7 @@
       transition: background 0.2s, color 0.2s;
       margin-top: var(--space-sm);
     }
-    .sc-btn:hover { background: #C8A97E; border-color: #C8A97E; color: #fff; }
+    .sc-btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
 
     /* ── Goal Split ── */
     .sc-goal-split {
@@ -293,10 +293,8 @@
     .sc-design-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      max-width: 1200px;
-      margin: var(--space-lg) auto 0;
-      padding: 0 80px;
-      gap: 80px;
+      width: 100%;
+      margin-top: var(--space-lg);
       align-items: center;
     }
     .sc-design-row + .sc-design-row {
@@ -304,21 +302,67 @@
     }
     .sc-design-row__media {
       overflow: hidden;
-      background: #f0ece6;
-      border-radius: 12px;
+      background: #fff;
+      padding-left: 32px;
     }
     .sc-design-row__media img,
     .sc-design-row__media video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
+      border-radius: 8px;
+    }
+
+    /* ── Across Screens ── */
+    .sc-across {
+      max-width: 640px;
+      margin: var(--space-lg) auto 0;
+      text-align: center;
+    }
+    .sc-across__title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      line-height: 1.2;
+      margin-bottom: var(--space-xs);
+    }
+    .sc-across__body {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    /* ── Mockups Row ── */
+    .sc-mockups-row {
+      display: grid;
+      grid-template-columns: 3.3fr 1.4fr;
+      gap: 60px;
+      align-items: end;
+      max-width: 960px;
+      margin: var(--space-lg) auto 0;
+    }
+    .sc-mockups-clip {
+      overflow: hidden;
+    }
+    .sc-mockups-clip video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .sc-mockups-clip--tablet {
+      border-radius: 6% / 8%;
+    }
+    .sc-mockups-clip--mobile {
+      border-radius: 12% / 8%;
     }
     .sc-design-row__text {
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 0;
+      padding: 72px max(80px, calc((100vw - 1200px) / 2 + 80px)) 72px 80px;
     }
     .sc-design-row__heading {
       font-size: 24px;
@@ -347,36 +391,9 @@
       align-self: flex-start;
       transition: opacity 0.2s;
     }
-    .sc-design-row__link:hover { opacity: 0.5; }
+    .sc-design-row__link:hover { color: #7b70bf; border-bottom-color: #7b70bf; }
 
-    .sc-design-video-full {
-      width: 100%;
-      overflow: hidden;
-      background: #000;
-      margin-top: var(--space-lg);
-    }
-    .sc-design-video-full video {
-      width: 100%;
-      display: block;
-      max-height: 560px;
-      object-fit: cover;
-    }
-
-    .sc-design-phones {
-      display: grid;
-      grid-template-columns: repeat(3, 260px);
-      gap: 70px;
-      padding: var(--space-lg) 0 var(--space-lg) max(80px, calc((100vw - 1200px) / 2 + 80px));
-      overflow: hidden;
-    }
-    .sc-design-phones video {
-      width: 100%;
-      display: block;
-      border-radius: 20px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-    }
-
-    .sc-demo__title {
+.sc-demo__title {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 0.88px;
@@ -421,6 +438,7 @@
       padding: var(--section-gap-lg) 80px var(--section-gap-lg);
       text-align: center;
     }
+    .sc-final__macbook-wrap { width: 100%; max-width: 860px; margin: 48px auto 0; }
 
     .sc-final__title {
       font-size: 24px;
@@ -448,7 +466,7 @@
       color: #000;
       transition: background 0.2s, color 0.2s;
     }
-    .sc-final__btn:hover { background: #C8A97E; border-color: #C8A97E; color: #fff; }
+    .sc-final__btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
   </style>
 </head>
 <body>
@@ -468,13 +486,13 @@
     <div class="sc-banner">
       <div class="sc-banner__inner">
         <div class="sc-banner__phone">
-          <img src="scente-mobile-home.png" alt="Scenté — Home" />
+          <img src="mobile-oficial.png" alt="Scenté — Home" />
         </div>
         <div class="sc-banner__phone">
-          <img src="scente-mobile-collection.png" alt="Scenté — Collection" />
+          <img src="mobile-oficial-2.png" alt="Scenté — Collection" />
         </div>
         <div class="sc-banner__phone">
-          <img src="scente-mobile-contact.png" alt="Scenté — Contact" />
+          <img src="mobile-oficial-3.png" alt="Scenté — Contact" />
         </div>
       </div>
     </div>
@@ -522,37 +540,63 @@
       </div>
     </div>
 
-    <div class="sc-design-video-full">
-      <video src="scente-prototype-demo.mp4" autoplay muted loop playsinline></video>
+    <!-- ─── Across Screens ─── -->
+    <div class="sc-across">
+      <h2 class="sc-across__title">Across Screens</h2>
+      <p class="sc-across__body">Tablet and mobile weren't afterthoughts. Layout, spacing, and typography were reconsidered at every breakpoint to keep the composition intentional at any screen size.</p>
     </div>
 
-    <div class="sc-design-phones">
-      <video src="scente-prototype-demo-mobile.mp4" autoplay muted loop playsinline></video>
-      <video src="scente-prototype-demo-mobile.mp4" autoplay muted loop playsinline></video>
-      <video src="scente-prototype-demo-mobile.mp4" autoplay muted loop playsinline></video>
+    <!-- ─── Mockups ─── -->
+    <div class="sc-mockups-row">
+      <div class="sc-mockups-clip sc-mockups-clip--tablet"><video src="scente-prototype-demo.mp4" autoplay muted loop playsinline></video></div>
+      <div class="sc-mockups-clip sc-mockups-clip--mobile"><video src="scente-prototype-demo-mobile.mp4" autoplay muted loop playsinline></video></div>
     </div>
 
-    <!-- ─── Live Demo ─── -->
-    <section class="sc-demo">
-      <h2 class="sc-demo__title">Explore</h2>
-      <p class="sc-demo__hint">Try it yourself — browse the collection or navigate the pages.</p>
-      <div class="sc-demo__clip">
-        <iframe
-          class="sc-demo__frame"
-          src="https://scent-website-sigma.vercel.app"
-          title="Scenté — live demo"
-          loading="lazy"
-          scrolling="no"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- ─── Final ─── -->
+<!-- ─── Final ─── -->
     <section class="sc-final">
       <h2 class="sc-final__title">Final Website</h2>
       <div class="sc-final__buttons">
         <a href="https://github.com/marimnespoli/Scent-Website" target="_blank" class="sc-final__btn">GitHub</a>
         <a href="https://scent-website-sigma.vercel.app" target="_blank" class="sc-final__btn">View Website</a>
+      </div>
+      <div class="sc-final__macbook-wrap">
+        <div class="cs-macbook-wrap">
+          <div class="cs-macbook">
+            <div class="cs-mb__lid"></div>
+            <div class="cs-mb__dark"></div>
+            <div class="cs-mb__screen">
+              <img class="cs-mb__site-img" src="scente-screenshot.png" alt="Scenté final website" style="transform:none;object-position:center top;" />
+            </div>
+            <div class="cs-mb__bottom-wrap">
+              <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display:block;" viewBox="0 0 1008 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Bottom"><g id="Base">
+                  <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="#A3ACB1"/>
+                  <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#sc_grad0)"/>
+                </g><g id="BottomCurve">
+                  <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="#647279"/>
+                  <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#sc_grad1)"/>
+                </g><g id="Groove">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="#96A1A8"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#sc_grad2)"/>
+                </g></g>
+                <defs>
+                  <linearGradient id="sc_grad0" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0D1012"/><stop offset="0.03" stop-color="#CAD4DB"/><stop offset="0.0625" stop-color="#242729"/>
+                    <stop offset="0.134" stop-color="#A3ACB1"/><stop offset="0.866" stop-color="#A3ACB1"/>
+                    <stop offset="0.942" stop-color="#242729"/><stop offset="0.971" stop-color="#CAD4DB"/><stop offset="0.997" stop-color="#0D1012"/>
+                  </linearGradient>
+                  <linearGradient id="sc_grad1" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7A7F83"/><stop offset="1" stop-color="#0B0B0E"/>
+                  </linearGradient>
+                  <linearGradient id="sc_grad2" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3C3C3C"/><stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
+                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/><stop offset="1" stop-color="#444444"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
