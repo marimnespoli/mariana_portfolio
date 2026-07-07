@@ -1222,6 +1222,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  height: 100%;
 }
 
 .project-card__img-wrap {
@@ -1289,6 +1290,7 @@ main {
   font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.6;
+  flex: 1;
 }
 
 .project-card__tag {
