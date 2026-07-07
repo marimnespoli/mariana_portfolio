@@ -1265,9 +1265,8 @@ main {
 
 .project-card__heading {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .badge--type {
@@ -1293,10 +1292,16 @@ main {
 }
 
 .project-card__tag {
-  font-size: 13px;
-  color: var(--text-muted);
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 9.5px;
   font-weight: 500;
-  margin-top: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  padding: 2px 7px;
 }
 
 .project-card__github {
