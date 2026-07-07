@@ -1219,9 +1219,10 @@ main {
 
 /* ─── PROJECT CARD ───────────────────────────────────────────── */
 .project-card {
+  --card-gap: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--card-gap);
   height: 100%;
 }
 
@@ -1267,7 +1268,7 @@ main {
 .project-card__heading {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: calc(var(--card-gap) * 0.5);
 }
 
 .badge--type {
@@ -1314,7 +1315,7 @@ main {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
-  margin-top: 8px;
+  margin-top: 0;
   transition: color 0.15s;
 }
 
