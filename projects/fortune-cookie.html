@@ -17,6 +17,9 @@
     }
   }
   </script>
+  <link rel="preload" href="../assets/models/letter-m-fallback.png" as="image" />
+  <link rel="preload" href="../assets/models/letter-m.glb" as="fetch" crossorigin="anonymous" />
+  <script type="module" src="../js/logo-3d.js"></script>
   <style>
     /* ── Base ── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -439,9 +442,9 @@
 
   <!-- ─── Nav ─── -->
   <header class="header-row">
-    <a href="../index.html" class="header__logo" data-logo-3d data-model="../assets/models/letter-m.glb" data-fallback="../assets/models/letter-m-fallback.png" aria-label="Home">
+    <a href="../index.html" class="header__logo is-loading" data-logo-3d data-model="../assets/models/letter-m.glb" data-fallback="../assets/models/letter-m-fallback.png" aria-label="Home">
       <canvas class="header__logo-canvas" aria-hidden="true"></canvas>
-      <img class="header__logo-fallback" src="../assets/models/letter-m-fallback.png" alt="" />
+      <img class="header__logo-fallback" src="../assets/models/letter-m-fallback.png" alt="" fetchpriority="high" loading="eager" decoding="async" />
     </a>
     <nav class="header__nav-pill">
       <a href="../index.html#work" class="header__nav-link">Work</a>
@@ -602,6 +605,6 @@
 
   <!-- ─── Footer ─── -->
 
-  <script type="module" src="../js/logo-3d.js"></script>
+
 </body>
 </html>

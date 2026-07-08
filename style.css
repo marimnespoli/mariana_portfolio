@@ -136,16 +136,25 @@ main {
   transition: opacity 0.25s ease;
 }
 
+.header__logo[data-logo-3d]:not(.is-ready):not(.is-fallback) .header__logo-fallback,
+.header__logo.is-loading .header__logo-fallback,
 .header__logo.is-ready .header__logo-canvas,
 .header__logo.is-fallback .header__logo-fallback {
   opacity: 1;
 }
 
+.header__logo.is-ready .header__logo-fallback {
+  opacity: 0;
+}
+
 .header__logo-fallback {
   position: absolute;
-  inset: 0;
-  width: 52px;
-  height: 52px;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%) scale(var(--logo-display-scale, 1.47));
+  transform-origin: center center;
   object-fit: contain;
   display: block;
   opacity: 0;
