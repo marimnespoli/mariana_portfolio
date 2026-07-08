@@ -6,6 +6,9 @@ const RENDER_SIZE = 100;
 const MODEL_SCALE = 1.73;
 const VIEW_PADDING = 0.68;
 const ROTATION_SPEED = 0.4;
+// The canvas is displayed 1/VIEW_PADDING larger via a CSS transform (see --logo-display-scale),
+// so the drawing buffer must be rendered at that same size to avoid upscaling blur.
+const BUFFER_SIZE = Math.round(RENDER_SIZE / VIEW_PADDING);
 const DRACO_PATH = 'https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/libs/draco/gltf/';
 
 const dracoLoader = new DRACOLoader();
@@ -103,7 +106,7 @@ function initLogo(link) {
   });
 
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(RENDER_SIZE, RENDER_SIZE, false);
+  renderer.setSize(BUFFER_SIZE, BUFFER_SIZE, false);
   renderer.setClearColor(0x000000, 0);
   renderer.toneMapping = THREE.NoToneMapping;
   renderer.toneMappingExposure = 1;
