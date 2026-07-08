@@ -4,24 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=72" />
+  <link rel="stylesheet" href="style.css?v=73" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@1,700&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/overused-grotesk" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
 
 
   <!-- NAV -->
   <header class="header-row">
+    <a href="index.html" class="header__logo" data-logo-3d data-model="assets/models/letter-m.glb" data-fallback="assets/models/letter-m-fallback.png" aria-label="Home">
+      <canvas class="header__logo-canvas" aria-hidden="true"></canvas>
+      <img class="header__logo-fallback" src="assets/models/letter-m-fallback.png" alt="" />
+    </a>
     <nav class="header__nav-pill">
       <a href="#work" class="header__nav-link">Work</a>
       <a href="about.html" class="header__nav-link">About</a>
       <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
       <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
+    <div class="header-row__spacer" aria-hidden="true"></div>
   </header>
 
   <main>
@@ -107,6 +120,23 @@
 
           <li>
             <article class="project-card">
+              <a href="projects/celestia.html" class="project-card__img-wrap">
+                <img src="icon-512.png" alt="Celestia" />
+              </a>
+              <div class="project-card__heading">
+                <span class="project-card__tag">UI/UX Design</span>
+                <a href="projects/celestia.html" class="project-card__title-link"><h3 class="project-card__title">Celestia</h3></a>
+              </div>
+              <p class="project-card__desc">A horoscope PWA with a UX/UI-first approach, designed and built through Prompt-Driven Development, pairing Claude Design and Claude Code for daily horoscopes and celestial profiles.</p>
+              <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
+                <img src="25231.png" alt="GitHub" width="14" height="14" />
+                GitHub
+              </a>
+            </article>
+          </li>
+
+          <li>
+            <article class="project-card">
               <a href="projects/rick-and-morty.html" class="project-card__img-wrap">
                 <img src="rick and morty image project.jpg" alt="Rick and Morty API" />
               </a>
@@ -156,23 +186,6 @@
             </article>
           </li>
 
-          <li>
-            <article class="project-card">
-              <a href="projects/celestia.html" class="project-card__img-wrap">
-                <img src="icon-512.png" alt="Celestia" />
-              </a>
-              <div class="project-card__heading">
-                <span class="project-card__tag">UI/UX Design</span>
-                <a href="projects/celestia.html" class="project-card__title-link"><h3 class="project-card__title">Celestia</h3></a>
-              </div>
-              <p class="project-card__desc">A horoscope PWA with a UX/UI-first approach, designed and built through Prompt-Driven Development, pairing Claude Design and Claude Code for daily horoscopes and celestial profiles.</p>
-              <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="project-card__github">
-                <img src="25231.png" alt="GitHub" width="14" height="14" />
-                GitHub
-              </a>
-            </article>
-          </li>
-
         </ul>
       </div>
     </section>
@@ -192,5 +205,6 @@
       });
     });
   </script>
+  <script type="module" src="js/logo-3d.js"></script>
 </body>
 </html>

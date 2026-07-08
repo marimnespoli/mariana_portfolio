@@ -6,6 +6,16 @@
   --space-lg: 120px;  /* entre uma seção completa e a próxima */
 }
 
+/* ─── Shared section title (fortune-cookie pattern) ─────────── */
+.project-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 1.2;
+}
+
 /* ─── CASE STUDY ─────────────────────────────────────────────── */
 
 .cs-back {

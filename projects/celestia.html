@@ -9,127 +9,838 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+    }
+  }
+  </script>
+  <style>
+    /* ── Base ── */
+    :root { --cel-purple: #856EB1; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─────────────────────────────────────────
+       1. HERO
+    ───────────────────────────────────────── */
+    .cel-hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 80px;
+      align-items: start;
+      padding: 0 80px 72px;
+      max-width: 1200px;
+      margin: var(--section-gap-lg) auto 0;
+    }
+
+    .cel-hero__title {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: #000;
+      text-transform: uppercase;
+      margin-bottom: var(--space-xs);
+    }
+
+    .cel-hero__desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .cel-hero__right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 220px;
+      padding-top: 8px;
+    }
+
+    .cel-meta-group { display: flex; flex-direction: column; gap: 4px; }
+
+    .cel-meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #000;
+    }
+
+    .cel-meta-val {
+      font-size: 13px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .cel-btn {
+      display: inline-block;
+      width: fit-content;
+      align-self: flex-start;
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 12px 36px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000;
+      text-align: center;
+      transition: background 0.2s, color 0.2s;
+      margin-top: var(--space-sm);
+    }
+    .cel-btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
+
+    /* Shared section title */
+    .cel-section-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
+      color: #000;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: var(--space-md);
+    }
+
+    /* ─────────────────────────────────────────
+       2. THE CONCEPT
+    ───────────────────────────────────────── */
+    .cel-concept {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      width: 100%;
+      margin-top: var(--space-lg);
+    }
+
+    .cel-concept__visual {
+      position: relative;
+      min-height: 480px;
+      background: #F7F5FB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .cel-phone-demo {
+      position: relative;
+      width: 62%;
+      max-width: 260px;
+      aspect-ratio: 482 / 965;
+    }
+
+    .cel-phone-demo__screen {
+      position: absolute;
+      left: 5.39%;
+      top: 2.18%;
+      width: 89.22%;
+      height: 95.54%;
+      border-radius: 13% / 6.5%;
+      overflow: hidden;
+      background: #0d0b1a;
+    }
+
+    .cel-phone-demo__screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cel-phone-demo__frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .cel-concept__text {
+      background: #F7F5FB;
+      padding: 72px max(80px, calc((100vw - 1200px) / 2 + 80px)) 72px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-xs);
+    }
+
+    .cel-concept__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #999;
+    }
+
+    .cel-concept__body {
+      font-size: 15px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    /* ─────────────────────────────────────────
+       3. THE PROCESS: DESIGNING WITH AI
+    ───────────────────────────────────────── */
+    .cel-process {
+      width: 100%;
+      background: transparent;
+      padding: var(--space-lg) 0 0;
+    }
+
+    .cel-process__inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .cel-process__intro {
+      max-width: 760px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    .cel-process__intro-body {
+      font-size: 15px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .cel-process__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xs);
+    }
+
+    .cel-process__title-card {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .cel-process__title-card .cel-section-title {
+      color: #000;
+      text-align: left;
+      margin-bottom: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+    }
+
+    .cel-process__card {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cel-process__step {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #7b70bf;
+      text-transform: uppercase;
+    }
+
+    .cel-process__card-label {
+      font-size: 17px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: -0.01em;
+    }
+
+    .cel-process__card-body {
+      font-size: 14px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────────────────────
+       4. KEY SCREENS
+    ───────────────────────────────────────── */
+    .cel-screens {
+      margin: var(--section-gap-lg) auto 0;
+      padding: 0;
+    }
+
+    .cel-screens__band {
+      width: 100%;
+      background: #F7F5FB;
+      padding: var(--section-gap-md) 0 var(--space-lg);
+    }
+
+    .cel-screens .cel-section-title {
+      margin: 0 auto var(--section-gap-md);
+      padding: 0 60px;
+    }
+
+    .cel-screens__headers {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .cel-screens__grid {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1600px;
+      margin: var(--space-sm) auto 0;
+      padding: 0 60px;
+    }
+
+    .cel-screens__item {
+      flex: 0 0 340px;
+      width: 340px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cel-screens__phone {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cel-screens__phone .cel-phone-demo {
+      position: relative;
+      width: 300px;
+      max-width: 300px;
+      flex-shrink: 0;
+      margin: 0 auto;
+      aspect-ratio: 482 / 965;
+    }
+
+    .cel-screens__phone .cel-phone-demo__screen {
+      position: absolute;
+      left: 5.39%;
+      top: 2.18%;
+      width: 89.22%;
+      height: 95.54%;
+      border-radius: 13% / 6.5%;
+      overflow: hidden;
+      background: #0d0b1a;
+    }
+
+    .cel-screens__phone .cel-phone-demo__screen img,
+    .cel-screens__phone .cel-phone-demo__screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cel-screens__header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 0 0 340px;
+      width: 340px;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    .cel-screens__caption {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(0, 0, 0, 0.8);
+      background: transparent;
+    }
+
+    .cel-screens__desc {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* ─────────────────────────────────────────
+       5. DESIGN DECISIONS
+    ───────────────────────────────────────── */
+    .cel-decisions {
+      margin-top: var(--section-gap-lg);
+      background: #FAFAFA;
+      color: #111;
+    }
+
+    .cel-decisions__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-md) 80px var(--space-lg);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      column-gap: 80px;
+      align-items: start;
+      justify-items: start;
+    }
+
+    .cel-editorial__title-col {
+      grid-column: 1;
+      width: 200px;
+      justify-self: start;
+      align-self: start;
+      text-align: left;
+    }
+
+    .cel-decisions .cel-section-title {
+      color: #000;
+      text-align: left;
+      margin-bottom: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+    }
+
+    .cel-decisions__body {
+      font-size: 16px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.9;
+      text-align: left;
+      margin: 0;
+    }
+
+    .cel-decisions__swatches {
+      display: flex;
+      justify-content: flex-start;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+      grid-column: 2;
+    }
+
+    .cel-swatch {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 900px) {
+      .cel-decisions__inner { grid-template-columns: 1fr; gap: 24px; padding-left: 24px; padding-right: 24px; }
+      .cel-editorial__title-col { width: 100%; }
+      .cel-decisions__swatches { grid-column: 1; flex-wrap: wrap; }
+      .cel-swatch { width: 80px; height: 80px; }
+    }
+
+    /* ─────────────────────────────────────────
+       6. DESIGN SYSTEM
+    ───────────────────────────────────────── */
+    .cel-design-system {
+      width: 100%;
+    }
+
+    .cel-design-system__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-md) 80px var(--space-lg);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      column-gap: 80px;
+      align-items: start;
+      justify-items: start;
+      box-sizing: border-box;
+    }
+
+    .cel-design-system .cel-section-title {
+      color: #000;
+      text-align: left;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+      width: 100%;
+      justify-self: start;
+    }
+
+    .cel-design-system__body {
+      font-size: 16px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.9;
+      text-align: left;
+      margin: 0;
+    }
+
+    .cel-design-system__visual {
+      grid-column: 1 / -1;
+      margin: var(--space-md) 0 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .cel-design-system__visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* ─────────────────────────────────────────
+       7. FINAL APP
+    ───────────────────────────────────────── */
+    .cel-final {
+      padding: var(--space-lg) 80px var(--space-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .cel-final__title {
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .cel-final__buttons {
+      display: flex;
+      gap: 24px;
+    }
+
+    .cel-final__btn {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 12px 36px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #000;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cel-final__btn:hover {
+      background: rgba(123,112,191,0.08);
+      border-color: #7b70bf;
+      color: #7b70bf;
+    }
+
+    .cel-final__phone-wrap {
+      margin-top: var(--space-md);
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .cel-final__phone-wrap .cel-phone-demo {
+      width: 260px;
+      max-width: 260px;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       7. TAKEAWAYS
+    ───────────────────────────────────────── */
+    .cel-takeaways {
+      width: 100%;
+    }
+
+    .cel-takeaways__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-md) 80px var(--space-lg);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      column-gap: 80px;
+      align-items: start;
+      justify-items: start;
+      box-sizing: border-box;
+    }
+
+    .cel-takeaways .cel-section-title {
+      color: #000;
+      text-align: left;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+      width: 100%;
+      justify-self: start;
+    }
+
+    .cel-takeaways__body {
+      font-size: 16px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.9;
+      text-align: left;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .cel-hero { grid-template-columns: 1fr; padding: 0 24px 40px; gap: 32px; margin-top: var(--section-gap-lg); }
+      .cel-concept { grid-template-columns: 1fr; min-height: auto; }
+      .cel-concept__visual { min-height: 360px; }
+      .cel-concept__text { padding: 40px 24px; }
+      .cel-phone-demo { max-width: 220px; }
+      .cel-process__inner { padding: 0 24px; }
+      .cel-process__grid { grid-template-columns: 1fr; }
+      .cel-screens { padding: 0; }
+      .cel-screens__band { padding: var(--section-gap-md) 0 var(--space-lg); }
+      .cel-screens .cel-section-title { padding: 0 24px; margin-bottom: var(--section-gap-md); }
+      .cel-screens__headers { flex-direction: column; align-items: center; gap: var(--space-md); padding: 0 24px; }
+      .cel-screens__header { width: 100%; max-width: 340px; flex: none; }
+      .cel-screens__grid { flex-direction: column; align-items: center; gap: var(--space-lg); padding: 0 24px; margin-top: var(--space-md); }
+      .cel-screens__item { max-width: 100%; width: 100%; }
+      .cel-screens__phone .cel-phone-demo { max-width: 260px; width: 260px; }
+      .cel-takeaways__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: var(--space-lg) 24px;
+      }
+      .cel-final { padding: var(--space-lg) 24px; }
+      .cel-final__buttons { flex-wrap: wrap; justify-content: center; }
+      .cel-design-system__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: var(--space-lg) 24px;
+      }
+      .cel-design-system__visual { grid-column: 1; margin-top: var(--space-md); }
+    }
+  </style>
 </head>
 <body>
 
   <header class="header-row">
+    <a href="../index.html" class="header__logo" data-logo-3d data-model="../assets/models/letter-m.glb" data-fallback="../assets/models/letter-m-fallback.png" aria-label="Home">
+      <canvas class="header__logo-canvas" aria-hidden="true"></canvas>
+      <img class="header__logo-fallback" src="../assets/models/letter-m-fallback.png" alt="" />
+    </a>
     <nav class="header__nav-pill">
       <a href="../index.html#work" class="header__nav-link">Work</a>
       <a href="../about.html" class="header__nav-link">About</a>
       <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
       <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
+    <div class="header-row__spacer" aria-hidden="true"></div>
   </header>
 
-  <main class="cs-main">
-    <div class="container">
+  <main>
 
-      <!-- Hero -->
-      <section class="cs-hero">
-        <h1 class="cs-title">Celestia</h1>
-        <p class="cs-title-sub">Horoscope PWA</p>
-      </section>
+    <!-- ─── 1. Hero ─── -->
+    <section class="cel-hero">
+      <div class="cel-hero__left">
+        <h1 class="cel-hero__title">Celestia</h1>
+        <p class="cel-hero__desc">A horoscope PWA with daily readings, real zodiac compatibility, and personal birth charts — designed and built end-to-end through a prompt-driven, AI-assisted workflow.</p>
+      </div>
+      <div class="cel-hero__right">
+        <div class="cel-meta-group">
+          <span class="cel-meta-label">Project Scope</span>
+          <span class="cel-meta-val">End-to-End App</span>
+        </div>
+        <div class="cel-meta-group">
+          <span class="cel-meta-label">Role</span>
+          <span class="cel-meta-val">UX/UI Design, Prompt-Driven Development</span>
+        </div>
+        <div class="cel-meta-group">
+          <span class="cel-meta-label">Skills</span>
+          <span class="cel-meta-val">Figma · Gemini · Claude Design · Claude Code</span>
+        </div>
+        <a href="https://celestia-henna.vercel.app" target="_blank" class="cel-btn">View Final Prototype</a>
+      </div>
+    </section>
 
-      <!-- MacBook + Overview -->
-      <div class="cs-macbook-row">
+    <!-- ─── 2. The Concept ─── -->
+    <section class="cel-concept">
+      <div class="cel-concept__visual">
+        <div class="cel-phone-demo">
+          <div class="cel-phone-demo__screen">
+            <video src="celestia-demo-horoscope.mp4?v=3" autoplay muted loop playsinline></video>
+          </div>
+          <img class="cel-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+        </div>
+      </div>
+      <div class="cel-concept__text">
+        <span class="cel-concept__label">The Concept</span>
+        <p class="cel-concept__body">
+          Most horoscope apps feel generic — the same daily blurb regardless of who's reading it. Celestia was built to feel personal: a daily reading tied to real stats (Love, Emotions, Mind, Career), a compatibility engine that calculates actual synergy between two signs, and a birth chart that maps out someone's Sun, Moon, and Rising.
+        </p>
+        <p class="cel-concept__body">
+          The bigger experiment was the workflow itself — designing and shipping a full PWA through prompts alone, from concept to a deployed product, using AI at every stage of the pipeline.
+        </p>
+      </div>
+    </section>
 
-        <!-- MacBook mockup -->
-        <div class="cs-macbook-wrap">
-          <div class="cs-macbook">
-            <div class="cs-mb__lid"></div>
-            <div class="cs-mb__dark"></div>
-            <div class="cs-mb__screen">
-              <img class="cs-mb__site-img" src="celestia-screenshot.png" alt="Celestia Horoscope PWA" />
+    <!-- ─── 3. The Process: Designing with AI ─── -->
+    <section class="cel-process">
+      <div class="cel-process__inner">
+        <div class="cel-process__grid">
+          <div class="cel-process__title-card">
+            <h2 class="cel-section-title project-section-title">The Process: Designing With AI</h2>
+          </div>
+          <div class="cel-process__card">
+            <span class="cel-process__step">Ideation &amp; Concept</span>
+            <span class="cel-process__card-label">Gemini</span>
+            <p class="cel-process__card-body">Used Gemini to brainstorm the app's structure, feature set, and copy tone — shaping ideas like "Cosmic Synergy" and the language used to describe each sign's traits.</p>
+          </div>
+          <div class="cel-process__card">
+            <span class="cel-process__step">UI Design</span>
+            <span class="cel-process__card-label">Claude Design</span>
+            <p class="cel-process__card-body">Used Claude Design to explore the visual direction — a dark, cosmic palette, glowing progress rings, and a card system reused consistently across every screen.</p>
+          </div>
+          <div class="cel-process__card">
+            <span class="cel-process__step">Development</span>
+            <span class="cel-process__card-label">Claude Code</span>
+            <p class="cel-process__card-body">Used Claude Code to implement the PWA end-to-end — components, state, and logic — and to deploy the finished build to Vercel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 4. Key Screens ─── -->
+    <section class="cel-screens">
+      <div class="cel-screens__band">
+        <h2 class="cel-section-title project-section-title">Key Screens</h2>
+        <div class="cel-screens__headers">
+          <div class="cel-screens__header">
+            <p class="cel-screens__caption">Daily Insights: Stats &amp; Trends</p>
+            <p class="cel-screens__desc">Personalized daily overview featuring emotional state metrics and astrological trends.</p>
+          </div>
+          <div class="cel-screens__header">
+            <p class="cel-screens__caption">Cosmic Compatibility: Real-Time Analysis</p>
+            <p class="cel-screens__desc">Synergy calculation engine providing real-time compatibility insights between zodiac signs.</p>
+          </div>
+          <div class="cel-screens__header">
+            <p class="cel-screens__caption">Personal Birth Chart: Core Identity</p>
+            <p class="cel-screens__desc">Comprehensive birth chart mapping focused on the fundamental pillars of user identity.</p>
+          </div>
+        </div>
+        <div class="cel-screens__grid">
+          <div class="cel-screens__item">
+            <div class="cel-screens__phone">
+              <div class="cel-phone-demo">
+                <div class="cel-phone-demo__screen">
+                  <img src="celestia-horoscope.png" alt="Celestia Horoscope screen with Love, Emotions, Mind, and Career stats" />
+                </div>
+                <img class="cel-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+              </div>
             </div>
-            <div class="cs-mb__bottom-wrap">
-              <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display:block;" viewBox="0 0 1008 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Bottom">
-                  <g id="Base">
-                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="#A3ACB1"/>
-                    <path d="M0 2C0 0.89543 0.895431 0 2 0H1006C1007.1 0 1008 0.895431 1008 2V18H0V2Z" fill="url(#mb_grad0)"/>
-                  </g>
-                  <g id="BottomCurve">
-                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="#647279"/>
-                    <path d="M0 18H1008L987.646 22.105C961.613 27.3553 935.123 30 908.566 30H97.9089C68.724 30 39.6267 26.8059 11.1367 20.4748L0 18Z" fill="url(#mb_grad1)"/>
-                  </g>
-                  <g id="Groove">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="#96A1A8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M421.033 0C421.547 7.81803 428.052 14 436 14H573C580.948 14 587.453 7.81803 587.967 0H421.033Z" fill="url(#mb_grad2)"/>
-                  </g>
-                </g>
-                <defs>
-                  <linearGradient id="mb_grad0" x1="0" y1="9" x2="1008" y2="9" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#0D1012"/>
-                    <stop offset="0.03" stop-color="#CAD4DB"/>
-                    <stop offset="0.0625" stop-color="#242729"/>
-                    <stop offset="0.134" stop-color="#A3ACB1"/>
-                    <stop offset="0.866" stop-color="#A3ACB1"/>
-                    <stop offset="0.942" stop-color="#242729"/>
-                    <stop offset="0.971" stop-color="#CAD4DB"/>
-                    <stop offset="0.997" stop-color="#0D1012"/>
-                  </linearGradient>
-                  <linearGradient id="mb_grad1" x1="504" y1="18" x2="504" y2="30" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#7A7F83"/>
-                    <stop offset="1" stop-color="#0B0B0E"/>
-                  </linearGradient>
-                  <linearGradient id="mb_grad2" x1="437.5" y1="8.5" x2="574.5" y2="8.5" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3C3C3C"/>
-                    <stop offset="0.318" stop-color="#3C3C3C" stop-opacity="0"/>
-                    <stop offset="0.661" stop-color="#3C3C3C" stop-opacity="0"/>
-                    <stop offset="1" stop-color="#444444"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+          </div>
+          <div class="cel-screens__item">
+            <div class="cel-screens__phone">
+              <div class="cel-phone-demo">
+                <div class="cel-phone-demo__screen">
+                  <img src="celestia-compatibility.png" alt="Celestia Compatibility screen showing overall match percentage" />
+                </div>
+                <img class="cel-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="cel-screens__item">
+            <div class="cel-screens__phone">
+              <div class="cel-phone-demo">
+                <div class="cel-phone-demo__screen">
+                  <img src="celestia-birthchart.png" alt="Celestia Birth Chart screen with Sun, Moon, and Rising signs" />
+                </div>
+                <img class="cel-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Overview text -->
-        <div class="cs-overview-text">
-          <p class="cs-overview-label">Overview</p>
-          <h2 class="cs-overview-heading">A celestial PWA built with<br>Prompt-Driven Development</h2>
-          <p>Celestia is a horoscope Progressive Web App built using Claude Design and Claude Code — an AI-assisted workflow from concept to deployment. It features daily horoscopes, zodiac compatibility, and detailed celestial profiles for all 12 signs.</p>
-          <p>This project explores the intersection of AI-assisted workflows and front-end development, demonstrating how prompt engineering can accelerate the full design-to-code pipeline.</p>
-          <div class="cs-links cs-links--inline">
-            <a href="https://celestia-henna.vercel.app" target="_blank" class="cs-live-btn">View Live Site ↗</a>
-            <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="cs-live-btn cs-live-btn--outline">GitHub ↗</a>
+    <!-- ─── 5. Design Decisions ─── -->
+    <section class="cel-decisions">
+      <div class="cel-decisions__inner">
+        <div class="cel-editorial__title-col">
+          <h2 class="cel-section-title project-section-title">Design Decisions</h2>
+        </div>
+        <p class="cel-decisions__body">
+          The interface leans into a dark, cosmic palette — deep navy backgrounds with soft pink, violet, and blue accents — paired with Oswald for headings and Inter for body text. Circular progress rings carry the daily stats, and a single card system repeats across the Horoscope, Compatibility, and Profile screens, so the app feels cohesive without needing more than a handful of components.
+        </p>
+        <div class="cel-decisions__swatches">
+          <span class="cel-swatch" style="background:#0d0b1a"></span>
+          <span class="cel-swatch" style="background:#F0A8C4"></span>
+          <span class="cel-swatch" style="background:var(--cel-purple)"></span>
+          <span class="cel-swatch" style="background:#7FD6E0"></span>
+          <span class="cel-swatch" style="background:#9AE6A0"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 6. Design System ─── -->
+    <section class="cel-design-system">
+      <div class="cel-design-system__inner">
+        <div class="cel-editorial__title-col">
+          <h2 class="cel-section-title project-section-title">Design<br>System</h2>
+        </div>
+        <p class="cel-design-system__body">
+          Once the app was built, a design system was generated from the real code via Claude Design — consolidating the color palette, typography, and reusable components that had emerged from the project into a single documented reference.
+        </p>
+        <figure class="cel-design-system__visual">
+          <img src="celestia-ds-group.png" alt="Celestia design system overview" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── 7. Takeaways ─── -->
+    <section class="cel-takeaways">
+      <div class="cel-takeaways__inner">
+        <div class="cel-editorial__title-col">
+          <h2 class="cel-section-title project-section-title">Takeaways</h2>
+        </div>
+        <p class="cel-takeaways__body">
+          Building Celestia taught me that AI is an incredible partner for rapid prototyping and idea generation. While AI doesn't always provide a perfect result on the first try, it excels at providing the visual references and design systems needed to refine my vision. Through iterative prompting, I was able to translate my intent into high-fidelity designs, proving that my role is less about manual execution and more about curating and polishing AI-assisted output.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── 8. Final App ─── -->
+    <section class="cel-final">
+      <h2 class="cel-final__title cel-section-title project-section-title">Final App</h2>
+      <div class="cel-final__buttons">
+        <a href="https://github.com/marimnespoli/Celestia-" target="_blank" class="cel-final__btn">GitHub</a>
+        <a href="https://celestia-henna.vercel.app" target="_blank" class="cel-final__btn">View App</a>
+      </div>
+      <div class="cel-final__phone-wrap">
+        <div class="cel-phone-demo">
+          <div class="cel-phone-demo__screen">
+            <video src="celestia-final-mobile.mp4?v=5" autoplay muted loop playsinline></video>
           </div>
-        </div>
-
-      </div>
-
-      <!-- Info row -->
-      <div class="cs-info-row">
-        <div class="cs-info-block">
-          <p class="cs-info-label">What it does</p>
-          <p>Daily horoscopes, zodiac compatibility checks, and celestial profiles for all 12 signs. Installable as a PWA for a native-app feel on any device.</p>
-        </div>
-        <div class="cs-info-block">
-          <p class="cs-info-label">How I built it</p>
-          <p>Built with Prompt-Driven Development using Claude Design for UI ideation and Claude Code for implementation. The workflow went from prompt → design → code → deploy.</p>
-        </div>
-        <div class="cs-info-block">
-          <p class="cs-info-label">Key challenge</p>
-          <p>Learning to communicate design intent precisely through prompts — discovering that clear, specific prompts produce dramatically better AI-generated code than vague ones.</p>
+          <img class="cel-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
         </div>
       </div>
+    </section>
 
-      <!-- Live Demo -->
-      <div class="cs-demo">
-        <p class="cs-demo__label">Live Demo</p>
-        <p class="cs-demo__hint">Explore your zodiac sign and compatibility</p>
-        <div class="cs-demo__frame">
-          <iframe
-            src="https://celestia-henna.vercel.app"
-            title="Celestia — live demo"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-
-    </div>
   </main>
 
-
+  <script type="module" src="../js/logo-3d.js"></script>
 </body>
 </html>

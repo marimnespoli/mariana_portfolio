@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+    }
+  }
+  </script>
   <style>
     /* ── Base ── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -182,37 +190,14 @@
       position: relative;
       width: 68%;
       max-width: 320px;
-      aspect-ratio: 476 / 352;
+      aspect-ratio: 426 / 342;
     }
 
-    .fc-goal-split__app-cookie-masked {
-      position: absolute;
-      top: 8.09%; left: 0; right: 0.14%; bottom: 0.05%;
-      -webkit-mask-image: url(../assets/fortune-cookie/cookie-mask.svg);
-      mask-image: url(../assets/fortune-cookie/cookie-mask.svg);
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-    }
-
-    .fc-goal-split__app-cookie-masked img {
-      width: 100%; height: 100%; object-fit: fill; display: block;
-    }
-
-    .fc-goal-split__app-cookie-v1 {
-      position: absolute;
-      top: 0; left: 47.07%; right: 50.89%; bottom: 97.22%;
-    }
-
-    .fc-goal-split__app-cookie-v2 {
-      position: absolute;
-      top: 0.4%; left: 37.01%; right: 57.05%; bottom: 89.28%;
-    }
-
-    .fc-goal-split__app-cookie-v1 img,
-    .fc-goal-split__app-cookie-v2 img {
-      width: 100%; height: 100%; display: block;
+    .fc-goal-split__app-cookie {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
     }
 
     .fc-goal-split__app-click {
@@ -372,11 +357,13 @@
     }
 
     .fc-final__title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
       text-align: center;
       color: #000;
+      line-height: 1.2;
     }
 
     .fc-final__buttons {
@@ -452,12 +439,17 @@
 
   <!-- ─── Nav ─── -->
   <header class="header-row">
+    <a href="../index.html" class="header__logo" data-logo-3d data-model="../assets/models/letter-m.glb" data-fallback="../assets/models/letter-m-fallback.png" aria-label="Home">
+      <canvas class="header__logo-canvas" aria-hidden="true"></canvas>
+      <img class="header__logo-fallback" src="../assets/models/letter-m-fallback.png" alt="" />
+    </a>
     <nav class="header__nav-pill">
       <a href="../index.html#work" class="header__nav-link">Work</a>
       <a href="../about.html" class="header__nav-link">About</a>
       <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
       <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
     </nav>
+    <div class="header-row__spacer" aria-hidden="true"></div>
   </header>
 
   <main>
@@ -494,15 +486,7 @@
         <img class="fc-goal-split__app-bg" src="../assets/fortune-cookie/bg.png" alt="" />
         <div class="fc-goal-split__app-content">
           <div class="fc-goal-split__app-cookie-wrap">
-            <div class="fc-goal-split__app-cookie-masked">
-              <img src="../assets/fortune-cookie/cookie-fill.svg" alt="" />
-            </div>
-            <div class="fc-goal-split__app-cookie-v1">
-              <img src="../assets/fortune-cookie/cookie-v1.svg" alt="" />
-            </div>
-            <div class="fc-goal-split__app-cookie-v2">
-              <img src="../assets/fortune-cookie/cookie-v2.svg" alt="" />
-            </div>
+            <img class="fc-goal-split__app-cookie" src="../cookie.svg" alt="" />
           </div>
           <img class="fc-goal-split__app-click" src="../assets/fortune-cookie/click-btn.svg" alt="click" />
         </div>
@@ -527,7 +511,7 @@
 
     <!-- ─── 5. References Research ─── -->
     <section class="fc-references">
-      <h2 class="fc-references__title fc-section-title">References research</h2>
+      <h2 class="fc-references__title fc-section-title project-section-title">References research</h2>
       <div class="fc-references__grid">
         <div class="fc-references__img">
           <img src="ref1.png" alt="Reference 1" />
@@ -568,7 +552,7 @@
 
     <!-- ─── 8. Final Website ─── -->
     <section class="fc-final">
-      <h2 class="fc-final__title">FINAL WEBSITE</h2>
+      <h2 class="fc-final__title project-section-title">FINAL WEBSITE</h2>
       <div class="fc-final__buttons">
         <a href="https://github.com/marimnespoli/Fortune-Cookie" target="_blank" class="fc-final__btn">GitHub</a>
         <a href="https://fortune-cookie-d55a.vercel.app" target="_blank" class="fc-final__btn">View Website</a>
@@ -618,5 +602,6 @@
 
   <!-- ─── Footer ─── -->
 
+  <script type="module" src="../js/logo-3d.js"></script>
 </body>
 </html>
