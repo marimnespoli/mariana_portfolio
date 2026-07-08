@@ -1,11 +1,18 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 const RENDER_SIZE = 100;
 const MODEL_SCALE = 1.73;
 const VIEW_PADDING = 0.68;
 const ROTATION_SPEED = 0.4;
+const DRACO_PATH = 'https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/libs/draco/gltf/';
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath(DRACO_PATH);
+dracoLoader.preload();
+
+const modelCache = new Map();
 
 function supportsWebGL() {
   try {
@@ -21,6 +28,22 @@ function supportsWebGL() {
 
 function showFallback(link) {
   link.classList.add('is-fallback');
+}
+
+function loadModel(url) {
+  if (modelCache.has(url)) {
+    return modelCache.get(url);
+  }
+
+  const loader = new GLTFLoader();
+  loader.setDRACOLoader(dracoLoader);
+
+  const promise = new Promise((resolve, reject) => {
+    loader.load(url, resolve, undefined, reject);
+  });
+
+  modelCache.set(url, promise);
+  return promise;
 }
 
 function enhanceMaterials(object) {
@@ -60,9 +83,15 @@ function initLogo(link) {
   canvas.style.setProperty('--logo-display-scale', String(1 / VIEW_PADDING));
 
   const fallbackSrc = link.dataset.fallback;
+  const modelUrl = link.dataset.model;
+
   if (!supportsWebGL()) {
     showFallback(link);
     return;
+  }
+
+  if (modelUrl) {
+    loadModel(modelUrl);
   }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -97,17 +126,16 @@ function initLogo(link) {
   const pivot = new THREE.Group();
   scene.add(pivot);
 
-  const loader = new GLTFLoader();
-  loader.setMeshoptDecoder(MeshoptDecoder);
-
-  loader.load(
-    link.dataset.model,
-    (gltf) => {
+  loadModel(modelUrl)
+    .then((gltf) => {
       const model = gltf.scene.clone(true);
       enhanceMaterials(model);
       fitModel(model);
       pivot.add(model);
       pivot.rotation.y = -0.35;
+
+      renderer.render(scene, camera);
+      link.classList.add('is-ready');
 
       const clock = new THREE.Clock();
       const animate = () => {
@@ -118,14 +146,11 @@ function initLogo(link) {
         renderer.render(scene, camera);
       };
 
-      link.classList.add('is-ready');
       animate();
-    },
-    undefined,
-    () => {
+    })
+    .catch(() => {
       if (fallbackSrc) showFallback(link);
-    }
-  );
+    });
 }
 
 document.querySelectorAll('[data-logo-3d]').forEach(initLogo);
