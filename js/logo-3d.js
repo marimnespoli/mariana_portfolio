@@ -19,29 +19,8 @@ function supportsWebGL() {
   }
 }
 
-const modelCache = new Map();
-
 function showFallback(link) {
-  link.classList.remove('is-loading');
   link.classList.add('is-fallback');
-}
-
-function loadModel(loader, url) {
-  if (modelCache.has(url)) {
-    return Promise.resolve(modelCache.get(url));
-  }
-
-  return new Promise((resolve, reject) => {
-    loader.load(
-      url,
-      (gltf) => {
-        modelCache.set(url, gltf);
-        resolve(gltf);
-      },
-      undefined,
-      reject
-    );
-  });
 }
 
 function enhanceMaterials(object) {
@@ -81,8 +60,6 @@ function initLogo(link) {
   canvas.style.setProperty('--logo-display-scale', String(1 / VIEW_PADDING));
 
   const fallbackSrc = link.dataset.fallback;
-  link.classList.add('is-loading');
-
   if (!supportsWebGL()) {
     showFallback(link);
     return;
@@ -123,8 +100,9 @@ function initLogo(link) {
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
 
-  loadModel(loader, link.dataset.model)
-    .then((gltf) => {
+  loader.load(
+    link.dataset.model,
+    (gltf) => {
       const model = gltf.scene.clone(true);
       enhanceMaterials(model);
       fitModel(model);
@@ -140,13 +118,14 @@ function initLogo(link) {
         renderer.render(scene, camera);
       };
 
-      link.classList.remove('is-loading');
       link.classList.add('is-ready');
       animate();
-    })
-    .catch(() => {
+    },
+    undefined,
+    () => {
       if (fallbackSrc) showFallback(link);
-    });
+    }
+  );
 }
 
 document.querySelectorAll('[data-logo-3d]').forEach(initLogo);
