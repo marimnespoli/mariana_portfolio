@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifelong Learning Canada — Mariana Mesquita</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+    }
+  }
+  </script>
+  <link rel="preload" href="../assets/models/letter-m.glb" as="fetch" crossorigin="anonymous" />
+  <script type="module" src="../js/logo-3d.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #fafafa; color: #000; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Hero ── */
+    .ll-hero {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 80px;
+      align-items: start;
+      padding: 72px 80px 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ll-hero__title {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #000;
+      margin-bottom: var(--space-xs);
+    }
+
+    .ll-hero__desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .ll-hero__right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 220px;
+      padding-top: 8px;
+    }
+
+    .ll-meta-group { display: flex; flex-direction: column; gap: 4px; }
+
+    .ll-meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #000;
+    }
+
+    .ll-meta-val {
+      font-size: 13px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .ll-btn {
+      display: inline-block;
+      width: fit-content;
+      align-self: flex-start;
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 12px 36px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000;
+      text-align: center;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      margin-top: var(--space-sm);
+    }
+    .ll-btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
+
+    /* ── Intro split ── */
+    .ll-goal-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+      width: 100%;
+      margin-top: var(--section-gap-lg);
+    }
+
+    .ll-goal-split__visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      background: #EFF5F1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ll-goal-split__visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .ll-goal-split__text {
+      background: #f3f7f4;
+      padding: 72px max(80px, calc((100vw - 1200px) / 2 + 80px)) 72px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-xs);
+    }
+
+    .ll-goal-split__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #999;
+    }
+
+    .ll-goal-split__heading {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    .ll-goal-split__body {
+      font-size: 15px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    /* ── Before / After comparisons ── */
+    .ll-compare {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-lg) 80px 0;
+    }
+
+    .ll-compare__title {
+      text-align: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .ll-compare__row {
+      display: flex;
+      gap: clamp(16px, 3vw, 40px);
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .ll-compare__col {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ll-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    .ll-pill--before { background: #fff; color: #000; border: 1.5px solid #000; }
+    .ll-pill--after  { background: #000; color: #fff; border: 1.5px solid #000; }
+
+    .ll-compare__img {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e4e4e4;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      background: #fff;
+    }
+    .ll-compare__img img {
+      width: 100%;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .ll-compare--piece .ll-compare__col { max-width: 440px; }
+    .ll-compare--full .ll-compare__col { max-width: 320px; }
+
+    /* ── Lightbox ── */
+    .ll-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .ll-lightbox.is-open { display: block; }
+    .ll-lightbox__img {
+      max-width: min(900px, 90vw);
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.4);
+    }
+    .ll-lightbox__close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #000;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+    }
+
+    .ll-compare + .ll-compare {
+      padding-top: var(--space-lg);
+    }
+
+    /* ── Final ── */
+    .ll-final {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-lg) 80px var(--section-gap-lg);
+      text-align: center;
+    }
+
+    .ll-final__title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.88px;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: var(--space-xs);
+    }
+
+    .ll-final__body {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.9;
+      max-width: 560px;
+      margin: 0 auto var(--space-sm);
+    }
+
+    .ll-final__buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .ll-final__btn {
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 12px 36px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .ll-final__btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
+
+    @media (max-width: 860px) {
+      .ll-hero { grid-template-columns: 1fr; padding: 48px 24px 40px; gap: 32px; }
+      .ll-goal-split { grid-template-columns: 1fr; }
+      .ll-goal-split__visual { min-height: 280px; }
+      .ll-goal-split__text { padding: 48px 24px; }
+      .ll-compare { padding-left: 24px; padding-right: 24px; }
+      .ll-compare__row { flex-direction: column; align-items: center; }
+      .ll-final { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-row">
+    <a href="../index.html" class="header__logo" data-logo-3d data-model="../assets/models/letter-m.glb" data-fallback="../assets/models/letter-m-fallback.png" aria-label="Home">
+      <canvas class="header__logo-canvas" aria-hidden="true"></canvas>
+      <img class="header__logo-fallback" src="../assets/models/letter-m-fallback.png" alt="" />
+    </a>
+    <nav class="header__nav-pill">
+      <a href="../index.html#work" class="header__nav-link">Work</a>
+      <a href="../about.html" class="header__nav-link">About</a>
+      <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="header__nav-link">LinkedIn</a>
+      <a href="https://github.com/marimnespoli" target="_blank" class="header__nav-link">GitHub</a>
+    </nav>
+    <div class="header-row__spacer" aria-hidden="true"></div>
+  </header>
+
+  <main>
+
+    <!-- ─── Hero ─── -->
+    <section class="ll-hero">
+      <div class="ll-hero__left">
+        <h1 class="ll-hero__title">Lifelong Learning Canada</h1>
+        <p class="ll-hero__desc">A homepage redesign concept for Lifelong Learning Canada, built in Figma — a cleaner structure, a real design system, and a page that tells a story.</p>
+      </div>
+      <div class="ll-hero__right">
+        <div class="ll-meta-group">
+          <span class="ll-meta-label">Project Scope</span>
+          <span class="ll-meta-val">UI/UX Design · Web Design</span>
+        </div>
+        <div class="ll-meta-group">
+          <span class="ll-meta-label">Skills</span>
+          <span class="ll-meta-val">Figma · Design Systems · Visual Hierarchy</span>
+        </div>
+        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-btn">View Figma File</a>
+      </div>
+    </section>
+
+    <!-- ─── Intro split ─── -->
+    <div class="ll-goal-split">
+      <div class="ll-goal-split__visual">
+        <img src="lifelong-hero-after.png" alt="Lifelong Learning Canada — redesigned homepage" />
+      </div>
+      <div class="ll-goal-split__text">
+        <span class="ll-goal-split__label">The Challenge</span>
+        <h2 class="ll-goal-split__heading">Rebuild the homepage with a clearer structure and a real design system.</h2>
+        <p class="ll-goal-split__body">Lifelong Learning Canada's homepage needed a cleaner structure, stronger visual hierarchy, and a cohesive design system behind it — so every section feels like part of the same page, and the story the organization is telling comes through clearly.</p>
+      </div>
+    </div>
+
+    <!-- ─── Before / After: Hero ─── -->
+    <section class="ll-compare ll-compare--piece">
+      <h2 class="ll-compare__title project-section-title">The Hero</h2>
+      <div class="ll-compare__row">
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--before">Before</span>
+          <div class="ll-compare__img"><img src="lifelong-hero-before.png" alt="Lifelong Learning Canada — hero section before" /></div>
+        </div>
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--after">After</span>
+          <div class="ll-compare__img"><img src="lifelong-hero-after.png" alt="Lifelong Learning Canada — hero section after" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Before / After: Programs / Content ─── -->
+    <section class="ll-compare ll-compare--piece">
+      <h2 class="ll-compare__title project-section-title">The Programs</h2>
+      <div class="ll-compare__row">
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--before">Before</span>
+          <div class="ll-compare__img"><img src="lifelong-content-before.png" alt="Lifelong Learning Canada — programs section before" /></div>
+        </div>
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--after">After</span>
+          <div class="ll-compare__img"><img src="lifelong-content-after.png" alt="Lifelong Learning Canada — programs section after" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Before / After: Full page ─── -->
+    <section class="ll-compare ll-compare--full">
+      <h2 class="ll-compare__title project-section-title">The Full Homepage</h2>
+      <div class="ll-compare__row">
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--before">Before</span>
+          <div class="ll-compare__img"><img src="lifelong-full-before.png" alt="Lifelong Learning Canada — full homepage before" /></div>
+        </div>
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--after">After</span>
+          <div class="ll-compare__img"><img src="lifelong-full-after.png" alt="Lifelong Learning Canada — full homepage after" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Final ─── -->
+    <section class="ll-final">
+      <h2 class="ll-final__title project-section-title">See the Full Design</h2>
+      <p class="ll-final__body">Explore the complete design system and prototype in Figma.</p>
+      <div class="ll-final__buttons">
+        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-final__btn">View Figma File</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Lightbox ─── -->
+  <div class="ll-lightbox" id="llLightbox">
+    <button class="ll-lightbox__close" id="llLightboxClose" aria-label="Close">&times;</button>
+    <img class="ll-lightbox__img" id="llLightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    (function () {
+      var lightbox = document.getElementById('llLightbox');
+      var lightboxImg = document.getElementById('llLightboxImg');
+      var closeBtn = document.getElementById('llLightboxClose');
+
+      document.querySelectorAll('.ll-compare__img img').forEach(function (img) {
+        img.addEventListener('click', function () {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('is-open');
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightboxImg.src = '';
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

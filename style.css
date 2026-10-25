@@ -137,8 +137,7 @@ main {
   transition: none;
 }
 
-.header__logo.is-ready .header__logo-canvas,
-.header__logo.is-fallback .header__logo-fallback {
+.header__logo.is-ready .header__logo-canvas {
   visibility: visible;
 }
 
@@ -149,8 +148,12 @@ main {
   height: 52px;
   object-fit: contain;
   display: block;
-  visibility: hidden;
+  visibility: visible;
   pointer-events: none;
+}
+
+.header__logo.is-ready .header__logo-fallback {
+  visibility: hidden;
 }
 
 .header__logo.is-fallback .header__logo-canvas {
@@ -435,12 +438,12 @@ main {
 
 .hero-intro__sub {
   font-family: 'Overused Grotesk', Inter, system-ui, sans-serif;
-  font-size: 43.7px;
-  font-weight: 300;
-  color: #141414;
-  line-height: 57.6px;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
   letter-spacing: 0.01em;
-  margin: 0 0 28px;
+  margin: 12px 0 28px;
 }
 
 .hero-intro__cta {
