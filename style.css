@@ -1588,3 +1588,204 @@ main {
   padding: 48px 56px;
   border-radius: 20px;
 }
+
+/* ─── SITE FOOTER (prefixed .ft- to stay isolated from legacy footer rules) ─── */
+.ft {
+  position: relative;
+  margin-top: var(--section-gap-lg);
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ft-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 96px 24px 0;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ft-title {
+  font-family: 'Overused Grotesk', Inter, system-ui, sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .ft-title { white-space: nowrap; }
+}
+
+.ft-code {
+  position: relative;
+  display: inline-block;
+  margin-top: 18px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.ft-code:hover,
+.ft-code:focus-visible { background: #EEF0FB; }
+.ft-code:focus-visible { outline: 2px solid #3B5BDB; outline-offset: 2px; }
+.ft-code__base { color: #8A8A8A; }
+
+.ft-hint {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ft-toast {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translate(-50%, 100%);
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 3;
+}
+.ft-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 100%) translateY(-8px);
+}
+
+/* ── Sticker stage: fixed-height area between content and bar ── */
+.ft-stage {
+  position: relative;
+  z-index: 2;
+  height: 240px;
+  overflow: visible;
+}
+
+.ft-sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  filter: drop-shadow(0 3px 0 rgba(0,0,0,.08));
+}
+.ft-sticker:active { cursor: grabbing; }
+.ft-sticker path { vector-effect: non-scaling-stroke; }
+
+.ft-burst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* ── Bottom bar ── */
+.ft-bar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 64px;
+  border-top: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ft-bar__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ft-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3BBF6E;
+  flex-shrink: 0;
+  animation: ft-dot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes ft-dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.ft-bar__clock {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ft-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ft-bar__link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.ft-bar__link:hover { opacity: 0.6; }
+
+.ft-bar__rain {
+  background: transparent;
+  border: none;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.ft-bar__rain:hover,
+.ft-bar__rain:focus-visible { color: var(--text); }
+
+.ft-bar__copyright {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-dot { animation: none; }
+}
+
+@media (max-width: 700px) {
+  .ft-content { padding: 72px 20px 0; }
+  .ft-code { font-size: 18px; }
+  .ft-stage { height: 180px; }
+  .ft-bar {
+    height: auto;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ft-bar__links { flex-wrap: wrap; gap: 14px; }
+}

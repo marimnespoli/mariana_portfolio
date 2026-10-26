@@ -212,6 +212,36 @@
 
   </main>
 
+  <!-- FOOTER -->
+  <footer class="ft" id="siteFooter">
+    <div class="ft-content">
+      <h2 class="ft-title">Let's work together</h2>
+
+      <button type="button" class="ft-code" id="footerCopyBtn" aria-label="Copy my email address">
+        <span class="ft-code__base">mariana</span><span class="hero__code-punct">.</span><span class="hero__code-fn">say</span><span class="hero__code-punct">(</span><span class="hero__code-bool">"hi"</span><span class="hero__code-punct">);</span>
+      </button>
+      <p class="ft-hint">click to copy my email</p>
+
+      <div class="ft-toast" id="footerToast" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="ft-stage" id="footerRain" aria-hidden="true"></div>
+
+    <div class="ft-bar">
+      <div class="ft-bar__status">
+        <span class="ft-dot" aria-hidden="true"></span>
+        <span id="footerClock" class="ft-bar__clock"></span>
+      </div>
+      <div class="ft-bar__links">
+        <a href="https://www.linkedin.com/in/mariana-mesquita-16845829a/" target="_blank" class="ft-bar__link">LinkedIn</a>
+        <a href="https://github.com/marimnespoli" target="_blank" class="ft-bar__link">GitHub</a>
+        <button type="button" class="ft-bar__rain" id="footerRainBtn">↻ make it rain</button>
+        <span class="ft-bar__copyright">© 2026 Mariana Mesquita</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/footer.js" defer></script>
 
   <script>
     document.querySelectorAll('.hero-sticker').forEach(function(el) {
