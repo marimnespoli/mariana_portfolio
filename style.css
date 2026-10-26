@@ -443,7 +443,26 @@ main {
   color: var(--text-muted);
   line-height: 1.5;
   letter-spacing: 0.01em;
-  margin: 12px 0 28px;
+  margin: 12px 0 10px;
+}
+
+.hero__code {
+  margin: 0 0 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.tok-muted { color: var(--text-muted); }
+.tok-punct { color: #9A9A9A; }
+.tok-fn    { color: #3B5BDB; }
+.tok-key   { color: #A23FD1; }
+.tok-bool  { color: #D9480F; }
+
+@media (max-width: 420px) {
+  .hero__code { font-size: 14px; }
 }
 
 .hero-intro__cta {
