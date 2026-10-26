@@ -455,9 +455,10 @@ main {
   color: #8A8A8A;
   white-space: nowrap;
 }
-.hero__code-fn   { color: #3B5BDB; font-weight: 500; }
-.hero__code-key  { color: #A23FD1; }
-.hero__code-bool { color: #D9480F; }
+.hero__code-punct { color: #A8A8A8; }
+.hero__code-fn    { color: #3B5BDB; font-weight: 500; }
+.hero__code-key   { color: #A24DB3; }
+.hero__code-bool  { color: #C2462A; }
 
 .hero-intro__cta {
   display: inline-flex;
