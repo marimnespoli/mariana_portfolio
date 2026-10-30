@@ -190,8 +190,6 @@
     var rect = stageEl.getBoundingClientRect();
     var mobile = isMobile();
     var repeats = mobile ? 1 : 2;
-    var sizeMin = mobile ? 40 : 64;
-    var sizeMax = mobile ? 64 : 98;
 
     var order = [];
     for (var rep = 0; rep < repeats; rep++) {
@@ -199,9 +197,9 @@
     }
 
     order.forEach(function (typeIndex) {
-      var size = sizeMin + Math.random() * (sizeMax - sizeMin);
+      // Same size as the hero stickers (each SVG's natural size)
       var type = STICKER_TYPES[typeIndex];
-      var s = buildSticker(type, size);
+      var s = buildSticker(type, Math.max(type.w, type.h));
       stageEl.appendChild(s.el);
 
       var maxDim = Math.max(s.w, s.h);
