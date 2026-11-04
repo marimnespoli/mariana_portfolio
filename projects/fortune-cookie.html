@@ -562,6 +562,33 @@
       .fc-goal-split__text { padding: 40px 24px; }
       .fc-phone-demo { max-width: 220px; }
     }
+
+    /* ── Phones and small tablets ── */
+    @media (max-width: 860px) {
+      .fc-hero { grid-template-columns: 1fr; padding: 48px 24px 40px; gap: 32px; }
+      .fc-hero__right { min-width: 0; }
+      .fc-goal-split { grid-template-columns: 1fr; min-height: auto; }
+      .fc-goal-split__visual { min-height: 300px; }
+      .fc-goal-split__text { padding: 40px 24px; }
+      .fc-references { padding-left: 24px; padding-right: 24px; }
+      .fc-references__grid { flex-wrap: wrap; }
+      .fc-references__img { flex: 1 1 calc(50% - 12px); }
+      .fc-stat,
+      .fc-stat--image-first,
+      .fc-stat:not(.fc-stat--image-first) { grid-template-columns: 1fr; height: auto; }
+      .fc-stat__text,
+      .fc-stat:not(.fc-stat--image-first) .fc-stat__text { padding: 32px 24px; justify-content: center; }
+      .fc-stat__visual { aspect-ratio: 16 / 10; height: auto; }
+      .fc-final { padding-left: 24px; padding-right: 24px; }
+      .fc-final__buttons { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 860px) {
+      .fc-banner__bg { width: 80%; }
+      .fc-ribbon { padding: 64px 24px; }
+      .fc-ribbon img { width: 100%; }
+      .header-row { padding-left: 24px; padding-right: 24px; }
+    }
   </style>
 </head>
 <body>

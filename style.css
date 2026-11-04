@@ -323,7 +323,7 @@ main {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 960px;
+  width: min(960px, calc(100% - 16px));
   height: 360px;
   pointer-events: none;
 }
@@ -384,7 +384,7 @@ main {
   }
   @keyframes hero-typewriter {
     from { width: 0; }
-    to   { width: 360px; }
+    to   { width: 8.8em; } /* the full highlighted name, at any font size */
   }
 }
 
@@ -420,6 +420,21 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .hero-sticker.is-wiggling { animation: none; }
   .hero-sticker--sparkle { transform: rotate(-15deg); }
+}
+
+/* Tablets: keep the right-edge sticker on screen */
+@media (max-width: 1000px) {
+  .hero-sticker--orange-star { left: calc(100% - 44px); }
+}
+
+/* Phones: stickers stay inside the screen and the heading scales down */
+@media (max-width: 700px) {
+  .hero-intro { padding-top: 64px; }
+  .hero-intro__heading { font-size: 28px; line-height: 40px; }
+  .hero-sticker--sparkle     { width: 48px; height: 48px; left: 3%; top: 300px; }
+  .hero-sticker--orange-star { left: 86%; top: 150px; }
+  .hero-sticker--flower      { left: 84%; }
+  .hero-sticker--curl        { width: 40px; height: 45px; left: 8%; top: 390px; }
 }
 
 .hero-intro__dash {

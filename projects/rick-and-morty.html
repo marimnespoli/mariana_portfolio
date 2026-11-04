@@ -463,6 +463,34 @@
     .rm-final__btn:hover { background: rgba(123,112,191,0.08); border-color: #7b70bf; color: #7b70bf; }
 
     .rm-final__macbook-wrap { width: 100%; max-width: 860px; }
+
+    /* ── Phones and small tablets ── */
+    @media (max-width: 860px) {
+      .rm-hero { grid-template-columns: 1fr; padding: 48px 24px 40px; gap: 32px; }
+      .rm-hero__right { min-width: 0; }
+      .rm-goal-split { grid-template-columns: 1fr; min-height: auto; }
+      .rm-goal-split__visual { min-height: 300px; }
+      .rm-goal-split__text { padding: 40px 24px; }
+      .rm-references { padding-left: 24px; padding-right: 24px; }
+      .rm-references__grid { flex-wrap: wrap; }
+      .rm-references__img { flex: 1 1 calc(50% - 12px); }
+      .rm-stat,
+      .rm-stat--image-first,
+      .rm-stat:not(.rm-stat--image-first) { grid-template-columns: 1fr; height: auto; }
+      .rm-stat__text,
+      .rm-stat:not(.rm-stat--image-first) .rm-stat__text { padding: 32px 24px; justify-content: center; }
+      .rm-stat__visual { aspect-ratio: 16 / 10; height: auto; }
+      .rm-final { padding-left: 24px; padding-right: 24px; }
+      .rm-final__buttons { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 860px) {
+      .rm-container { padding-left: 24px; padding-right: 24px; }
+      .rm-cards-section { padding: var(--section-gap-md) 24px; }
+      .rm-cards-row { gap: 24px; }
+      .rm-demo { padding: var(--section-gap-md) 24px; }
+      .rm-demo__clip { height: 560px; }
+    }
   </style>
 </head>
 <body>
