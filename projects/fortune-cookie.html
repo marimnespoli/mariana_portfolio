@@ -32,13 +32,6 @@
       padding: 0 80px;
     }
 
-    /* ── Header alignment override (global uses 60px) ── */
-    .header-row {
-      padding-left: 98px;
-      padding-right: 98px;
-      max-width: 100%;
-    }
-
     /* ── Banner stack ── */
     .fc-banner {
       position: relative;
@@ -286,62 +279,77 @@
     }
 
     /* ─────────────────────────────────────────
-       6. STAT SECTIONS (1 interaction / Infinity luck)
+       6. KEY SCREENS (same layout as Celestia)
     ───────────────────────────────────────── */
-    /* text-left: text(~46%) | image(~54%) */
-    .fc-stat {
-      display: grid;
-      grid-template-columns: 54% 46%;
-      height: 460px;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: calc(100% - 48px);
-      overflow: hidden;
-      border-radius: 15px;
+    .fc-screens {
+      margin-top: var(--section-gap-lg);
+      background: #F7F5FB;
+      padding: var(--section-gap-md) 0 var(--space-lg);
     }
 
-    .fc-stat--image-first {
-      grid-template-columns: 54% 46%;
+    .fc-screens .fc-section-title {
+      text-align: center;
+      margin: 0 auto var(--section-gap-md);
+      padding: 0 60px;
     }
 
-    /* text-left variant (Infinity Luck) */
-    .fc-stat:not(.fc-stat--image-first) {
-      grid-template-columns: 46% 54%;
-    }
-
-    .fc-stat + .fc-stat {
-      margin-top: 16px;
-    }
-
-    .fc-stat__text {
-      background: #fff;
-      padding: 56px 80px 56px 160px;
+    .fc-screens__grid {
       display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .fc-screens__item {
+      flex: 0 0 340px;
+      width: 340px;
+      max-width: 340px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      gap: var(--space-sm);
     }
 
-    .fc-stat__label {
-      font-size: 24px;
+    .fc-screens__header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+      min-height: 64px;
+    }
+
+    .fc-screens__caption {
+      margin: 0;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.88px;
       text-transform: uppercase;
-      color: #000;
-      line-height: 1.2;
-      max-width: 308px;
+      letter-spacing: 0.08em;
+      color: rgba(0, 0, 0, 0.8);
     }
 
-    .fc-stat__visual {
-      overflow: hidden;
-      height: 100%;
-      border-radius: 15px;
+    .fc-screens__desc {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.6);
     }
 
-    .fc-stat__visual-screen {
+    .fc-screens .fc-phone-demo {
+      width: 300px;
+      max-width: 300px;
+      flex-shrink: 0;
+    }
+
+    .fc-screens .fc-phone-demo__screen { width: calc(89.22% + 3px); }
+
+    .fc-phone-demo__screen img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
       display: block;
     }
 
@@ -479,11 +487,7 @@
       border-radius: 15px;
     }
 
-    .fc-redesign__video {
-      max-width: 520px;
-      margin: 0 auto;
-      width: 100%;
-    }
+    .fc-redesign__strip img { border-radius: 0; }
 
     .fc-redesign__steps {
       display: grid;
@@ -573,12 +577,13 @@
       .fc-references { padding-left: 24px; padding-right: 24px; }
       .fc-references__grid { flex-wrap: wrap; }
       .fc-references__img { flex: 1 1 calc(50% - 12px); }
-      .fc-stat,
-      .fc-stat--image-first,
-      .fc-stat:not(.fc-stat--image-first) { grid-template-columns: 1fr; height: auto; }
-      .fc-stat__text,
-      .fc-stat:not(.fc-stat--image-first) .fc-stat__text { padding: 32px 24px; justify-content: center; }
-      .fc-stat__visual { aspect-ratio: 16 / 10; height: auto; }
+      .fc-screens .fc-section-title { padding: 0 24px; }
+      .fc-screens__grid { flex-direction: column; align-items: center; padding: 0 24px; }
+      .fc-screens__item { width: 100%; max-width: 340px; flex: none; }
+      .fc-screens__header { min-height: 0; }
+      .fc-redesign__strip-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .fc-redesign__strip-scroll img { width: 860px; max-width: none; }
+      .fc-screens .fc-phone-demo { width: 260px; max-width: 260px; }
       .fc-final { padding-left: 24px; padding-right: 24px; }
       .fc-final__buttons { flex-wrap: wrap; justify-content: center; }
     }
@@ -587,7 +592,6 @@
       .fc-banner__bg { width: 80%; }
       .fc-ribbon { padding: 64px 24px; }
       .fc-ribbon img { width: 100%; }
-      .header-row { padding-left: 24px; padding-right: 24px; }
     }
   </style>
 </head>
@@ -683,25 +687,46 @@
       </div>
     </section>
 
-    <!-- ─── 6. Stat: 1 Interaction ─── -->
-    <!-- Image LEFT, text RIGHT (Figma layout) -->
-    <section class="fc-stat fc-stat--image-first">
-      <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
-      </div>
-      <div class="fc-stat__text">
-        <span class="fc-stat__label">1 Interaction</span>
-      </div>
-    </section>
-
-    <!-- ─── 7. Stat: Infinity Luck ─── -->
-    <!-- Text LEFT, image RIGHT (Figma layout) -->
-    <section class="fc-stat">
-      <div class="fc-stat__text">
-        <span class="fc-stat__label">Infinity luck.</span>
-      </div>
-      <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
+    <!-- ─── 6. Key Screens ─── -->
+    <section class="fc-screens">
+      <h2 class="fc-section-title project-section-title">Key Screens</h2>
+      <div class="fc-screens__grid">
+        <figure class="fc-screens__item">
+          <figcaption class="fc-screens__header">
+            <p class="fc-screens__caption">The Cookie: One Tap</p>
+            <p class="fc-screens__desc">A single golden cookie on a night sky. One click is all it asks for.</p>
+          </figcaption>
+          <div class="fc-phone-demo">
+            <div class="fc-phone-demo__screen">
+              <img src="../assets/fortune-cookie/screens/screen-cookie.jpg" alt="Home screen with the Fortune Cookie ribbon, a golden cookie and the Click button" loading="lazy" />
+            </div>
+            <img class="fc-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+          </div>
+        </figure>
+        <figure class="fc-screens__item">
+          <figcaption class="fc-screens__header">
+            <p class="fc-screens__caption">The Crack: Luck Unfolds</p>
+            <p class="fc-screens__desc">The cookie shakes, cracks and drifts apart before the slip appears.</p>
+          </figcaption>
+          <div class="fc-phone-demo">
+            <div class="fc-phone-demo__screen">
+              <img src="../assets/fortune-cookie/screens/screen-crack.jpg" alt="The cookie split in two halves under the Your Fortune heading" loading="lazy" />
+            </div>
+            <img class="fc-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+          </div>
+        </figure>
+        <figure class="fc-screens__item">
+          <figcaption class="fc-screens__header">
+            <p class="fc-screens__caption">The Fortune: Written for You</p>
+            <p class="fc-screens__desc">A fresh fortune with four lucky numbers, ready to share or try again.</p>
+          </figcaption>
+          <div class="fc-phone-demo">
+            <div class="fc-phone-demo__screen">
+              <img src="../assets/fortune-cookie/screens/screen-fortune.jpg" alt="Fortune slip with a message and lucky numbers, plus Another Cookie and Share buttons" loading="lazy" />
+            </div>
+            <img class="fc-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -732,9 +757,9 @@
         </figure>
       </div>
 
-      <figure class="fc-redesign__figure fc-redesign__video">
-        <video src="../assets/fortune-cookie/redesign/before-after.mp4" poster="../assets/fortune-cookie/redesign/before-after-poster.jpg" autoplay muted loop playsinline aria-label="The original and the redesigned app side by side, going through the full interaction"></video>
-        <span class="fc-goal-split__label">The full interaction, before and after</span>
+      <figure class="fc-redesign__figure fc-redesign__strip">
+        <div class="fc-redesign__strip-scroll"><img src="../assets/fortune-cookie/redesign/marketing-strip.webp" alt="Five App Store screens: Crack open a little magic, Written just for you, Watch your luck unfold, Lucky numbers every time, and Share the luck" loading="lazy" /></div>
+        <span class="fc-goal-split__label">App Store screens</span>
       </figure>
 
       <div class="fc-redesign__steps">

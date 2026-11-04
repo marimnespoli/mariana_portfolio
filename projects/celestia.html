@@ -643,20 +643,28 @@
       margin: var(--space-lg) auto 0;
       padding: 0 24px;
     }
-    .cel-personas-line__wire {
-      position: absolute;
-      left: 14%;
-      right: 14%;
-      top: 22px;
-      height: 0;
-      border-top: 1.5px solid rgba(0, 0, 0, 0.22);
-    }
+    .cel-personas-line { overflow-x: clip; }
     .cel-personas-line__cards {
+      position: relative;
       display: flex;
       justify-content: center;
-      gap: clamp(24px, 6vw, 80px);
-      padding-top: 30px;
+      align-items: flex-start;
+      gap: 80px;
+      width: 600px;
+      margin: 0 auto;
+      padding-top: 90px;
     }
+    /* A loose cord that sags in the middle; each card hangs from it on its own string */
+    .cel-personas-line__wire {
+      position: absolute;
+      top: 0;
+      left: -70px;
+      width: 740px;
+      height: 110px;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .cel-personas-line__cards > .cel-persona-card:nth-of-type(2) { margin-top: 28px; }
     .cel-persona-card {
       position: relative;
       margin: 0;
@@ -728,7 +736,8 @@
     }
     @media (max-width: 700px) {
       .cel-personas-line__wire { display: none; }
-      .cel-personas-line__cards { flex-direction: column; align-items: center; gap: 40px; padding-top: 18px; }
+      .cel-personas-line__cards { flex-direction: column; align-items: center; gap: 40px; padding-top: 18px; width: auto; }
+      .cel-personas-line__cards > .cel-persona-card:nth-of-type(2) { margin-top: 0; }
       .cel-persona-card { transform: none; width: min(300px, 100%); }
     }
   </style>
@@ -862,8 +871,20 @@
 
     <!-- ─── Personas: illustrated cards ─── -->
     <section class="cel-personas-line" aria-label="Meet the personas">
-      <div class="cel-personas-line__wire" aria-hidden="true"></div>
       <div class="cel-personas-line__cards">
+        <svg class="cel-personas-line__wire" viewBox="0 0 740 110" aria-hidden="true">
+          <g fill="none" stroke="rgba(0,0,0,0.28)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M8 14 C 240 74, 500 74, 732 14" />
+            <path d="M200 49.4 L200 72" />
+            <path d="M540 49.4 L540 100" />
+          </g>
+          <g fill="#fff" stroke="rgba(0,0,0,0.35)" stroke-width="1.5">
+            <circle cx="8" cy="14" r="3.5" />
+            <circle cx="732" cy="14" r="3.5" />
+            <circle cx="200" cy="49.4" r="2.5" />
+            <circle cx="540" cy="49.4" r="2.5" />
+          </g>
+        </svg>
           <figure class="cel-persona-card" style="--tilt:-3deg">
             <span class="cel-persona-card__clip" aria-hidden="true"></span>
             <img class="cel-persona-card__art" src="celestia-persona-luna.jpg" alt="Luna, 3D portrait of a young woman with long dark hair, gold hoops and a pink top" loading="lazy" />
