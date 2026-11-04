@@ -511,6 +511,57 @@
       .fc-redesign__compare,
       .fc-redesign__steps { grid-template-columns: 1fr; }
     }
+
+    /* Phone with the app running (same component as the Celestia page) */
+    .fc-goal-split__app--phone {
+      background: #F5F0E8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .fc-phone-demo {
+      position: relative;
+      width: 62%;
+      max-width: 260px;
+      aspect-ratio: 482 / 965;
+    }
+
+    .fc-phone-demo__screen {
+      position: absolute;
+      left: 5.39%;
+      top: 2.18%;
+      width: 89.22%;
+      height: 95.54%;
+      border-radius: 13% / 6.5%;
+      overflow: hidden;
+      background: #1b2254;
+    }
+
+    .fc-phone-demo__screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .fc-phone-demo__frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .fc-goal-split { grid-template-columns: 1fr; min-height: auto; }
+      .fc-goal-split__app--phone { min-height: 360px; }
+      .fc-goal-split__text { padding: 40px 24px; }
+      .fc-phone-demo { max-width: 220px; }
+    }
   </style>
 </head>
 <body>
@@ -560,13 +611,12 @@
     <!-- ─── 3. The Goal Split ─── -->
     <section class="fc-goal-split">
 
-      <div class="fc-goal-split__app">
-        <img class="fc-goal-split__app-bg" src="../assets/fortune-cookie/bg.png" alt="" />
-        <div class="fc-goal-split__app-content">
-          <div class="fc-goal-split__app-cookie-wrap">
-            <img class="fc-goal-split__app-cookie" src="../cookie.svg" alt="" />
+      <div class="fc-goal-split__app fc-goal-split__app--phone">
+        <div class="fc-phone-demo">
+          <div class="fc-phone-demo__screen">
+            <video src="../assets/fortune-cookie/redesign/app-demo-mobile.mp4" poster="../assets/fortune-cookie/redesign/app-demo-poster.jpg" autoplay muted loop playsinline aria-label="The Fortune Cookie app: tap, the cookie cracks and a fortune appears"></video>
           </div>
-          <img class="fc-goal-split__app-click" src="../assets/fortune-cookie/click-btn.svg" alt="click" />
+          <img class="fc-phone-demo__frame" src="iphone-dark-frame-cropped.png" alt="" />
         </div>
       </div>
 
