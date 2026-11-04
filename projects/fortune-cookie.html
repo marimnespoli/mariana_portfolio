@@ -435,6 +435,82 @@
       transition: opacity 0.2s;
     }
     .fc-footer__link:hover { opacity: 0.5; }
+
+    /* ─────────────────────────────────────────
+       9. THE REDESIGN (with Claude)
+    ───────────────────────────────────────── */
+    .fc-redesign {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-lg) 80px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    .fc-redesign__intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .fc-redesign__intro .fc-goal-split__body + .fc-goal-split__body {
+      margin-top: 12px;
+    }
+
+    .fc-redesign__compare {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .fc-redesign__figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fc-redesign__figure img,
+    .fc-redesign__figure video {
+      width: 100%;
+      display: block;
+      border-radius: 15px;
+    }
+
+    .fc-redesign__video {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .fc-redesign__steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px 32px;
+    }
+
+    .fc-redesign__step img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center top;
+      background: #10153a;
+    }
+
+    .fc-redesign__step h3 {
+      margin: 4px 0 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .fc-redesign { padding: var(--space-lg) 24px 0; gap: 48px; }
+      .fc-redesign__intro,
+      .fc-redesign__compare,
+      .fc-redesign__steps { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -458,7 +534,8 @@
 
     <!-- ─── 1. Golden Banner ─── -->
     <div class="fc-banner">
-      <img class="fc-banner__bg" src="../assets/fortune-cookie/banner-redesign.png" alt="Fortune Cookie" />
+      <img class="fc-banner__bg" src="../assets/fortune-cookie/faixa do fortune cookie.png" alt="" />
+      <img class="fc-banner__text" src="../assets/fortune-cookie/Fortune cookie.svg" alt="Fortune Cookie" />
     </div>
 
     <!-- ─── 2. Hero ─── -->
@@ -484,12 +561,12 @@
     <section class="fc-goal-split">
 
       <div class="fc-goal-split__app">
-        <img class="fc-goal-split__app-bg" src="../assets/fortune-cookie/bg-redesign.jpg" alt="" />
+        <img class="fc-goal-split__app-bg" src="../assets/fortune-cookie/bg.png" alt="" />
         <div class="fc-goal-split__app-content">
           <div class="fc-goal-split__app-cookie-wrap">
             <img class="fc-goal-split__app-cookie" src="../cookie.svg" alt="" />
           </div>
-          <img class="fc-goal-split__app-click" src="../assets/fortune-cookie/click-btn-redesign.png" alt="click" />
+          <img class="fc-goal-split__app-click" src="../assets/fortune-cookie/click-btn.svg" alt="click" />
         </div>
       </div>
 
@@ -507,7 +584,7 @@
 
     <!-- ─── 4. Fortune Ribbon ─── -->
     <div class="fc-ribbon">
-      <img src="../assets/fortune-cookie/slip-redesign.png" alt="A journey of a thousand miles begins with a single step. Lucky numbers 7, 14, 23, 31." />
+      <img src="../Group 16.png" alt="A journey of a thousand miles begins with a single step" />
     </div>
 
     <!-- ─── 5. References Research ─── -->
@@ -533,7 +610,7 @@
     <!-- Image LEFT, text RIGHT (Figma layout) -->
     <section class="fc-stat fc-stat--image-first">
       <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../assets/fortune-cookie/stat-home.jpg" alt="Fortune Cookie home screen" />
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 1 (1).png" alt="Fortune Cookie app screen" />
       </div>
       <div class="fc-stat__text">
         <span class="fc-stat__label">1 Interaction</span>
@@ -547,8 +624,69 @@
         <span class="fc-stat__label">Infinity luck.</span>
       </div>
       <div class="fc-stat__visual">
-        <img class="fc-stat__visual-screen" src="../assets/fortune-cookie/stat-fortune.jpg" alt="Fortune Cookie fortune screen" />
+        <img class="fc-stat__visual-screen" src="../MacBook Pro 16_ - 2 (2) copy.png" alt="Fortune Cookie app screen" />
       </div>
+    </section>
+
+    <!-- ─── 9. The Redesign ─── -->
+    <section class="fc-redesign">
+
+      <div class="fc-redesign__intro">
+        <h2 class="fc-section-title project-section-title">The redesign</h2>
+        <div>
+          <span class="fc-goal-split__label">Designing with Claude</span>
+          <p class="fc-goal-split__body">
+            Later, I came back to the project and redesigned it together with Claude. The interaction stayed the same: one click, one cookie, one fortune. Everything around it changed.
+          </p>
+          <p class="fc-goal-split__body">
+            I worked on a shared canvas, asking for directions, reacting to them, and deciding what stayed. Claude explored and built; I set the direction, drew the artwork and made the calls.
+          </p>
+        </div>
+      </div>
+
+      <div class="fc-redesign__compare">
+        <figure class="fc-redesign__figure">
+          <img src="../MacBook Pro 16_ - 1 (1).png" alt="The original Fortune Cookie home screen" />
+          <span class="fc-goal-split__label">Before</span>
+        </figure>
+        <figure class="fc-redesign__figure">
+          <img src="../assets/fortune-cookie/redesign/stat-home.jpg" alt="The redesigned Fortune Cookie home screen" />
+          <span class="fc-goal-split__label">After</span>
+        </figure>
+      </div>
+
+      <figure class="fc-redesign__figure fc-redesign__video">
+        <video src="../assets/fortune-cookie/redesign/before-after.mp4" poster="../assets/fortune-cookie/redesign/before-after-poster.jpg" autoplay muted loop playsinline aria-label="The original and the redesigned app side by side, going through the full interaction"></video>
+        <span class="fc-goal-split__label">The full interaction, before and after</span>
+      </figure>
+
+      <div class="fc-redesign__steps">
+        <figure class="fc-redesign__figure fc-redesign__step">
+          <img src="../assets/fortune-cookie/redesign/explore-slips.jpg" alt="Board comparing eight fortune slip styles" />
+          <span class="fc-goal-split__label">01 · Explore</span>
+          <h3>Many directions, side by side</h3>
+          <p class="fc-goal-split__body">Backgrounds, buttons, slips and sparkles were laid out as static boards, so I could compare them at a glance instead of describing what I wanted.</p>
+        </figure>
+        <figure class="fc-redesign__figure fc-redesign__step">
+          <img src="../assets/fortune-cookie/redesign/decide-share.jpg" alt="Board with five ways to place the share action" />
+          <span class="fc-goal-split__label">02 · Decide</span>
+          <h3>UX calls, one screen at a time</h3>
+          <p class="fc-goal-split__body">For details like the share action, I asked for options with the trade-offs explained, then picked the one that kept “another cookie” as the main action.</p>
+        </figure>
+        <figure class="fc-redesign__figure fc-redesign__step">
+          <img src="../assets/fortune-cookie/redesign/cloud.jpg" alt="Golden cloud artwork" />
+          <span class="fc-goal-split__label">03 · Hand-craft</span>
+          <h3>My artwork, brought to life</h3>
+          <p class="fc-goal-split__body">I traced the clouds and drew the cookie in Illustrator. Claude cleaned up the SVGs and animated them: clouds drifting like mist, the cookie cracking open.</p>
+        </figure>
+        <figure class="fc-redesign__figure fc-redesign__step">
+          <img src="../assets/fortune-cookie/redesign/stat-fortune.jpg" alt="The redesigned fortune screen" />
+          <span class="fc-goal-split__label">04 · Ship</span>
+          <h3>Tested before every release</h3>
+          <p class="fc-goal-split__body">Each change was built on a separate branch and screenshotted on phone and desktop for my approval before it went live. Fortunes are now written by AI.</p>
+        </figure>
+      </div>
+
     </section>
 
     <!-- ─── 8. Final Website ─── -->
@@ -564,7 +702,7 @@
             <div class="cs-mb__lid"></div>
             <div class="cs-mb__dark"></div>
             <div class="cs-mb__screen">
-              <img class="cs-mb__site-img" src="../assets/fortune-cookie/screen-home.jpg" alt="Fortune Cookie final website" style="transform:none;object-position:center top;" />
+              <img class="cs-mb__site-img" src="../assets/fortune-cookie/redesign/screen-home.jpg" alt="Fortune Cookie final website" style="transform:none;object-position:center top;" />
             </div>
             <div class="cs-mb__bottom-wrap">
               <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display:block;" viewBox="0 0 1008 30" fill="none" xmlns="http://www.w3.org/2000/svg">
