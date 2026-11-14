@@ -257,6 +257,73 @@
       padding-top: var(--space-lg);
     }
 
+    /* ── Editorial text + cards ── */
+    .ll-text {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--section-gap-lg) 80px 0;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      column-gap: 80px;
+      align-items: start;
+    }
+    .ll-text .project-section-title {
+      text-align: left;
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+    }
+    .ll-text__body { display: flex; flex-direction: column; gap: 16px; }
+    .ll-text__body p { font-size: 16px; color: #444; line-height: 1.9; }
+    .ll-text__body strong { color: #111; font-weight: 600; }
+
+    .ll-cards {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: var(--space-lg) 60px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xs);
+    }
+    .ll-card {
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 15px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ll-card--title .project-section-title {
+      text-align: left;
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.88px;
+      line-height: 1.2;
+    }
+    .ll-card__step {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #7b70bf;
+      text-transform: uppercase;
+    }
+    .ll-card__label { font-size: 17px; font-weight: 700; color: #000; letter-spacing: -0.01em; }
+    .ll-card__body { font-size: 14px; color: #444; line-height: 1.55; }
+
+    /* ── Design system ── */
+    .ll-system .ll-compare__img img { cursor: zoom-in; }
+    .ll-system__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: var(--space-sm);
+    }
+    .ll-system__list li { display: flex; flex-direction: column; gap: 6px; }
+    .ll-system__list strong { font-size: 15px; font-weight: 700; color: #000; }
+    .ll-system__list span { font-size: 15px; color: #333; line-height: 1.7; }
+
     /* ── Final ── */
     .ll-final {
       max-width: 1200px;
@@ -309,6 +376,9 @@
       .ll-compare { padding-left: 24px; padding-right: 24px; }
       .ll-compare__row { flex-direction: column; align-items: center; }
       .ll-final { padding-left: 24px; padding-right: 24px; }
+      .ll-system__list { grid-template-columns: 1fr; gap: 24px; }
+      .ll-text { grid-template-columns: 1fr; gap: 24px; padding: var(--space-lg) 24px 0; }
+      .ll-cards { grid-template-columns: 1fr; padding: var(--space-md) 24px 0; }
     }
   </style>
 </head>
@@ -334,18 +404,22 @@
     <section class="ll-hero">
       <div class="ll-hero__left">
         <h1 class="ll-hero__title">Lifelong Learning Canada</h1>
-        <p class="ll-hero__desc">A homepage redesign concept for Lifelong Learning Canada, built in Figma: a cleaner structure, a real design system, and a page that tells a story.</p>
+        <p class="ll-hero__desc">A website redesign for Lifelong Learning Canada, a Canadian charity. I designed the Landing, About Us and Resource Hub pages, built a design system in Figma and prepared the file for developer handoff.</p>
       </div>
       <div class="ll-hero__right">
         <div class="ll-meta-group">
           <span class="ll-meta-label">Project Scope</span>
-          <span class="ll-meta-val">UI/UX Design · Web Design</span>
+          <span class="ll-meta-val">UI/UX Design · Web Design · Design System</span>
         </div>
         <div class="ll-meta-group">
           <span class="ll-meta-label">Skills</span>
-          <span class="ll-meta-val">Figma · Design Systems · Visual Hierarchy</span>
+          <span class="ll-meta-val">Figma · Design Systems · Developer Handoff</span>
         </div>
-        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-btn">View Figma File</a>
+        <div class="ll-meta-group">
+          <span class="ll-meta-label">Pages</span>
+          <span class="ll-meta-val">Landing · About Us · Resource Hub</span>
+        </div>
+        <a href="https://www.figma.com/design/nwnEfswx4xMTpzGlQBsQtA/Lifelong-Learning-Canada" target="_blank" class="ll-btn">View Figma File</a>
       </div>
     </section>
 
@@ -356,21 +430,51 @@
       </div>
       <div class="ll-goal-split__text">
         <span class="ll-goal-split__label">The Challenge</span>
-        <h2 class="ll-goal-split__heading">Rebuild the homepage with a clearer structure and a real design system.</h2>
-        <p class="ll-goal-split__body">Lifelong Learning Canada's homepage needed a cleaner structure, stronger visual hierarchy, and a cohesive design system behind it, so every section feels like part of the same page, and the story the organization is telling comes through clearly.</p>
+        <h2 class="ll-goal-split__heading">Rebuild the website with a clearer structure and one design system behind every page.</h2>
+        <p class="ll-goal-split__body">Lifelong Learning Canada's website needed a cleaner structure, a stronger visual hierarchy and a cohesive system, so every page feels connected and the mission comes through clearly: learning belongs to everyone, at every age. I chose a warm butter and stone palette with a green accent, paired Lora with Work Sans, and kept decoration to a minimum so the stories and programs lead.</p>
       </div>
     </div>
+
+    <!-- ─── The Context ─── -->
+    <section class="ll-text">
+      <h2 class="project-section-title">The Context</h2>
+      <div class="ll-text__body">
+        <p>Lifelong Learning Canada has been around since 1992, but like many small nonprofits it works with very little. There were almost no photos to design with, not much data to show impact, and no real visual identity. The logo is an apple, a symbol that is hard to connect to education and to people of every age on its own.</p>
+        <p>The website didn't feel like a place about learning, so a big part of my work was creating that feeling from scratch, without inventing anything the organization doesn't have.</p>
+        <p><strong>How might we make a small charity feel warm, credible and clearly about learning, with almost no photos or data to lean on?</strong></p>
+      </div>
+    </section>
+
+    <!-- ─── Design decisions ─── -->
+    <section class="ll-cards">
+      <div class="ll-card ll-card--title">
+        <h2 class="project-section-title">Design Decisions</h2>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Identity</span>
+        <span class="ll-card__label">Illustration instead of photos</span>
+        <p class="ll-card__body">Illustrations of people reading and learning at different ages give the site a visual language for education that the photos and the logo couldn't carry alone.</p>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Content</span>
+        <span class="ll-card__label">Real stories over numbers</span>
+        <p class="ll-card__body">With little data available, the pages lean on real learners like Cybell and Leah, and on the mission, values and beliefs the organization already has.</p>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Visual system</span>
+        <span class="ll-card__label">Warm, calm and readable</span>
+        <p class="ll-card__body">A butter and stone palette with one green for actions, Lora for headings and Work Sans for body text. Black text everywhere, minimal decoration, so the content leads.</p>
+      </div>
+    </section>
 
     <!-- ─── Before / After: Hero ─── -->
     <section class="ll-compare ll-compare--piece">
       <h2 class="ll-compare__title project-section-title">The Hero</h2>
       <div class="ll-compare__row">
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--before">Before</span>
           <div class="ll-compare__img"><img src="lifelong-hero-before.png" alt="Lifelong Learning Canada hero section, before" /></div>
         </div>
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--after">After</span>
           <div class="ll-compare__img"><img src="lifelong-hero-after.png" alt="Lifelong Learning Canada hero section, after" /></div>
         </div>
       </div>
@@ -381,11 +485,9 @@
       <h2 class="ll-compare__title project-section-title">The Programs</h2>
       <div class="ll-compare__row">
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--before">Before</span>
           <div class="ll-compare__img"><img src="lifelong-content-before.png" alt="Lifelong Learning Canada programs section, before" /></div>
         </div>
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--after">After</span>
           <div class="ll-compare__img"><img src="lifelong-content-after.png" alt="Lifelong Learning Canada programs section, after" /></div>
         </div>
       </div>
@@ -396,22 +498,66 @@
       <h2 class="ll-compare__title project-section-title">The Full Homepage</h2>
       <div class="ll-compare__row">
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--before">Before</span>
           <div class="ll-compare__img"><img src="lifelong-full-before.png" alt="Lifelong Learning Canada full homepage, before" /></div>
         </div>
         <div class="ll-compare__col">
-          <span class="ll-pill ll-pill--after">After</span>
-          <div class="ll-compare__img"><img src="lifelong-full-after.png" alt="Lifelong Learning Canada full homepage, after" /></div>
+          <div class="ll-compare__img"><img src="lifelong-full-after.jpg" alt="Lifelong Learning Canada full homepage, after" /></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ─── More pages ─── -->
+    <section class="ll-compare ll-compare--full">
+      <h2 class="ll-compare__title project-section-title">About Us and Resource Hub</h2>
+      <div class="ll-compare__row">
+        <div class="ll-compare__col">
+          <div class="ll-compare__img"><img src="lifelong-about-after.jpg" alt="Lifelong Learning Canada About Us page, redesigned" /></div>
+        </div>
+        <div class="ll-compare__col">
+          <div class="ll-compare__img"><img src="lifelong-hub-after.jpg" alt="Lifelong Learning Canada Resource Hub page, redesigned" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Design system ─── -->
+    <section class="ll-compare ll-system">
+      <h2 class="ll-compare__title project-section-title">The Design System</h2>
+      <div class="ll-compare__img"><img src="lifelong-design-system.png" alt="Lifelong Learning Canada design system: colors, typography and components" /></div>
+      <ul class="ll-system__list">
+        <li><strong>Tokens</strong><span>Color, spacing and radius variables with CSS names, plus text styles for every heading and body size.</span></li>
+        <li><strong>Components</strong><span>Header, footer, buttons, cards, filters and the resource table, all with properties and variants.</span></li>
+        <li><strong>Handoff</strong><span>Every page is built from those components on a 12 column grid, with greyscale wireframes alongside.</span></li>
+      </ul>
+    </section>
+
+    <!-- ─── How I used AI ─── -->
+    <section class="ll-cards">
+      <div class="ll-card ll-card--title">
+        <h2 class="project-section-title">How I Used AI</h2>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Details</span>
+        <span class="ll-card__label">Alignment and polish</span>
+        <p class="ll-card__body">I used Claude for the smaller, repetitive work: checking alignment and spacing across sections and keeping every page consistent.</p>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Exploration</span>
+        <span class="ll-card__label">Font and color options</span>
+        <p class="ll-card__body">When I was stuck on a decision, I asked for type pairings and palette options side by side, compared them and picked the direction myself.</p>
+      </div>
+      <div class="ll-card">
+        <span class="ll-card__step">Speed</span>
+        <span class="ll-card__label">Faster work in Figma</span>
+        <p class="ll-card__body">It helped me move faster when building the components, variables and text styles of the design system, so I could spend more time on the design itself.</p>
       </div>
     </section>
 
     <!-- ─── Final ─── -->
     <section class="ll-final">
       <h2 class="ll-final__title project-section-title">See the Full Design</h2>
-      <p class="ll-final__body">Explore the complete design system and prototype in Figma.</p>
+      <p class="ll-final__body">Explore the pages, the design system, the components and the wireframes in Figma.</p>
       <div class="ll-final__buttons">
-        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-final__btn">View Figma File</a>
+        <a href="https://www.figma.com/design/nwnEfswx4xMTpzGlQBsQtA/Lifelong-Learning-Canada" target="_blank" class="ll-final__btn">View Figma File</a>
       </div>
     </section>
 
