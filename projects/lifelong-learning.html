@@ -257,6 +257,19 @@
       padding-top: var(--space-lg);
     }
 
+    /* ── Design system ── */
+    .ll-system .ll-compare__img img { cursor: zoom-in; }
+    .ll-system__list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: var(--space-sm);
+    }
+    .ll-system__list li { display: flex; flex-direction: column; gap: 6px; }
+    .ll-system__list strong { font-size: 15px; font-weight: 700; color: #000; }
+    .ll-system__list span { font-size: 15px; color: #333; line-height: 1.7; }
+
     /* ── Final ── */
     .ll-final {
       max-width: 1200px;
@@ -309,6 +322,7 @@
       .ll-compare { padding-left: 24px; padding-right: 24px; }
       .ll-compare__row { flex-direction: column; align-items: center; }
       .ll-final { padding-left: 24px; padding-right: 24px; }
+      .ll-system__list { grid-template-columns: 1fr; gap: 24px; }
     }
   </style>
 </head>
@@ -334,18 +348,22 @@
     <section class="ll-hero">
       <div class="ll-hero__left">
         <h1 class="ll-hero__title">Lifelong Learning Canada</h1>
-        <p class="ll-hero__desc">A homepage redesign concept for Lifelong Learning Canada, built in Figma: a cleaner structure, a real design system, and a page that tells a story.</p>
+        <p class="ll-hero__desc">A website redesign for Lifelong Learning Canada, a Canadian charity. I designed the Landing, About Us and Resource Hub pages, built a design system in Figma and prepared the file for developer handoff.</p>
       </div>
       <div class="ll-hero__right">
         <div class="ll-meta-group">
           <span class="ll-meta-label">Project Scope</span>
-          <span class="ll-meta-val">UI/UX Design · Web Design</span>
+          <span class="ll-meta-val">UI/UX Design · Web Design · Design System</span>
         </div>
         <div class="ll-meta-group">
           <span class="ll-meta-label">Skills</span>
-          <span class="ll-meta-val">Figma · Design Systems · Visual Hierarchy</span>
+          <span class="ll-meta-val">Figma · Design Systems · Developer Handoff</span>
         </div>
-        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-btn">View Figma File</a>
+        <div class="ll-meta-group">
+          <span class="ll-meta-label">Pages</span>
+          <span class="ll-meta-val">Landing · About Us · Resource Hub</span>
+        </div>
+        <a href="https://www.figma.com/design/nwnEfswx4xMTpzGlQBsQtA/Lifelong-Learning-Canada" target="_blank" class="ll-btn">View Figma File</a>
       </div>
     </section>
 
@@ -356,8 +374,8 @@
       </div>
       <div class="ll-goal-split__text">
         <span class="ll-goal-split__label">The Challenge</span>
-        <h2 class="ll-goal-split__heading">Rebuild the homepage with a clearer structure and a real design system.</h2>
-        <p class="ll-goal-split__body">Lifelong Learning Canada's homepage needed a cleaner structure, stronger visual hierarchy, and a cohesive design system behind it, so every section feels like part of the same page, and the story the organization is telling comes through clearly.</p>
+        <h2 class="ll-goal-split__heading">Rebuild the website with a clearer structure and one design system behind every page.</h2>
+        <p class="ll-goal-split__body">Lifelong Learning Canada's website needed a cleaner structure, a stronger visual hierarchy and a cohesive system, so every page feels connected and the mission comes through clearly: learning belongs to everyone, at every age. I chose a warm butter and stone palette with a green accent, paired Lora with Work Sans, and kept decoration to a minimum so the stories and programs lead.</p>
       </div>
     </div>
 
@@ -401,17 +419,43 @@
         </div>
         <div class="ll-compare__col">
           <span class="ll-pill ll-pill--after">After</span>
-          <div class="ll-compare__img"><img src="lifelong-full-after.png" alt="Lifelong Learning Canada full homepage, after" /></div>
+          <div class="ll-compare__img"><img src="lifelong-full-after.jpg" alt="Lifelong Learning Canada full homepage, after" /></div>
         </div>
       </div>
+    </section>
+
+    <!-- ─── More pages ─── -->
+    <section class="ll-compare ll-compare--full">
+      <h2 class="ll-compare__title project-section-title">About Us and Resource Hub</h2>
+      <div class="ll-compare__row">
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--after">About Us</span>
+          <div class="ll-compare__img"><img src="lifelong-about-after.jpg" alt="Lifelong Learning Canada About Us page, redesigned" /></div>
+        </div>
+        <div class="ll-compare__col">
+          <span class="ll-pill ll-pill--after">Resource Hub</span>
+          <div class="ll-compare__img"><img src="lifelong-hub-after.jpg" alt="Lifelong Learning Canada Resource Hub page, redesigned" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Design system ─── -->
+    <section class="ll-compare ll-system">
+      <h2 class="ll-compare__title project-section-title">The Design System</h2>
+      <div class="ll-compare__img"><img src="lifelong-design-system.png" alt="Lifelong Learning Canada design system: colors, typography and components" /></div>
+      <ul class="ll-system__list">
+        <li><strong>Tokens</strong><span>Color, spacing and radius variables with CSS names, plus text styles for every heading and body size.</span></li>
+        <li><strong>Components</strong><span>Header, footer, buttons, cards, filters and the resource table, all with properties and variants.</span></li>
+        <li><strong>Handoff</strong><span>Every page is built from those components on a 12 column grid, with greyscale wireframes alongside.</span></li>
+      </ul>
     </section>
 
     <!-- ─── Final ─── -->
     <section class="ll-final">
       <h2 class="ll-final__title project-section-title">See the Full Design</h2>
-      <p class="ll-final__body">Explore the complete design system and prototype in Figma.</p>
+      <p class="ll-final__body">Explore the pages, the design system, the components and the wireframes in Figma.</p>
       <div class="ll-final__buttons">
-        <a href="https://www.figma.com/design/TqlMsr2NwENECF7xT0gA2a/LilfeLong" target="_blank" class="ll-final__btn">View Figma File</a>
+        <a href="https://www.figma.com/design/nwnEfswx4xMTpzGlQBsQtA/Lifelong-Learning-Canada" target="_blank" class="ll-final__btn">View Figma File</a>
       </div>
     </section>
 
