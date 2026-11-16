@@ -1,0 +1,248 @@
+/* ─────────────────────────────────────────────────────────────
+   Case study layout rule
+   Every title, paragraph, card and image starts on the same
+   left edge: one 1040px column, centered (200px from the edge
+   on a 1440 screen). Titles are always left aligned.
+───────────────────────────────────────────────────────────── */
+:root {
+  --case-col: 1040px;
+  --case-gutter: 24px;
+}
+
+.pf-wrap {
+  width: 100%;
+  max-width: calc(var(--case-col) + 2 * var(--case-gutter));
+  margin: 0 auto;
+  padding: 0 var(--case-gutter);
+}
+
+.pf-section { padding-top: var(--space-lg); }
+.pf-section > .pf-wrap > .project-section-title,
+.pf-title {
+  text-align: left;
+  margin: 0 0 var(--space-xs);
+  font-size: 24px;
+  letter-spacing: 0.88px;
+  line-height: 1.2;
+}
+
+.pf-lead {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pf-lead p { font-size: 16px; color: #444; line-height: 1.9; }
+.pf-lead strong { color: #111; font-weight: 600; }
+
+/* cards */
+.pf-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+.pf-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pf-card__label { font-size: 17px; font-weight: 700; color: #000; letter-spacing: -0.01em; }
+.pf-card__body { font-size: 14px; color: #444; line-height: 1.6; }
+
+/* stage: soft band behind mockups */
+.pf-stage {
+  margin-top: var(--space-sm);
+  border-radius: 24px;
+  padding: 56px 56px 0;
+  overflow: hidden;
+  background: var(--stage, #efeee9);
+}
+.pf-stage--pad { padding-bottom: 56px; }
+
+/* browser mockup */
+.pf-browser {
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.pf-stage--pad .pf-browser { border-radius: 12px; }
+.pf-browser__bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  background: #f3f3f1;
+  border-bottom: 1px solid #e6e6e2;
+}
+.pf-browser__dot { width: 11px; height: 11px; border-radius: 50%; background: #d9d9d4; }
+.pf-browser__tabs { display: flex; gap: 4px; margin-left: 16px; }
+.pf-browser__tab {
+  font: 500 12px/1 'Inter', sans-serif;
+  color: #555;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.pf-browser__tab.is-active { background: #fff; color: #000; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.pf-browser__view { display: block; width: 100%; }
+.pf-browser__view img { display: block; width: 100%; height: auto; }
+.pf-browser__view--scroll { height: 620px; overflow-y: auto; overscroll-behavior: contain; }
+.pf-browser__view--crop { aspect-ratio: 4 / 5; overflow: hidden; }
+
+/* phones */
+.pf-phones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.pf-phone {
+  width: 260px;
+  border-radius: 40px;
+  background: #111;
+  padding: 10px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+}
+.pf-phone__screen {
+  border-radius: 31px;
+  overflow-y: auto;
+  aspect-ratio: 390 / 844;
+  background: #fff;
+  scrollbar-width: none;
+}
+.pf-phone__screen::-webkit-scrollbar { display: none; }
+.pf-phone__screen img { display: block; width: 100%; height: auto; }
+
+/* grid of framed images */
+.pf-grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pf-grid3 .pf-browser { border-radius: 10px; }
+.pf-zoom { cursor: zoom-in; }
+
+.pf-caption { font-size: 14px; color: #666; line-height: 1.6; margin-top: 12px; }
+
+/* final */
+.pf-final { padding: var(--space-lg) 0 var(--space-lg); }
+.pf-final p { font-size: 16px; color: #444; line-height: 1.7; margin-bottom: var(--space-sm); max-width: 720px; }
+.pf-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+  border: 1.5px solid #000;
+  border-radius: 999px;
+  padding: 14px 28px;
+  transition: background .2s, color .2s;
+}
+.pf-btn:hover { background: #000; color: #fff; }
+.pf-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* lightbox */
+.pf-lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.85);
+  display: none; align-items: flex-start; justify-content: center;
+  overflow-y: auto; padding: 48px 24px;
+}
+.pf-lightbox.is-open { display: flex; }
+.pf-lightbox img { max-width: min(1200px, 100%); height: auto; border-radius: 8px; }
+.pf-lightbox__close {
+  position: fixed; top: 16px; right: 24px;
+  background: none; border: 0; color: #fff; font-size: 40px; cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .pf-cards, .pf-grid3 { grid-template-columns: 1fr; }
+  .pf-stage { padding: 24px 16px 0; border-radius: 16px; }
+  .pf-stage--pad { padding-bottom: 24px; }
+  .pf-browser__view--scroll { height: 460px; }
+  .pf-browser__tabs { margin-left: 4px; }
+  .pf-browser__tab { padding: 6px 8px; font-size: 11px; }
+  .pf-phones { gap: 24px; }
+  .pf-phone { width: 230px; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Older case studies: snap their sections to the same column.
+   (!important because each page has its own inline styles)
+───────────────────────────────────────────────────────────── */
+.cel-takeaways__inner, .cel-decisions__inner, .cel-design-system__inner,
+.cel-process__inner, .cel-screens__headers, .cel-screens__grid, .cel-final,
+.fc-redesign, .fc-screens__headers, .fc-screens__grid, .fc-final, .fc-references,
+.rm-references, .rm-demo, .rm-final {
+  max-width: calc(var(--case-col) + 2 * var(--case-gutter)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--case-gutter) !important;
+  padding-right: var(--case-gutter) !important;
+}
+
+/* text sections: title on top, text below */
+.cel-takeaways__inner, .cel-decisions__inner, .cel-design-system__inner, .fc-redesign__intro {
+  grid-template-columns: 1fr !important;
+  gap: var(--space-xs) !important;
+}
+.cel-takeaways__inner > *:not(:first-child),
+.cel-decisions__inner > *:not(:first-child),
+.fc-redesign__intro > *:not(:first-child) { max-width: 720px; }
+.cel-editorial__title-col { width: auto !important; }
+
+/* card grids: title above, three cards below */
+.cel-process__grid { grid-template-columns: repeat(3, 1fr) !important; }
+.cel-process__title-card {
+  grid-column: 1 / -1;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* every title left */
+.project-section-title, .cel-section-title, .fc-section-title, .fc-references__title,
+.rm-references__title, .rm-demo__title, .cel-final__title, .fc-final__title, .rm-final__title {
+  text-align: left !important;
+}
+.cel-screens .cel-section-title, .fc-screens .fc-section-title {
+  max-width: calc(var(--case-col) + 2 * var(--case-gutter));
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 var(--case-gutter) !important;
+}
+.cel-screens__headers, .fc-screens__headers, .cel-screens__grid, .fc-screens__grid {
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+.cel-screens__header, .fc-screens__header, .cel-screens__item, .fc-screens__item { flex: 1 1 0 !important; max-width: none !important; }
+.cel-screens__caption, .cel-screens__desc, .fc-screens__caption, .fc-screens__desc, .rm-demo__hint { text-align: left !important; }
+
+.cel-final, .fc-final, .rm-final { align-items: flex-start !important; text-align: left !important; }
+.cel-final__buttons, .fc-final__buttons, .rm-final__buttons { justify-content: flex-start !important; }
+
+@media (max-width: 900px) {
+  .cel-process__grid { grid-template-columns: 1fr !important; }
+  .cel-screens__headers, .fc-screens__headers, .cel-screens__grid, .fc-screens__grid { flex-direction: column !important; align-items: stretch !important; }
+}
+
+.cel-takeaways__inner > *, .cel-decisions__inner > *, .cel-design-system__inner > *, .fc-redesign__intro > * {
+  grid-column: 1 / -1 !important;
+  margin-left: 0 !important;
+}
+.rm-cards-section > .rm-references__title {
+  max-width: calc(var(--case-col) + 2 * var(--case-gutter));
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 var(--case-gutter) !important;
+}
+
+.cel-editorial__title-col, .cel-editorial__title-col .project-section-title { max-width: none !important; width: auto !important; white-space: normal; }
